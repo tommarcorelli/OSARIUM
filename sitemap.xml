@@ -167,6 +167,11 @@
   <url><loc>https://osarium.example/os.html?id=eos</loc><lastmod>2026-07-25</lastmod></url>
   <url><loc>https://osarium.example/os.html?id=sailfishos</loc><lastmod>2026-07-25</lastmod></url>
   <url><loc>https://osarium.example/os.html?id=calyxos</loc><lastmod>2026-07-25</lastmod></url>
+  <url><loc>https://osarium.example/os.html?id=asahi</loc><lastmod>2026-07-25</lastmod></url>
+  <url><loc>https://osarium.example/os.html?id=mobian</loc><lastmod>2026-07-25</lastmod></url>
+  <url><loc>https://osarium.example/os.html?id=kolibrios</loc><lastmod>2026-07-25</lastmod></url>
+  <url><loc>https://osarium.example/os.html?id=zentyal</loc><lastmod>2026-07-25</lastmod></url>
+  <url><loc>https://osarium.example/os.html?id=openmandriva</loc><lastmod>2026-07-25</lastmod></url>
   <url><loc>https://osarium.example/tool.html?id=rufus</loc><lastmod>2026-07-24</lastmod></url>
   <url><loc>https://osarium.example/tool.html?id=etcher</loc><lastmod>2026-07-24</lastmod></url>
   <url><loc>https://osarium.example/tool.html?id=ventoy</loc><lastmod>2026-07-24</lastmod></url>

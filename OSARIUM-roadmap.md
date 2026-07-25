@@ -2,7 +2,22 @@
 
 *Dernière mise à jour : juillet 2026*
 
-## ✅ Fait (cette session — +5 systèmes, 160 → 165)
+## ✅ Fait (cette session — +5 systèmes, 165 → 170)
+
+- **5 nouveaux systèmes ajoutés, recherchés individuellement (pas de contenu générique)** :
+  - **Asahi Linux / Fedora Asahi Remix** (desktop, `asahi`) — version 44 vérifiée, portage Linux pour Mac Apple Silicon (M1/M2 pleinement supportés, M3+ pas encore), installation en une commande depuis le Terminal macOS (pas de clé USB), dual-boot préservé. Particularités documentées : firmware Wi-Fi/Bluetooth extrait de macOS, pilote graphique développé spécifiquement par le projet (rétro-ingénierie du GPU Apple).
+  - **Mobian** (mobile, `mobian`) — version 13 Trixie stable (oct. 2025) vérifiée, Debian porté sur PinePhone/PinePhone Pro/PineTab/Librem 5, différenciation claire avec postmarketOS (Debian/.deb vs Alpine/apk) documentée en FAQ.
+  - **KolibriOS** (rétro, `kolibrios`) — version 0.7.7.0+ vérifiée (encore d'actualité mi-2026), OS graphique complet écrit intégralement en assembleur FASM, tient sur une disquette 1,44 Mo, 8 Mo de RAM suffisent.
+  - **Zentyal Server** (serveur, `zentyal`) — version 8.1 sur Ubuntu 24.04 LTS vérifiée, remplaçant direct d'un contrôleur de domaine Active Directory (Samba 4) basé sur Ubuntu Server, licence Development gratuite vs Commercial payante documentée.
+  - **OpenMandriva Lx** (desktop, `openmandriva`) — version 6.0 vérifiée (branches Rock stable / ROME rolling), distribution RPM indépendante héritière de Mandriva, particularité Clang/LLVM (au lieu de GCC) documentée avec ses implications pratiques (paquets tiers).
+  - Chaque fiche a été recherchée via le web (versions/specs/licences à jour mi-2026), pas générée par template — même standard de qualité que les sessions précédentes.
+  - **Liens « Systèmes similaires » réciproques** mis à jour sur les fiches proches (Fedora, Fedora KDE, Debian, postmarketOS, UCS, Mageia, PCLinuxOS, FreeDOS, ReactOS) pour intégrer les nouveaux venus des deux côtés.
+  - **Arbre de filiation** : `base` correctement renseigné pour un rattachement automatique (Asahi → Fedora, Mobian → Debian, Zentyal → Ubuntu ; KolibriOS et OpenMandriva en `base:"—"` comme les autres OS réellement indépendants, pour éviter de créer un faux nœud de famille synthétique).
+  - **Validation automatisée** : 170/170 ids uniques, 170/170 `errors` à 3 entrées, 0 lien `alt` cassé/auto-référencé, 170/170 `req.ram` reconnus par le vrai parseur de `js/hardware-check.js` (regex rejouée telle quelle, pas une approximation).
+  - **Vérification visuelle** (Playwright headless local) : les 5 fiches, la recherche catalogue et l'arbre de filiation contrôlés par capture d'écran — rendu correct, aucune erreur console JS.
+  - Compteurs mis à jour (`index.html`, `os.html`) et sitemap régénéré (176 URLs).
+
+## ✅ Fait (session précédente — +5 systèmes, 160 → 165)
 
 - **5 nouveaux systèmes ajoutés, recherchés individuellement (pas de contenu générique)** :
   - **Windows 10** (desktop, `win10`) — RAM/disque/CPU vérifiés (specs Microsoft actuelles), section dédiée à la fin de support (oct. 2025) et au programme ESU (gratuit/payant jusqu'en oct. 2027).

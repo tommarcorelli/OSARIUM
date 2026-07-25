@@ -64,7 +64,7 @@ window.OS_DATA = [
       {t:"Réseau & miroir", d:"Configurer le miroir APT le plus proche pour des téléchargements rapides."},
       {t:"Choisir l'environnement", d:"tasksel : GNOME, KDE, Xfce… ou serveur minimal sans interface."}
     ],
-    alt:["ubuntu","fedora","mint"],
+    alt:["ubuntu","fedora","mobian"],
     errors:[
       {q:"Secure Boot empêche le démarrage sur la clé",a:"Désactive temporairement Secure Boot dans le BIOS/UEFI, ou laisse-le activé si la distribution utilise un shim signé (cas de la plupart des distributions grand public) — le souci vient alors plutôt d'un pilote tiers non signé."},
       {q:"La clé USB ne boote pas ou plante au démarrage",a:"Vérifie l'empreinte SHA-256 de l'ISO avant de graver, et utilise balenaEtcher ou Rufus en mode DD (pas ISO) si le choix est proposé. Une ISO corrompue est la cause la plus fréquente d'un échec silencieux."},
@@ -88,7 +88,7 @@ window.OS_DATA = [
       {t:"Anaconda", d:"Lancer l'installeur Anaconda, définir disque, fuseau et utilisateur."},
       {t:"Premier démarrage", d:"Activer les dépôts tiers (RPM Fusion) pour les codecs et pilotes.", code:"sudo dnf install rpmfusion-free-release rpmfusion-nonfree-release"}
     ],
-    alt:["debian","mint","ubuntu"],
+    alt:["debian","mint","asahi"],
     errors:[
       {q:"Secure Boot empêche le démarrage sur la clé",a:"Désactive temporairement Secure Boot dans le BIOS/UEFI, ou laisse-le activé si la distribution utilise un shim signé (cas de la plupart des distributions grand public) — le souci vient alors plutôt d'un pilote tiers non signé."},
       {q:"La clé USB ne boote pas ou plante au démarrage",a:"Vérifie l'empreinte SHA-256 de l'ISO avant de graver, et utilise balenaEtcher ou Rufus en mode DD (pas ISO) si le choix est proposé. Une ISO corrompue est la cause la plus fréquente d'un échec silencieux."},
@@ -1470,7 +1470,7 @@ window.OS_DATA = [
       {t:"Installeur GUI", d:"Deuxième phase graphique : composants, nom d'ordinateur, mot de passe."},
       {t:"Application Manager", d:"Store maison pour installer Firefox, LibreOffice, jeux Win legacy."}
     ],
-    alt:["freedos","aros"],
+    alt:["freedos","aros","kolibrios"],
     errors:[
       {q:"Aucun pilote pour le GPU ou le Wi-Fi modernes",a:"Ces projets ciblent un public restreint et le support matériel récent est très limité par design. Privilégie une machine ancienne ou une machine virtuelle plutôt qu'un PC neuf pour de meilleures chances de compatibilité."},
       {q:"Un logiciel Windows/Linux classique ne fonctionne pas",a:"La compatibilité annoncée reste partielle sur ces projets communautaires : teste sur un cas simple avant de compter dessus pour un usage précis."},
@@ -1494,7 +1494,7 @@ window.OS_DATA = [
       {t:"Installeur texte", d:"Partitionner avec FDISK intégré, formater en FAT32, copier les fichiers."},
       {t:"Utilisation", d:"Lancer des .exe/.com DOS, ou utiliser FreeDOS pour flasher un BIOS/firmware."}
     ],
-    alt:["reactos","aros"],
+    alt:["reactos","aros","kolibrios"],
     errors:[
       {q:"Aucun pilote pour le GPU ou le Wi-Fi modernes",a:"Ces projets ciblent un public restreint et le support matériel récent est très limité par design. Privilégie une machine ancienne ou une machine virtuelle plutôt qu'un PC neuf pour de meilleures chances de compatibilité."},
       {q:"Un logiciel Windows/Linux classique ne fonctionne pas",a:"La compatibilité annoncée reste partielle sur ces projets communautaires : teste sur un cas simple avant de compter dessus pour un usage précis."},
@@ -1594,7 +1594,7 @@ window.OS_DATA = [
       {t:"Installer", d:"Lancer l'icône « Install PCLinuxOS » sur le bureau live."},
       {t:"Synaptic", d:"Gérer les paquets via Synaptic ou apt-get (dérivé RPM historique passé en apt)."}
     ],
-    alt:["kubuntu","ultramarine","mageia"],
+    alt:["kubuntu","ultramarine","openmandriva"],
     errors:[
       {q:"Secure Boot empêche le démarrage sur la clé",a:"Désactive temporairement Secure Boot dans le BIOS/UEFI, ou laisse-le activé si la distribution utilise un shim signé (cas de la plupart des distributions grand public) — le souci vient alors plutôt d'un pilote tiers non signé."},
       {q:"La clé USB ne boote pas ou plante au démarrage",a:"Vérifie l'empreinte SHA-256 de l'ISO avant de graver, et utilise balenaEtcher ou Rufus en mode DD (pas ISO) si le choix est proposé. Une ISO corrompue est la cause la plus fréquente d'un échec silencieux."},
@@ -2052,7 +2052,7 @@ window.OS_DATA = [
       {t:"Bureau", d:"Choisir KDE Plasma, GNOME, Xfce ou LXQt."},
       {t:"Centre de contrôle Mageia", d:"Outil unifié pour gérer réseau, matériel et services après installation."}
     ],
-    alt:["ultramarine","pclinuxos","kubuntu"],
+    alt:["ultramarine","pclinuxos","openmandriva"],
     errors:[
       {q:"Secure Boot empêche le démarrage sur la clé",a:"Désactive temporairement Secure Boot dans le BIOS/UEFI, ou laisse-le activé si la distribution utilise un shim signé (cas de la plupart des distributions grand public) — le souci vient alors plutôt d'un pilote tiers non signé."},
       {q:"La clé USB ne boote pas ou plante au démarrage",a:"Vérifie l'empreinte SHA-256 de l'ISO avant de graver, et utilise balenaEtcher ou Rufus en mode DD (pas ISO) si le choix est proposé. Une ISO corrompue est la cause la plus fréquente d'un échec silencieux."},
@@ -2687,7 +2687,7 @@ window.OS_DATA = [
       {t:"UCS Management Console", d:"Terminer la configuration depuis l'interface web.", code:"https://<ip-serveur>"},
       {t:"App Center", d:"Installer des services complémentaires (Nextcloud, Samba, mail) en un clic."}
     ],
-    alt:["openmediavault","truenas","proxmox"],
+    alt:["openmediavault","truenas","zentyal"],
     errors:[
       {q:"Pas d'écran connecté / installation headless",a:"La plupart de ces systèmes proposent un mode d'installation automatisée par fichier de configuration (kickstart, cloud-init, preseed) plutôt que l'assistant graphique — vérifie la documentation officielle avant de brancher un écran inutilement."},
       {q:"Pas d'IP après le premier démarrage",a:"Le réseau par défaut est souvent en DHCP sur la première interface détectée seulement. Si plusieurs cartes réseau sont présentes, vérifie laquelle a reçu une adresse via la console locale avant de chercher à s'y connecter à distance."},
@@ -3338,7 +3338,7 @@ window.OS_DATA = [
       {t:"Live Plasma", d:"Tester le bureau KDE avant installation."},
       {t:"Anaconda", d:"Installeur classique, RPM Fusion en post-install."}
     ],
-    alt:["kdeneon","kubuntu","tumbleweed"],
+    alt:["kdeneon","kubuntu","asahi"],
     errors:[
       {q:"Secure Boot empêche le démarrage sur la clé",a:"Désactive temporairement Secure Boot dans le BIOS/UEFI, ou laisse-le activé si la distribution utilise un shim signé (cas de la plupart des distributions grand public) — le souci vient alors plutôt d'un pilote tiers non signé."},
       {q:"La clé USB ne boote pas ou plante au démarrage",a:"Vérifie l'empreinte SHA-256 de l'ISO avant de graver, et utilise balenaEtcher ou Rufus en mode DD (pas ISO) si le choix est proposé. Une ISO corrompue est la cause la plus fréquente d'un échec silencieux."},
@@ -3665,7 +3665,7 @@ window.OS_DATA = [
       {t:"Flasher", d:"Générer l'image et la flasher via fastboot/heimdall.", code:"pmbootstrap flasher flash_rootfs"},
       {t:"Interface", d:"Choisir Phosh, Plasma Mobile ou Sxmo au premier boot."}
     ],
-    alt:["androidx86","lineageos","grapheneos","sailfishos"],
+    alt:["androidx86","lineageos","mobian"],
     errors:[
       {q:"Le déverrouillage du bootloader efface toutes les données",a:"C'est systématique et volontaire (mesure anti-vol) : sauvegarde impérativement tes données avant de lancer le déverrouillage, il n'existe aucun moyen de l'éviter."},
       {q:"Mauvaise image flashée pour l'appareil",a:"Chaque modèle a son propre nom de code et sa propre image. Flasher l'image d'un autre appareil, même très proche, peut rendre le téléphone temporairement inutilisable — vérifie trois fois le nom de code exact avant de flasher."},
@@ -4076,6 +4076,122 @@ window.OS_DATA = [
     faq:[
       {q:"Différence principale avec GrapheneOS ?", a:"GrapheneOS ne supporte que les Google Pixel avec un focus sécurité maximal ; CalyxOS supporte plus d'appareils (Fairphone, Motorola, SHIFTphone) et intègre Tor (Orbot) et micro-G plus directement, avec une approche légèrement plus permissive."},
       {q:"Le projet est-il fiable sur la durée ?", a:"CalyxOS est maintenu par l'association à but non lucratif Calyx Institute ; le projet a connu une pause de maintenance courant 2025-2026 avant de reprendre un support complet à l'été 2026 — vérifier le statut des mises à jour avant de s'engager sur un appareil critique."}
+    ]
+  },
+  {
+    id:"asahi", name:"Asahi Linux (Fedora Remix)", version:"Fedora Asahi Remix 44", cat:"desktop", color:"#8B5CF6", icon:null,
+    tag:"Portage Linux pour Mac Apple Silicon, distribué officiellement comme Fedora Asahi Remix depuis l'adoption du projet par Fedora.",
+    site:"asahilinux.org", license:"Libre / Open-source", popular:false, isNew:true,
+    time:"~45 min", diff:"Avancé", base:"Fedora",
+    req:{ram:"8 Go min. (16 Go conseillés)", disk:"50 Go d'espace libre min. sur le SSD interne (l'installeur réserve aussi une marge pour macOS)", cpu:"Mac Apple Silicon M1 ou M2 uniquement (M3/M4/M5 pas encore pleinement supportés)"},
+    steps:[
+      {t:"Vérifier la compatibilité de la puce", d:"Liste à jour sur asahilinux.org : M1/M2 pleinement supportés (MacBook, Mac mini, Mac Studio, iMac, et Mac Pro depuis peu), M3 et plus récents pas encore."},
+      {t:"Libérer de l'espace sous macOS", d:"Au moins 50 Go, en purgeant si besoin les snapshots Time Machine locaux qui grignotent l'espace « libre » apparent."},
+      {t:"Lancer l'installateur depuis le Terminal macOS", d:"Une seule commande (fournie sur asahilinux.org/install) télécharge et exécute l'installateur, sans clé USB externe."},
+      {t:"Choisir la variante (Plasma ou GNOME) et valider le partitionnement", d:"L'installateur redimensionne le volume macOS à chaud et crée un nouveau volume pour Linux, sans supprimer macOS."},
+      {t:"Premier démarrage", d:"Maintenir le bouton d'alimentation au démarrage pour choisir entre macOS et Fedora Asahi Remix."}
+    ],
+    alt:["fedora","fedorakde","arch"],
+    errors:[
+      {q:"Le redimensionnement du disque échoue pendant l'installation",a:"Causé le plus souvent par des snapshots APFS locaux (Time Machine) ou une mise à jour macOS en attente ; purger les snapshots et terminer les mises à jour macOS en attente avant de relancer."},
+      {q:"Wi-Fi ou Bluetooth absents après l'installation",a:"Ces pilotes dépendent d'un firmware propriétaire Apple extrait automatiquement depuis macOS pendant l'installation ; un volume macOS déjà supprimé ou trop ancien empêche cette extraction."},
+      {q:"Écran figé ou glitchs graphiques après une mise à jour système",a:"Le pilote graphique est développé spécifiquement par le projet Asahi (rétro-ingénierie du GPU Apple) et évolue vite ; toujours mettre à jour via les dépôts officiels `asahi`, jamais en mélangeant avec un noyau Fedora généraliste."}
+    ],
+    faq:[
+      {q:"macOS est-il supprimé ?", a:"Non par défaut : l'installation redimensionne macOS mais le conserve, avec un sélecteur au démarrage entre les deux systèmes."},
+      {q:"Tous les Mac Apple Silicon sont-ils supportés ?", a:"Non, seulement M1 et M2 sont pleinement pris en charge à ce jour ; le support M3/M4/M5 progresse mais reste partiel, à vérifier avant d'investir du temps sur un Mac récent."}
+    ]
+  },
+  {
+    id:"mobian", name:"Mobian", version:"13 « Trixie » (stable)", cat:"mobile", color:"#2CA58D", icon:null,
+    tag:"Debian porté sur smartphones et tablettes (PinePhone, Librem 5), avec l'interface tactile Phosh (GNOME) ou Plasma Mobile.",
+    site:"mobian.org", license:"Libre / Open-source", popular:false, isNew:true,
+    time:"~20 min", diff:"Avancé", base:"Debian",
+    req:{ram:"2 Go min. (selon l'appareil)", disk:"16 Go de stockage/microSD min.", cpu:"PinePhone / PinePhone Pro / PineTab / PineTab 2, Librem 5, ou portages communautaires (OnePlus 6/6T...)"},
+    steps:[
+      {t:"Choisir l'image adaptée à l'appareil", d:"images.mobian.org propose une image par modèle précis, avec le choix Phosh (par défaut) ou Plasma Mobile."},
+      {t:"Installer Tow-Boot au préalable (PinePhone/PineTab)", d:"Bootloader de remplacement à flasher une seule fois avant tout système Linux mobile alternatif."},
+      {t:"Flasher la carte microSD ou la mémoire interne", d:"balenaEtcher (ou dd) pour la microSD ; JumpDrive permet ensuite de flasher directement la mémoire eMMC interne depuis cette carte."},
+      {t:"Premier démarrage et configuration", d:"Assistant Phosh, connexion Wi-Fi, création du code de verrouillage."}
+    ],
+    alt:["postmarketos","debian","ubuntutouch"],
+    errors:[
+      {q:"L'appareil ne démarre sur aucun système Linux après le flash",a:"Sur PinePhone/PineTab, Tow-Boot doit être installé une seule fois avant tout OS Linux mobile ; sans lui, la carte microSD ou l'eMMC n'est simplement pas détectée au démarrage."},
+      {q:"L'autonomie de la batterie est très faible comparée à l'OS d'origine",a:"Limitation connue du matériel Linux mobile communautaire actuel (gestion de la mise en veille profonde encore imparfaite) ; désactiver modem/GPS quand inutilisés améliore nettement l'autonomie en attendant."},
+      {q:"Les appels ou la donnée mobile ne fonctionnent pas",a:"Le modem cellulaire (souvent un Quectel EG25-G) tourne sur un firmware séparé piloté par ModemManager ; un service modem non démarré ou un firmware non à jour est la cause la plus fréquente."}
+    ],
+    faq:[
+      {q:"Quelle différence avec postmarketOS ?", a:"Mobian est basé sur Debian (paquets .deb, dépôts Debian classiques) alors que postmarketOS est basé sur Alpine (musl, apk) ; Mobian vise avant tout la continuité avec l'écosystème Debian existant."},
+      {q:"Peut-on l'utiliser comme téléphone principal au quotidien ?", a:"Possible mais avec des compromis assumés par le projet (autonomie, appareil photo, modem) ; c'est avant tout un projet pour utilisateurs libristes et bidouilleurs, pas un remplacement direct grand public."}
+    ]
+  },
+  {
+    id:"kolibrios", name:"KolibriOS", version:"0.7.7.0+ (nightly)", cat:"retro", color:"#2E86C1", icon:null,
+    tag:"Système d'exploitation graphique complet écrit intégralement en assembleur FASM, tient sur quelques Mo et démarre en quelques secondes.",
+    site:"kolibrios.org", license:"Libre / Open-source (GPLv2)", popular:false, isNew:true,
+    time:"~5 min", diff:"Facile", base:"—",
+    req:{ram:"8 Mo min. (12 Mo conseillés)", disk:"quelques Mo seulement (tient sur une disquette 1,44 Mo dans sa version minimale)", cpu:"x86 32 bits, y compris un i586 très ancien"},
+    steps:[
+      {t:"Télécharger l'image", d:"kolibrios.org/en/download, version stable 0.7.7 ou une build nightly plus récente."},
+      {t:"Graver sur clé USB ou disquette", d:"Rufus (mode DD) ou balenaEtcher ; l'image tient aussi sur une disquette 3,5\" pour un usage rétro complet."},
+      {t:"Démarrer directement, sans installation", d:"KolibriOS peut s'utiliser en live entièrement en RAM, aucune installation sur disque n'est nécessaire pour l'essayer."},
+      {t:"Installer sur disque (optionnel)", d:"Un outil dédié dans le menu permet de copier le système sur une partition FAT32 pour un démarrage permanent."}
+    ],
+    alt:["freedos","reactos","aros"],
+    errors:[
+      {q:"Aucun réseau ou Wi-Fi détecté",a:"Le support matériel est volontairement restreint à une liste de puces reconnues (cartes réseau filaires anciennes surtout) ; le Wi-Fi moderne et la majorité du matériel récent ne sont pas pris en charge par design."},
+      {q:"L'écran reste en résolution très basse ou noir",a:"Le pilote graphique VESA générique est utilisé par défaut ; sur du matériel très récent ou une VM mal configurée, forcer un mode VESA standard (800x600 ou 1024x768) au démarrage résout la plupart des cas."},
+      {q:"Un programme téléchargé sur le forum ne se lance pas",a:"KolibriOS a son propre format d'exécutable et ses propres bibliothèques (aucune compatibilité Windows/Linux native) ; vérifier que le programme cible bien KolibriOS et pas un simple exécutable DOS/Windows."}
+    ],
+    faq:[
+      {q:"C'est un dérivé de MenuetOS ?", a:"Oui à l'origine : KolibriOS est un fork de MenuetOS (2004) qui a ensuite pris une direction indépendante, avec sa propre communauté et son propre code."},
+      {q:"À quoi ça sert concrètement aujourd'hui ?", a:"Démonstration de programmation bas niveau, curiosité technique (un OS graphique complet tenant sur quelques Mo), ou utilisation sur du matériel x86 très ancien/limité."}
+    ]
+  },
+  {
+    id:"zentyal", name:"Zentyal Server", version:"8.1 (Ubuntu 24.04 LTS)", cat:"server", color:"#1F6FB2", icon:null,
+    tag:"Serveur Linux tout-en-un pensé comme remplaçant direct d'un contrôleur de domaine Active Directory, basé sur Ubuntu Server.",
+    site:"zentyal.com", license:"Libre / Open-source (édition Development gratuite, édition Commercial payante avec support)", popular:false, isNew:true,
+    time:"~30 min", diff:"Avancé", base:"Ubuntu",
+    req:{ram:"4 Go min. (8 Go+ conseillés en production)", disk:"20 Go min. selon les services activés", cpu:"x86_64, Intel Core i5 ou équivalent recommandé en production"},
+    steps:[
+      {t:"Télécharger l'ISO", d:"zentyal.com/community (édition Development, gratuite) — l'installateur est un Ubuntu Server standard."},
+      {t:"Installer comme un Ubuntu Server classique", d:"Partitionnement, réseau et compte admin se configurent exactement comme sur une installation Ubuntu Server."},
+      {t:"Premier lancement de l'assistant Zentyal", d:"Au premier démarrage, un assistant web guide le choix des rôles à activer (Contrôleur de domaine, Passerelle, Messagerie...)."},
+      {t:"Rejoindre le domaine depuis les postes Windows", d:"Une fois le rôle Active Directory activé, les postes Windows rejoignent le domaine comme avec un vrai contrôleur Microsoft."}
+    ],
+    alt:["ucs","openmediavault","clearos"],
+    errors:[
+      {q:"Le service Samba/Active Directory refuse de démarrer après une mise à jour",a:"Vérifier que l'horloge système (NTP) est synchronisée : Kerberos, au cœur de l'authentification AD, rejette les requêtes en cas de décalage horaire important entre serveur et clients."},
+      {q:"Un poste Windows ne parvient pas à rejoindre le domaine",a:"Vérifier que ce poste utilise bien le serveur Zentyal comme DNS primaire (pas seulement comme passerelle) ; l'intégration AD dépend entièrement de la résolution DNS interne."},
+      {q:"L'interface web de Zentyal ne répond plus après l'ajout d'un module",a:"L'ajout d'un module lourd (mail, proxy) peut saturer la RAM sur une petite VM ; vérifier la consommation mémoire avant d'activer plusieurs services sur une machine sous-dimensionnée."}
+    ],
+    faq:[
+      {q:"Zentyal remplace-t-il vraiment un Windows Server AD ?", a:"Oui pour l'essentiel (annuaire, GPO de base, partage de fichiers, DNS) grâce à Samba 4 ; certaines fonctionnalités très spécifiques à l'écosystème Microsoft (Exchange natif...) restent hors périmètre."},
+      {q:"Faut-il payer pour l'utiliser en production ?", a:"Non, l'édition Development gratuite est fonctionnelle en production, mais sans mises à jour automatiques ni support ; l'édition Commercial ajoute support, sauvegarde/restauration et mises à jour continues."}
+    ]
+  },
+  {
+    id:"openmandriva", name:"OpenMandriva Lx", version:"6.0 (Rock stable / ROME rolling)", cat:"desktop", color:"#3DA5D9", icon:null,
+    tag:"Distribution RPM indépendante héritière de Mandriva, l'une des rares à compiler l'essentiel du système avec Clang/LLVM plutôt que GCC.",
+    site:"openmandriva.org", license:"Libre / Open-source", popular:false, isNew:true,
+    time:"~20 min", diff:"Intermédiaire", base:"—",
+    req:{ram:"2 Go min. (4 Go+ conseillés pour Plasma)", disk:"10 Go min.", cpu:"x86_64 uniquement (32 bits non supporté), carte graphique compatible OpenGL 2.0+"},
+    steps:[
+      {t:"Télécharger l'ISO", d:"openmandriva.org/downloads, choisir Rock (stable, releases fixes) ou ROME (rolling, paquets récents en continu)."},
+      {t:"Graver la clé USB", d:"Rufus, balenaEtcher ou dd."},
+      {t:"Tester en live puis lancer l'installation", d:"Le bureau Plasma tourne directement depuis la clé ; l'installateur graphique Calamares se lance depuis le bureau live."},
+      {t:"Partitionnement et compte utilisateur", d:"Assistant Calamares classique, avec chiffrement de disque en option."}
+    ],
+    alt:["mageia","pclinuxos","fedora"],
+    errors:[
+      {q:"Le système semble instable après une grosse mise à jour",a:"La branche ROME est une rolling release qui embarque des composants récents (dont la stack Clang/LLVM en évolution active) ; privilégier Rock (stable, à releases fixes) pour un usage quotidien sans surveillance technique."},
+      {q:"Une application tierce compilée pour d'autres distributions plante ou ne se lance pas",a:"OpenMandriva compile l'essentiel de son système avec Clang/LLVM au lieu de GCC, ce qui peut exposer des incompatibilités avec des paquets tiers (.rpm non officiels) prévus pour une chaîne de compilation GCC standard."},
+      {q:"Aucun paquet équivalent trouvé pour une commande dnf habituelle",a:"Le gestionnaire de paquets est dnf (compatible RPM) mais les noms de paquets suivent la nomenclature propre à OpenMandriva, différente de celle de Fedora ou Mageia malgré la parenté RPM."}
+    ],
+    faq:[
+      {q:"Quel est le lien avec Mandriva/Mageia ?", a:"OpenMandriva est un fork direct de Mandriva (2012, après l'arrêt de l'entreprise), tout comme Mageia ; les deux projets ont ensuite évolué séparément, OpenMandriva misant sur Clang/LLVM et KDE Plasma en priorité."},
+      {q:"Rock ou ROME, laquelle choisir ?", a:"Rock pour un usage stable classique avec des mises à jour par version ; ROME pour suivre les paquets les plus récents en continu, au prix d'une stabilité moindre."}
     ]
   },
 ];
