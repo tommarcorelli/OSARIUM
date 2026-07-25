@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Appli desktop OSARIUM (Electron) — charge le site statique existant et ajoute la détection matérielle réelle (CPU/GPU/RAM/disque) via systeminformation, gratuit et 100% local.",
   "author": "OSARIUM",
+  "repository": { "type": "git", "url": "https://github.com/tommarcorelli/OSARIUM.git" },
   "main": "main.js",
   "private": true,
   "scripts": {
