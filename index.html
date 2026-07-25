@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="css/pwa.css">
 <link rel="stylesheet" href="css/hw.css">
 <link rel="stylesheet" href="css/pcage.css">
+<link rel="stylesheet" href="css/shortcuts.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#06080C">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -183,7 +184,7 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
 <div class="controls" id="controls">
   <label class="search">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    <input id="search" type="text" placeholder="rechercher un système…" data-testid="search-input">
+    <input id="search" type="text" placeholder="rechercher un système… ( / )" data-testid="search-input">
   </label>
   <div class="filters" id="filters"></div>
   <div class="subcontrols">
@@ -207,6 +208,7 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
       <option value="time">Durée (croissant)</option>
       <option value="popular">Popularité</option>
     </select>
+    <button class="fav-chip" id="shortcutsOpen" data-testid="shortcuts-open" title="Voir les raccourcis clavier">⌨ Raccourcis</button>
   </div>
 </div>
 <div class="grid" id="grid"></div>
@@ -245,6 +247,23 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
   </div>
 </div>
 
+<div class="modal" id="shortcutsModal">
+  <div class="modal-inner wizard-inner">
+    <span class="cmp-close" id="shortcutsClose">✕</span>
+    <h3 class="disp">Raccourcis clavier</h3>
+    <p class="lead" style="margin-bottom:24px">Actifs sur cette page (catalogue), hors saisie dans un champ.</p>
+    <ul class="shortcuts-list">
+      <li><span class="shortcuts-keys"><kbd>/</kbd></span><span>Aller à la recherche</span></li>
+      <li><span class="shortcuts-keys"><kbd>W</kbd></span><span>Ouvrir « Trouve-moi un OS »</span></li>
+      <li><span class="shortcuts-keys"><kbd>H</kbd></span><span>Ouvrir « Vérifier mon PC »</span></li>
+      <li><span class="shortcuts-keys"><kbd>F</kbd></span><span>Filtrer sur les favoris</span></li>
+      <li><span class="shortcuts-keys"><kbd>T</kbd></span><span>Basculer le thème clair/sombre</span></li>
+      <li><span class="shortcuts-keys"><kbd>Échap</kbd></span><span>Fermer la fenêtre ouverte / quitter la recherche</span></li>
+      <li><span class="shortcuts-keys"><kbd>?</kbd></span><span>Afficher cet aide-mémoire</span></li>
+    </ul>
+  </div>
+</div>
+
 <footer>
   <p><b>OSARIUM</b> — la collection ultime de systèmes d'exploitation. Conçu pour être complété au fil des systèmes ajoutés.</p>
 </footer>
@@ -256,6 +275,7 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
 <script src="js/favorites.js"></script>
 <script src="js/recent.js"></script>
 <script src="js/pcage.js"></script>
+<script src="js/shortcuts.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/scroll.js"></script>

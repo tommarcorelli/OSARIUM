@@ -99,6 +99,7 @@ Phase 2 considérée close.
 - **Mode anglais (i18n)** — gros chantier mais élargit fortement l'audience du site statique
 - **Recherche vocale / raccourcis clavier** dans le catalogue
 - ✅ **Génération de sitemap automatique** — voir détail plus haut (`scripts/generate-sitemap.js`).
+- ✅ **Raccourcis clavier** dans le catalogue — `js/shortcuts.js` + `css/shortcuts.css` : `/` (recherche), `W` (wizard), `H` (vérifier mon PC), `F` (favoris), `T` (thème), `Échap` (fermer/quitter le focus), `?` (aide-mémoire, modale dédiée). Désactivés pendant une saisie dans un champ. Testé au clavier réel (Chrome), tous fonctionnels.
 
 ## 💡 Idées plus exploratoires (à valider avant d'investir du temps)
 

@@ -1,0 +1,8 @@
+/* ---------- RACCOURCIS CLAVIER ---------- */
+.shortcuts-list{list-style:none;display:grid;gap:4px;}
+.shortcuts-list li{display:flex;align-items:center;gap:16px;padding:12px 4px;border-bottom:1px solid var(--line);}
+.shortcuts-list li:last-child{border-bottom:none;}
+.shortcuts-keys{flex:0 0 110px;}
+.shortcuts-list span:last-child{color:var(--muted);font-size:13.5px;}
+kbd{font-family:'JetBrains Mono';font-size:11.5px;color:var(--text);background:var(--void-2);
+  border:1px solid var(--line-2);border-bottom-width:2px;border-radius:4px;padding:3px 8px;white-space:nowrap;}
