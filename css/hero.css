@@ -1,0 +1,54 @@
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;
+  padding:120px clamp(20px,5vw,64px) 60px;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(80% 60% at 30% 40%,#000,transparent 90%);}
+.hero-orb{position:absolute;width:60vw;height:60vw;right:-15vw;top:-10vw;z-index:0;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,rgba(255,179,0,.10),transparent 62%);will-change:transform;}
+.hero-inner{position:relative;z-index:2;max-width:1200px;width:100%;margin:0 auto;}
+.kick{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.35em;color:var(--phos);text-transform:uppercase;
+  display:flex;align-items:center;gap:14px;margin-bottom:26px;}
+.kick::before{content:"";width:40px;height:1px;background:var(--phos);}
+.hero h1{font-family:'Chakra Petch';font-weight:700;line-height:.94;letter-spacing:-.02em;
+  font-size:clamp(48px,11vw,148px);text-transform:uppercase;}
+.hero h1 .ln{display:block;overflow:hidden;}
+.hero h1 .ln > span{display:block;transform:translateY(110%);animation:rise .9s cubic-bezier(.16,1,.3,1) forwards;}
+.hero h1 .ln:nth-child(2) > span{animation-delay:.12s;}
+.hero h1 .ln:nth-child(3) > span{animation-delay:.24s;}
+.hero h1 .stroke{-webkit-text-stroke:1.5px var(--amber);color:transparent;}
+.hero h1 em{font-style:normal;color:var(--amber);text-shadow:0 0 40px rgba(255,179,0,.5);}
+@keyframes rise{to{transform:translateY(0)}}
+.hero-tag{max-width:520px;margin-top:34px;color:var(--muted);font-size:16px;
+  opacity:0;animation:fade 1s ease .6s forwards;}
+.hero-cta{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;opacity:0;animation:fade 1s ease .8s forwards;}
+@keyframes fade{to{opacity:1}}
+.hero-meta{position:absolute;right:clamp(20px,5vw,64px);bottom:60px;z-index:2;text-align:right;
+  font-family:'JetBrains Mono';font-size:12px;color:var(--muted-2);line-height:2;
+  opacity:0;animation:fade 1s ease 1s forwards;}
+.hero-meta b{color:var(--amber);font-size:44px;display:block;line-height:1;}
+@media(max-width:720px){.hero-meta{display:none;}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero h1 .ln>span{transform:none;}
+  .hero-tag,.hero-cta,.hero-meta{opacity:1;}
+}
+
+/* buttons (shared, but only used from the hero and onward) */
+.btn{font-family:'JetBrains Mono';font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;
+  padding:15px 26px;border:1px solid var(--line-2);color:var(--text);cursor:pointer;position:relative;overflow:hidden;
+  transition:color .25s,border-color .25s;background:transparent;display:inline-flex;align-items:center;gap:10px;}
+.btn::before{content:"";position:absolute;inset:0;background:var(--amber);transform:translateY(101%);transition:transform .3s cubic-bezier(.16,1,.3,1);z-index:-1;}
+.btn:hover{color:#000;border-color:var(--amber);}
+.btn:hover::before{transform:translateY(0);}
+.btn.solid{background:var(--amber);color:#000;border-color:var(--amber);}
+.btn.solid::before{background:#fff;}
+
+/* ---------- MARQUEE ---------- */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
+  padding:22px 0;background:var(--void-2);white-space:nowrap;}
+.marquee .track{display:inline-flex;gap:44px;animation:scrollx 34s linear infinite;font-family:'Chakra Petch';
+  font-size:30px;font-weight:600;text-transform:uppercase;color:var(--muted-2);}
+.marquee .track span{display:inline-flex;align-items:center;gap:44px;}
+.marquee .track span::after{content:"◇";color:var(--amber);}
+@keyframes scrollx{to{transform:translateX(-50%)}}

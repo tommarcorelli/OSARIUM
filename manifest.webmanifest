@@ -1,0 +1,23 @@
+{
+  "name": "OSARIUM — Collection de systèmes d'exploitation",
+  "short_name": "OSARIUM",
+  "description": "La collection ultime de systèmes d'exploitation. Choisis, grave une clé USB bootable et installe n'importe quel OS étape par étape.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#06080C",
+  "theme_color": "#06080C",
+  "categories": ["utilities", "developer", "education"],
+  "shortcuts": [
+    { "name": "Catalogue", "short_name": "Catalogue", "url": "./index.html#catalog", "description": "Parcourir tous les systèmes" },
+    { "name": "Comparer", "short_name": "Comparer", "url": "./index.html#catalog", "description": "Comparer des systèmes" },
+    { "name": "Trouve-moi un OS", "short_name": "Wizard", "url": "./index.html#catalog", "description": "Se faire recommander un OS" }
+  ],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

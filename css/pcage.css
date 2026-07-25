@@ -1,0 +1,22 @@
+/* ---------- "QUEL OS POUR UN PC DE [ANNÉE] ?" ---------- */
+.pcage-year-inline{color:var(--amber);}
+.pcage-widget{max-width:780px;background:var(--panel);border:1px solid var(--line-2);padding:clamp(24px,4vw,36px);}
+
+.pcage-slider-row{display:flex;align-items:center;gap:16px;}
+.pcage-bound{font-size:11px;color:var(--muted-2);flex-shrink:0;}
+
+.pcage-slider{flex:1;appearance:none;-webkit-appearance:none;height:4px;border-radius:2px;
+  background:var(--line-2);outline:none;cursor:pointer;}
+.pcage-slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--amber);border:3px solid var(--void);box-shadow:0 0 0 1px var(--line-2);cursor:pointer;transition:transform .15s;}
+.pcage-slider::-webkit-slider-thumb:hover{transform:scale(1.15);}
+.pcage-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--amber);
+  border:3px solid var(--void);box-shadow:0 0 0 1px var(--line-2);cursor:pointer;transition:transform .15s;}
+.pcage-slider::-moz-range-thumb:hover{transform:scale(1.15);}
+.pcage-slider::-moz-range-track{height:4px;border-radius:2px;background:var(--line-2);}
+
+.pcage-meta{font-size:13px;color:var(--muted);line-height:1.7;margin:20px 0 22px;}
+.pcage-meta b{color:var(--text);}
+.pcage-caveat{display:inline-block;margin-top:6px;font-size:11.5px;color:var(--muted-2);}
+
+@media(max-width:520px){.pcage-slider-row{gap:10px;}.pcage-bound{font-size:10px;}}

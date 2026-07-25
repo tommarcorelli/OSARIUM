@@ -1,0 +1,6 @@
+desktop-app/node_modules/
+desktop-app/dist/
+downloads/*.exe
+downloads/*.dmg
+downloads/*.AppImage
+downloads/*.deb

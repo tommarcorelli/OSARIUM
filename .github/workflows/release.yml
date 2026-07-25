@@ -1,0 +1,64 @@
+name: Build installateurs OSARIUM Desktop
+
+# Construit automatiquement les installateurs Windows, macOS et Linux de
+# l'appli desktop (desktop-app/). Se déclenche quand tu pousses un tag de
+# version (ex: v1.0.0), ou manuellement depuis l'onglet "Actions" du dépôt.
+# Même pattern que le projet Amarre.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: desktop-app
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm install
+
+      - name: Construire l'installateur
+        run: npm run dist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publier les installateurs (artefacts)
+        uses: actions/upload-artifact@v4
+        with:
+          name: OSARIUM-${{ matrix.os }}
+          path: |
+            desktop-app/dist/*.exe
+            desktop-app/dist/*.dmg
+            desktop-app/dist/*.AppImage
+            desktop-app/dist/*.deb
+          if-no-files-found: ignore
+
+      - name: Attacher à la Release (si tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            desktop-app/dist/*.exe
+            desktop-app/dist/*.dmg
+            desktop-app/dist/*.AppImage
+            desktop-app/dist/*.deb

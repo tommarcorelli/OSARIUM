@@ -1,0 +1,7 @@
+/* ---------- CRT / vignette overlay ---------- */
+.fx{position:fixed;inset:0;pointer-events:none;z-index:200;}
+.fx.vig{background:radial-gradient(120% 90% at 50% 0%,transparent 55%,rgba(0,0,0,.55) 100%);}
+
+/* progress bar (position/paint updated per-frame by js/scroll.js) */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:300;
+  background:linear-gradient(90deg,var(--amber),var(--phos));box-shadow:0 0 12px var(--amber);}

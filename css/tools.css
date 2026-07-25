@@ -1,0 +1,22 @@
+/* ---------- TOOL DETAIL PAGE ---------- */
+.ideal-for{position:relative;z-index:2;max-width:640px;margin-top:22px;font-size:14px;color:var(--muted);
+  border-left:2px solid var(--c);padding:10px 16px;background:color-mix(in srgb,var(--c) 6%,transparent);}
+.ideal-for b{color:var(--c);}
+
+.proscons{max-width:1000px;margin:0 auto;padding:10px clamp(20px,5vw,64px) 10px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.proscons-col{padding:24px;border:1px solid var(--line);background:var(--panel);}
+.proscons-col h4{font-family:'Chakra Petch';font-size:15px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;}
+.proscons-col.pros h4{color:var(--phos);}
+.proscons-col.cons h4{color:var(--amber);}
+.proscons-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.proscons-col li{font-size:13.5px;color:var(--muted);padding-left:20px;position:relative;line-height:1.5;}
+.proscons-col.pros li::before{content:"+";position:absolute;left:0;color:var(--phos);font-weight:700;}
+.proscons-col.cons li::before{content:"–";position:absolute;left:0;color:var(--amber);font-weight:700;}
+@media(max-width:640px){.proscons{grid-template-columns:1fr;}}
+
+/* tool cards on index.html become links */
+.tool{display:block;text-decoration:none;color:inherit;}
+.tool .tgo{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono';
+  font-size:10.5px;color:var(--muted-2);opacity:0;transform:translateX(-4px);transition:all .25s;}
+.tool:hover .tgo{opacity:1;transform:none;color:var(--amber);}
