@@ -14,7 +14,7 @@ Nouveautés de cette version (OSARIUM v4)
 * Nouveau nom + identité : OSARIUM, avec logo (anneaux phosphore + ambre).
 * PWA complète : manifest, service worker offline, icônes, bouton
   « Installer l'app » qui apparaît quand l'installation est possible.
-* +29 systèmes ajoutés (total : 160).
+* +29 systèmes ajoutés (total : 160, puis 165 avec Windows 10, Unraid, /e/OS, Sailfish OS et CalyxOS).
 * 2 nouvelles catégories : Média (home cinéma) et Mobile (smartphones/tablettes).
 * Logos : logos officiels via Simple Icons quand ils existent, sinon
   monogramme stylé aux couleurs officielles de chaque projet.

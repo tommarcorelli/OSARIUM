@@ -16,7 +16,7 @@ window.OS_DATA = [
       {t:"Démarrer sur la clé", d:"Redémarrer, ouvrir le menu de boot (F12 / F8 / Échap selon la carte mère) et choisir la clé USB."},
       {t:"Installer", d:"Suivre l'assistant : langue, partition, compte. Astuce : Maj+F10 puis OOBE\\BYPASSNRO pour éviter le compte Microsoft.", code:"Maj + F10 → oobe\\bypassnro"}
     ],
-    alt:["ubuntu","debian","fedora"],
+    alt:["win10","ubuntu","debian","fedora"],
     errors:[
       {q:"Secure Boot ou TPM 2.0 bloque l'installation",a:"Vérifie l'activation du TPM 2.0 et de Secure Boot dans le BIOS/UEFI avant de démarrer sur la clé. Si le PC est trop ancien, un contournement existe via le registre ou une option dédiée de Rufus, mais Microsoft ne garantit alors ni les mises à jour ni le support."},
       {q:"La clé USB n'apparaît pas dans le menu de boot",a:"Le disque doit être partitionné en GPT (pas MBR) et le mode UEFI activé dans le BIOS, CSM/Legacy désactivé. Recrée la clé avec Rufus en confirmant bien le schéma GPT/UEFI."},
@@ -3665,7 +3665,7 @@ window.OS_DATA = [
       {t:"Flasher", d:"Générer l'image et la flasher via fastboot/heimdall.", code:"pmbootstrap flasher flash_rootfs"},
       {t:"Interface", d:"Choisir Phosh, Plasma Mobile ou Sxmo au premier boot."}
     ],
-    alt:["androidx86","lineageos","grapheneos"],
+    alt:["androidx86","lineageos","grapheneos","sailfishos"],
     errors:[
       {q:"Le déverrouillage du bootloader efface toutes les données",a:"C'est systématique et volontaire (mesure anti-vol) : sauvegarde impérativement tes données avant de lancer le déverrouillage, il n'existe aucun moyen de l'éviter."},
       {q:"Mauvaise image flashée pour l'appareil",a:"Chaque modèle a son propre nom de code et sa propre image. Flasher l'image d'un autre appareil, même très proche, peut rendre le téléphone temporairement inutilisable — vérifie trois fois le nom de code exact avant de flasher."},
@@ -3877,7 +3877,7 @@ window.OS_DATA = [
       {t:"Flasher et effacer", d:"Depuis le recovery, effacer /system, /data, /cache puis installer le zip LineageOS."},
       {t:"Ajouter les Google Apps (optionnel)", d:"Installer un pack GApps ou microG si les services Google sont nécessaires."}
     ],
-    alt:["grapheneos","ubuntutouch","androidx86"],
+    alt:["grapheneos","eos","calyxos","androidx86"],
     errors:[
       {q:"Le déverrouillage du bootloader efface toutes les données",a:"C'est systématique et volontaire (mesure anti-vol) : sauvegarde impérativement tes données avant de lancer le déverrouillage, il n'existe aucun moyen de l'éviter."},
       {q:"Mauvaise image flashée pour l'appareil",a:"Chaque modèle a son propre nom de code et sa propre image. Flasher l'image d'un autre appareil, même très proche, peut rendre le téléphone temporairement inutilisable — vérifie trois fois le nom de code exact avant de flasher."},
@@ -3902,7 +3902,7 @@ window.OS_DATA = [
       {t:"Flasher automatiquement", d:"L'installeur web télécharge et flashe l'image officielle sans ligne de commande manuelle."},
       {t:"Reverrouiller le bootloader", d:"Étape recommandée après installation pour restaurer la chaîne de vérification du démarrage."}
     ],
-    alt:["lineageos","ubuntutouch","androidx86"],
+    alt:["lineageos","eos","calyxos","androidx86"],
     errors:[
       {q:"Le déverrouillage du bootloader efface toutes les données",a:"C'est systématique et volontaire (mesure anti-vol) : sauvegarde impérativement tes données avant de lancer le déverrouillage, il n'existe aucun moyen de l'éviter."},
       {q:"Mauvaise image flashée pour l'appareil",a:"Chaque modèle a son propre nom de code et sa propre image. Flasher l'image d'un autre appareil, même très proche, peut rendre le téléphone temporairement inutilisable — vérifie trois fois le nom de code exact avant de flasher."},
@@ -3958,6 +3958,124 @@ window.OS_DATA = [
     ],
     faq:[
       {q:"Différence avec LibreELEC ?", a:"CoreELEC se concentre sur le matériel Amlogic/ARM des boîtiers TV bas coût, avec un support matériel plus poussé que LibreELEC sur ces puces."}
+    ]
+  },
+  /* ===================== NOUVEAUX SYSTÈMES (2026-07-25) ===================== */
+  {
+    id:"win10", name:"Windows 10", version:"22H2", cat:"desktop", color:"#0078D6", icon:null,
+    svg:"<svg viewBox=\"0 0 24 24\" width=\"30\" height=\"30\" fill=\"#0078D6\"><path d=\"M2.5 2.5h8.5v8.5H2.5zM13 2.5h8.5v8.5H13zM2.5 13h8.5v8.5H2.5zM13 13h8.5v8.5H13z\"/></svg>",
+    tag:"Le prédécesseur de Windows 11. Fin de support standard en octobre 2025, mais prolongeable via le programme ESU jusqu'en octobre 2027.",
+    site:"microsoft.com", license:"Propriétaire", popular:false, isNew:true,
+    time:"~15 min", diff:"Facile", base:"Windows NT",
+    req:{ram:"2 Go min. (64 bits, officiel) ; 4 Go+ conseillés en pratique", disk:"32 Go min. (exigence officielle Microsoft récente)", cpu:"64 bits, 1 GHz, 1 cœur min."},
+    steps:[
+      {t:"Télécharger l'ISO officiel", d:"Depuis microsoft.com/software-download/windows10, section « Télécharger l'image disque (ISO) ». Le site peut proposer l'outil de création de support à la place d'un lien direct selon le navigateur détecté."},
+      {t:"Créer la clé bootable", d:"Ouvrir Rufus, sélectionner l'ISO et la clé USB. GPT/UEFI pour un PC récent, MBR/Legacy si le PC est plus ancien (BIOS non-UEFI).", code:"Rufus → GPT ou MBR selon le PC cible"},
+      {t:"Démarrer sur la clé", d:"Redémarrer, ouvrir le menu de boot (F12 / F8 / Échap selon la carte mère) et choisir la clé USB."},
+      {t:"Installer", d:"Suivre l'assistant : langue, partition, compte local ou Microsoft. Contrairement à Windows 11, aucune vérification TPM 2.0/Secure Boot n'est exigée."},
+      {t:"Envisager le programme ESU", d:"Windows 10 a atteint sa fin de support standard en octobre 2025. Le programme ESU (gratuit via compte Microsoft ou payant) prolonge les correctifs de sécurité jusqu'en octobre 2027."}
+    ],
+    alt:["win11","ubuntu","mxlinux"],
+    errors:[
+      {q:"Le programme d'installation signale un manque d'espace disque",a:"Vérifie que le disque cible a au moins 32 Go libres ; sur un PC ancien avec un petit SSD/disque, c'est la cause la plus fréquente de blocage en cours d'installation."},
+      {q:"L'activation demande une clé de licence introuvable",a:"L'installation peut se terminer sans clé : Windows reste utilisable avec un filigrane et des limitations de personnalisation jusqu'à activation ultérieure."},
+      {q:"Windows Update n'affiche plus de mises à jour de sécurité",a:"Sans inscription au programme ESU, les mises à jour de sécurité se sont arrêtées en octobre 2025. Vérifie l'inscription ESU dans Windows Update si le PC doit rester en ligne."}
+    ],
+    faq:[
+      {q:"Windows 10 est-il encore sûr à utiliser en 2026 ?", a:"Le support standard s'est arrêté en octobre 2025. Le programme ESU (gratuit via compte Microsoft ou payant) prolonge les correctifs de sécurité critiques jusqu'en octobre 2027 ; au-delà, mieux vaut migrer vers Windows 11 ou un Linux léger."},
+      {q:"Mon PC ne supporte pas Windows 11, pourquoi installer Windows 10 alors ?", a:"Pour profiter d'un support de sécurité prolongé (ESU) le temps de préparer une migration, ou pour continuer d'utiliser un PC ancien sans les exigences matérielles (TPM 2.0, Secure Boot) de Windows 11."}
+    ]
+  },
+  {
+    id:"unraid", name:"Unraid", version:"7.3.2", cat:"server", color:"#F15A24", icon:null,
+    tag:"OS de stockage et virtualisation pour serveur maison : RAID flexible par parité, Docker et VM intégrés, démarre depuis une simple clé USB.",
+    site:"unraid.net", license:"Propriétaire", popular:false, isNew:true,
+    time:"~20 min", diff:"Intermédiaire", base:"Slackware",
+    req:{ram:"2 Go min. (4-8 Go conseillés selon les apps Docker/VM)", disk:"Clé USB dédiée 4-32 Go (GUID unique) comme média de démarrage permanent, + disques de stockage séparés", cpu:"64 bits (x86_64), 1 GHz+"},
+    steps:[
+      {t:"Préparer une clé USB dédiée", d:"Contrairement aux autres OS de cette liste, la clé USB n'est pas qu'un support d'installation : c'est le média de démarrage permanent d'Unraid. Prévoir une clé de qualité, 4 à 32 Go, rien que pour ça."},
+      {t:"Écrire Unraid avec l'outil officiel", d:"Le « USB Creator » officiel (Windows/macOS) écrit directement l'image sur la clé et configure son démarrage — plus simple qu'un graveur ISO classique.", code:"Unraid USB Creator → sélectionner la clé → Write"},
+      {t:"Démarrer le serveur sur la clé", d:"Brancher la clé sur la machine cible, démarrer dessus via le menu de boot. Unraid se charge entièrement en RAM à chaque démarrage."},
+      {t:"Configurer via l'interface web", d:"Une fois démarré, l'interface d'administration est accessible depuis un navigateur sur le réseau local (ex. http://tower.local) pour créer le tableau de stockage et attribuer une licence."}
+    ],
+    alt:["truenas","proxmox","openmediavault"],
+    errors:[
+      {q:"Le serveur ne démarre plus après un souci avec la clé USB",a:"Unraid tourne entièrement en RAM après le boot, mais dépend de la clé au démarrage : une clé USB de mauvaise qualité ou mal insérée est la cause la plus fréquente de plantage au boot. La remplacer par une clé de marque reconnue résout la majorité des cas."},
+      {q:"Le tableau de stockage refuse de démarrer (« array won't start »)",a:"Vérifie qu'un disque de parité au moins aussi grand que le plus gros disque de données est assigné, et que tous les disques sont bien détectés dans l'onglet Main avant de cliquer sur Start."},
+      {q:"La licence n'est plus reconnue après un changement de clé USB",a:"La licence Unraid est liée au GUID unique de la clé USB : en changer nécessite une procédure de transfert de licence depuis le compte Unraid, pas une simple réinstallation."}
+    ],
+    faq:[
+      {q:"Pourquoi la clé USB reste branchée en permanence, ce n'est pas juste pour l'installation ?", a:"C'est une particularité d'Unraid : le système démarre et tourne depuis la RAM, mais la clé USB reste le support d'identité et de licence de l'installation. La retirer empêche le serveur de redémarrer normalement."},
+      {q:"Faut-il payer pour utiliser Unraid ?", a:"Un essai gratuit de 30 jours donne accès à toutes les fonctionnalités sans limite de disques. Au-delà, une licence payante (Starter, Unleashed ou Lifetime selon le nombre de disques) est nécessaire."}
+    ]
+  },
+  {
+    id:"eos", name:"/e/OS", version:"4.1.1", cat:"mobile", color:"#0B7261", icon:null,
+    tag:"ROM Android « dégooglisée » : vie privée par défaut, micro-G en remplacement des services Google, sans sacrifier la compatibilité applicative.",
+    site:"e.foundation", license:"Libre / Open-source", popular:false, isNew:true,
+    time:"~35 min", diff:"Avancé", base:"LineageOS",
+    req:{ram:"3 Go min. (selon l'appareil)", disk:"16 Go de stockage libre min.", cpu:"Smartphone compatible parmi les 200+ appareils supportés (voir doc.e.foundation)"},
+    steps:[
+      {t:"Vérifier la compatibilité de l'appareil", d:"Consulter le sélecteur d'appareils officiel (doc.e.foundation/devices) : le bootloader doit pouvoir être déverrouillé."},
+      {t:"Sauvegarder puis déverrouiller le bootloader", d:"Le déverrouillage efface toutes les données de l'appareil. Procédure spécifique à chaque marque, via les options développeur puis fastboot."},
+      {t:"Flasher via l'installeur web ou la méthode CLI", d:"Les appareils récents disposent d'un installeur web (Chrome, WebUSB) ; plus de 200 autres appareils s'installent via le script d'installation en ligne de commande.", code:"Installeur web : install.e.foundation (Chrome/Chromium requis)"},
+      {t:"Premier démarrage et micro-G", d:"Au premier lancement, activer les services micro-G (remplacement libre des Google Play Services) si besoin de compatibilité applicative étendue."}
+    ],
+    alt:["lineageos","grapheneos","calyxos"],
+    errors:[
+      {q:"L'installeur web ne détecte pas le téléphone",a:"L'installeur web nécessite WebUSB : utiliser Chrome ou un navigateur basé Chromium à jour, activer le débogage USB dans les options développeur, et essayer un autre câble/port USB."},
+      {q:"Les applications bancaires ou de paiement refusent de fonctionner",a:"Certaines apps détectent le bootloader déverrouillé ou l'absence des services Google natifs (Play Integrity) et refusent de se lancer ; c'est une limitation connue de la plupart des ROM dégooglisées, pas un bug d'installation."},
+      {q:"Aucune notification ne remonte pour certaines apps",a:"Sans les Google Play Services, le push notifications dépend de micro-G : vérifie qu'il est bien activé et que l'app est autorisée à tourner en arrière-plan dans les réglages batterie."}
+    ],
+    faq:[
+      {q:"Quelle différence avec LineageOS pur ?", a:"/e/OS est un fork de LineageOS : mêmes bases techniques, mais avec micro-G préinstallé, un WebView basé sur un fork de Chromium nettoyé des connexions Google, et une boutique d'applications (App Lounge) sans compte Google requis."},
+      {q:"Faut-il un compte /e/ pour utiliser le téléphone ?", a:"Non, un compte /e/ (optionnel, gratuit) n'est nécessaire que pour la synchronisation cloud (contacts, mails, photos) ; le téléphone fonctionne pleinement sans."}
+    ]
+  },
+  {
+    id:"sailfishos", name:"Sailfish OS", version:"5.0 Tampella", cat:"mobile", color:"#1B4F72", icon:null,
+    tag:"OS mobile indépendant, non basé sur Android — interface gestuelle unique, développé par Jolla (Finlande). Compatibilité apps Android via une couche optionnelle.",
+    site:"sailfishos.org", license:"Libre / Open-source", popular:false, isNew:true,
+    time:"~45 min", diff:"Avancé", base:"—",
+    req:{ram:"2 Go min. (selon l'appareil)", disk:"16 Go de stockage libre min.", cpu:"Appareil Sony Xperia officiellement supporté, ou port communautaire non officiel sur d'autres appareils"},
+    steps:[
+      {t:"Choisir la voie officielle ou communautaire", d:"Voie officielle : licence Sailfish X (payante) sur Sony Xperia récent via la boutique Jolla. Voie communautaire : ports non officiels et gratuits sur d'autres appareils, sans support Jolla."},
+      {t:"Déverrouiller le bootloader de l'appareil", d:"Procédure fastboot spécifique au modèle, efface toutes les données existantes."},
+      {t:"Flasher l'image Sailfish", d:"Télécharger l'image achetée (ou le port communautaire), la flasher via fastboot en suivant le guide correspondant à l'appareil exact."},
+      {t:"Premier démarrage et activation", d:"Sur la voie officielle, entrer la licence Sailfish X liée au compte Jolla pour débloquer les fonctionnalités complètes (prédiction de texte, synchronisation Exchange, support des apps Android)."}
+    ],
+    alt:["postmarketos","lineageos","grapheneos"],
+    errors:[
+      {q:"Le flash échoue avec une erreur de partition",a:"Vérifie que l'image téléchargée correspond exactement au modèle ET à la région de l'appareil (les Xperia ont plusieurs variantes) ; une image pour le mauvais modèle échoue systématiquement au flash."},
+      {q:"Le support des applications Android ne fonctionne pas",a:"La couche de compatibilité Android est un composant propriétaire réservé à la licence Sailfish X officielle sur appareil supporté ; elle est absente des ports communautaires par défaut."},
+      {q:"Plus aucune mise à jour ne semble disponible",a:"Les ports communautaires n'ont pas toujours de suivi des dernières versions ; vérifie le statut de maintenance du port utilisé sur le forum Sailfish OS avant de s'inquiéter d'un problème d'installation."}
+    ],
+    faq:[
+      {q:"Faut-il payer pour utiliser Sailfish OS ?", a:"Le cœur du système (Mer/Sailfish) est open-source et gratuit sur les ports communautaires. La version officielle Jolla sur Xperia supporté (Sailfish X) est payante et ajoute des composants propriétaires (clavier prédictif, Exchange, support Android)."},
+      {q:"Peut-on installer des applications Android dessus ?", a:"Oui, via une couche de compatibilité optionnelle — mais réservée aux appareils sous licence Sailfish X officielle, pas aux ports communautaires gratuits."}
+    ]
+  },
+  {
+    id:"calyxos", name:"CalyxOS", version:"7.2.2.0", cat:"mobile", color:"#5B3A9E", icon:null,
+    tag:"ROM Android axée vie privée, développée par l'association à but non lucratif Calyx Institute. Micro-G optionnel, VPN Tor intégré (Orbot).",
+    site:"calyxos.org", license:"Libre / Open-source", popular:false, isNew:true,
+    time:"~30 min", diff:"Avancé", base:"Android (AOSP)",
+    req:{ram:"4 Go min. (selon l'appareil)", disk:"16 Go de stockage libre min.", cpu:"Google Pixel, Fairphone ou modèles Motorola/SHIFTphone supportés"},
+    steps:[
+      {t:"Vérifier la compatibilité de l'appareil", d:"CalyxOS supporte une liste restreinte mais activement maintenue : Pixel, Fairphone, certains Motorola et SHIFTphone — consulter calyxos.org avant de commencer."},
+      {t:"Sauvegarder puis déverrouiller le bootloader", d:"Efface toutes les données. Procédure via les options développeur puis fastboot, spécifique au modèle."},
+      {t:"Installer via le script d'installation web", d:"CalyxOS fournit un installateur assisté par navigateur (WebUSB) qui flashe automatiquement les bonnes partitions pour l'appareil détecté."},
+      {t:"Reverrouiller le bootloader", d:"Étape recommandée après installation : reverrouiller restaure le Verified Boot et l'intégrité du système, contrairement à beaucoup d'autres ROM qui restent déverrouillées."}
+    ],
+    alt:["grapheneos","lineageos","eos"],
+    errors:[
+      {q:"Le bootloader refuse de se reverrouiller après l'installation",a:"Reverrouiller trop tôt (avant la fin complète du premier démarrage et de la configuration) peut bloquer l'appareil ; toujours terminer l'assistant de configuration initial avant de reverrouiller."},
+      {q:"Certaines apps Google essentielles (Maps, Wallet) ne s'installent pas",a:"CalyxOS ne fournit pas les services Google par défaut ; micro-G (à activer dans les réglages) restaure une compatibilité partielle, mais certaines apps très dépendantes des services propriétaires Google restent limitées."},
+      {q:"L'appareil semble bloqué en boucle de démarrage (bootloop)",a:"Signe fréquent d'un flash incomplet ou d'une image ne correspondant pas exactement au modèle ; reflasher intégralement via l'installateur officiel plutôt que de chercher un correctif partiel."}
+    ],
+    faq:[
+      {q:"Différence principale avec GrapheneOS ?", a:"GrapheneOS ne supporte que les Google Pixel avec un focus sécurité maximal ; CalyxOS supporte plus d'appareils (Fairphone, Motorola, SHIFTphone) et intègre Tor (Orbot) et micro-G plus directement, avec une approche légèrement plus permissive."},
+      {q:"Le projet est-il fiable sur la durée ?", a:"CalyxOS est maintenu par l'association à but non lucratif Calyx Institute ; le projet a connu une pause de maintenance courant 2025-2026 avant de reprendre un support complet à l'été 2026 — vérifier le statut des mises à jour avant de s'engager sur un appareil critique."}
     ]
   },
 ];

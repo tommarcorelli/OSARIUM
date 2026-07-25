@@ -2,11 +2,26 @@
 
 *Dernière mise à jour : juillet 2026*
 
-## ✅ Fait (cette session — appli desktop)
+## ✅ Fait (cette session — +5 systèmes, 160 → 165)
 
-- **Appli desktop Electron** (`desktop-app/`) — coquille séparée qui charge le site existant tel quel (aucune duplication, `../index.html` chargé directement) et ajoute la **détection matérielle réelle** (CPU, GPU, RAM exacte, disques) via `systeminformation` (paquet npm gratuit, open-source, 100% local, aucun appel réseau ni clé API). Le mode « Vérifier mon PC » du site (`js/hardware-check.js` → `detectDesktop()`, branché dans `js/catalog.js` → `renderHwBody()`) bascule automatiquement sur ces valeurs réelles quand il tourne dans l'appli desktop ; en navigateur classique, rien ne change (estimation `navigator.deviceMemory` comme avant). Testé de bout en bout : `npm install` (405 paquets, 0 vulnérabilité en dépendances de production), lancement Electron sans erreur, détection réelle vérifiée sur la machine (CPU/RAM/GPU/2 disques correctement remontés). `npm run dist` (electron-builder, cible NSIS) génère le `.exe`, embarquant une copie du site dans les ressources au moment du build.
+- **5 nouveaux systèmes ajoutés, recherchés individuellement (pas de contenu générique)** :
+  - **Windows 10** (desktop, `win10`) — RAM/disque/CPU vérifiés (specs Microsoft actuelles), section dédiée à la fin de support (oct. 2025) et au programme ESU (gratuit/payant jusqu'en oct. 2027).
+  - **Unraid** (server, `unraid`) — version 7.3.2 vérifiée, base Slackware confirmée, licence payante avec essai 30 jours documentée ; particularité propre à ce système (la clé USB est le média de démarrage permanent, pas juste un support d'installation) explicitement expliquée en FAQ/erreurs.
+  - **/e/OS** (mobile, `eos`) — version 4.1.1, base LineageOS confirmée (fork), méthode d'installation à jour (l'ancien Easy Installer déprécié, installeur web + méthode CLI 200+ appareils).
+  - **Sailfish OS** (mobile, `sailfishos`) — version 5.0 Tampella, nuance licence (cœur libre + Sailfish X payant sur Xperia officiel) et voie communautaire non officielle documentées.
+  - **CalyxOS** (mobile, `calyxos`) — version 7.2.2.0, base Android (AOSP) confirmée (pas un fork de LineageOS malgré des composants empruntés), mention honnête de la pause de maintenance 2025-2026 avant reprise.
+  - Chaque fiche a été recherchée via le web (versions/specs/licences à jour mi-2026), pas générée par template — même standard de qualité que les ajouts précédents (+8 systèmes, session antérieure).
+  - **Liens « Systèmes similaires » réciproques** mis à jour sur les fiches existantes proches (LineageOS, GrapheneOS, postmarketOS, Windows 11) pour intégrer les nouveaux venus des deux côtés.
+  - **Validation automatisée** : 165/165 ids uniques, 165/165 `errors` à 3 entrées, 0 lien `alt` cassé/auto-référencé, 165/165 `req.ram` reconnus par le parseur RAM (`HwCheck`). Arbre de filiation vérifié visuellement (Chrome) : `/e/OS` rattaché à LineageOS, CalyxOS au cluster synthétique Android (AOSP), Sailfish OS en système indépendant.
+  - Compteurs mis à jour (`index.html`, `os.html`, hero/kick) et sitemap régénéré (171 URLs).
+
+- **Raccourcis clavier** dans le catalogue — `/` (recherche), `W` (wizard), `H` (vérifier mon PC), `F` (favoris), `T` (thème), `Échap` (fermer/quitter le focus), `?` (aide-mémoire, modale dédiée). Désactivés pendant une saisie dans un champ. Testé au clavier réel (Chrome), tous fonctionnels.
+
+## ✅ Fait (session précédente — appli desktop)
+
+- **Appli desktop Electron** (`desktop-app/`) — coquille séparée qui charge le site existant tel quel (aucune duplication, `../index.html` chargé directement) et ajoute la **détection matérielle réelle** (CPU, GPU, RAM exacte, disques) via `systeminformation` (paquet npm gratuit, open-source, 100% local, aucun appel réseau ni clé API). Le mode « Vérifier mon PC » du site (`js/hardware-check.js` → `detectDesktop()`, branché dans `js/catalog.js` → `renderHwBody()`) bascule automatiquement sur ces valeurs réelles quand il tourne dans l'appli desktop ; en navigateur classique, rien ne change (estimation `navigator.deviceMemory` comme avant).
 - Motivation : un navigateur ne peut techniquement pas lire le modèle réel d'une machine (restriction anti-fingerprinting commune à tous les navigateurs) — seule une appli avec accès natif (Electron ici) peut aller au-delà de l'estimation RAM déjà en place.
-- **Bouton de téléchargement sur le site** — `downloads/OSARIUM-Setup.exe` (installeur généré par `npm run dist`, ~79 Mo, NSIS, non signé) + bouton « 💾 Télécharger l'appli Windows (.exe) » dans le hero de `index.html`, à côté des CTA existants. À recopier manuellement dans `downloads/` après chaque nouveau build (voir `README.txt`) — pas automatisé. **À trancher plus tard** : si le site est un jour poussé sur GitHub, un binaire de 79 Mo dans le dépôt n'est pas idéal (GitHub Releases serait plus propre) — pas bloquant tant qu'il n'y a pas de dépôt git.
+- **Repo GitHub public** créé et poussé : https://github.com/tommarcorelli/OSARIUM. Pattern de release repris du projet Amarre : `.github/workflows/release.yml` build les installateurs Windows/macOS/Linux à chaque tag `v*` et les attache à une Release GitHub (jamais commités, voir `.gitignore`). Bouton « 💾 Télécharger l'appli Windows (.exe) » du hero → lien stable `releases/latest/download/OSARIUM-Setup.exe`. Tag `v1.0.0` publié et testé de bout en bout (build CI réussi sur les 3 OS, lien de téléchargement vérifié fonctionnel).
 
 ## ✅ Fait (cette session — Phase 3/4)
 
