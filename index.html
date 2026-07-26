@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="css/hw.css">
 <link rel="stylesheet" href="css/pcage.css">
 <link rel="stylesheet" href="css/shortcuts.css">
+<link rel="stylesheet" href="css/toast.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#06080C">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,6 +31,7 @@
 <meta property="og:image" content="icons/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#catalog">Aller directement au catalogue</a>
 <div class="fx vig"></div>
 <div class="progress" id="progress"></div>
 
@@ -174,7 +176,7 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
   <div class="recent-strip" id="recentStrip"></div>
 </section>
 
-<section class="sec" id="catalog" style="padding-bottom:0">
+<section class="sec" id="catalog" tabindex="-1" style="padding-bottom:0">
   <div class="sec-head rv">
     <div class="eyebrow"><span class="n">02</span> Catalogue</div>
     <h2 class="disp">Tous les systèmes</h2>
@@ -195,6 +197,7 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
       <option value="Facile">Facile</option>
       <option value="Intermédiaire">Intermédiaire</option>
       <option value="Avancé">Avancé</option>
+      <option value="Expert">Expert</option>
     </select>
     <select class="select mono" id="licenseSelect" data-testid="filter-license">
       <option value="all">Toutes licences</option>
@@ -270,6 +273,7 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="data.js"></script>
+<script src="js/toast.js"></script>
 <script src="js/hardware-check.js"></script>
 <script src="js/logo.js"></script>
 <script src="js/favorites.js"></script>

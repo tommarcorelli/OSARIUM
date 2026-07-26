@@ -31,6 +31,29 @@ icons/              → icônes de l'application.
 css/                → système de design (thème terminal phosphore, grain CRT).
 js/                 → logique (catalogue, détail, reveal, scroll, logo, pwa).
 
+LIENS PARTAGEABLES
+------------------
+L'état du catalogue est reflété dans l'URL : recherche, catégorie, niveau,
+licence, tri, favoris, filtre matériel et comparateur. Copier la barre
+d'adresse suffit à partager une vue exacte. Paramètres reconnus :
+    q, cat, diff, lic (libre|proprio), sort, fav=1, ram, hide=1, cmp=id1,id2
+Exemple : index.html?cat=gaming&diff=Facile&cmp=steamos,bazzite
+Le comparateur propose aussi un bouton « Copier le lien de cette comparaison ».
+
+PROGRESSION D'INSTALLATION
+--------------------------
+Chaque fiche affiche une checklist : les étapes se cochent au fur et à mesure,
+la progression (barre + compteur) est enregistrée par système dans le
+localStorage (clé osarium_steps). Rien n'est envoyé nulle part.
+
+CACHE OFFLINE — À NE PAS OUBLIER
+--------------------------------
+La liste ASSETS de sw.js doit rester exhaustive : `addAll` échoue en bloc si
+un seul fichier manque, et tout css/js absent de cette liste ne sera pas
+disponible hors-ligne. À chaque nouveau fichier ajouté à une page, l'ajouter
+à ASSETS **et** incrémenter la constante CACHE (osarium-vN), sinon les
+navigateurs déjà passés garderont l'ancienne version.
+
 AJOUTER UN SYSTÈME
 ------------------
 Ajoute un objet dans OS_DATA (data.js). La carte, la page détail et le

@@ -2,7 +2,28 @@
 
 *Dernière mise à jour : juillet 2026*
 
-## ✅ Fait (cette session — +5 systèmes, 165 → 170)
+## ✅ Fait (cette session — correctifs + liens partageables + checklist)
+
+**Correctifs (bugs trouvés à l'audit, pas demandés)**
+
+- **Cache offline réparé** (`sw.js`) — la liste `ASSETS` était restée à la v4 : `css/hw.css`, `css/pcage.css`, `css/shortcuts.css`, `js/hardware-check.js`, `js/pcage.js`, `js/shortcuts.js`, `js/recent.js` et `js/recent-strip.js` n'y figuraient pas. Hors-ligne, « Vérifier mon PC », le widget « PC de quelle année », les raccourcis clavier et « Vus récemment » ne se chargeaient donc pas. Liste reconstruite (45 entrées, complétude vérifiée par script contre les `<link>`/`<script>` des 4 pages), cache passé en `osarium-v6`. Ajout de `ignoreSearch:true` sur les requêtes de navigation : sans ça, `os.html?id=xxx` ne retombait jamais sur la page `os.html` en cache et **toutes les fiches étaient KO hors-ligne** au premier passage.
+- **Catalogue navigable au clavier** — les cartes étaient des `<article>` avec un `location.href` au clic : ni tabulation, ni Entrée, ni ouverture en nouvel onglet, et rien d'exploitable par un lecteur d'écran. Le titre porte désormais un vrai `<a class="card-link">` étiré sur toute la carte (la carte reste cliquable en entier). Les boutons ★ et + sont passés de `<div>` à `<button>` avec `aria-pressed` et `aria-label` explicite. Ils sont masqués par `opacity` (et non `display:none`) pour rester dans l'ordre de tabulation naturel — fav → cmp → lien — avec `pointer-events:none` tant qu'ils sont invisibles. Le focus est restauré sur le bon bouton après le re-rendu de la grille (sinon il retombait sur `<body>`). Ajout d'un `:focus-visible` global et d'un lien d'évitement sur les deux pages.
+- **`alert()` remplacés par des toasts** (`js/toast.js`, `css/toast.css`) — les deux messages du comparateur (max 4 / min 2) passaient par des `alert()` natifs bloquants. Toast `aria-live` remontant au-dessus de la barre du comparateur.
+- **Difficulté « Expert » réintégrée** — 7 systèmes (Arch, Gentoo, NixOS, Qubes, BlackArch, Parabola, Hyperbola) portent `diff:"Expert"` dans `data.js`, valeur absente du sélecteur de niveau **et** du barème `diffRank`. Conséquences : impossible de les filtrer, et le tri par difficulté comme le score du wizard produisaient `NaN` sur ces 7 fiches. Option ajoutée au filtre + rang 3 dans `diffRank` (tri vérifié : 0 inversion sur 170, Expert bien en fin de liste).
+
+**Liens partageables**
+
+- **État du catalogue dans l'URL** (`js/catalog.js`) — recherche, catégorie, niveau, licence, tri, favoris, filtre matériel (`ram`/`hide`) et comparateur (`cmp=id1,id2`) sont écrits en `replaceState` à chaque interaction et rejoués au chargement. Licences raccourcies en `libre`/`proprio` pour garder une URL lisible. Bouton **« Copier le lien de cette comparaison »** dans le comparateur.
+- Vérifié en navigateur réel : `?cat=gaming&diff=Facile&sort=name&cmp=steamos,bazzite` restaure la pastille de catégorie, les deux sélecteurs et les 2 emplacements du comparateur ; l'URL se met à jour en direct pendant la frappe dans la recherche.
+
+**Checklist d'installation**
+
+- **Progression cochable par étape** sur les fiches (`js/progress.js`, section `.ckl-panel` dans `js/detail.js`, styles dans `css/detail.css`) — barre de progression, compteur `n / N étapes`, message de fin, bouton de réinitialisation qui n'apparaît qu'une fois commencé. Stockage `localStorage` par système (clé `osarium_steps`), rien n'est envoyé nulle part. Case redessinée (`appearance:none`) parce que la case native s'affiche en blanc vif et jure avec le thème sombre.
+- Testé en navigateur réel : cochage, barre à 40 % puis 100 %, persistance après rechargement, isolation entre deux fiches (Ubuntu et Windows 11), rendu contrôlé en thème clair **et** sombre, aucune erreur console sur `index.html`, `os.html` et `arbre.html`.
+
+**Écarté volontairement** : l'export PDF/impression d'une fiche (peu d'intérêt réel) et le lot SEO/diffusion — les données structurées JSON-LD n'apportent quasiment plus rien depuis que Google a supprimé l'affichage « HowTo » et restreint « FAQPage », et un Open Graph par fiche exigerait de pré-générer 170 pages HTML statiques (les aperçus de lien sont lus avant l'exécution du JavaScript), soit un chantier à part entière.
+
+## ✅ Fait (session précédente — +5 systèmes, 165 → 170)
 
 - **5 nouveaux systèmes ajoutés, recherchés individuellement (pas de contenu générique)** :
   - **Asahi Linux / Fedora Asahi Remix** (desktop, `asahi`) — version 44 vérifiée, portage Linux pour Mac Apple Silicon (M1/M2 pleinement supportés, M3+ pas encore), installation en une commande depuis le Terminal macOS (pas de clé USB), dual-boot préservé. Particularités documentées : firmware Wi-Fi/Bluetooth extrait de macOS, pilote graphique développé spécifiquement par le projet (rétro-ingénierie du GPU Apple).

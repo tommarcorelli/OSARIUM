@@ -15,35 +15,116 @@ if (grid) {
   /* accent-insensitive normalize, used for search */
   const norm = (s) => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
+  /* ============ \u00c9TAT DANS L'URL ============
+     Recherche, filtres, tri et comparateur sont refl\u00e9t\u00e9s dans la barre
+     d'adresse : un lien devient partageable et rejouable tel quel.
+     Les licences sont raccourcies en codes courts pour rester lisibles. */
+  let rawQuery = '';
+  let urlReady = false; // pas d'\u00e9criture avant la lecture initiale
+  const LICENSE_CODES = { libre: 'Libre / Open-source', proprio: 'Propri\u00e9taire' };
+  const licenseToCode = (v) => Object.keys(LICENSE_CODES).find((k) => LICENSE_CODES[k] === v);
+  const SORT_MODES = ['default', 'name', 'diff', 'time', 'popular'];
+  const DIFFS = ['Facile', 'Interm\u00e9diaire', 'Avanc\u00e9', 'Expert'];
+
+  function buildParams() {
+    const p = new URLSearchParams();
+    if (rawQuery) p.set('q', rawQuery);
+    if (activeCat !== 'all') p.set('cat', activeCat);
+    if (activeDiff !== 'all') p.set('diff', activeDiff);
+    if (activeLicense !== 'all') p.set('lic', licenseToCode(activeLicense) || activeLicense);
+    if (sortMode !== 'default') p.set('sort', sortMode);
+    if (favOnly) p.set('fav', '1');
+    if (hwActive && hwRamMB) {
+      p.set('ram', String(hwRamMB));
+      if (hwHideIncompatible) p.set('hide', '1');
+    }
+    if (compare.length) p.set('cmp', compare.join(','));
+    return p;
+  }
+
+  function syncURL() {
+    if (!urlReady) return;
+    const qs = buildParams().toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+
+  function shareURL() {
+    const qs = buildParams().toString();
+    return location.origin + location.pathname + (qs ? '?' + qs : '');
+  }
+
+  function applyURL() {
+    const p = new URLSearchParams(location.search);
+
+    const q = p.get('q');
+    if (q) { rawQuery = q; query = norm(q.trim()); searchEl.value = q; }
+
+    const cat = p.get('cat');
+    if (cat && cats[cat]) {
+      activeCat = cat;
+      filtersEl.querySelectorAll('.chip').forEach((x) => x.classList.toggle('on', x.dataset.cat === cat));
+    }
+
+    const diff = p.get('diff');
+    if (DIFFS.includes(diff)) { activeDiff = diff; if (diffSelect) diffSelect.value = diff; }
+
+    const lic = p.get('lic');
+    if (lic && LICENSE_CODES[lic]) { activeLicense = LICENSE_CODES[lic]; if (licenseSelect) licenseSelect.value = activeLicense; }
+
+    const sort = p.get('sort');
+    if (SORT_MODES.includes(sort)) { sortMode = sort; if (sortSelect) sortSelect.value = sort; }
+
+    if (p.get('fav') === '1' && favChip) { favOnly = true; favChip.classList.add('on'); }
+
+    const ram = Number(p.get('ram'));
+    if (RAM_OPTIONS.some(([v]) => v === ram)) {
+      hwActive = true; hwRamMB = ram; hwHideIncompatible = p.get('hide') === '1';
+      updateHwChip();
+    }
+
+    const cmp = p.get('cmp');
+    if (cmp) {
+      cmp.split(',').forEach((id) => {
+        if (compare.length < 4 && !compare.includes(id) && data.some((o) => o.id === id)) compare.push(id);
+      });
+      if (compare.length) renderBar();
+    }
+
+    urlReady = true;
+  }
+
   /* filters (category chips) */
   const filtersEl = document.getElementById('filters');
   filtersEl.innerHTML = Object.entries(cats).map(([k, v]) =>
     `<button class="chip${k === 'all' ? ' on' : ''}" data-cat="${k}" data-testid="filter-${k}">${v.label}</button>`).join('');
   filtersEl.querySelectorAll('.chip').forEach((c) => c.addEventListener('click', () => {
     filtersEl.querySelectorAll('.chip').forEach((x) => x.classList.remove('on'));
-    c.classList.add('on'); activeCat = c.dataset.cat; render();
+    c.classList.add('on'); activeCat = c.dataset.cat; render(); syncURL();
   }));
 
   const searchEl = document.getElementById('search');
-  searchEl.addEventListener('input', (e) => { query = norm(e.target.value.trim()); render(); });
+  searchEl.addEventListener('input', (e) => { rawQuery = e.target.value; query = norm(rawQuery.trim()); render(); syncURL(); });
 
   /* difficulty + sort selects */
   const diffSelect = document.getElementById('diffSelect');
-  if (diffSelect) diffSelect.addEventListener('change', (e) => { activeDiff = e.target.value; render(); });
+  if (diffSelect) diffSelect.addEventListener('change', (e) => { activeDiff = e.target.value; render(); syncURL(); });
   const licenseSelect = document.getElementById('licenseSelect');
-  if (licenseSelect) licenseSelect.addEventListener('change', (e) => { activeLicense = e.target.value; render(); });
+  if (licenseSelect) licenseSelect.addEventListener('change', (e) => { activeLicense = e.target.value; render(); syncURL(); });
   const sortSelect = document.getElementById('sortSelect');
-  if (sortSelect) sortSelect.addEventListener('change', (e) => { sortMode = e.target.value; render(); });
+  if (sortSelect) sortSelect.addEventListener('change', (e) => { sortMode = e.target.value; render(); syncURL(); });
 
   /* favorites chip */
   const favChip = document.getElementById('favChip');
   if (favChip) favChip.addEventListener('click', () => {
     favOnly = !favOnly;
     favChip.classList.toggle('on', favOnly);
-    render();
+    render(); syncURL();
   });
 
-  const diffRank = { 'Facile': 0, 'Intermédiaire': 1, 'Avancé': 2 };
+  /* "Expert" existe bien dans data.js (7 systèmes : Arch, Gentoo, NixOS, Qubes,
+     BlackArch, Parabola, Hyperbola). Sans lui ici, le tri par difficulté
+     produisait NaN et le wizard leur attribuait un score NaN. */
+  const diffRank = { 'Facile': 0, 'Intermédiaire': 1, 'Avancé': 2, 'Expert': 3 };
 
   function hwBadgeHTML(os) {
     if (!hwActive) return '';
@@ -62,15 +143,23 @@ if (grid) {
       os.isNew ? '<span class="badge badge-new">✦ Nouveau</span>' : '',
       hwBadgeHTML(os),
     ].join('');
+    /* Le titre porte le vrai lien (étiré sur toute la carte via .card-link::after) :
+       la carte reste cliquable en entier tout en devenant navigable au clavier,
+       ouvrable en nouvel onglet et lisible par un lecteur d'écran. Les deux
+       boutons ★ / + passent au-dessus grâce à leur z-index. */
     return `<article class="card rv" style="--c:${os.color}" data-id="${os.id}" data-testid="os-card-${os.id}">
-      <div class="fav ${isFav ? 'added' : ''}" data-fav="${os.id}" title="${isFav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${isFav ? '★' : '☆'}</div>
-      <div class="cmp ${added ? 'added' : ''}" data-cmp="${os.id}" title="Ajouter au comparateur">${added ? '✓' : '+'}</div>
+      <button type="button" class="fav ${isFav ? 'added' : ''}" data-fav="${os.id}" aria-pressed="${isFav}"
+        aria-label="${isFav ? 'Retirer' : 'Ajouter'} ${os.name} ${isFav ? 'des' : 'aux'} favoris"
+        title="${isFav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${isFav ? '★' : '☆'}</button>
+      <button type="button" class="cmp ${added ? 'added' : ''}" data-cmp="${os.id}" aria-pressed="${added}"
+        aria-label="${added ? 'Retirer' : 'Ajouter'} ${os.name} ${added ? 'du' : 'au'} comparateur"
+        title="${added ? 'Retirer du comparateur' : 'Ajouter au comparateur'}">${added ? '✓' : '+'}</button>
       <div class="card-top">
         <div class="logo">${logoInner(os, { size: 30, lazy: true })}</div>
         <span class="cat">${cats[os.cat].label}</span>
       </div>
       ${badges ? `<div class="badges">${badges}</div>` : ''}
-      <h3 class="disp">${os.name}</h3>
+      <h3 class="disp"><a class="card-link" href="os.html?id=${os.id}">${os.name}</a></h3>
       <div class="ver mono">${os.version} · ${os.base !== '—' ? 'base ' + os.base : 'indépendant'}</div>
       <p class="desc">${os.tag}</p>
       <div class="card-foot">
@@ -102,22 +191,29 @@ if (grid) {
     observeReveals();
   }
 
+  /* render() reconstruit toute la grille : sans ça, activer ★ ou + au clavier
+     renverrait le focus sur <body> et ferait perdre sa place dans la liste. */
+  function refocus(selector) {
+    const el = grid.querySelector(selector);
+    if (el) el.focus();
+  }
+
   function bindCards() {
-    grid.querySelectorAll('.card').forEach((card) => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('.cmp') || e.target.closest('.fav')) return;
-        location.href = `os.html?id=${card.dataset.id}`;
-      });
-    });
+    /* pas de handler de clic sur la carte : c'est .card-link (lien étiré) qui
+       gère la navigation, y compris au clavier et au clic milieu. */
     grid.querySelectorAll('.cmp').forEach((btn) => btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleCompare(btn.dataset.cmp);
+      const id = btn.dataset.cmp;
+      toggleCompare(id);
+      refocus(`.cmp[data-cmp="${id}"]`);
     }));
     grid.querySelectorAll('.fav').forEach((btn) => btn.addEventListener('click', (e) => {
       e.stopPropagation();
       if (!window.Favorites) return;
-      window.Favorites.toggle(btn.dataset.fav);
+      const id = btn.dataset.fav;
+      window.Favorites.toggle(id);
       render();
+      refocus(`.fav[data-fav="${id}"]`);
     }));
   }
 
@@ -126,22 +222,25 @@ if (grid) {
   function toggleCompare(id) {
     const i = compare.indexOf(id);
     if (i > -1) compare.splice(i, 1);
-    else { if (compare.length >= 4) { alert('Maximum 4 systèmes.'); return; } compare.push(id); }
-    render(); renderBar();
+    else {
+      if (compare.length >= 4) { window.Toast.warn('Le comparateur accepte 4 systèmes au maximum — retires-en un pour en ajouter un autre.'); return; }
+      compare.push(id);
+    }
+    render(); renderBar(); syncURL();
   }
   function renderBar() {
     bar.classList.toggle('show', compare.length > 0);
     slots.innerHTML = compare.map((id) => {
       const os = data.find((o) => o.id === id);
-      return `<span class="cmp-slot" style="--c:${os.color}"><span class="dot"></span>${os.name}<span class="x" data-x="${id}">✕</span></span>`;
+      return `<span class="cmp-slot" style="--c:${os.color}"><span class="dot"></span>${os.name}<button type="button" class="x" data-x="${id}" aria-label="Retirer ${os.name} du comparateur" title="Retirer du comparateur">✕</button></span>`;
     }).join('');
     slots.querySelectorAll('.x').forEach((x) => x.addEventListener('click', () => toggleCompare(x.dataset.x)));
   }
-  document.getElementById('cmpClear').addEventListener('click', () => { compare.length = 0; render(); renderBar(); });
+  document.getElementById('cmpClear').addEventListener('click', () => { compare.length = 0; render(); renderBar(); syncURL(); });
 
   const modal = document.getElementById('modal');
   document.getElementById('cmpOpen').addEventListener('click', () => {
-    if (compare.length < 2) { alert('Ajoute au moins 2 systèmes.'); return; }
+    if (compare.length < 2) { window.Toast.warn('Ajoute au moins 2 systèmes pour lancer une comparaison.'); return; }
     const os = compare.map((id) => data.find((o) => o.id === id));
     const rows = [
       ['Version', (o) => o.version],
@@ -156,7 +255,18 @@ if (grid) {
     ];
     document.getElementById('cmpTableWrap').innerHTML =
       `<table class="cmp-table"><thead><tr><th></th>${os.map((o) => `<th style="color:${o.color}">${o.name}</th>`).join('')}</tr></thead>
-      <tbody>${rows.map(([k, fn]) => `<tr><td class="k">${k}</td>${os.map((o) => `<td>${fn(o)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      <tbody>${rows.map(([k, fn]) => `<tr><td class="k">${k}</td>${os.map((o) => `<td>${fn(o)}</td>`).join('')}</tr>`).join('')}</tbody></table>
+      <div class="cmp-actions"><button class="btn" id="cmpShare" data-testid="compare-share">🔗 Copier le lien de cette comparaison</button></div>`;
+    document.getElementById('cmpShare').addEventListener('click', async () => {
+      const url = shareURL();
+      try { await navigator.clipboard.writeText(url); } catch (e) {
+        const ta = document.createElement('textarea'); ta.value = url;
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e2) {}
+        ta.remove();
+      }
+      window.Toast.ok('Lien copié — il rouvrira le catalogue avec ces systèmes déjà comparés.');
+    });
     modal.classList.add('show'); document.body.classList.add('lock');
   });
   const closeModal = () => { modal.classList.remove('show'); document.body.classList.remove('lock'); };
@@ -323,14 +433,14 @@ if (grid) {
       hwActive = true;
       closeHwModal();
       updateHwChip();
-      render();
+      render(); syncURL();
     });
     const resetBtn = document.getElementById('hwReset');
     if (resetBtn) resetBtn.addEventListener('click', () => {
       hwActive = false; hwRamMB = null; hwHideIncompatible = false;
       closeHwModal();
       updateHwChip();
-      render();
+      render(); syncURL();
     });
 
     /* si on tourne dans l'appli desktop (Electron), remplace l'estimation
@@ -355,7 +465,8 @@ if (grid) {
   if (hwCloseBtn) hwCloseBtn.addEventListener('click', closeHwModal);
   hwModal.addEventListener('click', (e) => { if (e.target === hwModal) closeHwModal(); });
 
-  /* initial render + reveal observers */
+  /* état éventuellement transmis par l'URL, puis premier rendu */
+  applyURL();
   render();
   observeReveals();
   armRevealSafetyNet();

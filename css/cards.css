@@ -8,9 +8,13 @@
   transform:scaleX(0);transform-origin:left;transition:transform .35s;}
 .card::before{content:"";position:absolute;right:-40%;top:-40%;width:80%;height:80%;border-radius:50%;
   background:radial-gradient(circle,color-mix(in srgb,var(--c) 45%,transparent),transparent 70%);opacity:0;transition:opacity .4s;}
-.card:hover{transform:translateY(-8px);border-color:color-mix(in srgb,var(--c) 55%,transparent);}
-.card:hover::after{transform:scaleX(1);}
-.card:hover::before{opacity:.14;}
+.card:hover,.card:focus-within{transform:translateY(-8px);border-color:color-mix(in srgb,var(--c) 55%,transparent);}
+.card:hover::after,.card:focus-within::after{transform:scaleX(1);}
+.card:hover::before,.card:focus-within::before{opacity:.14;}
+/* lien étiré : la carte entière reste cliquable, mais c'est un vrai <a> */
+.card-link::after{content:"";position:absolute;inset:0;z-index:1;}
+.card-link:focus{outline:none;}
+.card-link:focus-visible::after{outline:2px solid var(--amber);outline-offset:-4px;}
 .card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
 .logo{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;
   background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent);
@@ -25,21 +29,29 @@
 .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;
   font-family:'JetBrains Mono';font-size:11px;color:var(--muted-2);}
 .card-foot .go{color:var(--c);display:inline-flex;align-items:center;gap:6px;font-weight:700;}
-.card .cmp{position:absolute;top:16px;right:16px;z-index:3;width:26px;height:26px;border:1px solid var(--line-2);
-  display:none;place-items:center;background:var(--void-2);border-radius:6px;color:var(--muted);font-size:14px;}
-.card:hover .cmp{display:grid;}
-.card .cmp.added{background:var(--phos);color:#000;border-color:var(--phos);display:grid;}
-.card .fav{position:absolute;top:16px;right:50px;z-index:3;width:26px;height:26px;border:1px solid var(--line-2);
-  display:none;place-items:center;background:var(--void-2);border-radius:6px;color:var(--muted);font-size:15px;cursor:pointer;}
-.card:hover .fav{display:grid;}
-.card .fav.added{display:grid;color:var(--amber);border-color:var(--amber);}
+/* Boutons ★ / + : masqués par opacité (et non display:none) pour rester dans
+   l'ordre de tabulation naturel — sinon ils ne seraient atteignables qu'en
+   Maj+Tab après avoir focalisé le lien de la carte. pointer-events:none évite
+   qu'ils restent cliquables tant qu'ils sont invisibles. */
+.card .cmp,.card .fav{position:absolute;top:16px;z-index:3;width:26px;height:26px;border:1px solid var(--line-2);
+  display:grid;place-items:center;background:var(--void-2);border-radius:6px;color:var(--muted);
+  font-family:inherit;line-height:1;padding:0;cursor:pointer;
+  opacity:0;pointer-events:none;transition:opacity .2s;}
+.card .cmp{right:16px;font-size:14px;}
+.card .fav{right:50px;font-size:15px;}
+.card:hover .cmp,.card:hover .fav,
+.card:focus-within .cmp,.card:focus-within .fav,
+.card .cmp.added,.card .fav.added{opacity:1;pointer-events:auto;}
+.card .cmp.added{background:var(--phos);color:#000;border-color:var(--phos);}
+.card .fav.added{color:var(--amber);border-color:var(--amber);}
+.card .cmp:focus-visible,.card .fav:focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
 .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
 .badge{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
   padding:3px 8px;border-radius:20px;font-weight:700;}
 .badge-pop{background:rgba(255,179,0,.14);color:var(--amber);border:1px solid rgba(255,179,0,.35);}
 .badge-new{background:var(--phos-dim);color:var(--phos);border:1px solid rgba(92,242,176,.35);}
 .no-result{grid-column:1/-1;text-align:center;padding:80px 0;color:var(--muted);font-family:'JetBrains Mono';}
-@media(pointer:coarse){.card .cmp,.card .fav{display:grid;}}
+@media(pointer:coarse){.card .cmp,.card .fav{opacity:1;pointer-events:auto;}}
 
 /* ---------- COMPARATOR ---------- */
 .cmp-bar{position:fixed;left:0;right:0;bottom:0;z-index:120;transform:translateY(120%);transition:transform .4s cubic-bezier(.16,1,.3,1);
@@ -49,7 +61,9 @@
 .cmp-bar .slots{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
 .cmp-slot{font-family:'JetBrains Mono';font-size:12px;padding:8px 12px;border:1px solid var(--line-2);
   display:flex;align-items:center;gap:8px;}
-.cmp-slot .x{cursor:pointer;color:var(--muted);}
+.cmp-slot .x{cursor:pointer;color:var(--muted);background:none;border:none;padding:0 2px;
+  font-family:inherit;font-size:12px;line-height:1;transition:color .2s;}
+.cmp-slot .x:hover{color:var(--amber);}
 .cmp-slot .dot{width:8px;height:8px;border-radius:50%;background:var(--c);}
 .modal{position:fixed;inset:0;z-index:250;display:none;align-items:center;justify-content:center;padding:20px;
   background:rgba(0,0,0,.75);backdrop-filter:blur(6px);}
@@ -61,6 +75,7 @@
 .cmp-table th{font-family:'JetBrains Mono';font-size:11px;color:var(--muted-2);text-transform:uppercase;}
 .cmp-table td.k{font-family:'JetBrains Mono';color:var(--muted);white-space:nowrap;}
 .cmp-close{float:right;cursor:pointer;color:var(--muted);font-size:22px;}
+.cmp-actions{margin-top:22px;display:flex;justify-content:flex-end;}
 
 /* ---------- WIZARD ---------- */
 .wizard-inner{max-width:640px;}

@@ -58,13 +58,31 @@
       </div>
     </section>` : ''}
     <div class="steps">
+      <section class="ckl-panel" data-testid="install-progress">
+        <div class="ckl-head">
+          <div>
+            <div class="ckl-title mono">Progression de l'installation</div>
+            <p class="ckl-sub">Coche les étapes au fur et à mesure : la progression est conservée sur cet appareil, tu peux fermer la page et revenir.</p>
+          </div>
+          <div class="ckl-count mono" id="cklCount"></div>
+        </div>
+        <div class="ckl-bar"><span id="cklFill"></span></div>
+        <div class="ckl-foot">
+          <span class="ckl-done-msg mono" id="cklDoneMsg">✓ Toutes les étapes sont faites — bonne installation.</span>
+          <button class="ckl-reset" id="cklReset" type="button">Réinitialiser la progression</button>
+        </div>
+      </section>
       ${os.steps.map((s, i) => `
-        <div class="step rv" style="--c:${os.color}">
+        <div class="step rv" style="--c:${os.color}" data-step="${i}">
           <div class="num disp">${String(i + 1).padStart(2, '0')}</div>
           <div>
             <h4 class="disp">${s.t}</h4>
             <p>${s.d}</p>
             ${s.code ? `<div class="code"><span>${s.code.replace(/</g, '&lt;')}</span><button class="copy" data-code="${encodeURIComponent(s.code)}">Copier</button></div>` : ''}
+            <label class="ckl-check">
+              <input type="checkbox" data-step-check="${i}" data-testid="step-check-${i}">
+              <span class="ckl-check-label">Étape terminée</span>
+            </label>
           </div>
         </div>`).join('')}
     </div>
@@ -118,6 +136,43 @@
       <a class="prev" href="os.html?id=${prev.id}"><span class="lbl">← Précédent</span>${prev.name}</a>
       <a class="next" href="os.html?id=${next.id}"><span class="lbl">Suivant →</span>${next.name}</a>
     </nav>`;
+
+  /* ============ checklist de progression ============ */
+  (function initChecklist() {
+    if (!window.StepProgress) return;
+    const total = os.steps.length;
+    const fill = document.getElementById('cklFill');
+    const countEl = document.getElementById('cklCount');
+    const panel = app.querySelector('.ckl-panel');
+    const boxes = Array.from(app.querySelectorAll('[data-step-check]'));
+
+    function sync() {
+      const done = window.StepProgress.get(os.id).filter((i) => i < total);
+      boxes.forEach((box) => {
+        const i = Number(box.dataset.stepCheck);
+        const isDone = done.includes(i);
+        box.checked = isDone;
+        box.closest('.step').classList.toggle('step-done', isDone);
+      });
+      const pct = total ? Math.round((done.length / total) * 100) : 0;
+      fill.style.width = pct + '%';
+      countEl.textContent = `${done.length} / ${total} étapes`;
+      panel.classList.toggle('ckl-complete', done.length === total && total > 0);
+      panel.classList.toggle('ckl-started', done.length > 0);
+    }
+
+    boxes.forEach((box) => box.addEventListener('change', () => {
+      window.StepProgress.toggle(os.id, Number(box.dataset.stepCheck));
+      sync();
+    }));
+
+    document.getElementById('cklReset').addEventListener('click', () => {
+      window.StepProgress.reset(os.id);
+      sync();
+    });
+
+    sync();
+  })();
 
   /* FAQ accordion */
   app.querySelectorAll('.faq-q').forEach((btn) => btn.addEventListener('click', () => {
