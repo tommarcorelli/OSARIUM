@@ -91,9 +91,16 @@ DATA.forEach((os, i) => {
       fail(id, `« dl » pointe un fichier plutôt qu'une page — figé sur une version (« ${os.dl} »)`);
     }
     const host = os.dl.split('/')[0].replace(/^www\./, '');
-    const base = (os.site || '').replace(/^www\./, '');
+    const base = (os.site || '').split('/')[0].replace(/^www\./, '');
     const tok = base.split('.')[0];
-    if (base && !(host.endsWith(base) || host.includes(tok))) {
+    /* Plusieurs projets distribuent officiellement depuis une forge (Athena OS,
+       Harvester, Bottlerocket, Inferno). On l'accepte, à condition que le
+       chemin nomme bien le projet — sinon n'importe quel dépôt passerait. */
+    const FORGES = ['github.com', 'gitlab.com', 'codeberg.org', 'sourceforge.net'];
+    const pathTok = os.dl.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const nameTok = (os.name || '').toLowerCase().split(/\s+/)[0].replace(/[^a-z0-9]/g, '');
+    const forgeOk = FORGES.includes(host) && (pathTok.includes(nameTok) || pathTok.includes(os.id));
+    if (base && !(host.endsWith(base) || host.includes(tok) || forgeOk)) {
       fail(id, `« dl » est sur un domaine étranger au projet (site : ${os.site}, dl : ${host})`);
     }
   }
@@ -223,6 +230,31 @@ TOOLS.forEach((t, i) => {
   toolIds.add(t.id);
 });
 
+/* ---------------- textes dupliqués (dérive de template) ---------------- */
+/* Les fiches historiques ont reçu une config et une FAQ générées par
+   catégorie. Il en restait des traces fausses : 22 fiches annonçaient
+   « temps de compilation important » alors qu'elles distribuent des binaires,
+   phrase copiée depuis Gentoo. Ce contrôle signale toute formulation partagée
+   par un nombre anormal de fiches, pour repérer la prochaine dérive. */
+const SEUIL_DUPLICATION = 8;
+const duplications = [];
+[['req.cpu', (o) => o.req && o.req.cpu],
+  ['req.ram', (o) => o.req && o.req.ram],
+  ['req.disk', (o) => o.req && o.req.disk],
+  ['tag', (o) => o.tag]].forEach(([champ, get]) => {
+  const counts = new Map();
+  DATA.forEach((o) => {
+    const v = get(o);
+    if (!v) return;
+    if (!counts.has(v)) counts.set(v, []);
+    counts.get(v).push(o.id);
+  });
+  [...counts.entries()]
+    .filter(([, ids]) => ids.length >= SEUIL_DUPLICATION)
+    .forEach(([v, ids]) => duplications.push({ champ, texte: v, ids }));
+});
+duplications.sort((a, b) => b.ids.length - a.ids.length);
+
 /* ---------------- sitemap ---------------- */
 /* On compare l'ensemble des URLs, pas le fichier entier : les <lastmod> sont
    dérivés de la date de modification des fichiers, que `git checkout` réécrit
@@ -275,6 +307,23 @@ console.log(`  ${catCounts}`);
 if (warnings.length) {
   console.log(`\n${warnings.length} avertissement(s) :`);
   warnings.forEach((w) => console.log(`  ~ ${w}`));
+}
+
+/* Inventaire séparé des avertissements : ces formulations partagées sont
+   approximatives, pas fausses — c'est la config générée par catégorie assumée
+   dans la roadmap. Les lister ici plutôt qu'en avertissements évite d'habituer
+   à ignorer une sortie bruyante, tout en gardant la dette visible.
+   Passer --dupes pour le détail. */
+if (duplications.length) {
+  const fiches = new Set(duplications.flatMap((d) => d.ids)).size;
+  console.log(`\nDette de template : ${duplications.length} formulations partagées par ${SEUIL_DUPLICATION} fiches ou plus (${fiches} fiches concernées).`);
+  console.log(`  Approximatif mais pas faux — config générée par catégorie, cf. roadmap. Détail : node scripts/validate-data.js --dupes`);
+  if (process.argv.includes('--dupes')) {
+    duplications.forEach((d) => {
+      console.log(`\n  ${d.ids.length}× ${d.champ} : « ${d.texte} »`);
+      console.log(`     ${d.ids.join(' ')}`);
+    });
+  }
 }
 
 if (errors.length) {

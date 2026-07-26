@@ -1120,7 +1120,7 @@ window.OS_DATA = [
     tag:"Config déclarative & reproductible. Ton système entier dans un seul fichier.",
     site:"nixos.org", dl:"nixos.org/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~25 min", diff:"Expert", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — paquets binaires récupérés depuis le cache officiel ; la compilation locale n'intervient que pour un paquet absent du cache"},
     steps:[
       {t:"Télécharger l'ISO", d:"nixos.org → ISO graphique (Calamares) ou minimal."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -1145,7 +1145,7 @@ window.OS_DATA = [
     tag:"Arch presque pur, avec un installeur. Le pont idéal vers le vanilla Arch.",
     site:"endeavouros.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"endeavouros.com → dernière ISO (Cassini/Galileo)."},
       {t:"Graver la clé", d:"balenaEtcher ou Ventoy."},
@@ -1170,7 +1170,7 @@ window.OS_DATA = [
     tag:"Indépendante, sans systemd. Runit + XBPS, rolling maîtrisée.",
     site:"voidlinux.org", dl:"voidlinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires via xbps (la compilation par xbps-src reste optionnelle)"},
     steps:[
       {t:"Télécharger l'ISO", d:"voidlinux.org → base (glibc ou musl) ou live avec DE."},
       {t:"Graver la clé", d:"dd de l'ISO hybride."},
@@ -1196,7 +1196,7 @@ window.OS_DATA = [
     tag:"Tout compiler depuis les sources. Optimisations chirurgicales, apprentissage total.",
     site:"gentoo.org", dl:"gentoo.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~2-6 h", diff:"Expert", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — système construit depuis les sources : prévoir un CPU rapide et plusieurs heures pour la compilation initiale"},
     steps:[
       {t:"Télécharger le stage3", d:"gentoo.org/downloads → ISO minimal + tarball stage3 selon l'archi."},
       {t:"Booter et partitionner", d:"Booter l'ISO, partitionner (parted), formater et monter /mnt/gentoo."},
@@ -1222,7 +1222,7 @@ window.OS_DATA = [
     tag:"La plus ancienne distribution encore active (1993). Unix-like, pas de dépendances auto.",
     site:"slackware.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires (les SlackBuilds, qui compilent, restent optionnels)"},
     steps:[
       {t:"Télécharger l'ISO", d:"slackware.com → miroir officiel, DVD complet."},
       {t:"Graver la clé", d:"dd de l'ISO."},
@@ -1249,7 +1249,7 @@ window.OS_DATA = [
     tag:"Arch Linux sans systemd. Choix entre OpenRC, runit ou s6 comme init.",
     site:"artixlinux.org", dl:"artixlinux.org/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"artixlinux.org/download.php → variante base (OpenRC, runit, s6, dinit)."},
       {t:"Graver la clé", d:"dd de l'ISO sur la clé USB.", code:"dd if=artix.iso of=/dev/sdX bs=4M status=progress"},
@@ -1576,14 +1576,14 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"peppermint", name:"Peppermint OS", version:"Debian Edition 2", cat:"lightweight", color:"#D6234A", icon:null,
+    id:"peppermint", name:"Peppermint OS", version:"Debian Edition (base Trixie)", cat:"lightweight", color:"#D6234A", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#D6234A" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#D6234A">Pm</text></svg>',
     tag:"Xfce léger orienté cloud/apps web, taillé pour les machines modestes.",
-    site:"peppermintos.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"peppermintos.com", dl:"peppermintos.com/trixie-base-downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"peppermintos.com/guide/install → édition Debian (Bookworm)."},
+      {t:"Télécharger l'ISO", d:"peppermintos.com/trixie-base-downloads → édition Debian (base Trixie). Une édition Devuan (Excalibur) est également publiée, pour un système sans systemd."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
       {t:"Live", d:"Tester le bureau Xfce minimaliste avant d'installer."},
       {t:"Calamares", d:"Lancer l'installeur graphique Calamares."},
@@ -1678,7 +1678,7 @@ window.OS_DATA = [
     id:"lakka", name:"Lakka", version:"5.0", cat:"gaming", color:"#00ADEF", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#00ADEF" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#00ADEF">Lk</text></svg>',
     tag:"« Linux-libretro » : distribution minimaliste entièrement bâtie autour de RetroArch.",
-    site:"lakka.tv", dl:"lakka.tv/disclaimer", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"lakka.tv", dl:"www.lakka.tv/get", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Linux",
     req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
     steps:[
@@ -1732,7 +1732,7 @@ window.OS_DATA = [
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"clearos.com/downloads → édition Community."},
+      {t:"Télécharger l'ISO", d:"clearos.com → bouton « Free Download » de la page d'accueil, édition Community. Le projet ne publie plus de page de téléchargement dédiée."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
       {t:"Installeur texte", d:"Partitionnement automatique conseillé pour débuter."},
       {t:"Assistant Marketplace", d:"Choisir les modules à activer (pare-feu, proxy, antivirus…)."},
@@ -1805,7 +1805,7 @@ window.OS_DATA = [
     tag:"Fedora immuable façon image atomique (rpm-ostree). Rollbacks natifs, apps en Flatpak.",
     site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/silverblue", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"fedoraproject.org/atomic-desktops/silverblue → image officielle."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -1831,7 +1831,7 @@ window.OS_DATA = [
     tag:"Distro expérimentale musl/LLVM avec un userland BSD (dinit, bmake). Ni GNU ni systemd.",
     site:"chimera-linux.org", dl:"chimera-linux.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"chimera-linux.org/downloads → image bootstrap."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -1907,11 +1907,11 @@ window.OS_DATA = [
     id:"vyos", name:"VyOS", version:"1.5 Circinus", cat:"network", color:"#00B39F", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#00B39F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#00B39F">Vy</text></svg>',
     tag:"Routeur/pare-feu open source « as code », CLI façon Cisco/Juniper, config versionnable.",
-    site:"vyos.io", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"vyos.io", dl:"vyos.net/get/nightly-builds", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
     steps:[
-      {t:"Télécharger l'image", d:"vyos.io/downloads → build LTS (compte communautaire gratuit)."},
+      {t:"Télécharger l'image", d:"vyos.net/get/nightly-builds → build rolling, librement téléchargeable. Les images LTS ne sont plus distribuées gratuitement : elles passent par un abonnement (vyos.io/subscriptions/software). Le code source reste libre, une image LTS peut donc aussi être compilée soi-même."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
       {t:"Live puis install", d:"Se connecter (vyos/vyos), lancer l'installeur.", code:"install image"},
       {t:"Configuration", d:"Entrer en mode config et définir les interfaces réseau.", code:"configure\nset interfaces ethernet eth0 address dhcp"},
@@ -2188,11 +2188,11 @@ window.OS_DATA = [
     id:"athenaos", name:"Athena OS", version:"25.0", cat:"security", color:"#C0392B", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#C0392B" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#C0392B">At</text></svg>',
     tag:"Distro pentest basée sur Arch, orientée personnalisation (BlackArch/Kali repos en option).",
-    site:"athenaos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"athenaos.org", dl:"github.com/Athena-OS/athena/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Arch",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"athenaos.org/en/download → image ISO officielle."},
+      {t:"Télécharger l'ISO", d:"github.com/Athena-OS/athena/releases → image ISO officielle de la dernière version publiée."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
       {t:"Live", d:"Booter en live, environnement Hyprland ou KDE selon l'édition."},
       {t:"Installer", d:"Lancer l'installeur graphique (Calamares)."},
@@ -2289,11 +2289,11 @@ window.OS_DATA = [
     id:"bunsenlabs", name:"BunsenLabs", version:"Boron", cat:"lightweight", color:"#2C9F9F", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2C9F9F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2C9F9F">Bl</text></svg>',
     tag:"Successeur communautaire de CrunchBang. Openbox minimaliste sur base Debian, très clavier-friendly.",
-    site:"bunsenlabs.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"www.bunsenlabs.org", dl:"www.bunsenlabs.org/installation.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"bunsenlabs.org/installation.html → dernière version stable."},
+      {t:"Télécharger l'ISO", d:"www.bunsenlabs.org/installation.html → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
       {t:"Live", d:"Booter en live, environnement Openbox + tint2."},
       {t:"Installer", d:"Lancer Calamares depuis le menu conky/raccourci bureau."},
@@ -2316,7 +2316,7 @@ window.OS_DATA = [
     tag:"Équivalent KDE Plasma de Silverblue : bureau immuable, mises à jour atomiques, Flatpak par défaut.",
     site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/kinoite", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"fedoraproject.org/atomic-desktops/kinoite → image officielle."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -2342,7 +2342,7 @@ window.OS_DATA = [
     tag:"Fork de Debian sans systemd (init sysvinit/OpenRC/runit au choix). Pour les puristes Unix.",
     site:"devuan.org", dl:"devuan.org/os/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"devuan.org/os/download → netinstall ou live desktop."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -2368,7 +2368,7 @@ window.OS_DATA = [
     tag:"Distro GNU 100% libre, configuration déclarative en Scheme, rollbacks transactionnels façon NixOS.",
     site:"gnu.org", dl:"guix.gnu.org/en/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — paquets binaires récupérés depuis le cache officiel ; la compilation locale n'intervient que pour un paquet absent du cache"},
     steps:[
       {t:"Télécharger l'ISO", d:"guix.gnu.org/en/download → image d'installation officielle."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -2392,11 +2392,11 @@ window.OS_DATA = [
     id:"hardenedbsd", name:"HardenedBSD", version:"14-STABLE", cat:"bsd", color:"#7A1F1F", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#7A1F1F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#7A1F1F">Hb</text></svg>',
     tag:"Fork de FreeBSD axé exploit mitigation (ASLR, PIE partout, durcissement du noyau par défaut).",
-    site:"hardenedbsd.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"hardenedbsd.org", dl:"installers.hardenedbsd.org/pub", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"FreeBSD",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
-      {t:"Télécharger l'image", d:"hardenedbsd.org/pages/download.html → image d'installation."},
+      {t:"Télécharger l'image", d:"installers.hardenedbsd.org/pub → builds officiels, branche 15-stable ou current."},
       {t:"Graver la clé", d:"dd depuis un terminal Unix."},
       {t:"bsdinstall", d:"Suivre les étapes texte : disque (ZFS conseillé), réseau, utilisateur."},
       {t:"Vérification", d:"Les protections mémoire sont actives par défaut dès le premier boot."},
@@ -2444,11 +2444,11 @@ window.OS_DATA = [
     id:"aros", name:"AROS", version:"20240601", cat:"retro", color:"#E2231A", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E2231A" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E2231A">Ar</text></svg>',
     tag:"Réimplémentation libre d'AmigaOS 3.x, compatible avec de nombreux logiciels Amiga d'origine.",
-    site:"sourceforge.io", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"aros.sourceforge.io", dl:"aros.sourceforge.io/download.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"AmigaOS",
     req:{ram:"512 Mo min.", disk:"1 Go", cpu:"x86 (build ABIv0) — matériel ancien ou récent en VM"},
     steps:[
-      {t:"Télécharger l'image", d:"aros.sourceforge.io/download.php → édition x86 « Live/Install »."},
+      {t:"Télécharger l'image", d:"aros.sourceforge.io/download.html → édition x86 « Live/Install »."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
       {t:"Live", d:"Booter et découvrir le Workbench (interface historique Amiga)."},
       {t:"Installer", d:"Lancer l'icône d'installation depuis le bureau live."},
@@ -2468,7 +2468,7 @@ window.OS_DATA = [
     id:"templeos", name:"TempleOS", version:"5.03", cat:"alt", color:"#FFD700", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#FFD700" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#FFD700">Tp</text></svg>',
     tag:"OS 64 bits écrit seul par Terry A. Davis, en HolyC, avec compilateur/EDL/3D intégrés. Curiosité historique de l'informatique DIY.",
-    site:"templeos.org", dl:"templeos.org/Downloads", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"templeos.org", dl:"templeos.org/Downloads/", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~5 min", diff:"Intermédiaire", base:"—",
     req:{ram:"2-4 Go selon le projet", disk:"8-16 Go d'espace disque", cpu:"x86_64 standard"},
     steps:[
@@ -2697,11 +2697,11 @@ window.OS_DATA = [
     id:"regolith", name:"Regolith Linux", version:"3.1", cat:"desktop", color:"#E64A19", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E64A19" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E64A19">Rg</text></svg>',
     tag:"Ubuntu avec un gestionnaire de fenêtres en tuiles (i3/Sway) préconfiguré, pour les claviéristes.",
-    site:"regolith-desktop.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"regolith-desktop.com", dl:"regolith-desktop.com/docs/using-regolith/install", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"regolith-desktop.com/docs/install → image ISO officielle."},
+      {t:"Télécharger l'ISO", d:"regolith-desktop.com/docs/using-regolith/install → procédure officielle (dépôt à ajouter sur une Ubuntu/Debian existante, ou image ISO)."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
       {t:"Live", d:"Booter en live, se familiariser avec les raccourcis i3wm (Super+…)."},
       {t:"Installer", d:"Installeur Ubuntu standard."},
@@ -2774,11 +2774,11 @@ window.OS_DATA = [
     id:"harvester", name:"Harvester", version:"1.3", cat:"server", color:"#0075A8", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#0075A8" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#0075A8">Hv</text></svg>',
     tag:"Plateforme hyperconvergée open source (KubeVirt + Kubernetes) par SUSE/Rancher, pour VM et conteneurs.",
-    site:"harvesterhci.io", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"harvesterhci.io", dl:"github.com/harvester/harvester/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"openSUSE",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"harvesterhci.io/download → image d'installation officielle."},
+      {t:"Télécharger l'ISO", d:"github.com/harvester/harvester/releases → image ISO d'installation de la dernière version."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
       {t:"Installeur", d:"Choisir « Create a new Harvester cluster » sur le premier nœud."},
       {t:"Réseau de gestion", d:"Définir une VIP (IP virtuelle) pour accéder au tableau de bord."},
@@ -2882,7 +2882,7 @@ window.OS_DATA = [
     time:"~15 min", diff:"Intermédiaire", base:"Slackware",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"absolutelinux.org/download.html → dernière version stable."},
+      {t:"Télécharger l'ISO", d:"Attention : absolutelinux.org n'affiche plus qu'une page « Returning! » depuis sa reprise par eXybit Technologies, sans image téléchargeable. Aucune version n'est distribuée officiellement pour l'instant — vérifier l'état du projet avant de compter dessus."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
       {t:"Installeur texte", d:"Suivre les étapes façon Slackware : disque, paquets, LILO/GRUB."},
       {t:"Premier boot", d:"Bureau IceWM léger, prêt à l'emploi."},
@@ -2930,7 +2930,7 @@ window.OS_DATA = [
     tag:"Distro source-based minimaliste, gestionnaire de ports façon BSD, pour puristes du « fait main ».",
     site:"crux.nu", dl:"crux.nu/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — système construit depuis les sources : prévoir un CPU rapide et plusieurs heures pour la compilation initiale"},
     steps:[
       {t:"Télécharger l'ISO", d:"crux.nu/Download → image d'installation amd64."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -2956,7 +2956,7 @@ window.OS_DATA = [
     tag:"Bureau GNOME immuable du projet Universal Blue, basé sur Fedora Atomic, orienté dev/cloud-native.",
     site:"projectbluefin.io", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"projectbluefin.io → image ISO ou installeur web."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -2981,7 +2981,7 @@ window.OS_DATA = [
     tag:"Équivalent KDE Plasma de Bluefin (Universal Blue) : bureau immuable, mises à jour atomiques.",
     site:"getaurora.de", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"getaurora.dev → image ISO ou installeur web."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -3006,7 +3006,7 @@ window.OS_DATA = [
     tag:"openSUSE immuable en transactions atomiques (transactional-update), pensée conteneurs et edge.",
     site:"opensuse.org", dl:"get.opensuse.org/microos", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"openSUSE",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"get.opensuse.org/microos → édition Desktop (GNOME/KDE) ou serveur."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3133,11 +3133,11 @@ window.OS_DATA = [
     id:"inferno", name:"Inferno", version:"20240202", cat:"alt", color:"#D35400", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#D35400" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#D35400">In</text></svg>',
     tag:"Successeur spirituel de Plan 9 par les mêmes équipes Bell Labs, exécuté nativement ou hébergé sur un autre OS.",
-    site:"vitanuova.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"github.com/inferno-os/inferno-os", dl:"github.com/inferno-os/inferno-os/blob/master/INSTALL", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"Plan 9",
     req:{ram:"2-4 Go selon le projet", disk:"8-16 Go d'espace disque", cpu:"x86_64 standard"},
     steps:[
-      {t:"Télécharger l'archive", d:"vitanuova.com/inferno → distribution hébergée (Linux/Windows/macOS) ou native."},
+      {t:"Télécharger l'archive", d:"github.com/inferno-os/inferno-os → sources de la distribution, hébergée (Linux/Windows/macOS) ou native. Le site historique vitanuova.com n'est plus en ligne."},
       {t:"Installer (hébergé)", d:"Décompresser et lancer emu, l'émulateur qui exécute Inferno dans l'OS hôte."},
       {t:"Native (optionnel)", d:"Graver l'image native sur clé avec dd pour un boot direct sur x86."},
       {t:"Limbo", d:"Découvrir le langage Limbo, conçu spécifiquement pour Inferno."},
@@ -3210,11 +3210,11 @@ window.OS_DATA = [
     id:"bottlerocket", name:"Bottlerocket", version:"1.x", cat:"container", color:"#FF9900", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#FF9900" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#FF9900">Br</text></svg>',
     tag:"OS minimal orienté conteneurs porté par AWS, pensé pour EKS/ECS, sans shell ni gestionnaire de paquets classique.",
-    site:"github.io", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"bottlerocket.dev", dl:"github.com/bottlerocket-os/bottlerocket/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"Linux",
     req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
-      {t:"Choisir la variante", d:"aws.github.io/bottlerocket → image adaptée (EKS, ECS, VMware, bare metal)."},
+      {t:"Choisir la variante", d:"bottlerocket.dev → choisir la variante adaptée (EKS, ECS, VMware, bare metal). Images et notes de version : github.com/bottlerocket-os/bottlerocket/releases."},
       {t:"Déployer l'image", d:"Sur AWS, lancer via AMI Bottlerocket dans un Auto Scaling Group ou nodegroup EKS."},
       {t:"Configuration utilisateur", d:"Fournir un user-data TOML décrivant réseau et paramètres kubelet."},
       {t:"Accès admin", d:"Passer par le conteneur « admin container » plutôt qu'un shell SSH classique."},
@@ -3237,7 +3237,7 @@ window.OS_DATA = [
     id:"raspios", name:"Raspberry Pi OS", version:"Bookworm", cat:"lightweight", color:"#C51A4A", icon:"raspberrypi",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#C51A4A"><path d="m19.8955 10.8961-.1726-.3028c.0068-2.1746-1.0022-3.061-2.1788-3.7348.356-.0938.7237-.1711.8245-.6182.6118-.1566.7397-.4398.8011-.7398.16-.1066.6955-.4061.6394-.9211.2998-.2069.4669-.4725.3819-.8487.3222-.3515.407-.6419.2702-.9096.3868-.4805.2152-.7295.05-.9817.2897-.5254.0341-1.0887-.7758-.9944-.3221-.4733-1.0244-.3659-1.133-.3637-.1215-.1519-.2819-.2821-.7755-.219-.3197-.2851-.6771-.2364-1.0458-.0964-.4378-.3403-.7275-.0675-1.0584.0356-.53-.1706-.6513.0631-.9117.1583-.5781-.1203-.7538.1416-1.0309.4182l-.3224-.0063c-.8719.5061-1.305 1.5366-1.4585 2.0664-.1536-.5299-.5858-1.5604-1.4575-2.0664l-.3223.0063C9.942.5014 9.7663.2394 9.1883.3597 8.9279.2646 8.807.0309 8.2766.2015c-.2172-.0677-.417-.2084-.6522-.2012l.0004.0002C7.5017.0041 7.369.049 7.2185.166c-.3688-.1401-.7262-.1887-1.0459.0964-.4936-.0631-.654.0671-.7756.219C5.2887.4791 4.5862.3717 4.264.845c-.8096-.0943-1.0655.4691-.7756.9944-.1653.2521-.3366.5013.05.9819-.1367.2677-.0519.5581.2703.9096-.085.3763.0822.6418.3819.8487-.0561.515.4795.8144.6394.9211.0614.3001.1894.5832.8011.7398.1008.4472.4685.5244.8245.6183-1.1766.6737-2.1856 1.56-2.1788 3.7348l-.1724.3028c-1.3491.8082-2.5629 3.4056-.6648 5.5167.124.6609.3319 1.1355.5171 1.6609.2769 2.117 2.0841 3.1082 2.5608 3.2255.6984.524 1.4423 1.0212 2.449 1.3696.949.964 1.977 1.3314 3.0107 1.3308.0152 0 .0306.0002.0457 0 1.0337.0006 2.0618-.3668 3.0107-1.3308 1.0067-.3483 1.7506-.8456 2.4491-1.3696.4766-.1173 2.2838-1.1085 2.5607-3.2255.1851-.5253.3931-1 .517-1.6609 1.8981-2.1113.6843-4.7089-.6649-5.517zm-1.0386-.3715c-.0704.8759-4.6354-3.0504-3.8472-3.1808 2.1391-.3558 3.9191.896 3.8472 3.1808zm-2.0155 4.3649c-1.1481.7409-2.8025.2626-3.6953-1.0681-.8928-1.3306-.6858-3.0101.4623-3.7509 1.1481-.7409 2.8025-.2627 3.6953 1.068.8927 1.3307.6858 3.0101-.4623 3.751zM13.6591 1.3721c.0396.1967.0843.321.1354.3577.2537-.272.4611-.5506.7878-.8123.0011.1537-.0776.3205.1169.4425.1752-.2356.4119-.4459.7263-.6244-.1514.2611-.026.3404.0554.4486.24-.2059.4681-.4144.9109-.5759-.121.1474-.2902.2914-.1108.4607.2473-.1544.496-.3086 1.0833-.4183-.1323.1475-.4059.295-.2401.4426.3104-.1186.6539-.2047 1.034-.2546-.182.1496-.3337.2963-.1846.4122.3323-.1022.7899-.2398 1.2372-.1212l-.2832.2849c-.0314.0382.6623.0297 1.1202.0364-.167.2321-.3375.4562-.437.8548.0454.0459.2723.0204.4862 0-.2194.4618-.6004.5783-.6893.776.134.1015.32.075.5232.006-.158.3254-.4892.5484-.7509.8123.0662.047.1818.075.4555.0425-.2418.257-.5339.492-.8802.7032.0614.0708.2722.0681.4678.0727-.3136.3069-.7173.466-1.0955.6668.1885.1288.3234.0988.4678.097-.2676.2198-.7225.3342-1.1448.4668.0803.1249.1607.1589.3324.194-.447.2473-1.0873.1343-1.2679.2607.0435.1243.1665.2053.3139.2728-.7197.0418-2.6879-.0262-3.0652-1.5156.7367-.8094 2.0813-1.7593 4.394-2.934-1.7994.6022-3.4229 1.405-4.7817 2.5096-1.5978-.7436-.4965-2.6197.283-3.3645zm-1.6126 5.3718c1.1329-.0123 2.5356.8325 2.53 1.6286-.005.7027-.9851 1.2715-2.5213 1.2607-1.5043-.0177-2.5172-.7148-2.5137-1.3957.003-.5603 1.2282-1.5263 2.505-1.4936zm-5.7646-.6006c.1717-.0351.252-.0692.3323-.194-.4223-.1327-.8772-.247-1.1448-.4668.1444.0018.2792.0318.4678-.097-.3783-.2008-.782-.3599-1.0956-.6668.1955-.0048.4064-.002.4677-.0728-.3462-.2113-.6383-.4463-.8801-.7033.2738.0325.3893.0045.4555-.0425-.2617-.264-.593-.487-.7509-.8123.2032.069.3892.0954.5232-.006-.089-.1977-.47-.3142-.6894-.776.214.0204.4409.0459.4863 0-.0994-.3985-.2698-.6226-.4369-.8547.4579-.0067 1.1516.0018 1.1202-.0364l-.2831-.2849c.4472-.1186.9049.019 1.2371.1213.1492-.1159-.0026-.2626-.1847-.4123.3801.05.7236.1361 1.034.2547.1659-.1476-.1076-.2951-.24-.4426.5872.1097.8361.2639 1.0833.4183.1794-.1694.0103-.3133-.1108-.4607.4428.1615.6709.37.911.5759.0814-.1082.2068-.1875.0554-.4486.3143.1785.5511.3888.7263.6244.1945-.122.1159-.2888.1169-.4426.3267.2618.534.5404.7879.8124.0511-.0366.0959-.161.1354-.3577.7794.7448 1.8807 2.6208.2831 3.3646-1.3589-1.1039-2.9817-1.9064-4.78-2.5086 2.3115 1.174 3.6556 2.1239 4.392 2.9328-.3773 1.4895-2.3455 1.5575-3.0651 1.5157.1473-.0676.2703-.1485.3139-.2728-.1806-.1264-.8209-.0134-1.2679-.2607zm2.8175 1.1334c.7881.1304-3.7769 4.0567-3.8472 3.1809-.0719-2.2846 1.7079-3.5367 3.8472-3.1809zm-4.847 8.7567c-1.1094-.8789-1.4668-3.4529.5901-4.6097 1.2394-.3273.4184 5.051-.5901 4.6097zm4.2656 4.5989c-.6257.3719-2.1452.2187-3.2252-1.3095-.7283-1.2823-.6345-2.5872-.123-2.9705.7648-.4589 1.9464.1609 2.8559 1.2003.7923.9405 1.1536 2.5927.4923 3.0797zm-1.2415-5.6086c-1.1481-.7409-1.3551-2.4203-.4623-3.7511.8928-1.3307 2.5472-1.8089 3.6952-1.068 1.1481.7409 1.3551 2.4203.4623 3.7509-.8926 1.3308-2.5471 1.809-3.6952 1.0682zm4.7948 8.2279c-1.3763.0584-2.7258-1.1105-2.7081-1.5157-.0206-.594 1.6758-1.0578 2.782-1.0306 1.1131-.0479 2.6068.3531 2.6097.8851.0184.5166-1.3547 1.6838-2.6836 1.6612zm2.7584-5.8578c.0081 1.3899-1.226 2.5225-2.7562 2.5299-1.5302.0073-2.7773-1.1135-2.7854-2.5033v-.0265c-.008-1.3899 1.2259-2.5226 2.7562-2.5299 1.5302-.0073 2.7773 1.1134 2.7853 2.5033a.7794.7794 0 0 1 .0001.0265zm3.855 2.0029c-1.186 1.6208-2.7916 1.684-3.3896 1.2325-.6255-.5811-.148-2.3854.7094-3.3747v-.0003c.9812-1.0912 2.0302-1.8037 2.7609-1.2469.4919.4828.7805 2.3008-.0807 3.3894zm1.0724-3.4301c-1.0086.4413-1.8298-4.9372-.5901-4.61 2.0568 1.1569 1.6994 3.731.5901 4.61zm-.0256-8.3279h.2985v-.5304h.2986c.1502 0 .2053.0624.2262.2052.0152.1088.0113.2395.0477.3253h.2984c-.0533-.0763-.0515-.2358-.0571-.3213-.0097-.1373-.0513-.2796-.1977-.3176v-.0037c.1502-.061.2149-.1807.2149-.341 0-.2048-.1539-.3738-.3974-.3738h-.732v1.3573zm.2985-1.1255h.3269c.1333 0 .2054.0573.2054.188 0 .1369-.0721.1942-.2054.1942H20.03v-.3822zm-1.0337.4633c0 .7009.5682 1.2694 1.2695 1.2694s1.2695-.5684 1.2695-1.2694c0-.7013-.5683-1.2697-1.2695-1.2697-.7013 0-1.2695.5684-1.2695 1.2697zm2.3275 0c0 .5845-.4737 1.058-1.058 1.058s-1.058-.4735-1.058-1.058c0-.5849.4737-1.058 1.058-1.058s1.058.4731 1.058 1.058z"/></svg>',
     tag:"L'OS officiel du Raspberry Pi. Debian allégé, taillé pour les cartes ARM.",
-    site:"raspberrypi.com", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"raspberrypi.com", dl:"www.raspberrypi.com/software", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~8 min", diff:"Facile", base:"Debian",
     req:{ram:"1 Go min. (2-8 Go selon le modèle de Raspberry Pi)", disk:"8 Go de carte microSD min. (16-32 Go conseillés)", cpu:"Carte Raspberry Pi (Zero à 5) — pas un PC x86 classique"},
     steps:[
@@ -3359,7 +3359,7 @@ window.OS_DATA = [
     tag:"La rolling release d'openSUSE : toujours à jour, testée par openQA.",
     site:"opensuse.org", dl:"get.opensuse.org/tumbleweed", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"get.opensuse.org/tumbleweed → DVD complet."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3429,7 +3429,7 @@ window.OS_DATA = [
     tag:"OS immuable sur base Debian sid, transactions atomiques (ABRoot) et conteneurs.",
     site:"vanillaos.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"vanillaos.org → dernière image stable."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3453,7 +3453,7 @@ window.OS_DATA = [
     tag:"Arch immuable qui fait tourner apps Arch, Fedora, Ubuntu et Android côte à côte.",
     site:"blendos.co", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"blendos.co → dernière image."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3473,13 +3473,13 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"clearlinux", name:"Clear Linux OS", version:"rolling", cat:"advanced", color:"#0071C5", icon:null,
-    tag:"Distribution Intel optimisée pour la performance x86. Bundles au lieu de paquets.",
-    site:"clearlinux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    id:"clearlinux", name:"Clear Linux OS", version:"arrêtée (2025)", cat:"advanced", color:"#0071C5", icon:null,
+    tag:"Distribution Intel optimisée pour la performance x86, bundles au lieu de paquets — arrêtée par Intel en 2025, plus aucune mise à jour.",
+    site:"github.com/clearlinux", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 avec AVX2 recommandé — bundles binaires précompilés via swupd, optimisés pour les processeurs Intel récents"},
     steps:[
-      {t:"Télécharger l'image", d:"clearlinux.org/downloads → image live server ou desktop."},
+      {t:"Télécharger l'image", d:"Projet arrêté : Intel a annoncé la fin de Clear Linux OS en 2025, clearlinux.org ne répond plus et le dépôt est archivé depuis août 2025. Aucune image officielle n'est plus distribuée ni mise à jour — fiche conservée à titre documentaire, à ne pas installer sur une machine en usage réel."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
       {t:"Installeur", d:"clr-installer en TUI ou GUI : disque, télémétrie (optionnelle)."},
       {t:"swupd", d:"Gérer les bundles logiciels.", code:"sudo swupd bundle-add <bundle>"}
@@ -3593,7 +3593,7 @@ window.OS_DATA = [
     tag:"Distribution 100% libre approuvée par la FSF. Aucun blob propriétaire.",
     site:"trisquel.info", dl:"trisquel.info/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"trisquel.info/download → édition standard (MATE) ou Sugar/Mini."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3616,7 +3616,7 @@ window.OS_DATA = [
     tag:"Arch entièrement libre (FSF). Rolling, noyau Linux-libre, dépôts nettoyés.",
     site:"parabola.nu", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~40 min", diff:"Expert", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"parabola.nu → image de base ou LXDE live."},
       {t:"Graver la clé", d:"dd de l'image hybride."},
@@ -3639,7 +3639,7 @@ window.OS_DATA = [
     tag:"Distro libre stable (ex-Arch, en migration vers un noyau BSD). Puriste et minimaliste.",
     site:"hyperbola.info", dl:"www.hyperbola.info/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Expert", base:"Arch / BSD",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"hyperbola.info → dernière image."},
       {t:"Graver la clé", d:"dd de l'ISO."},
@@ -4140,13 +4140,13 @@ window.OS_DATA = [
   {
     id:"asahi", name:"Asahi Linux (Fedora Remix)", version:"Fedora Asahi Remix 44", cat:"desktop", color:"#8B5CF6", icon:null,
     tag:"Portage Linux pour Mac Apple Silicon, distribué officiellement comme Fedora Asahi Remix depuis l'adoption du projet par Fedora.",
-    site:"asahilinux.org", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"asahilinux.org", dl:"asahilinux.org/fedora", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~45 min", diff:"Avancé", base:"Fedora",
     req:{ram:"8 Go min. (16 Go conseillés)", disk:"50 Go d'espace libre min. sur le SSD interne (l'installeur réserve aussi une marge pour macOS)", cpu:"Mac Apple Silicon M1 ou M2 uniquement (M3/M4/M5 pas encore pleinement supportés)"},
     steps:[
       {t:"Vérifier la compatibilité de la puce", d:"Liste à jour sur asahilinux.org : M1/M2 pleinement supportés (MacBook, Mac mini, Mac Studio, iMac, et Mac Pro depuis peu), M3 et plus récents pas encore."},
       {t:"Libérer de l'espace sous macOS", d:"Au moins 50 Go, en purgeant si besoin les snapshots Time Machine locaux qui grignotent l'espace « libre » apparent."},
-      {t:"Lancer l'installateur depuis le Terminal macOS", d:"Une seule commande (fournie sur asahilinux.org/install) télécharge et exécute l'installateur, sans clé USB externe."},
+      {t:"Lancer l'installateur depuis le Terminal macOS", d:"Une seule commande (fournie sur asahilinux.org/fedora) télécharge et exécute l'installateur, sans clé USB externe."},
       {t:"Choisir la variante (Plasma ou GNOME) et valider le partitionnement", d:"L'installateur redimensionne le volume macOS à chaud et crée un nouveau volume pour Linux, sans supprimer macOS."},
       {t:"Premier démarrage", d:"Maintenir le bouton d'alimentation au démarrage pour choisir entre macOS et Fedora Asahi Remix."}
     ],
