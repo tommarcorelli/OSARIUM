@@ -2,6 +2,18 @@
 
 *Dernière mise à jour : juillet 2026*
 
+## ✅ Fait (cette session — contenu : téléchargements, outils, recherche)
+
+- **Lien de téléchargement vérifié sur 104 fiches** (nouveau champ `dl`, bouton dans l'en-tête de la fiche). L'étape 1 de chaque guide disait « télécharger l'ISO » sans que rien ne soit cliquable. **Aucune URL n'a été inventée** : elles viennent soit du texte des guides lui-même (63), soit du lien que le site officiel étiquette « Download » sur sa propre page d'accueil (41), et toutes ont été confirmées en HTTP (200 + contenu de téléchargement dans la page d'arrivée).
+  - Une première approche par sondage de chemins conventionnels (`/download`, `/downloads`…) a été **abandonnée** : elle « validait » `kde.org/download` pour KDE neon et `microsoft.com/download` pour Windows Server, des pages génériques. Un 200 ne prouve pas qu'on est sur la bonne page ; un mauvais lien de téléchargement est pire que pas de lien.
+  - Filtres de rejet appliqués aux découvertes : fichier direct figé sur une version (Debian pointait un `.iso` numéroté, elementary une URL à jeton à usage unique, EndeavourOS un miroir sud-africain), et libellés trop génériques (« Get Started » de Proxmox, Unraid, Harvester ; « Get Involved » de Linux Mint). 8 candidats écartés à ce titre.
+  - Les 66 fiches restantes n'ont pas de bouton : leur page de téléchargement n'a pas pu être établie avec certitude. La pastille « Site officiel » reste là.
+- **URLs mortes trouvées dans le contenu existant** — la vérification a révélé que plusieurs guides citaient des pages qui répondent 404. Corrigées avec la page actuelle du même projet, vérifiée : Q4OS, Chimera Linux, OpenIndiana, Redox, Univention UCS, Pentoo, OpenMandriva. **SystemRescue citait carrément un domaine inexistant** (`sysrescue.org` au lieu de `www.system-rescue.org`) — champ `site` et texte corrigés.
+  - **Restent à traiter** (404 ou domaine injoignable, sans remplaçante établie avec certitude) : Peppermint, ClearOS, Athena OS, HardenedBSD, Regolith, Harvester, Absolute Linux, Bottlerocket, Asahi Linux, Inferno, BunsenLabs, Clear Linux. Ce dernier ne répond plus du tout — à vérifier, Intel ayant arrêté le projet.
+  - Trois autres (VyOS, AROS, Raspberry Pi OS) renvoient 403 à un client non-navigateur : leurs URLs sont probablement bonnes, simplement protégées contre les robots.
+- **+4 outils de préparation** (4 → 8), chacun couvrant un manque réel du catalogue plutôt qu'un doublon : **Raspberry Pi Imager** (tout ce qui démarre sur carte ARM — LibreELEC, Batocera, RecalBox, OpenWrt — et la pré-configuration SSH/Wi-Fi avant le premier boot), **la commande dd** (déjà citée dans de nombreuses fiches, seule méthode disponible en SSH sur une machine sans écran), **Media Creation Tool** (voie officielle Microsoft) et **Fedora Media Writer** (les 11 fiches de la famille Fedora). Champ `mono` ajouté pour forcer le monogramme quand l'initiale du nom ne veut rien dire (« La commande dd » donnait un « L »).
+- **Recherche étendue au contenu des guides** — elle ne couvrait que nom, description, base et catégorie. Chercher « TPM », « Secure Boot » ou « chiffrement » ne remontait rien alors que ces termes sont écrits dans les étapes, les erreurs fréquentes et les FAQ. Index construit une fois au chargement, en deux niveaux : une correspondance en surface passe devant une correspondance au fond d'un guide, et cette dernière est signalée par un badge « ≡ Trouvé dans le guide » — sinon la carte semble arriver sans raison. Mesuré : « TPM » 0 → 4 résultats, « Secure Boot » 0 → 34, « chiffrement » 0 → 4.
+
 ## ✅ Fait (cette session — correctifs + liens partageables + checklist)
 
 **Correctifs (bugs trouvés à l'audit, pas demandés)**

@@ -112,6 +112,10 @@
     <a class="tool rv" href="tool.html?id=etcher" data-testid="tool-card-etcher"><div class="ti">02 // GRAVEUR</div><h4>balenaEtcher</h4><p>Multiplateforme, interface minimale : ISO → clé → graver. Trois clics.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
     <a class="tool rv" href="tool.html?id=ventoy" data-testid="tool-card-ventoy"><div class="ti">03 // MULTI-BOOT</div><h4>Ventoy</h4><p>Installé une fois, copie plusieurs ISO sur la clé et choisit au démarrage.</p><span class="tag">Multi-boot</span><span class="tgo">Voir le guide →</span></a>
     <a class="tool rv" href="tool.html?id=checksum" data-testid="tool-card-checksum"><div class="ti">04 // SÉCURITÉ</div><h4>Checksum</h4><p>Comparer le SHA-256 de l'ISO avec celui du site officiel avant de graver.</p><span class="tag">Vérification</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=rpi-imager" data-testid="tool-card-rpi-imager"><div class="ti">05 // CARTE SD</div><h4>Raspberry Pi Imager</h4><p>Pour les cartes ARM. Configure SSH, Wi-Fi et compte avant le premier boot.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=dd" data-testid="tool-card-dd"><div class="ti">06 // TERMINAL</div><h4>La commande dd</h4><p>Présente d'origine sur tout Unix. Aucun garde-fou : écrit où on lui dit.</p><span class="tag">macOS · Linux · BSD</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=mediacreationtool" data-testid="tool-card-mediacreationtool"><div class="ti">07 // OFFICIEL</div><h4>Media Creation Tool</h4><p>Télécharge Windows chez Microsoft et prépare la clé dans la foulée.</p><span class="tag">Windows</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=fedora-media-writer" data-testid="tool-card-fedora-media-writer"><div class="ti">08 // OFFICIEL</div><h4>Fedora Media Writer</h4><p>Télécharge, vérifie la signature et grave toute la famille Fedora.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
   </div>
 </section>
 
@@ -187,7 +191,7 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
 <div class="controls" id="controls">
   <label class="search">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    <input id="search" type="text" placeholder="rechercher un système… ( / )" data-testid="search-input">
+    <input id="search" type="text" placeholder="rechercher un système ou un terme technique… ( / )" data-testid="search-input" aria-label="Rechercher parmi les systèmes, y compris dans le contenu des guides">
   </label>
   <div class="filters" id="filters"></div>
   <div class="subcontrols">

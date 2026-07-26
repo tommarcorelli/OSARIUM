@@ -20,7 +20,9 @@
 
   const prev = data[(idx - 1 + data.length) % data.length];
   const next = data[(idx + 1) % data.length];
-  const letter = tool.name.replace(/^[^A-Za-z]+/, '').charAt(0).toUpperCase();
+  /* `mono` permet de forcer le monogramme quand l'initiale du nom ne veut rien
+     dire : « La commande dd » donnerait un « L » qui n'évoque rien. */
+  const letter = tool.mono || tool.name.replace(/^[^A-Za-z]+/, '').charAt(0).toUpperCase();
 
   app.innerHTML = `
     <section class="detail-hero" style="--c:${tool.color}">

@@ -6,7 +6,7 @@ window.OS_DATA = [
     id:"win11", name:"Windows 11", version:"23H2", cat:"desktop", color:"#2F9BE6", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#2F9BE6"><path d="M2.5 2.5h8.5v8.5H2.5zM13 2.5h8.5v8.5H13zM2.5 13h8.5v8.5H2.5zM13 13h8.5v8.5H13z"/></svg>',
     tag:"Le système grand public de Microsoft, moderne et hardware-exigeant.",
-    site:"microsoft.com", license:"Propriétaire", popular:true, isNew:false,
+    site:"microsoft.com", dl:"microsoft.com/software-download/windows11", license:"Propriétaire", popular:true, isNew:false,
     time:"~15 min", diff:"Facile", base:"Windows NT",
     req:{ram:"4 Go min. (officiellement ; 8 Go+ conseillés en pratique)", disk:"64 Go min. (exigence officielle Microsoft)", cpu:"64 bits, 1 GHz, 2 cœurs min. + TPM 2.0 et UEFI Secure Boot obligatoires"},
     steps:[
@@ -31,7 +31,7 @@ window.OS_DATA = [
     id:"ubuntu", name:"Ubuntu", version:"24.04 LTS", cat:"desktop", color:"#E95420", icon:"ubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#E95420"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"La distribution Linux la plus populaire. Idéale pour débuter.",
-    site:"ubuntu.com", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"ubuntu.com", dl:"ubuntu.com/download/desktop", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"25 Go min. (officiel Ubuntu)", cpu:"2 GHz dual-core, 64 bits"},
     steps:[
@@ -206,7 +206,7 @@ window.OS_DATA = [
     id:"zorin", name:"Zorin OS", version:"17", cat:"desktop", color:"#0CC1F3", icon:"zorin",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0CC1F3"><path d="M4 18.944L5.995 22.4h12.01L20 18.944H4zM24 12l-2.013 3.488H9.216l12.771-6.976L24 12zM0 12l2.013-3.488h12.771L2.013 15.488 0 12zm4-6.944L5.995 1.6h12.01L20 5.056H4z"/></svg>',
     tag:"Conçu pour les migrants de Windows/macOS. Look configurable en un clic.",
-    site:"zorin.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"zorin.com", dl:"zorin.com/os/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -256,7 +256,7 @@ window.OS_DATA = [
     id:"linuxlite", name:"Linux Lite", version:"6.6", cat:"desktop", color:"#66B32E", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#66B32E"><path d="M12 2C8 2 5 5.5 5 10c0 6.5 5.5 10.5 7 11.7 1.5-1.2 7-5.2 7-11.7 0-4.5-3-8-7-8zm0 4.2c1.9 0 3.4 1.6 3.4 3.6S13.9 13.4 12 13.4 8.6 11.8 8.6 9.8 10.1 6.2 12 6.2z"/></svg>',
     tag:"Pensé pour les migrants de Windows sur du matériel modeste. Xfce simplifié.",
-    site:"linuxliteos.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"linuxliteos.com", dl:"linuxliteos.com/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -281,7 +281,7 @@ window.OS_DATA = [
     id:"deepin", name:"Deepin", version:"23", cat:"desktop", color:"#0080FF", icon:"deepin",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0080FF"><path d="M16.104.696c-1.724-.63-3.49-.8-5.205-.64-1.988.157-2.958.772-2.9.661-3.251 1.16-6 3.657-7.272 7.157-2.266 6.234.944 13.128 7.168 15.398 6.228 2.27 13.111-.945 15.378-7.179C25.54 9.86 22.33 2.966 16.104.696zM8.305 22.145a10.767 10.767 0 0 1-1.867-.904c2.9.223 6.686-.445 9.239-2.834 0 0 4.866-3.888 1.345-10.269 0 0 .568 2.572-.156 4.687 0 0-.69 2.877-3.757 3.712-4.517 1.231-9.664-1.93-11.816-3.463-.162-1.574-.018-3.2.56-4.788.855-2.352 2.463-4.188 4.427-5.42-.49 3.436-.102 6.6.456 7.925.749 1.777 2.05 3.85 4.59 4.115 2.54.267 3.94-2.11 3.94-2.11 1.304-1.98 1.508-4.823 1.488-4.892-.02-.07-.347-.257-.347-.257-.877 3.549-2.323 4.734-2.323 4.734-2.28 2.201-3.895.675-3.895.675-1.736-1.865-.52-4.895-.52-4.895.68-2.064 2.66-5.084 4.905-6.62.374.092.75.15 1.12.284a10.712 10.712 0 0 1 3.554 2.16c-1.641.599-4.291 1.865-4.291 1.865-4.201 1.77-4.485 4.446-4.485 4.446-.435 2.758 1.754 1.59 1.754 1.59 2.252-1.097 3.359-4.516 3.359-4.516-.703-.134-1.257.08-1.257.08-.899 2.22-2.733 3.132-2.733 3.132-.722.382-.89-.293-.89-.293-.122-.506.522-.592.522-.592 1-.389 1.639-1.439 1.784-1.868.144-.43.412-.464.412-.464a12.998 12.998 0 0 1 2.619-.535c1.7-.209 4.303.602 4.303.602.584.235 1.144.41 1.641.551.954 2.384 1.105 5.098.16 7.7-2.039 5.61-8.236 8.504-13.841 6.462z"/></svg>',
     tag:"Le Linux chinois le plus élégant. DDE : environnement de bureau signature.",
-    site:"deepin.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"deepin.org", dl:"www.deepin.org/en/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Facile", base:"Debian",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -382,7 +382,7 @@ window.OS_DATA = [
     id:"steamos", name:"SteamOS", version:"3.7 (Holo)", cat:"gaming", color:"#66C0F4", icon:"steam",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#66C0F4"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>',
     tag:"L'OS du Steam Deck. Arch + KDE + Gamescope, pensé pour le jeu.",
-    site:"steampowered.com", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"steampowered.com", dl:"store.steampowered.com/steamos/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~20 min", diff:"Intermédiaire", base:"Arch",
     req:{ram:"4 Go min. (8-16 Go conseillés)", disk:"64 Go min. sur SSD NVMe (SATA non supporté officiellement), 200 Go+ conseillés selon la ludothèque", cpu:"CPU 64 bits récent, GPU AMD recommandé (meilleur support pilotes que Nvidia)"},
     steps:[
@@ -432,7 +432,7 @@ window.OS_DATA = [
     id:"nobara", name:"Nobara", version:"40", cat:"gaming", color:"#8657D8", icon:"nobaralinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#8657D8"><path d="M23.808 11.808v8.281a3.542 3.542 0 0 1-3.542 3.527h-.46a3.543 3.543 0 0 1-3.083-3.513v-7.282l3.543-1.013-3.66-1.045a4.724 4.724 0 0 0-9.33 1.045v2.362a2.362 2.362 0 0 0 2.362 2.362 3.543 3.543 0 0 1 3.543 3.542V24a3.539 3.539 0 0 0-3.542-3.542 3.537 3.537 0 0 0-3.063 1.76 3.54 3.54 0 0 1-2.382 1.398h-.46A3.542 3.542 0 0 1 .192 20.09V3.543a3.542 3.542 0 0 1 6.323-2.194A11.756 11.756 0 0 1 12 0c6.521 0 11.808 5.287 11.808 11.808zm-9.446 0A2.359 2.359 0 0 1 12 14.17a2.362 2.362 0 1 1 2.362-2.362z"/></svg>',
     tag:"Fedora modifiée par GloriousEggroll (proton-ge). Patches gaming et codecs prêts à l'emploi.",
-    site:"nobaraproject.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"nobaraproject.org", dl:"nobaraproject.org/download.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Facile", base:"Fedora",
     req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
     steps:[
@@ -482,7 +482,7 @@ window.OS_DATA = [
     id:"cachyos", name:"CachyOS", version:"rolling", cat:"gaming", color:"#00E5B0", icon:"cachyos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#00E5B0"><path d="M5.301 2.646 0 11.771l5.541 9.583h11.486l2.904-5.017H8.102l-2.56-4.429L8.067 7.54h6.063l2.83-4.893ZM20.058 4.12a.748.748 0 0 0 0 1.496.748.748 0 0 0 0-1.496m-1.983 4.303a1.45 1.45 0 0 0 0 2.9 1.45 1.45 0 0 0 0-2.9m4.02 3.98a1.904 1.904 0 0 0 0 3.809 1.904 1.904 0 0 0 0-3.81"/></svg>',
     tag:"Arch optimisée à l'extrême : noyau BORE, paquets x86-64-v3/v4. Perf pure.",
-    site:"cachyos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"cachyos.org", dl:"cachyos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Arch",
     req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
     steps:[
@@ -509,7 +509,7 @@ window.OS_DATA = [
     id:"rocky", name:"Rocky Linux", version:"9.x", cat:"server", color:"#10B981", icon:"rockylinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#10B981"><path d="M23.332 15.957c.433-1.239.668-2.57.668-3.957 0-6.627-5.373-12-12-12S0 5.373 0 12c0 3.28 1.315 6.251 3.447 8.417L15.62 8.245l3.005 3.005zm-2.192 3.819l-5.52-5.52L6.975 22.9c1.528.706 3.23 1.1 5.025 1.1 3.661 0 6.94-1.64 9.14-4.224z"/></svg>',
     tag:"Le successeur de CentOS. Binaire-compatible RHEL, gratuit et communautaire.",
-    site:"rockylinux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"rockylinux.org", dl:"rockylinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -559,7 +559,7 @@ window.OS_DATA = [
     id:"centos", name:"CentOS Stream", version:"9", cat:"server", color:"#A55CC9", icon:"centos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#A55CC9"><path d="M12.076.066L8.883 3.28H3.348v5.434L0 12.01l3.349 3.298v5.39h5.374l3.285 3.236 3.285-3.236h5.43v-5.374L24 12.026l-3.232-3.252V3.321H15.31zm0 .749l2.49 2.506h-1.69v6.441l-.8.805-.81-.815V3.28H9.627zm-8.2 2.991h4.483L6.485 5.692l4.253 4.279v.654H9.94L5.674 6.423l-1.798 1.77zm5.227 0h1.635v5.415l-3.509-3.53zm4.302.043h1.687l1.83 1.842-3.517 3.539zm2.431 0h4.404v4.394l-1.83-1.842-4.241 4.267h-.764v-.69l4.261-4.287zm2.574 3.3l1.83 1.843v1.676h-5.327zm-12.735.013l3.515 3.462H3.876v-1.69zM3.348 9.454v1.697h6.377l.871.858-.782.77H3.35v1.786L.753 12.01zm17.42.068l2.488 2.503-2.533 2.55v-1.796h-6.41l-.75-.754.825-.83h6.38zm-9.502.978l.81.815.186-.188.614-.618v.686h.768l-.825.83.75.754h-.719v.808l-.842-.83-.741.73v-.707h-.7l.781-.77-.188-.186-.682-.672h.788zm-7.39 2.807h5.402l-3.603 3.55-1.798-1.772zm6.154 0h.708v.7l-4.404 4.338 1.852 1.824h-4.31v-4.342l1.798 1.77zm3.348 0h.715l4.317 4.343.186-.187 1.599-1.61v4.316h-4.366l1.853-1.825-.188-.185-4.116-4.054zm1.46 0h5.357v1.798l-1.785 1.796zm-2.83.191l.842.829v6.37h1.691l-2.532 2.495-2.533-2.495h1.79V14.23zm-1.27 1.251v5.42H8.939l-1.852-1.823zm2.64.097l3.552 3.499-1.853 1.825h-1.7z"/></svg>',
     tag:"L'amont continu de RHEL. Pour tester ce qui arrive dans Red Hat Enterprise.",
-    site:"centos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"centos.org", dl:"www.centos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -584,7 +584,7 @@ window.OS_DATA = [
     id:"ubuntuserver", name:"Ubuntu Server", version:"24.04 LTS", cat:"server", color:"#E95420", icon:"ubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#E95420"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"Sans interface graphique, pour héberger sites, bases de données et conteneurs.",
-    site:"ubuntu.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"ubuntu.com", dl:"ubuntu.com/download/server", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -609,7 +609,7 @@ window.OS_DATA = [
     id:"oraclelinux", name:"Oracle Linux", version:"9", cat:"server", color:"#F80000", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#F80000" stroke-width="3"><ellipse cx="12" cy="12" rx="8" ry="5.5"/></svg>',
     tag:"Clone RHEL gratuit par Oracle. Kernel UEK optionnel, support entreprise disponible.",
-    site:"oracle.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"oracle.com", dl:"oracle.com/linux/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -634,7 +634,7 @@ window.OS_DATA = [
     id:"windowsserver", name:"Windows Server 2022", version:"21H2", cat:"server", color:"#00A4EF", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#00A4EF"><path d="M2.5 2.5h8.5v8.5H2.5zM13 2.5h8.5v8.5H13zM2.5 13h8.5v3.2H2.5zM13 13h8.5v3.2H13zM2.5 18h8.5v3.5H2.5zM13 18h8.5v3.5H13z"/></svg>',
     tag:"Le serveur Microsoft : Active Directory, Hyper-V, IIS. Standard en entreprise.",
-    site:"microsoft.com", license:"Propriétaire", popular:false, isNew:false,
+    site:"microsoft.com", dl:"microsoft.com/evalcenter", license:"Propriétaire", popular:false, isNew:false,
     time:"~20 min", diff:"Intermédiaire", base:"Windows NT",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -685,7 +685,7 @@ window.OS_DATA = [
     id:"truenas", name:"TrueNAS Scale", version:"25.10 Goldeye", cat:"server", color:"#0095D5", icon:"truenas",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0095D5"><path d="M24 10.049v5.114l-10.949 6.324v-5.114L24 10.049zm-24 0v5.114l10.956 6.324v-5.114L0 10.049zm12.004-.605l-4.433 2.559 4.433 2.559 4.429-2.559-4.429-2.559zm10.952-1.207l-9.905-5.723v5.118l5.473 3.164 4.432-2.559zm-12-.605V2.513L1.044 8.236l4.432 2.555 5.48-3.159z"/></svg>',
     tag:"NAS sous stéroïdes. ZFS, conteneurs, VMs, réplication. Debian sous le capot.",
-    site:"truenas.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"truenas.com", dl:"truenas.com/download-truenas-scale", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Debian",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -712,7 +712,7 @@ window.OS_DATA = [
     id:"kali", name:"Kali Linux", version:"2024.x", cat:"security", color:"#5C8DBC", icon:"kalilinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#5C8DBC"><path d="M12.778 5.943s-1.97-.13-5.327.92c-3.42 1.07-5.36 2.587-5.36 2.587s5.098-2.847 10.852-3.008zm7.351 3.095l.257-.017s-1.468-1.78-4.278-2.648c1.58.642 2.954 1.493 4.021 2.665zm.42.74c.039-.068.166.217.263.337.004.024.01.039-.045.027-.005-.025-.013-.032-.013-.032s-.135-.08-.177-.137c-.041-.057-.049-.157-.028-.195zm3.448 8.479s.312-3.578-5.31-4.403a18.277 18.277 0 0 0-2.524-.187c-4.506.06-4.67-5.197-1.275-5.462 1.407-.116 3.087.643 4.73 1.408-.007.204.002.385.136.552.134.168.648.35.813.445.164.094.691.43 1.014.85.07-.131.654-.512.654-.512s-.14.003-.465-.119c-.326-.122-.713-.49-.722-.511-.01-.022-.015-.055.06-.07.059-.049-.072-.207-.13-.265-.058-.058-.445-.716-.454-.73-.009-.016-.012-.031-.04-.05-.085-.027-.46.04-.46.04s-.575-.283-.774-.893c.003.107-.099.224 0 .469-.3-.127-.558-.344-.762-.88-.12.305 0 .499 0 .499s-.707-.198-.82-.85c-.124.293 0 .469 0 .469s-1.153-.602-3.069-.61c-1.283-.118-1.55-2.374-1.43-2.754 0 0-1.85-.975-5.493-1.406-3.642-.43-6.628-.065-6.628-.065s6.45-.31 11.617 1.783c.176.785.704 2.094.989 2.723-.815.563-1.733 1.092-1.876 2.97-.143 1.878 1.472 3.53 3.474 3.58 1.9.102 3.214.116 4.806.942 1.52.84 2.766 3.4 2.89 5.703.132-1.709-.509-5.383-3.5-6.498 4.181.732 4.549 3.832 4.549 3.832zM12.68 5.663l-.15-.485s-2.484-.441-5.822-.204C3.37 5.211 0 6.38 0 6.38s6.896-1.735 12.68-.717Z"/></svg>',
     tag:"L'arsenal du pentester : plus de 600 outils de sécurité préinstallés.",
-    site:"kali.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"kali.org", dl:"kali.org/get-kali", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"2 Go min. (4-8 Go conseillés avec l'environnement Xfce par défaut)", disk:"20 Go min. (officiel Kali) ; prévoir plus pour une clé USB persistante", cpu:"x86_64 exclusivement (le 32 bits n'est plus supporté depuis 2020)"},
     steps:[
@@ -787,7 +787,7 @@ window.OS_DATA = [
     id:"blackarch", name:"BlackArch", version:"rolling", cat:"security", color:"#1793D1", icon:"archlinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#1793D1"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"/></svg>',
     tag:"2800+ outils de pentest sur base Arch. Le rasoir des professionnels.",
-    site:"blackarch.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"blackarch.org", dl:"blackarch.org/downloads.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~40 min", diff:"Expert", base:"Arch",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
@@ -812,7 +812,7 @@ window.OS_DATA = [
     id:"qubes", name:"Qubes OS", version:"4.2", cat:"security", color:"#3874D8", icon:"qubesos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#3874D8"><path d="M21.893 20.79l-2.289-1.332 1.547-.895a2.402 2.402 0 0 0 1.2-2.08V7.098l-.003-.059a2.402 2.402 0 0 0-1.198-2.027l-3.899-2.255-4.21-2.436a2.473 2.473 0 0 0-.237-.118L12.77.187l-.093-.036-.052-.019c-.028-.01-.057-.018-.085-.027l-.062-.019-.079-.02-.072-.017-.073-.013-.079-.013-.068-.008-.087-.008-.063-.004A10.324 10.324 0 0 0 11.9 0h-.03l-.082.001-.076.002-.093.007-.064.006c-.037.004-.073.01-.11.016-.014.004-.029.006-.044.009a3.266 3.266 0 0 0-.154.034 2.39 2.39 0 0 0-.602.245L5.536 3.277l-3 1.736a2.407 2.407 0 0 0-1.201 2.083v9.385a2.405 2.405 0 0 0 1.2 2.08l8.108 4.693a2.395 2.395 0 0 0 2.4.002l1.804-1.044 2.302 1.339c1.03.599 2.687.599 3.716 0l1.03-.6c1.027-.597 1.027-1.562-.002-2.161zm-10.71-2.695l-4.46-2.583a1.324 1.324 0 0 1-.66-1.143V9.206c0-.236.063-.464.177-.662l.002.001c.116-.2.282-.368.482-.485l4.459-2.58c.092-.053.189-.093.289-.122l.034-.01c.035-.01.07-.015.105-.022.023-.004.045-.01.068-.013.031-.004.062-.004.093-.006.028 0 .055-.004.083-.004.036 0 .073.004.11.007.02.002.038.002.058.005.037.005.074.014.11.022.018.004.037.007.055.012.04.011.077.025.115.04l.045.015c.052.022.104.047.154.076l4.46 2.58c.198.116.364.283.48.483l.002.003-.003.002c.116.201.177.43.177.661v5.161c0 .15-.028.295-.076.433a1.32 1.32 0 0 1-.583.71l-4.46 2.582a1.312 1.312 0 0 1-1.316 0z"/></svg>',
     tag:"Sécurité par compartimentation. Chaque tâche dans une VM Xen isolée. Snowden approuve.",
-    site:"qubes-os.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"qubes-os.org", dl:"www.qubes-os.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~35 min", diff:"Expert", base:"Fedora",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
@@ -837,7 +837,7 @@ window.OS_DATA = [
     id:"whonix", name:"Whonix", version:"17", cat:"security", color:"#5B9BD5", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#5B9BD5"><path d="M4 9c0-2.2 2-4 5-4s5 1.8 5 4-2 5-5 5-5-2.8-5-5zm2.4 0a2.6 1.8 0 1 0 5.2 0 2.6 1.8 0 1 0-5.2 0z"/><path d="M10 9c0-2.2 2-4 5-4s5 1.8 5 4-2 5-5 5-5-2.8-5-5zm2.4 0a2.6 1.8 0 1 0 5.2 0 2.6 1.8 0 1 0-5.2 0z" opacity=".6"/></svg>',
     tag:"Deux VM : une passerelle Tor + un poste isolé. Impossible à désanonymiser.",
-    site:"whonix.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"whonix.org", dl:"www.whonix.org/wiki/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Debian",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
@@ -914,7 +914,7 @@ window.OS_DATA = [
     id:"alpine", name:"Alpine Linux", version:"3.24", cat:"lightweight", color:"#0D9BD7", icon:"alpinelinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0D9BD7"><path d="M5.998 1.607L0 12l5.998 10.393h12.004L24 12 18.002 1.607H5.998zM9.965 7.12L12.66 9.9l1.598 1.595.002-.002 2.41 2.363c-.2.14-.386.252-.563.344a3.756 3.756 0 01-.496.217 2.702 2.702 0 01-.425.111c-.131.023-.25.034-.358.034-.13 0-.242-.014-.338-.034a1.317 1.317 0 01-.24-.072.95.95 0 01-.2-.113l-1.062-1.092-3.039-3.041-1.1 1.053-3.07 3.072a.974.974 0 01-.2.111 1.274 1.274 0 01-.237.073c-.096.02-.209.033-.338.033-.108 0-.227-.009-.358-.031a2.7 2.7 0 01-.425-.114 3.748 3.748 0 01-.496-.217 5.228 5.228 0 01-.563-.343l6.803-6.727zm4.72.785l4.579 4.598 1.382 1.353a5.24 5.24 0 01-.564.344 3.73 3.73 0 01-.494.217 2.697 2.697 0 01-.426.111c-.13.023-.251.034-.36.034-.129 0-.241-.014-.337-.034a1.285 1.285 0 01-.385-.146c-.033-.02-.05-.036-.053-.04l-1.232-1.218-2.111-2.111-.334.334L12.79 9.8l1.896-1.897zm-5.966 4.12v2.529a2.128 2.128 0 01-.356-.035 2.765 2.765 0 01-.422-.116 3.708 3.708 0 01-.488-.214 5.217 5.217 0 01-.555-.34l1.82-1.825Z"/></svg>',
     tag:"Minuscule (~130 Mo), sécurisée, la star des conteneurs Docker.",
-    site:"alpinelinux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"alpinelinux.org", dl:"alpinelinux.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"—",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -940,7 +940,7 @@ window.OS_DATA = [
     id:"lubuntu", name:"Lubuntu", version:"24.04 LTS", cat:"lightweight", color:"#2E7CD6", icon:"lubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#2E7CD6"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m1.287 4.723q.316-.031.63.004a3.17 3.17 0 0 1 2.41 1.642l5.665.781h-6.458a2.58 2.58 0 0 0-1.66-.955 2.57 2.57 0 0 0-1.371.192c-.43.19-.8.495-1.068.88-.268.387-.424.84-.451 1.31-.026.468.078.935.3 1.349a3.13 3.13 0 0 1-.795-1.68 3.13 3.13 0 0 1 .305-1.832 3.14 3.14 0 0 1 1.299-1.332 3.1 3.1 0 0 1 1.195-.36m-9.88 1.09 8.673 6.232-7.154-4.012a3.6 3.6 0 0 0-.072 2.022 3.57 3.57 0 0 0 1.998 2.34l4.748 1.334-6.002-.983c.061.58.275 1.133.619 1.604a3.33 3.33 0 0 0 2.652 1.33 3.95 3.95 0 0 1-3.062-.451 3.9 3.9 0 0 1-1.432-1.563 3.9 3.9 0 0 1-.398-2.08l1.32.371a4.7 4.7 0 0 1-1.246-.986 4.7 4.7 0 0 1-1.111-2.48 4.67 4.67 0 0 1 .466-2.678m11.667 3.132q-.01.138-.008.278c.007 1.143.535 2.21 1.057 3.226.523 1.017 1.064 2.076 1.094 3.22.024.95-.32 1.895-.899 2.651-.578.756-1.377 1.328-2.255 1.696a6.5 6.5 0 0 1-3.91.338l-1 2.373v-3.327a6.23 6.23 0 0 0 3.665-.31c.7-.285 1.352-.707 1.862-1.264s.875-1.255.986-2.002c.15-1-.151-2.007-.447-2.974s-.595-1.977-.436-2.975a3.3 3.3 0 0 1 .291-.93"/></svg>',
     tag:"Ubuntu ultra-léger avec LXQt. Ressuscite les PC anciens.",
-    site:"lubuntu.me", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"lubuntu.me", dl:"lubuntu.me/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -990,7 +990,7 @@ window.OS_DATA = [
     id:"antix", name:"antiX", version:"23 Arditi", cat:"lightweight", color:"#7FBF3F", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#7FBF3F" stroke-width="3" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>',
     tag:"Sans systemd, ultra-frugal (~256 Mo RAM). Pour les machines vraiment vieilles.",
-    site:"antixlinux.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"antixlinux.com", dl:"antixlinux.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -1066,7 +1066,7 @@ window.OS_DATA = [
     id:"bodhi", name:"Bodhi Linux", version:"7.0", cat:"lightweight", color:"#8DC63F", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#8DC63F"><path d="M12 21c-5-2-8-6-8-11 0-3 2-6 5-7 0 4 1 7 3 9 2-2 3-5 3-9 3 1 5 4 5 7 0 5-3 9-8 11z"/></svg>',
     tag:"Ubuntu minimaliste avec Moksha (fork d'Enlightenment). Léger mais très personnalisable.",
-    site:"bodhilinux.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"bodhilinux.com", dl:"www.bodhilinux.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -1092,7 +1092,7 @@ window.OS_DATA = [
     id:"arch", name:"Arch Linux", version:"rolling", cat:"advanced", color:"#1793D1", icon:"archlinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#1793D1"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"/></svg>',
     tag:"Construis ton système from scratch. Contrôle total, rolling release. BTW.",
-    site:"archlinux.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"archlinux.org", dl:"archlinux.org/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~40 min", diff:"Expert", base:"—",
     req:{ram:"512 Mo min. (2 Go+ conseillés pour un usage bureau)", disk:"2 Go min. pour la base (15-20 Go conseillés avec un environnement de bureau complet)", cpu:"x86_64, installation par paquets binaires (pas de compilation, contrairement à Gentoo)"},
     steps:[
@@ -1118,7 +1118,7 @@ window.OS_DATA = [
     id:"nixos", name:"NixOS", version:"24.05", cat:"advanced", color:"#5277C3", icon:"nixos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#5277C3"><path d="M7.352 1.592l-1.364.002L5.32 2.75l1.557 2.713-3.137-.008-1.32 2.34H14.11l-1.353-2.332-3.192-.006-2.214-3.865zm6.175 0l-2.687.025 5.846 10.127 1.341-2.34-1.59-2.765 2.24-3.85-.683-1.182h-1.336l-1.57 2.705-1.56-2.72zm6.887 4.195l-5.846 10.125 2.696-.008 1.601-2.76 4.453.016.682-1.183-.666-1.157-3.13-.008L21.778 8.1l-1.365-2.313zM9.432 8.086l-2.696.008-1.601 2.76-4.453-.016L0 12.02l.666 1.157 3.13.008-1.575 2.71 1.365 2.315L9.432 8.086zM7.33 12.25l-.006.01-.002-.004-1.342 2.34 1.59 2.765-2.24 3.85.684 1.182H7.35l.004-.006h.001l1.567-2.698 1.558 2.72 2.688-.026-.004-.006h.01L7.33 12.25zm2.55 3.93l1.354 2.332 3.192.006 2.215 3.865 1.363-.002.668-1.156-1.557-2.713 3.137.008 1.32-2.34H9.881Z"/></svg>',
     tag:"Config déclarative & reproductible. Ton système entier dans un seul fichier.",
-    site:"nixos.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"nixos.org", dl:"nixos.org/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~25 min", diff:"Expert", base:"—",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -1168,7 +1168,7 @@ window.OS_DATA = [
     id:"voidlinux", name:"Void Linux", version:"rolling", cat:"advanced", color:"#478061", icon:"voidlinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#478061"><path d="M15.818 12a3.82 3.82 0 0 1-3.82 3.82A3.82 3.82 0 0 1 8.178 12a3.82 3.82 0 0 1 3.82-3.82 3.82 3.82 0 0 1 3.82 3.82Zm3.179 9.73-2.726-2.725A8.212 8.212 0 0 1 12 20.212 8.212 8.212 0 0 1 3.788 12a8.212 8.212 0 0 1 1.209-4.269l-2.73-2.73A12 12 0 0 0 0 12c0 6.627 5.373 12 12 12a12 12 0 0 0 6.997-2.27zM12 0a12 12 0 0 0-6.997 2.27L7.73 4.994A8.212 8.212 0 0 1 12 3.788 8.212 8.212 0 0 1 20.212 12a8.212 8.212 0 0 1-1.209 4.269l2.73 2.73A12 12 0 0 0 24 12c0-6.627-5.373-12-12-12Z"/></svg>',
     tag:"Indépendante, sans systemd. Runit + XBPS, rolling maîtrisée.",
-    site:"voidlinux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"voidlinux.org", dl:"voidlinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -1194,7 +1194,7 @@ window.OS_DATA = [
     id:"gentoo", name:"Gentoo", version:"rolling", cat:"advanced", color:"#54487A", icon:"gentoo",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#54487A"><path d="M9.94 0a7.31 7.31 0 00-1.26.116c-4.344.795-7.4 4.555-7.661 7.031-.126 1.215.53 2.125.89 2.526.977 1.085 2.924 1.914 4.175 2.601-1.81 1.543-2.64 2.296-3.457 3.154C1.403 16.712.543 18.125.54 19.138c0 .325-.053 1.365.371 2.187.16.309.613 1.338 1.98 2.109.874.494 2.119.675 3.337.501 3.772-.538 8.823-3.737 12.427-6.716 2.297-1.9 3.977-3.739 4.462-4.644.39-.731.434-2.043.207-2.866-.645-2.337-5.887-7.125-10.172-9.051A7.824 7.824 0 009.94 0zm-.008.068a7.4 7.4 0 013.344.755c3.46 1.7 9.308 6.482 9.739 8.886.534 2.972-9.931 11.017-16.297 12.272-2.47.485-4.576.618-5.537-1.99-.832-2.262.783-3.916 3.16-6.09a92.546 92.546 0 012.96-2.576c.065-.069-5.706-2.059-5.89-4.343C1.221 4.634 4.938.3 9.697.076c.08-.004.157-.007.235-.008zm-.112.52a5.647 5.647 0 00-.506.032c-2.337.245-2.785.547-4.903 2.149-.71.537-2.016 1.844-2.35 3.393-.128.59.024 1.1.448 1.458 1.36 1.144 3.639 2.072 5.509 2.97.547.263.185.74-.698 1.505-2.227 1.928-5.24 4.276-5.45 6.066-.099.842.19 1.988 1.213 2.574 1.195.685 3.676.238 5.333-.379 2.422-.902 5.602-2.892 8.127-4.848 2.625-2.034 5.067-4.617 5.188-5.038.148-.517.133-.996-.154-1.546-.448-.862-1.049-1.503-1.694-2.22-1.732-1.825-3.563-3.43-5.754-4.658C12.694 1.242 11.417.564 9.82.588zm1.075 3.623c.546 0 1.176.173 1.853.5 1.688.817 3.422 2.961-.015 4.195-.935.336-3.9-.824-3.81-2.407.09-1.57.854-2.289 1.972-2.288zm.285 1.367c-.317-.002-.575.079-.694.263-.557.861-.303 1.472.212 1.862.192-.457 2.156.043 2.148.472a.32.32 0 00.055-.032c1.704-1.282-.472-2.557-1.72-2.565z"/></svg>',
     tag:"Tout compiler depuis les sources. Optimisations chirurgicales, apprentissage total.",
-    site:"gentoo.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"gentoo.org", dl:"gentoo.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~2-6 h", diff:"Expert", base:"—",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -1247,7 +1247,7 @@ window.OS_DATA = [
     id:"artix", name:"Artix Linux", version:"rolling", cat:"advanced", color:"#20B1F2", icon:"artixlinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#20B1F2"><path d="M12 0L7.873 8.462l11.358 6.363zM6.626 11.018L.295 24l18.788-7.762zm13.846 6.352l-5.926 3.402L23.706 24Z"/></svg>',
     tag:"Arch Linux sans systemd. Choix entre OpenRC, runit ou s6 comme init.",
-    site:"artixlinux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"artixlinux.org", dl:"artixlinux.org/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"Arch",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -1274,7 +1274,7 @@ window.OS_DATA = [
     id:"freebsd", name:"FreeBSD", version:"15.x", cat:"bsd", color:"#C0392B", icon:"freebsd",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#C0392B"><path d="M23.682 2.406c-.001-.149-.097-.187-.24-.189h-.25v.659h.108v-.282h.102l.17.282h.122l-.184-.29c.102-.012.175-.065.172-.18zm-.382.096v-.193h.13c.06-.002.145.011.143.089.005.09-.08.107-.153.103h-.12zM21.851 1.49c1.172 1.171-2.077 6.319-2.626 6.869-.549.548-1.944.044-3.115-1.128-1.172-1.171-1.676-2.566-1.127-3.115.549-.55 5.697-3.798 6.868-2.626zM1.652 6.61C.626 4.818-.544 2.215.276 1.395c.81-.81 3.355.319 5.144 1.334A11.003 11.003 0 0 0 1.652 6.61zm18.95.418a10.584 10.584 0 0 1 1.368 5.218c0 5.874-4.762 10.636-10.637 10.636C5.459 22.882.697 18.12.697 12.246.697 6.371 5.459 1.61 11.333 1.61c1.771 0 3.441.433 4.909 1.199-.361.201-.69.398-.969.574-.428-.077-.778-.017-.998.202-.402.402-.269 1.245.263 2.2.273.539.701 1.124 1.25 1.674.103.104.208.202.315.297 1.519 1.446 3.205 2.111 3.829 1.486.267-.267.297-.728.132-1.287.167-.27.35-.584.538-.927zm2.814-5.088c-.322 0-.584.266-.584.595s.261.595.584.595c.323 0 .584-.266.584-.595s-.261-.595-.584-.595zm0 1.087c-.252 0-.457-.22-.457-.492s.204-.492.457-.492c.252 0 .457.22.457.492s-.204.492-.457.492z"/></svg>',
     tag:"Pas Linux, mais Unix pur. Réputé serveur, réseau et stabilité extrême.",
-    site:"freebsd.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"freebsd.org", dl:"www.freebsd.org/where", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~25 min", diff:"Avancé", base:"BSD",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
@@ -1300,7 +1300,7 @@ window.OS_DATA = [
     id:"openbsd", name:"OpenBSD", version:"7.9", cat:"bsd", color:"#F5CA13", icon:"openbsd",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#F5CA13"><path d="M13.695 1.653c-.202.47-.146 1.02-.293 1.509-.034.112-.146.452-.308.429-.333-.048-.16-.688-.545-.7l.12.934c-.577.073-.498-.829-.733-1.195-.27-.423-.335.192-.317.38.011.122.036.242.05.363.026.21.032.393.005.603-.552-.007-.35-.733-.754-.844l.03.874c-.612-.005-.89-.557-1.159-1.025-.112-.196-.261-.574-.53-.453.126.544.423 1.064.454 1.63.007.145-.13.516-.333.448-.469-.158-.406-1.008-.796-1.231-.08-.045-.204-.006-.29-.002 0 .45.198.996.356 1.418.034.09.129.41-.069.403-.353-.01-.441-.695-.8-.615.044.185.153.335.215.513.037.109.106.219.126.332.044.247-.269.267-.432.22-.384-.114-.66-.428-.935-.703-.076-.076-.277-.344-.404-.222-.141.135.136.373.215.464.234.271.488.589.6.935.049.148.058.36-.09.462-.146.1-.384-.083-.502-.16-.362-.239-.721-.654-1.176-.664l-.107.271.29.392.752.845-.875-.362c.035.229.583.506.475.742-.064.14-.38.142-.505.124-.446-.064-.762-.396-1.177-.515-.366-.105-.298.18-.09.343.072.057.141.117.211.177.125.108.245.219.362.336.183.183.343.378.513.573l-.875-.03v.06l.845.392-.151.603c-.244 0-.442-.067-.664-.163-.151-.066-.31-.175-.482-.163-.206.014-.328.202-.19.377.206.263.62.412.883.617.1.078.247.212.133.345-.225.264-.832-.074-1.128.013v.06c.275.161.839.253 1 .549.128.231-.232.756-.487.736-.227-.019-.436-.275-.603-.41-.401-.322-.83-.7-1.298-.923-.801-.38-1.597.226-2.232.622.081.256.402-.017.603.029.271.061.477.313.651.513.84.968 1.543 2.064 1.857 3.319.083.33.224.725-.023 1.021-.066.08-.165.09-.238.155-.055.05-.052.118.023.141.138.043.34-.021.475-.054.443-.107.949-.346 1.15-.78.125-.271.169-.797.48-.905.068.29.394.673.363.965-.029.259-.302.56-.461.751-.057.068-.193.217-.112.315.082.097.25-.112.3-.16.229-.216.73-.558.865-.062.118.432-.261 1.13-.45 1.509-.054.105-.297.435-.202.553.11.135.338-.218.387-.282.19-.249.856-.987 1.21-.722.431.324.282.555.119.994-.046.123-.216.433-.1.55.111.114.258.01.315-.098.104-.197.383-.78.661-.631.175.093.441.251.543.425.158.272.02.815-.022 1.111-.024.17-.207.702-.055.825.14.113.254-.228.296-.312.149-.295.32-.597.54-.845.08-.089.192-.237.327-.212.7.131-.015.829.273 1.185.058.072.215.067.3.083l.362-.935c.184.07.455.095.591.248.114.128.137.344.17.506.092.454.142.896.084 1.357.057.042.148.138.225.088.097-.062.11-.315.143-.42.106-.332.269-.65.42-.965.099-.207.37-.427.565-.142.2.292.12.804.246 1.138.32-.158.355-.825.362-1.147l.415.061.25.513.45 1.297c.234-.09.16-.538.187-.754.035-.293.103-.882.318-1.1.086-.087.258-.095.37-.137.129.312.199.666.354.965.06.116.198.242.337.17.133-.068.128-.224.111-.35-.042-.313-.113-.62-.138-.936.598-.042.95.441 1.325.845.145.155.271.362.485.422l-.31-.905-.172-.845c.217-.09.676-.534.905-.47.34.097.6 1.046 1.023.823.18-.095.088-.257.003-.383-.126-.188-.506-.639-.465-.874.03-.175.324-.379.494-.377.391.006 1.071.304 1.297.618l.272-.03c-.04-.54-.85-.787-.966-1.328a.404.404 0 01.004-.172c.086-.347.294-.195.51-.102.067.029.213.103.269.02.06-.091-.048-.212-.087-.289-.082-.156-.156-.337-.122-.513.282.074.455.242.694.4.056.038.18.131.251.08.075-.056-.036-.167-.071-.208-.106-.123-.432-.42-.4-.6.022-.122.227-.252.31-.335.276-.276.59-.556.815-.875h.03c.532.621 2.203.186 1.99-.754-.132.019-.256.123-.392.077-.594-.205-.45-1.157-1.116-1.163-.049-.62-.298-1.24-.599-1.78-.138-.247-.424-.473-.525-.725-.055-.14-.046-.36-.052-.512.349-.054.177-.407.05-.603-.142-.218-.292-.477-.475-.66-.226-.227-.562-.374-.533-.758.027-.357.642-.311.747-.633-.183.008-.363.053-.543.083-.449.075-.527-.076-.317-.475.183-.349.474-.613.73-.905.083-.093.336-.306.205-.441-.107-.112-.286.058-.377.119-.333.22-.705.384-1.086.502-.113.035-.448.166-.486-.035-.051-.272.463-.322.395-.628-.205.049-.61.374-.807.223-.238-.18.111-.643.149-.856.038-.216-.136-.224-.258-.09-.043.048-.081.1-.12.15-.07.087-.126.17-.17.271-.494-.288.44-.623.265-.89-.063-.095-.179 0-.235.05-.117.102-.558.61-.654.237-.106-.412.108-.908.22-1.297.028-.102.159-.376.032-.449-.185-.106-.266.253-.31.359a2.333 2.333 0 01-.615.839c-.086.077-.232.225-.36.19-.187-.051-.188-.57-.182-.728.003-.075.045-.205-.028-.26-.096-.071-.147.072-.16.14-.048.222-.186.856-.515.44-.298-.376.163-1.157-.444-1.315l-.332 1.056c-.398-.087-.31-.656-.211-.966l-.181-.06a3.303 3.303 0 01-.112.362c-.16.451-.375.539-.541.03-.127-.388-.082-.807-.145-1.207-.025-.159-.04-.32-.198-.392zm.03.905c.153.364-.008.82.237 1.176.25.364.716.168 1.02.397.108.081.022.256-.007.358-.1.347-.278.604-.465.905.655-.335.875-1.29.965-1.96h.03c-.026.596-.007 1.182 0 1.779.003.27-.037.582.272.633V4.46c.323.093.808.502 1.159.381.179-.061.342-.277.467-.411.094-.102.175-.212.244-.332h.03l-.12.965-.302-.06.663.473.261.226-.2.294-.875.636c.637-.094.958-.564 1.418-.935-.15.63-.491 1.262-.332 1.93h.03l.362-1.448c.274.13.37.476.633.633.383.228.919-.204 1.267-.331-.227.322-.57.548-.633.965l-.272-.12c.236.606.519 1.19.62 1.84.093.594-.024 1.183.016 1.78.02.275.133.517.179.784-.563.191-.666.98-1.207 1.236.043-.188.11-.377.11-.573 0-.14-.066-.282-.03-.422.073-.277.314-.508.412-.784.152-.43.05-.835-.009-1.267l.301.03-.758-1.177-.376-.573.139-.392c-.762.586-1.867 1.188-1.87 2.293l.271-.091.09.664-.422.06v.06c.353.1.722.149 1.056.306.244.114.514.265.682.479.56.71.112 1.818-.31 2.473-.213.33-.594.634-.734.996.382-.092.577-.457.792-.754.091-.127.17-.303.325-.362.24-.09.32.354.371.512.065.2.218.546.18.755-.071.401-.415.662-.34 1.116.166-.202.217-.604.482-.702.17-.062.347.095.513.12.36.053.73-.082.996-.326.285-.263.48-.686.408-1.083-.043-.24-.177-.476-.16-.724.012-.2.148-.362.22-.543.173-.427.152-.912-.257-1.189a.86.86 0 00-.362-.138c.033-.222.264-.706.53-.418.188.202.29.558.396.81.389.918.392 2.006-.163 2.865-.394.61-1.02 1.11-1.548 1.6l-.21-.604h-.061c-.07.36.185.772.332 1.086-.33-.075-.645-.415-.996-.362.099.17.748.572.242.754.003.148-.11.25-.2.362-.201.248-.454.618-.766.724l-.573-1.508h-.03c.084.661.314 1.305.61 1.9.154.307.403.611.506.935-.187-.159-.306-.413-.466-.603a6.313 6.313 0 00-.952-.892c-.227-.177-.45-.376-.754-.345.345.31.868.475.835 1.056-.01.165-.193.237-.322.296-.339.155-.67.322-1.026.438-.098.032-.279.12-.382.087-.11-.037-.097-.277-.109-.369-.037-.285.121-1.028-.172-1.146-.128 1.01.132 1.929.21 2.926h-.03c-.17-.737-.439-1.558-.838-2.202-.11-.177-.343-.597-.579-.543l.62 1.086.013.46-.452.08-1.297.033c.047-.373.13-.746.2-1.116.014-.081.074-.326-.078-.326-.14 0-.169.408-.189.507-.108.542-.204 1.106-.205 1.66h-.03c0-.913-.41-1.73-.784-2.535-.104.155.041.377.086.543.099.371.113.737.065 1.116-.612-.118-1.275-.278-1.84-.543.149-.357.576-.889.573-1.267-.554.556-.804 1.335-1.086 2.052h-.03l.12-1.448-.21-1.237c-.132.133-.06.399-.04.573.033.275.015.688-.188.9-.112.117-.226.014-.346-.034-.335-.136-.582-.36-.875-.564-.104-.072-.293-.15-.28-.302.032-.433.656-.638.672-1.026-.72.31-1.062 1.088-1.629 1.57.186-.785.782-1.703.634-2.535-.152.084-.145.295-.185.453a4.324 4.324 0 01-.388.965c-.4-.231-.72-.623-.983-.996-.073-.102-.233-.26-.235-.392-.002-.128.145-.274.225-.362.244-.265.54-.465.872-.603-.237-.147-.706.2-.965.272.175-.37.65-.732.513-1.177-.393.307-.66.97-.935 1.388h-.03l-.574-1.267.754.271c.023-.27-.36-.373-.573-.422.126-.328.476-.578.392-.965h-.06c-.087.28-.269.759-.573.844l-.09-.482h-.03c-.119.253.029.447-.04.687-.037.125-.217.106-.28.222-.085.158-.092.37-.164.539-.172.407-.5.706-.904.874l-.037-.54.459-.515-.483.361c-.062-.161-.203-.465-.12-.633.073-.145.254-.24.362-.362l-.483.241c-.163-.422.135-.3.302-.603-.122.07-.325.2-.471.133-.187-.085-.384-.64-.464-.827l.512-.09v-.03c-.242.03-.626.12-.663-.211h.633v-.03l-.712-.08-.194-.252-.421-.543c.251-.075.683-.075.935 0-.368-.387-1.024.182-1.327-.453l.754-.15v-.03c-.234 0-.67.135-.874.028-.054-.028-.094-.075-.134-.12-.388-.438.48-.478.766-.44.55.076.975.452 1.358.833.194.193.473.538.754.595.278.055.51-.122.724-.263 0 .212-.022.422.15.573 0-.416.005-.857.07-1.267.023-.152.083-.352.263-.38.225-.034.531.309.693.44.002-.234-.175-.432-.319-.603-.396-.47-1.025-.914-1.58-1.177v-.03c.823.142 1.442.625 2.322.392v-.06l-1.026-.15c.043-.321.276-.734.203-1.057-.1-.44-.568-.644-.746-1.025.306.118.63.29.966.297.188.005.336-.098.512-.14.485-.113.766.123 1.086.446.088-.305-.15-.559-.334-.784-.186-.229-.35-.46-.57-.659-.267-.24-.662-.52-.815-.85.25.049.49.256.694.402.359.255.715.503 1.116.691.211.1.578.265.754.054l-.965-.362c.07-.101.17-.188.221-.302.138-.307-.104-.568-.191-.844.185.068.345.227.543.26.464.078.734-.47 1.086-.653L9.11 6.45c.201-.168.112-.494.078-.724-.099-.664-.493-1.251-.59-1.9h.03c.381.816.835 1.696 1.598 2.201l-.277-.363-.477-.723c.095-.037.188-.077.269-.142.528-.423.078-1.012.002-1.517h.03c.065.155.14.314.235.453.441.638 1.023.536 1.696.482l-.18 1.328h.03c.089-.283.258-.516.318-.815.11-.544-.006-1.084-.017-1.629h.03c.048.322.179.63.282.936.162.482.293 1.01.653 1.387l-.331-1.357c.958-.001 1.219-.647 1.236-1.509zm-.271 2.082l-.483 2.172c.372-.227.45-1.053.483-1.448h.03c.065.348.096.696.238 1.025.056.13.117.305.275.302l-.386-1.357zm-2.956.392c.006.771.387 1.473.24 2.262.146-.088.15-.295.152-.452.004-.365-.06-.723-.06-1.086h.03c.105.364.39 1.09.814 1.146-.05-.196-.211-.344-.319-.513-.238-.374-.472-1.13-.857-1.357zm6.184.332c-.336.526-.736 1.245-1.237 1.629v.03c.38-.068.791-.549.905-.905h.03c-.005.536-.251 1.105-.03 1.629h.03c.16-.543.077-1.184.215-1.75.043-.177.203-.473.087-.633zM14.69 6.57c-.178.402-.265.775-.634 1.056v.06c.265.07.45-.262.513-.482h.03c.026.203.05.624.272.694l-.149-.694zm-6.456.03c.065.743 1.063 1.244.935 2.052.16-.094.119-.269.065-.423-.112-.317-.298-.596-.427-.905.289.264.716.562 1.117.393l-.633-.263zm4.163.242c-.091.3-.347.886-.241 1.176h.06l.211-.724h.03c.075.273.153.687.483.724l-.483-1.176zm-2.021.754l.15 1.267h.061l-.03-.905c.197.137.463.474.724.362-.1-.11-.247-.129-.362-.222-.187-.151-.286-.482-.543-.502zm6.636.18c-.318.32-.584.539-1.025.664v.061c.261.075.514-.07.724-.211-.035.177-.26.64-.09.754l.289-.875zm1.539.624c.138.01.242.186.323.282.239.279.508.575.612.935-.697-.144-1.452-.045-2.142.12.154-.405.446-.834.785-1.1.115-.092.258-.25.422-.237zm-6.697.07l-.181.936c.151-.115.187-.481.211-.664l.272.302a1.058 1.058 0 00-.302-.573zm2.956.091l-.573.573.543-.392.09.543c.106-.154.05-.578-.06-.724zm-6.334.078a.252.252 0 00-.06.013v.03c.253.256.463.61.621.935.088.179.063.376.253.483-.015-.353-.166-.62-.302-.935.214.124.5.31.754.24v-.06c-.342-.152-.607-.281-.905-.518-.11-.088-.224-.2-.361-.188zm-2.082.284c.029.255.237.35.422.49a3.5 3.5 0 01.687.657c.127.166.205.452.37.573-.036-.444-.298-.966-.725-1.147v-.03c.434.084.867.246 1.297.06v-.06l-.513-.02zm14.027.09c.296.115.613.522.724.815l-.664-.09zm-7.3.03l-.271.514.301-.332.181.302zm5.95.712a.536.536 0 01.172.031c.365.143.267.9.19 1.188-.061.234-.17.495-.4.604-.167-.3-.415-.496-.724-.64-.154-.073-.41-.101-.517-.243-.103-.137-.208-.646-.068-.78.152-.147.57-.117.766-.117.163 0 .392-.051.581-.043zm-3.054.013l-.513.392.453-.241-.06.362c.128-.09.175-.371.12-.513zm4.404.18c.136.011.37-.002.47.1.331.34.145 1.25-.259 1.44l-.12-.695c.032.002.062 0 .09-.003v.003h.09l-.04-.013c.356-.085.295-.577-.051-.59l-.09-.03.049.032-.018.001v-.003h-.06l.01.011c-.023.005-.046.01-.071.02zm-1.538.122c-.062.063-.152.11-.198.187-.318.545.886.559.546-.03-.039-.068-.108-.111-.167-.157l-.121.06h-.06zm-6.335.12c0 .154-.03.31.12.392v-.301l.363.12zm-1.676.086c-.046.002-.092.005-.134.005.053.194.137.36.302.482l-.181-.392.362.03c-.07-.127-.211-.131-.349-.125zm3.685.011c-.09.01-.168.168-.169.325l.15-.271.182.12c-.05-.132-.109-.18-.163-.174zm-4.845.084l-.513.09.423.513-.241-.422.361-.06zm-2.655.42c-.307.013-.66.365-.904.515v.06l.875.302c-.018-.229-.315-.297-.513-.331l.603-.544a.386.386 0 00-.06-.002zm1.6.063l-1.237.332v.06l.663.238.393.275c-.043-.32-.383-.375-.604-.543.28-.053.66-.058.785-.362zm3.107.332c-.129.02-.23.12-.091.21zm.995.18l-.03.212c.094-.056.11-.105.09-.211zm1.357 0c-.117.035-.214.118-.09.212zm1.117.302l-.302.09v.121zm1.146.03v.362c.113-.11.113-.25 0-.362zm4.272.179c.425.004.846.395.75.847-.062.29-.242.605-.528.718-.149.06-.486.04-.498-.175-.01-.2.388-.478.468-.694-.558.427-.9.79-1.659.694v-.03c.447-.331.634-.895 1.059-1.224a.645.645 0 01.408-.136zm-9.943.032c-.146.076-.235.236-.272.393l.362.09-.2-.193zm-4.585.061l-1.147.603c.04.225.262.104.423.093.23-.015.657.06.784.27l.211-.03c-.054-.342-.546-.342-.814-.363.197-.2.48-.259.543-.573zm5.822.241l-.332.423.422.15-.302-.18c.063-.132.31-.247.212-.393zm-2.625.09l-.362.333c.142.047.468.233.573.09l-.392-.15zm7.813 0l.422.333v.06l-.392.211a.938.938 0 00.543-.211.883.883 0 00-.573-.392zm-9.683.121c-.183.41-.464.743-.784 1.056-.184.179-.471.346-.543.603L7.45 13.8l.694-.14c-.414-.296-1.14.033-1.539.21.275-.55.813-.769.935-1.418l-.03-.03zm5.701.03c-.13.043-.146.149-.18.272l.18.03zm1.237.212l.03.332a.503.503 0 00.272-.332l-.212.15zm-4.193.422c-.13.038-.2.131-.06.211zm5.34.181l-.031.422-.271-.18c.028.182.156.27.332.3l.03-.542zm-6.758.03c-.22.069-.596.692-.694.905.2-.008.895.018.996-.12l-.664-.091zm3.7.059c-.166.01-.327.105-.502.105-.507 0-1.34-.252-1.775.092-.396.314-.42.734-.669 1.132-.121.194-.336.325-.512.465-.065.052-.184.127-.159.227.03.122.238.187.34.233.228.105.477.187.724.238.131.027.328.022.44.103.204.148.135.653.163.876.227-.13.524-.52.633-.755-.241.073-.347.31-.513.483l-.09-.633c.705-.062 1.015-.833 1.43-1.296.253-.282.57-.405.893-.575-.19-.227-.455.013-.634.15-.479.37-.755.816-1.176 1.238l.241-.633h-.03c-.131.314-.288.65-.603.814l.12-.422h-.03c-.127.303-.27.452-.603.452l.301-.694h-.03l-.392.664-.12-.03.301-.573h-.03c-.152.244-.313.59-.633.512l.27-.512c-.15.118-.216.4-.394.471-.081.032-.235-.027-.202-.135.042-.14.272-.278.363-.397.31-.405.56-1.067 1.018-1.316.376-.205.947.054 1.358.05.235-.004.503-.084.573-.333a.427.427 0 00-.072-.001zm-7.591.092l-.03.181.12-.181zm14.875.029c.228.004.48.037.61.214.133.18.101.427.17.632.052-.216.046-1.024.477-.57.349.367.256 1.162-.087 1.502-.216.213-.735.343-.992.144-.393-.303-.494-.926-.608-1.378-.027-.109-.154-.36-.084-.461.058-.086.209-.08.3-.082.065 0 .138-.002.214-.001zm2.65.182c.569.103.615.907 1.117 1.147v.06c-.285.143-.38-.002-.573-.211l.211.392c-.233-.036-.283-.262-.422-.423l.21.453c-.346 0-.493-.057-.633-.392h-.03l.06.271-.214-.152.114-.39zm-4.735.03c-.123.036-.188.105-.09.212zm-4.163.242l.332.362.15-.362-.15.241zm3.047 0l-.03.452-.302-.18c-.017.198.288.424.453.512l-.06-.784zm-8.175.512c-.094.452-.417.859-.707 1.207-.138.166-.35.333-.41.543.5-.144 1.063-.652 1.6-.603-.138-.268-.783.103-1.026.15.196-.29.463-.542.59-.874.052-.14.086-.327-.047-.423zm6.998.272c-.23.036-.218.264-.271.452-.128-.127-.258-.303-.452-.271l.573.694zm-2.805.03l-.302.272-.03-.151h-.09l.03.392c.176-.03.358-.347.392-.513zm.815.483l-.151.392h-.03l-.242-.332.211.694h.03c.08-.202.365-.572.182-.754zm3.348.18l-.09.031.18.995c-.192-.168-.785-.942-1.025-.663.555.177.786.825 1.267 1.116l-.15-.573zm1.508.242c-.153.374.22.775.362 1.116-.392-.202-.74-.539-1.207-.543v.12c.672.06 1.03.747 1.569 1.057-.005-.563-.488-1.21-.664-1.75zm-6.123.453l-.212.03c.072.169.197.306.256.482.065.196.023.466.227.573.095-.212.327-.557.271-.784-.17.085-.252.268-.27.453h-.031zm-2.806.03c0 .592-.08 1.148-.241 1.72.21.007.32-.211.433-.363.225-.299.45-.628.804-.784v-.03c-.359-.047-.807.49-.935.784h-.03c.106-.41.2-.924.03-1.327zm5.31.03c-.244.093-.182.42-.182.633l-.693-.482c.038.123.136.16.228.245.18.167.337.557.586.6zm1.538.573c-.213.377.097 1.154.15 1.569h-.03c-.168-.355-.492-.649-.754-.935-.037-.04-.228-.301-.296-.192-.071.114.278.385.343.463.241.286.459.609.642.935.105.189.197.44.397.543-.15-.778-.39-1.586-.392-2.383zm-10.045.302c.223.066.35.219.362.452l-.694.483zm5.007.24l-.03.031c.147.405.293.742.364 1.177.034.202.013.465.179.603.17-.322.23-.695.385-1.026.09-.19.234-.356.188-.573-.29.143-.461.787-.543 1.086-.15-.399-.104-1.092-.543-1.297zm2.051.303c.341.677.594 1.314.785 2.05.212-.118.183-.329.18-.542-.005-.497.186-.99.152-1.478-.143.048-.168.194-.193.332-.06.329-.06.669-.14.995-.163-.38-.293-1.279-.784-1.357zm6.365.24l.453.665-.664-.302zM8.657 19.18c.647.057.205.652-.06.935zm8.296.724l.272.845c-.224-.157-.488-.414-.604-.664zm-5.502.455l.344.058-.272.965h-.03l-.06-.754zm2.85.174c.062 0 .121.013.169.053.163.138-.067.805-.141.977l-.332-.965c.086-.022.2-.063.304-.065Z"/></svg>',
     tag:"Sécurité paranoïaque par défaut. Auteurs d'OpenSSH, LibreSSL, pf. Code audité ligne à ligne.",
-    site:"openbsd.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"openbsd.org", dl:"www.openbsd.org/faq/faq4.html#Download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Avancé", base:"BSD",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
@@ -1352,7 +1352,7 @@ window.OS_DATA = [
     id:"dragonfly", name:"DragonFly BSD", version:"6.4", cat:"bsd", color:"#EB2E42", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#EB2E42"><ellipse cx="7" cy="8" rx="6" ry="2.6" transform="rotate(-20 7 8)"/><ellipse cx="17" cy="8" rx="6" ry="2.6" transform="rotate(20 17 8)"/><ellipse cx="8" cy="15" rx="5.5" ry="2.4" transform="rotate(-15 8 15)"/><ellipse cx="16" cy="15" rx="5.5" ry="2.4" transform="rotate(15 16 15)"/><rect x="10.8" y="6" width="2.4" height="14" rx="1.2"/></svg>',
     tag:"Fork de FreeBSD. HAMMER2 : système de fichiers pensé pour clusters et snapshots.",
-    site:"dragonflybsd.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"dragonflybsd.org", dl:"www.dragonflybsd.org/images", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"BSD",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
@@ -1378,7 +1378,7 @@ window.OS_DATA = [
     id:"ghostbsd", name:"GhostBSD", version:"24.10", cat:"bsd", color:"#37BC9B", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#37BC9B"><path d="M12 2C7.6 2 4 5.6 4 10v11l2.5-2 2.5 2 3-2 3 2 2.5-2 2.5 2V10c0-4.4-3.6-8-8-8z"/><circle cx="9" cy="10" r="1.3" fill="#0b1512"/><circle cx="15" cy="10" r="1.3" fill="#0b1512"/></svg>',
     tag:"FreeBSD pensé pour le bureau. Installeur graphique simple, MATE ou Xfce par défaut.",
-    site:"ghostbsd.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"ghostbsd.org", dl:"ghostbsd.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"FreeBSD",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
@@ -1404,7 +1404,7 @@ window.OS_DATA = [
     id:"opnsense", name:"OPNsense", version:"24.x", cat:"network", color:"#D94F00", icon:"opnsense",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#D94F00"><path d="M5.25 0v5.25h13.5v13.5H24V7.5L16.5 0Zm13.5 18.75H5.25V5.25H0V16.5L7.5 24h11.25Z"/></svg>',
     tag:"Pare-feu open source. Fork de pfSense, UI moderne, community-friendly. FreeBSD dessous.",
-    site:"opnsense.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"opnsense.org", dl:"opnsense.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"FreeBSD",
     req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
     steps:[
@@ -1429,7 +1429,7 @@ window.OS_DATA = [
     id:"pfsense", name:"pfSense CE", version:"2.7", cat:"network", color:"#212121", icon:"pfsense",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#212121"><path d="M2.013 0C.898 0 0 .929 0 2.044v17.775L3.252 8.27h3.282L6.1 9.785h.063c.186-.217.433-.403.742-.62.31-.216.62-.402.96-.588.342-.186.713-.31 1.116-.433.402-.124.805-.155 1.208-.155.867 0 1.579.154 2.198.433.62.279 1.084.712 1.455 1.239.31.464.5 1.019.593 1.669.006.06.027.135.027.189.062.712-.031 1.518-.28 2.385a8.571 8.571 0 0 1-1.02 2.322 9.885 9.885 0 0 1-1.58 1.95 8.125 8.125 0 0 1-2.044 1.364 5.536 5.536 0 0 1-2.354.495 5.655 5.655 0 0 1-1.982-.34c-.588-.217-.99-.62-1.238-1.177h-.062L2.353 24h19.603A2.042 2.042 0 0 0 24 21.956V4.706c-.093-.03-.186-.06-.248-.092a2.771 2.771 0 0 0-.557-.062c-.557 0-1.022.124-1.394.372-.34.248-.65.743-.867 1.518l-.526 1.826h2.013l.495 1.58-1.3 1.27h-2.014l-2.446 8.67h-3.53l2.446-8.67h-1.455l.805-2.85h1.425l.557-2.044c.185-.619.403-1.238.681-1.795a4.996 4.996 0 0 1 1.053-1.487c.433-.434.99-.775 1.641-1.022.65-.248 1.487-.372 2.447-.372.248 0 .464 0 .712.031A2.082 2.082 0 0 0 21.988 0zm6.565 11.118c-.898 0-1.672.278-2.323.805-.65.526-1.083 1.239-1.331 2.106-.248.867-.217 1.579.155 2.105.31.557.929.805 1.858.805.898 0 1.672-.278 2.322-.805.65-.526 1.115-1.238 1.363-2.105.247-.867.185-1.58-.155-2.106-.34-.527-.991-.805-1.89-.805Z"/></svg>',
     tag:"Le standard du pare-feu open source. Netgate. Ultra-fiable en prod.",
-    site:"pfsense.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"pfsense.org", dl:"pfsense.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"FreeBSD",
     req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
     steps:[
@@ -1454,7 +1454,7 @@ window.OS_DATA = [
     id:"ipfire", name:"IPFire", version:"2.29", cat:"network", color:"#901111", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#901111"><path d="M12 2c1 3-2 4-2 7 0 1.3 1 2 2 2s2-.7 2-2c2 2 3 4.5 3 7 0 3.9-3.1 7-7 7s-7-3.1-7-7c0-4.5 3-6.5 5-9 1-1.2 1.5-2.8 1-5-1 .5-1.5 1.3-1.5 2.3 0 .7.5 1.3 1 1.7-.5-1-1-2.2-1-4z"/></svg>',
     tag:"Pare-feu segmenté par zones (GREEN/RED/ORANGE/BLUE). IDS/IPS Suricata intégré.",
-    site:"ipfire.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"ipfire.org", dl:"ipfire.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Linux From Scratch",
     req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
     steps:[
@@ -1480,7 +1480,7 @@ window.OS_DATA = [
     id:"haiku", name:"Haiku OS", version:"R1/beta4", cat:"alt", color:"#3AB4F2", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#3AB4F2" stroke-width="1.7" stroke-linecap="round"><path d="M5 3h11l3 3v15H5z" fill="#3AB4F2" fill-opacity=".12"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>',
     tag:"L'héritier open source de BeOS. Kernel maison, réactivité incroyable, look unique.",
-    site:"haiku-os.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"haiku-os.org", dl:"haiku-os.org/get-haiku", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~10 min", diff:"Facile", base:"BeOS",
     req:{ram:"384 Mo min. (512 Mo-1 Go conseillés pour un usage confortable)", disk:"1,5 à 3 Go d'espace disque", cpu:"x86 (Pentium ou mieux) ; x86_64 et ARM/RISC-V en développement"},
     steps:[
@@ -1505,7 +1505,7 @@ window.OS_DATA = [
     id:"reactos", name:"ReactOS", version:"0.4.14", cat:"retro", color:"#183246", icon:"reactos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#183246"><path d="M20.21 24c-1.148-.007-2.477-.334-3.89-.915-2.823-1.163-6.04-3.372-9.036-6.367C4.289 13.723 2.075 10.505.913 7.68-.25 4.857-.383 2.36.988.989 2.358-.38 4.855-.248 7.679.915c.306.125.617.265.932.415-.331.113-.658.24-.974.383l-.141-.058C4.832.558 2.698.519 1.607 1.609.517 2.7.557 4.83 1.653 7.494c1.097 2.663 3.235 5.793 6.147 8.704 2.91 2.911 6.044 5.05 8.708 6.147 2.664 1.097 4.79 1.136 5.88.045 1.091-1.09 1.056-3.22-.041-5.884-.108-.263-.23-.531-.358-.803.134-.317.25-.642.354-.973.282.54.53 1.07.744 1.589 1.163 2.823 1.292 5.32-.079 6.691-.685.685-1.651.997-2.799.99zM3.79 24c-1.148.008-2.117-.305-2.802-.99-1.37-1.37-1.238-3.868-.075-6.691.235-.572.517-1.16.836-1.76.098.333.212.66.34.978a17.67 17.67 0 00-.436.969C.556 19.169.521 21.3 1.611 22.39c1.091 1.091 3.221 1.051 5.885-.045.922-.38 3.021-1.69 4.026-2.308.216.162.433.32.649.474-1.157.733-3.415 2.13-4.492 2.574-1.412.581-2.74.907-3.888.915zm9.753-4.458c-.214-.14-.429-.282-.645-.433a34.547 34.547 0 003.302-2.911c2.912-2.911 5.05-6.04 6.147-8.704 1.097-2.664 1.132-4.794.042-5.885-1.091-1.09-3.217-1.055-5.88.042l-.072.029a10.726 10.726 0 00-.99-.379c.295-.14.587-.272.874-.39 2.824-1.163 5.321-1.292 6.691.078s1.238 3.864.075 6.688c-1.162 2.823-3.376 6.046-6.37 9.04a35.747 35.747 0 01-3.174 2.825zm1.95 1.156c-.325-.17-1.798-1.073-2.135-1.273 1.002-.806 2.423-1.97 3.396-2.944 1.718-1.718 3.981-4.787 5.162-6.555-.008.111-.093 2.49-.105 2.6a9.802 9.802 0 01-6.318 8.172zm-6.928-.034c-3.407-1.308-6.043-4.71-6.287-8.198-.01-.151-.06-.399-.054-.984.007-.602.056-1.423.159-1.283 1.036 1.42 3.976 5.455 5.352 6.83.973.973 1.927 1.624 2.929 2.43a112.45 112.45 0 01-2.1 1.205zm3.43-2.208a33.27 33.27 0 01-3.443-3.01c-2.54-2.54-4.462-5.254-5.568-7.582 1.45-3.597 4.973-6.138 9.087-6.138 4.051 0 7.53 2.465 9.02 5.976-1.093 2.363-3.045 5.145-5.643 7.743a33.161 33.161 0 01-3.452 3.011z"/></svg>',
     tag:"OS libre binaire-compatible Windows. Objectif : exécuter des .exe Windows nativement.",
-    site:"reactos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"reactos.org", dl:"reactos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"—",
     req:{ram:"96 Mo min. (256 Mo conseillés)", disk:"1,5 Go", cpu:"x86 32 bits"},
     steps:[
@@ -1529,7 +1529,7 @@ window.OS_DATA = [
     id:"freedos", name:"FreeDOS", version:"1.3", cat:"retro", color:"#004A9F", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#004A9F" stroke-width="1.8"><rect x="2.5" y="4" width="19" height="16" rx="1.5" fill="#004A9F" fill-opacity=".12"/><path d="M6 9l3 3-3 3M11 15h6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     tag:"Clone libre de MS-DOS. Compatibilité totale pour vieux logiciels, jeux DOS et outils BIOS.",
-    site:"freedos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"freedos.org", dl:"freedos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"DOS",
     req:{ram:"1 Mo suffit (fonctionne sur presque tout)", disk:"quelques dizaines de Mo", cpu:"x86, y compris très ancien matériel"},
     steps:[
@@ -1554,7 +1554,7 @@ window.OS_DATA = [
     id:"kubuntu", name:"Kubuntu", version:"24.04 LTS", cat:"desktop", color:"#0079C1", icon:"kubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0079C1"><path d="M21.257 14.292a.2065.2065 0 01.1097.2374l-.5765 1.5293a.2063.2063 0 01-.2033.155l-2.3369-.2283c-.0628.001-.1623-.008-.2776.1255-.0178.0207-.7472.9328-.9783 1.1832-.079.0708-.1067.1652-.0878.281l.5521 2.1962a.2064.2064 0 01-.098.2314l-1.513.8906a.2063.2063 0 01-.2556-.0418l-1.5494-1.7055c-.0516-.0555-.1551-.0994-.2271-.0759l-1.645.2391c-.0804.011-.1267.0635-.1603.1164l-.9938 2.0793a.2063.2063 0 01-.2353.089l-1.6687-.3945a.2065.2065 0 01-.1462-.1824.209.209 0 01.0105-.0815l.8812-3.244a.222.222 0 01.2828-.1373l.0033-.001a5.8423 5.8423 0 002.7168.2176c2.3222-.3696 4.1964-2.0953 4.756-4.3791l.011-.0407c.0277-.1194.1768-.1827.2963-.155 0 0 2.8684.9737 3.2936 1.0816a.2089.2089 0 01.0394.0143zM5.539 4.9898l.0001.0001a.2051.2051 0 01.0659.0489l2.392 2.3567a.222.222 0 01-.0186.3138l-.0008.0034A5.8422 5.8422 0 006.4594 9.976c-.8132 2.2063-.2244 4.685 1.494 6.29l.0353.0396c.0906.0827.0678.2335-.0148.3241 0 0-2.2452 2.0243-2.5472 2.3425a.2064.2064 0 01-.2924.007l-1.0521-1.2507a.2063.2063 0 01-.0358-.253l1.335-1.9253c.0297-.0553.0863-.1376.0262-.3035-.0092-.0256-.4482-1.108-.5536-1.432-.0232-.1035-.092-.1738-.2022-.214l-2.1789-.594a.2064.2064 0 01-.154-.1986l-.0368-1.7552a.2065.2065 0 01.1615-.2026l2.2384-.516c.0737-.0177.1625-.0866.1772-.1609l.5958-1.5517c.0298-.0755.0068-.1417-.023-.1968L4.111 6.5396a.2064.2064 0 01.0374-.2488l1.1602-1.2626a.2066.2066 0 01.2305-.0385zm10.4906-1.747a.2139.2139 0 01.0313.0147l1.5385.8455a.2065.2065 0 01.0947.2412l-.6793 2.198c-.0214.0727-.0062.1841.0508.234l1.046 1.2918c.0505.0636.1193.0767.182.0785l2.3-.2029a.2064.2064 0 01.1968.1567l.5134 1.6361a.2064.2064 0 01-.082.2189h-.0001a.205.205 0 01-.0753.0326l-3.244.8946a.222.222 0 01-.2624-.1729.012.012 0 01-.0025-.0024 5.8422 5.8422 0 00-1.201-2.4466c-1.5041-1.8073-3.9452-2.5368-6.1943-1.851l-.0402.0123c-.1169.0371-.248-.0597-.285-.1766 0 0-.6236-2.958-.7481-3.3786a.2063.2063 0 01.14-.2568l1.6093-.2858a.2063.2063 0 01.237.0955l.9929 2.1203c.033.0534.076.1436.2498.1744.0268.0048 1.1835.1658 1.5169.2366.1012.0316.1966.0073.2864-.068l1.6107-1.5916a.2064.2064 0 01.2177-.0486zM16.021.6955A11.9968 11.9968 0 007.794.763C1.5889 3.086-1.5582 9.9993.7647 16.2044c2.323 6.205 9.2362 9.3522 15.4413 7.0293 6.2051-2.3229 9.3522-9.2362 7.0293-15.4413A11.997 11.997 0 0016.021.6955z"/></svg>',
     tag:"Ubuntu avec KDE Plasma. Un bureau élégant, fluide et hautement personnalisable.",
-    site:"kubuntu.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"kubuntu.org", dl:"kubuntu.org/getkubuntu", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés, Plasma étant plus gourmand que GNOME)", disk:"25 Go min.", cpu:"2 GHz dual-core, 64 bits"},
     steps:[
@@ -1604,11 +1604,11 @@ window.OS_DATA = [
     id:"q4os", name:"Q4OS", version:"5.8", cat:"lightweight", color:"#2E86C1", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2E86C1" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2E86C1">Q4</text></svg>',
     tag:"Distro Debian ultra-légère, pensée pour ressusciter les vieux PC.",
-    site:"q4os.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"q4os.org", dl:"q4os.org/downloads1.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"q4os.org/downloads.html → édition Desktop ou Core (sans bureau)."},
+      {t:"Télécharger l'ISO", d:"q4os.org/downloads1.html → édition Desktop ou Core (sans bureau)."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
       {t:"Live", d:"Booter en live, RAM très basse suffit (512 Mo)."},
       {t:"Installer", d:"Assistant Calamares : disque, langue, utilisateur."},
@@ -1654,7 +1654,7 @@ window.OS_DATA = [
     id:"batocera", name:"Batocera", version:"39", cat:"gaming", color:"#E4572E", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E4572E" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E4572E">Bt</text></svg>',
     tag:"OS de rétro-gaming clé en main. Boot direct, des dizaines d'émulateurs préconfigurés.",
-    site:"batocera.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"batocera.org", dl:"batocera.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Linux",
     req:{ram:"2 Go min. (4 Go+ pour les consoles récentes émulées)", disk:"8 Go min., + espace pour les ROMs", cpu:"x86 ou ARM (Raspberry Pi pris en charge)"},
     steps:[
@@ -1678,7 +1678,7 @@ window.OS_DATA = [
     id:"lakka", name:"Lakka", version:"5.0", cat:"gaming", color:"#00ADEF", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#00ADEF" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#00ADEF">Lk</text></svg>',
     tag:"« Linux-libretro » : distribution minimaliste entièrement bâtie autour de RetroArch.",
-    site:"lakka.tv", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"lakka.tv", dl:"lakka.tv/disclaimer", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Linux",
     req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
     steps:[
@@ -1753,7 +1753,7 @@ window.OS_DATA = [
     id:"kicksecure", name:"Kicksecure", version:"18", cat:"security", color:"#6B46C1", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#6B46C1" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#6B46C1">Ks</text></svg>',
     tag:"Debian durci par défaut (les mêmes protections que Whonix, sans le routage Tor obligatoire).",
-    site:"kicksecure.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"kicksecure.com", dl:"kicksecure.com/wiki/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
@@ -1778,7 +1778,7 @@ window.OS_DATA = [
     id:"dietpi", name:"DietPi", version:"9.x", cat:"lightweight", color:"#6BAF41", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#6BAF41" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#6BAF41">Di</text></svg>',
     tag:"OS minimaliste pour Raspberry Pi / SBC, avec un menu d'installation de services en un clic.",
-    site:"dietpi.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"dietpi.com", dl:"dietpi.com/#download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -1803,7 +1803,7 @@ window.OS_DATA = [
     id:"silverblue", name:"Fedora Silverblue", version:"40", cat:"advanced", color:"#3C6EB4", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#3C6EB4" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#3C6EB4">Sb</text></svg>',
     tag:"Fedora immuable façon image atomique (rpm-ostree). Rollbacks natifs, apps en Flatpak.",
-    site:"fedoraproject.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/silverblue", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Fedora",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -1829,11 +1829,11 @@ window.OS_DATA = [
     id:"chimera", name:"Chimera Linux", version:"rolling", cat:"advanced", color:"#708090", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#708090" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#708090">Ch</text></svg>',
     tag:"Distro expérimentale musl/LLVM avec un userland BSD (dinit, bmake). Ni GNU ni systemd.",
-    site:"chimera-linux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"chimera-linux.org", dl:"chimera-linux.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"—",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"chimera-linux.org/download → image bootstrap."},
+      {t:"Télécharger l'ISO", d:"chimera-linux.org/downloads → image bootstrap."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
       {t:"Live", d:"Booter en live, ouvrir un terminal."},
       {t:"chimera-bootstrap", d:"Lancer le script d'installation interactif.", code:"chimera-bootstrap-install"},
@@ -1855,11 +1855,11 @@ window.OS_DATA = [
     id:"openindiana", name:"OpenIndiana", version:"Hipster", cat:"bsd", color:"#F26522", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#F26522" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#F26522">Oi</text></svg>',
     tag:"Héritier libre d'OpenSolaris (illumos). ZFS natif, zones, DTrace : l'ADN Solaris préservé.",
-    site:"openindiana.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"openindiana.org", dl:"openindiana.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"illumos",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"openindiana.org/download → édition Hipster (rolling)."},
+      {t:"Télécharger l'ISO", d:"openindiana.org/downloads → édition Hipster (rolling)."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
       {t:"Live", d:"Booter en session live GNOME/Xfce."},
       {t:"Installer", d:"Lancer l'installeur graphique, partitionnement sur ZFS conseillé."},
@@ -1881,7 +1881,7 @@ window.OS_DATA = [
     id:"midnightbsd", name:"MidnightBSD", version:"3.2", cat:"bsd", color:"#1A1A40", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1A1A40" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1A1A40">Mb</text></svg>',
     tag:"Fork de FreeBSD orienté bureau, avec son propre gestionnaire de paquets mport.",
-    site:"midnightbsd.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"midnightbsd.org", dl:"midnightbsd.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"FreeBSD",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
@@ -1959,11 +1959,11 @@ window.OS_DATA = [
     id:"redox", name:"Redox OS", version:"0.9", cat:"alt", color:"#CC0000", icon:"redox",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#CC0000"><path d="M5.6935 6.0492a.2861.2861 0 0 0-.2578.242C3.5384 6.383 1.883 7.4011.912 8.9027H.9101a.2835.2835 0 0 0-.3866.2638c0 .0888.0423.1682.1073.2203A5.689 5.689 0 0 0 0 12.0001c0 .9415.2272 1.83.6312 2.6135a.2827.2827 0 0 0 .2808.4842c.9706 1.5016 2.6264 2.5198 4.5237 2.6116v.002a.2835.2835 0 0 0 .5605-.0023c1.8966-.0919 3.5509-1.1105 4.5215-2.6113h.0019a.285.285 0 0 0 .3885-.2638.2857.2857 0 0 0-.031-.1266l-.014-.0295-.029.0159a2.3482 2.3482 0 0 1-.459.1851l-.0313.0099.0098.0313a.3061.3061 0 0 0 .0216.0492 5.5177 5.5177 0 0 1-4.4202 2.5485v-.0019a.2827.2827 0 0 0-.4803.0038 5.5219 5.5219 0 0 1-4.4202-2.549l.0019-.0018a.2835.2835 0 0 0-.2419-.418A5.5003 5.5003 0 0 1 .1909 12c0-.9203.2252-1.7877.6232-2.5508a.2835.2835 0 0 0 .2404-.4195 5.5219 5.5219 0 0 1 4.4198-2.549.2827.2827 0 0 0 .4822 0 5.5219 5.5219 0 0 1 4.4183 2.5508.2816.2816 0 0 0-.0351.1346.285.285 0 0 0 .277.2835 5.4879 5.4879 0 0 1 .4649 1.232 2.369 2.369 0 0 1 .238.1894 5.6693 5.6693 0 0 0-.5192-1.4842.2827.2827 0 0 0 .1073-.2207.2854.2854 0 0 0-.3885-.2638A5.7112 5.7112 0 0 0 5.9958 6.293a.285.285 0 0 0-.2811-.2438c-.0076 0-.0144-.0007-.0216 0zm-.006 1.4177a.288.288 0 0 0-.248.2207c-2.245.1486-4.0233 2.0183-4.0233 4.3011 0 2.2802 1.7749 4.1492 4.0176 4.3004a.2835.2835 0 0 0 .2812.2441.2869.2869 0 0 0 .2812-.2418 4.3041 4.3041 0 0 0 2.945-1.4317 2.369 2.369 0 0 1-.1874-.0764 4.1083 4.1083 0 0 1-2.7969 1.3183.2854.2854 0 0 0-.2419-.1345.288.288 0 0 0-.2403.1326c-2.1582-.1304-3.8673-1.92-3.8673-4.111 0-2.1872 1.7027-3.9749 3.8552-4.1113v.0022a.283.283 0 0 0 .5064-.0022c1.5625.0907 2.8902 1.0492 3.5074 2.4026a2.369 2.369 0 0 1 .2034-.0159 4.3124 4.3124 0 0 0-3.6877-2.576v-.002a.285.285 0 0 0-.277-.2188c-.0099 0-.0182-.0008-.0277 0zM3.959 9.506v4.9849h.4958V9.9572h.703c.5099 0 .892.0605 1.1467.1815a.8504.8504 0 0 1 .389.3673c.0922.1648.1383.3614.1383.5896 0 .5496-.2415.8965-.7227 1.0394-.2282.0635-.6104.0956-1.1463.0956l1.6819 2.2602h.6187L5.8651 12.629c.4788-.0503.8455-.2056 1.096-.4649.2525-.2612.3787-.6145.3787-1.0605 0-.3031-.0623-.5685-.1851-.7967a1.3667 1.3667 0 0 0-.5318-.547c-.305-.1689-.7813-.254-1.4313-.254Zm11.6288 0v1.8811c-.3757-.4505-.8583-.6757-1.449-.6757-.3693 0-.703.0846-1.0043.2536a1.858 1.858 0 0 0-.7049.6992c-.1693.2967-.254.6259-.254.9902 0 .3606.0881.6883.2639.9827a1.8644 1.8644 0 0 0 .7207.6916c.3073.1663.6497.2495 1.0254.2495.3073 0 .5696-.059.7869-.1776.2196-.1183.424-.3118.6153-.5798v.6697h.502V9.506ZM9.697 10.7114a1.8905 1.8905 0 0 0-.9645.2536 1.8591 1.8591 0 0 0-.6916.6954 1.9106 1.9106 0 0 0-.254.9687c0 .2683.0514.5223.1523.7635a1.911 1.911 0 0 0 .4104.6236 1.9257 1.9257 0 0 0 .6229.412 1.9665 1.9665 0 0 0 .7657.1504 1.8172 1.8172 0 0 0 1.0957-.3576 1.948 1.948 0 0 0 .6992-.9471h-.5215a1.3172 1.3172 0 0 1-.5099.613 1.4003 1.4003 0 0 1-.777.2306 1.4237 1.4237 0 0 1-.9884-.3787c-.279-.2552-.4294-.5632-.4494-.928h3.338c0-.246-.0158-.4508-.049-.6133a1.8002 1.8002 0 0 0-.1716-.4804 1.7953 1.7953 0 0 0-.7012-.7363 1.9446 1.9446 0 0 0-1.006-.2694Zm9.0082 0c-.5432.0113-.9925.1954-1.3497.5506-.3693.3648-.5548.8266-.5548 1.3868 0 .3647.0846.6939.254.9883a1.833 1.833 0 0 0 .709.6916c.3008.1663.6365.2495 1.0076.2495.5427 0 .9918-.1822 1.3478-.5465.3556-.3647.5329-.8236.5329-1.3773 0-.3666-.0813-.6973-.2457-.994a1.7688 1.7688 0 0 0-.68-.6954c-.2875-.169-.6107-.2536-.9686-.2536h-.053zm2.1619.0895 1.285 1.809-1.285 1.8806h.5665l1.0016-1.4804.9902 1.4804H24l-1.291-1.8807L24 10.8008h-.5745l-.9902 1.4219-1.0016-1.4219zm-11.2343.3693c.0215-.0008.0427 0 .0642 0 .3583 0 .6652.1054.92.3182.257.2132.4263.5027.5102.8693H8.3006c.068-.3556.2313-.6417.4883-.8594a1.3444 1.3444 0 0 1 .844-.3281zm4.4005 0c.0242-.0011.0472 0 .0718 0 .4222 0 .7786.1421 1.0685.4278.2902.2835.4358.6286.4358 1.0371 0 .4082-.141.759-.4218 1.0489-.2812.2899-.6206.4335-1.016.4335-.4195 0-.7725-.1406-1.0605-.4237-.2854-.2857-.4275-.6357-.4275-1.0507 0-.4086.1372-.756.4139-1.0413.2596-.2698.5718-.4146.9358-.4316zm4.611 0c.025-.0011.0491 0 .0745 0 .4172 0 .7593.1387 1.0272.42.268.2788.4022.6371.4022 1.0722 0 .424-.1312.7725-.3923 1.0469-.2593.2721-.5919.4082-.9982.4082-.4173 0-.7627-.1372-1.0371-.4139-.2744-.277-.412-.6274-.412-1.0492 0-.426.1342-.7793.4022-1.0605.2513-.2653.5627-.407.9335-.4233z"/></svg>',
     tag:"OS écrit en Rust, microkernel, orienté sécurité mémoire. Projet de recherche actif.",
-    site:"redox-os.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"redox-os.org", dl:"redox-os.org/quickstart", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"—",
     req:{ram:"2-4 Go selon le projet", disk:"8-16 Go d'espace disque", cpu:"x86_64 standard"},
     steps:[
-      {t:"Télécharger l'image", d:"redox-os.org/download → image .img pré-compilée."},
+      {t:"Télécharger l'image", d:"redox-os.org/quickstart → image .img pré-compilée."},
       {t:"Graver la clé", d:"dd ou balenaEtcher (image brute, pas ISO)."},
       {t:"Booter", d:"Démarrer sur la clé, l'environnement Orbital se lance."},
       {t:"Tester en VM", d:"Alternative recommandée : lancer directement l'image dans QEMU."},
@@ -1986,7 +1986,7 @@ window.OS_DATA = [
     id:"clonezilla", name:"Clonezilla Live", version:"3.1", cat:"recovery", color:"#F7B500", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#F7B500" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#F7B500">Cz</text></svg>',
     tag:"Outil de clonage/sauvegarde d'images disque, l'équivalent libre de Norton Ghost.",
-    site:"clonezilla.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"clonezilla.org", dl:"clonezilla.org/downloads.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
@@ -2011,11 +2011,11 @@ window.OS_DATA = [
     id:"systemrescue", name:"SystemRescue", version:"11", cat:"recovery", color:"#2ECC71", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2ECC71" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2ECC71">Sr</text></svg>',
     tag:"Live Linux de dépannage (Arch-based) : partitionnement, récupération de données, réseau.",
-    site:"sysrescue.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"system-rescue.org", dl:"www.system-rescue.org/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Arch",
     req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
-      {t:"Télécharger l'ISO", d:"sysrescue.org/Download → image amd64."},
+      {t:"Télécharger l'ISO", d:"www.system-rescue.org/Download → image amd64."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
       {t:"Démarrer", d:"Booter en UEFI ou Legacy, session live avec Xfce ou console."},
       {t:"Outils", d:"GParted, TestDisk/PhotoRec, ddrescue déjà installés."},
@@ -2062,7 +2062,7 @@ window.OS_DATA = [
     id:"ultramarine", name:"Ultramarine Linux", version:"41", cat:"desktop", color:"#4169E1", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4169E1" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4169E1">Um</text></svg>',
     tag:"Fedora repensée grand public : préconfigurée, codecs inclus, plusieurs bureaux au choix.",
-    site:"ultramarine-linux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"ultramarine-linux.org", dl:"ultramarine-linux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Fedora",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -2087,7 +2087,7 @@ window.OS_DATA = [
     id:"mageia", name:"Mageia", version:"9", cat:"desktop", color:"#1E88E5", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1E88E5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1E88E5">Mg</text></svg>',
     tag:"Fork communautaire de Mandriva. Installeur DrakX réputé, très complet.",
-    site:"mageia.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"mageia.org", dl:"mageia.org/fr/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -2112,7 +2112,7 @@ window.OS_DATA = [
     id:"chimeraos", name:"ChimeraOS", version:"48", cat:"gaming", color:"#17A2B8", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#17A2B8" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#17A2B8">Cm</text></svg>',
     tag:"Alternative libre à SteamOS pour n'importe quel PC. Boot direct en Big Picture / mode console.",
-    site:"chimeraos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"chimeraos.org", dl:"chimeraos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Arch",
     req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
     steps:[
@@ -2137,7 +2137,7 @@ window.OS_DATA = [
     id:"openmediavault", name:"OpenMediaVault", version:"7", cat:"server", color:"#009688", icon:"openmediavault",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#009688"><path d="M.945 1.045A.947.947 0 0 0 0 1.988v20.024c0 .534.436.943.945.943h22.11a.944.944 0 0 0 .945-.943V1.988a.941.941 0 0 0-.945-.943Zm.118 1.064h21.875v19.784H1.063ZM3.53 4.385c-.198 0-.361.149-.361.334v3.699c0 .185.162.334.361.334h16.94c.198 0 .36-.15.36-.334v-3.7c0-.184-.161-.333-.36-.333zm2.057.886a1.3 1.3 0 0 1 1.297 1.297 1.3 1.3 0 0 1-1.297 1.3 1.3 1.3 0 0 1-1.299-1.3 1.3 1.3 0 0 1 1.299-1.297m-.002.62a.68.68 0 0 0-.676.677.68.68 0 0 0 .678.678.68.68 0 0 0 .678-.678.68.68 0 0 0-.678-.677ZM3.53 9.816c-.198 0-.361.15-.361.334v3.702c0 .184.162.332.361.332h16.94c.198 0 .36-.15.36-.334v-3.7c0-.184-.161-.334-.36-.334zm2.057.887A1.3 1.3 0 0 1 6.885 12a1.3 1.3 0 0 1-1.297 1.299A1.3 1.3 0 0 1 4.289 12a1.3 1.3 0 0 1 1.299-1.297m-.002.62A.68.68 0 0 0 4.91 12a.68.68 0 0 0 .678.68.68.68 0 0 0 0-1.358ZM3.53 15.247c-.198 0-.361.15-.361.334v3.701c0 .185.162.332.361.332h16.94c.198 0 .36-.15.36-.334v-3.699c0-.184-.161-.334-.36-.334zm2.057.887a1.3 1.3 0 0 1 1.297 1.297 1.3 1.3 0 0 1-1.297 1.298 1.3 1.3 0 0 1-1.299-1.298 1.3 1.3 0 0 1 1.299-1.297m-.002.619a.68.68 0 0 0 .002 1.358.68.68 0 0 0 0-1.358Z"/></svg>',
     tag:"NAS libre basé sur Debian. Partage réseau, RAID logiciel, plugins pour Docker/Nextcloud.",
-    site:"openmediavault.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"openmediavault.org", dl:"www.openmediavault.org/download.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -2162,7 +2162,7 @@ window.OS_DATA = [
     id:"xcpng", name:"XCP-ng", version:"8.3", cat:"server", color:"#F47B20", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#F47B20" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#F47B20">Xn</text></svg>',
     tag:"Hyperviseur libre basé sur Xen, alternative sérieuse à ESXi. Géré via Xen Orchestra.",
-    site:"xcp-ng.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"xcp-ng.org", dl:"xcp-ng.org/#easy-to-install", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Xen",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -2214,7 +2214,7 @@ window.OS_DATA = [
     id:"caine", name:"CAINE", version:"12", cat:"security", color:"#1F3A5F", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1F3A5F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1F3A5F">Ca</text></svg>',
     tag:"Distro forensique (Computer Aided INvestigative Environment), basée sur Ubuntu. Écriture bloquée par défaut.",
-    site:"caine-live.net", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"caine-live.net", dl:"caine-live.net/page5/page5.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
@@ -2239,7 +2239,7 @@ window.OS_DATA = [
     id:"sparkylinux", name:"SparkyLinux", version:"7 Orion Belt", cat:"lightweight", color:"#E67E22", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E67E22" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E67E22">Sp</text></svg>',
     tag:"Basée sur Debian Testing, légère et rapide, avec des éditions spécialisées (multimédia, gaming).",
-    site:"sparkylinux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"sparkylinux.org", dl:"sparkylinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -2264,7 +2264,7 @@ window.OS_DATA = [
     id:"4mlinux", name:"4MLinux", version:"46", cat:"lightweight", color:"#27AE60", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#27AE60" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#27AE60">4M</text></svg>',
     tag:"Micro-distribution (boot depuis un CD, tient en quelques dizaines de Mo) : maintenance, multimédia, mini-serveur.",
-    site:"4mlinux.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"4mlinux.com", dl:"4mlinux.com/index.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~6 min", diff:"Facile", base:"—",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -2314,7 +2314,7 @@ window.OS_DATA = [
     id:"kinoite", name:"Fedora Kinoite", version:"40", cat:"advanced", color:"#294172", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#294172" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#294172">Kn</text></svg>',
     tag:"Équivalent KDE Plasma de Silverblue : bureau immuable, mises à jour atomiques, Flatpak par défaut.",
-    site:"fedoraproject.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/kinoite", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Fedora",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -2340,7 +2340,7 @@ window.OS_DATA = [
     id:"devuan", name:"Devuan", version:"6.1 Excalibur", cat:"advanced", color:"#8E1B3C", icon:"devuan",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#8E1B3C"><path d="M0 .415C42.518 10.56 2.297 18.812 2.297 18.812c-.792.127-1.432.54-1.816 1.167-.433.704-.47 1.656-.066 2.326.492.814 1.114 1.096 1.65 1.217.845.191 1.527-.113 1.527-.113s20.562-6.11 20.407-12.214C23.922 8.131 17.694 2.948 0 .415"/></svg>',
     tag:"Fork de Debian sans systemd (init sysvinit/OpenRC/runit au choix). Pour les puristes Unix.",
-    site:"devuan.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"devuan.org", dl:"devuan.org/os/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -2366,7 +2366,7 @@ window.OS_DATA = [
     id:"guix", name:"Guix System", version:"1.4", cat:"advanced", color:"#FFB400", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#FFB400" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#FFB400">Gx</text></svg>',
     tag:"Distro GNU 100% libre, configuration déclarative en Scheme, rollbacks transactionnels façon NixOS.",
-    site:"gnu.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"gnu.org", dl:"guix.gnu.org/en/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"—",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -2468,7 +2468,7 @@ window.OS_DATA = [
     id:"templeos", name:"TempleOS", version:"5.03", cat:"alt", color:"#FFD700", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#FFD700" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#FFD700">Tp</text></svg>',
     tag:"OS 64 bits écrit seul par Terry A. Davis, en HolyC, avec compilateur/EDL/3D intégrés. Curiosité historique de l'informatique DIY.",
-    site:"templeos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"templeos.org", dl:"templeos.org/Downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~5 min", diff:"Intermédiaire", base:"—",
     req:{ram:"2-4 Go selon le projet", disk:"8-16 Go d'espace disque", cpu:"x86_64 standard"},
     steps:[
@@ -2493,7 +2493,7 @@ window.OS_DATA = [
     id:"corelinux", name:"Fedora CoreOS", version:"stable", cat:"container", color:"#294172", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#294172" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#294172">Co</text></svg>',
     tag:"OS minimal auto-mis-à-jour, conçu pour exécuter des conteneurs à grande échelle (successeur de CoreOS).",
-    site:"getfedora.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"getfedora.org", dl:"getfedora.org/coreos/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"Fedora",
     req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
@@ -2519,7 +2519,7 @@ window.OS_DATA = [
     id:"flatcar", name:"Flatcar Container Linux", version:"stable", cat:"container", color:"#4495D1", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4495D1" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4495D1">Fc</text></svg>',
     tag:"Fork communautaire de CoreOS Container Linux. Immuable, mises à jour automatiques façon ChromeOS.",
-    site:"flatcar.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"flatcar.org", dl:"flatcar.org/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"—",
     req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
@@ -2571,7 +2571,7 @@ window.OS_DATA = [
     id:"gpartedlive", name:"GParted Live", version:"1.6.0", cat:"recovery", color:"#1ABC9C", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1ABC9C" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1ABC9C">Gp</text></svg>',
     tag:"Live minimaliste dédié au partitionnement graphique (redimensionner, déplacer, formater).",
-    site:"gparted.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"gparted.org", dl:"gparted.org/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~5 min", diff:"Facile", base:"Debian",
     req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
@@ -2596,7 +2596,7 @@ window.OS_DATA = [
     id:"hirensbootcd", name:"Hiren's BootCD PE", version:"1.0.3", cat:"recovery", color:"#2980B9", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2980B9" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2980B9">Hb</text></svg>',
     tag:"Environnement de secours basé sur Windows PE : dépannage, récupération de données, antivirus hors ligne.",
-    site:"hirensbootcd.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"hirensbootcd.org", dl:"www.hirensbootcd.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Windows PE",
     req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
@@ -2622,7 +2622,7 @@ window.OS_DATA = [
     id:"nitrux", name:"Nitrux", version:"3.7", cat:"desktop", color:"#5E2CA5", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#5E2CA5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#5E2CA5">Nx</text></svg>',
     tag:"Bureau NX Desktop maison au-dessus de KDE Frameworks, tout en AppImage via NX Software Center.",
-    site:"nxos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"nxos.org", dl:"nxos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Debian",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -2647,7 +2647,7 @@ window.OS_DATA = [
     id:"kaos", name:"KaOS", version:"2024.05", cat:"desktop", color:"#21B6A8", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#21B6A8" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#21B6A8">Ka</text></svg>',
     tag:"Distro indépendante 100% KDE Plasma/Qt, rolling, philosophie « un seul bureau fait bien ».",
-    site:"kaosx.us", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"kaosx.us", dl:"kaosx.us/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"—",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -2722,11 +2722,11 @@ window.OS_DATA = [
     id:"ucs", name:"Univention Corporate Server", version:"5.2", cat:"server", color:"#FF6600", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#FF6600" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#FF6600">Uc</text></svg>',
     tag:"Serveur d'annuaire/identité open source (compatible Active Directory) basé sur Debian.",
-    site:"univention.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"univention.com", dl:"www.univention.com/products/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Debian",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"univention.com/downloads → édition Core (gratuite)."},
+      {t:"Télécharger l'ISO", d:"univention.com/products/download → édition Core (gratuite)."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
       {t:"Installeur", d:"Choisir le rôle du serveur (Domain Controller Master pour le premier)."},
       {t:"UCS Management Console", d:"Terminer la configuration depuis l'interface web.", code:"https://<ip-serveur>"},
@@ -2748,7 +2748,7 @@ window.OS_DATA = [
     id:"smartos", name:"SmartOS", version:"2024", cat:"server", color:"#00A4E4", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#00A4E4" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#00A4E4">Sm</text></svg>',
     tag:"Hyperviseur illumos taillé pour le cloud : zones légères + KVM, ZFS natif, live USB uniquement.",
-    site:"smartos.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"smartos.org", dl:"smartos.org/get-smartos", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"illumos",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
@@ -2800,7 +2800,7 @@ window.OS_DATA = [
     id:"kalipurple", name:"Kali Purple", version:"2026.2", cat:"security", color:"#7A288A", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#7A288A" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#7A288A">Kp</text></svg>',
     tag:"Version défensive (blue team) de Kali : SIEM, IDS et outils SOC préinstallés aux côtés des classiques.",
-    site:"kali.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"kali.org", dl:"kali.org/get-kali", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
@@ -2826,7 +2826,7 @@ window.OS_DATA = [
     id:"tsurugi", name:"Tsurugi Linux", version:"26.03", cat:"security", color:"#B71C1C", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#B71C1C" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#B71C1C">Ts</text></svg>',
     tag:"Distro forensique/DFIR basée sur Ubuntu LTS, orientée investigation numérique et OSINT.",
-    site:"tsurugi-linux.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"tsurugi-linux.org", dl:"tsurugi-linux.org/downloads.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
@@ -2852,11 +2852,11 @@ window.OS_DATA = [
     id:"pentoo", name:"Pentoo", version:"2024.0", cat:"security", color:"#54487A", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#54487A" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#54487A">Pt</text></svg>',
     tag:"Overlay pentest pour Gentoo. Compilation source, kernel durci (hardened), pour utilisateurs avancés.",
-    site:"pentoo.ch", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"pentoo.ch", dl:"pentoo.ch/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Gentoo",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"pentoo.ch/download → image live amd64 (hardened)."},
+      {t:"Télécharger l'ISO", d:"pentoo.ch/downloads → image live amd64 (hardened)."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
       {t:"Live", d:"Booter en live, mot de passe root par défaut à changer immédiatement."},
       {t:"Installer (optionnel)", d:"Utiliser install-gentoo pour une installation persistante, façon Gentoo classique."},
@@ -2903,7 +2903,7 @@ window.OS_DATA = [
     id:"trisquelmini", name:"Trisquel Mini", version:"11", cat:"lightweight", color:"#4A90D9", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4A90D9" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4A90D9">Tq</text></svg>',
     tag:"Édition légère (LXDE) de Trisquel, distro 100% logiciel libre approuvée par la FSF, basée sur Ubuntu.",
-    site:"trisquel.info", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"trisquel.info", dl:"trisquel.info/en/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
@@ -2928,7 +2928,7 @@ window.OS_DATA = [
     id:"crux", name:"CRUX", version:"3.7", cat:"advanced", color:"#C0392B", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#C0392B" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#C0392B">Cx</text></svg>',
     tag:"Distro source-based minimaliste, gestionnaire de ports façon BSD, pour puristes du « fait main ».",
-    site:"crux.nu", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"crux.nu", dl:"crux.nu/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -3004,7 +3004,7 @@ window.OS_DATA = [
     id:"microos", name:"openSUSE MicroOS", version:"Tumbleweed", cat:"advanced", color:"#4E9A06", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4E9A06" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4E9A06">Mo</text></svg>',
     tag:"openSUSE immuable en transactions atomiques (transactional-update), pensée conteneurs et edge.",
-    site:"opensuse.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"opensuse.org", dl:"get.opensuse.org/microos", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"openSUSE",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -3030,7 +3030,7 @@ window.OS_DATA = [
     id:"nomadbsd", name:"NomadBSD", version:"140R", cat:"bsd", color:"#A93226", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#A93226" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#A93226">Nb</text></svg>',
     tag:"FreeBSD prêt à l'emploi sur clé USB persistante : détection auto du matériel, bureau graphique inclus.",
-    site:"nomadbsd.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"nomadbsd.org", dl:"nomadbsd.org/download.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"FreeBSD",
     req:{ram:"1-2 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64 (ARM selon le projet)"},
     steps:[
@@ -3055,7 +3055,7 @@ window.OS_DATA = [
     id:"endian", name:"Endian Firewall", version:"Community 3.4", cat:"network", color:"#16A085", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#16A085" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#16A085">Ef</text></svg>',
     tag:"UTM (Unified Threat Management) libre basé sur Linux : pare-feu, VPN, antivirus, filtrage web.",
-    site:"endian.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"endian.com", dl:"endian.com/community", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Linux",
     req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
     steps:[
@@ -3081,7 +3081,7 @@ window.OS_DATA = [
     id:"9front", name:"9front", version:"rolling", cat:"alt", color:"#7F8C8D", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#7F8C8D" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#7F8C8D">9f</text></svg>',
     tag:"Fork communautaire de Plan 9 from Bell Labs. Philosophie « tout est un fichier » poussée à l'extrême.",
-    site:"9front.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"9front.org", dl:"9front.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Plan 9",
     req:{ram:"2-4 Go selon le projet", disk:"8-16 Go d'espace disque", cpu:"x86_64 standard"},
     steps:[
@@ -3107,7 +3107,7 @@ window.OS_DATA = [
     id:"genode", name:"Genode OS Framework", version:"24.05", cat:"alt", color:"#F39C12", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#F39C12" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#F39C12">Ge</text></svg>',
     tag:"Framework d'OS à composants, exécutable sur plusieurs microkernels (seL4, NOVA…). Sculpt OS en est la distro phare.",
-    site:"genode.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"genode.org", dl:"genode.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"seL4 / NOVA",
     req:{ram:"2-4 Go selon le projet", disk:"8-16 Go d'espace disque", cpu:"x86_64 standard"},
     steps:[
@@ -3261,7 +3261,7 @@ window.OS_DATA = [
     id:"ubuntumate", name:"Ubuntu MATE", version:"24.04 LTS", cat:"desktop", color:"#84A454", icon:"ubuntumate",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#84A454"><path d="M12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.628-5.373-12-12-12zm2.005 3.245L18.667 6 14 8.755ZM12 4.66c.342 0 .676.028 1.005.073v1.021A6.327 6.327 0 0 0 6.12 9.63l-.865-.51C6.378 6.503 8.978 4.66 12 4.66Zm0 2.495c.342 0 .677.041 1 .11v1.036a3.866 3.866 0 0 0-1-.13 3.812 3.812 0 0 0-3.672 2.76l-.896-.531A4.855 4.855 0 0 1 12 7.156Zm5.885.464A7.305 7.305 0 0 1 19.34 12a7.308 7.308 0 0 1-1.5 4.437l-.87-.515A6.3 6.3 0 0 0 18.329 12a6.31 6.31 0 0 0-1.313-3.865zm-2.171 1.286a4.81 4.81 0 0 1-.047 6.25l-.891-.526A3.793 3.793 0 0 0 15.828 12c0-.996-.377-1.899-.995-2.578zm-12.209.339L8.167 12 3.5 14.755Zm4.823 3.823A3.809 3.809 0 0 0 12 15.823c.346 0 .681-.047 1-.13v1.041a4.81 4.81 0 0 1-1 .11c-2.106 0-3.906-1.362-4.568-3.25zM6.12 14.37A6.327 6.327 0 0 0 12 18.328c.34 0 .67-.027.995-.078v1.016a7.212 7.212 0 0 1-.995.073c-3.022 0-5.622-1.842-6.745-4.459zm7.88.963 4.661 2.75-4.666 2.756z"/></svg>',
     tag:"Ubuntu avec le bureau MATE traditionnel : familier, léger et configurable.",
-    site:"ubuntu-mate.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"ubuntu-mate.org", dl:"ubuntu-mate.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -3285,7 +3285,7 @@ window.OS_DATA = [
     id:"ubuntubudgie", name:"Ubuntu Budgie", version:"24.04 LTS", cat:"desktop", color:"#4B4C6E", icon:"ubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#4B4C6E"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"Ubuntu avec le bureau Budgie : élégant, moderne et épuré.",
-    site:"ubuntubudgie.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"ubuntubudgie.org", dl:"ubuntubudgie.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -3333,7 +3333,7 @@ window.OS_DATA = [
     id:"lmde", name:"LMDE 6", version:"Faye", cat:"desktop", color:"#87CF3E", icon:"linuxmint",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#87CF3E"><path d="M5.438 5.906v8.438c0 2.06 1.69 3.75 3.75 3.75h5.625c2.06 0 3.75-1.69 3.75-3.75V9.656a2.827 2.827 0 0 0-2.813-2.812 2.8 2.8 0 0 0-1.875.737A2.8 2.8 0 0 0 12 6.844a2.827 2.827 0 0 0-2.812 2.812v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688a1.86 1.86 0 0 1-1.875 1.875H9.188a1.86 1.86 0 0 1-1.875-1.875V5.906ZM12 0C5.384 0 0 5.384 0 12s5.384 12 12 12 12-5.384 12-12S18.616 0 12 0m0 1.875A10.11 10.11 0 0 1 22.125 12 10.11 10.11 0 0 1 12 22.125 10.11 10.11 0 0 1 1.875 12 10.11 10.11 0 0 1 12 1.875"/></svg>',
     tag:"Linux Mint Debian Edition : le confort de Mint, directement sur base Debian.",
-    site:"linuxmint.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"linuxmint.com", dl:"linuxmint.com/download_lmde.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -3357,7 +3357,7 @@ window.OS_DATA = [
     id:"tumbleweed", name:"openSUSE Tumbleweed", version:"rolling", cat:"advanced", color:"#73BA25", icon:"opensuse",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#73BA25"><path d="M10.724 0a12 12 0 0 0-9.448 4.623c1.464.391 2.5.727 2.81.832.005-.19.037-1.893.037-1.893s.004-.04.025-.06c.026-.026.065-.018.065-.018.385.056 8.602 1.274 12.066 3.292.427.25.638.517.902.786.958.99 2.223 5.108 2.359 5.957.005.033-.036.07-.054.083a5.177 5.177 0 0 1-.313.228c-.82.55-2.708 1.872-5.13 1.656-2.176-.193-5.018-1.44-8.445-3.699.336.79.668 1.58 1 2.371.497.258 5.287 2.7 7.651 2.651 1.904-.04 3.941-.968 4.756-1.458 0 0 .179-.108.257-.048.085.066.061.167.041.27-.05.234-.164.66-.242.863l-.065.165c-.093.25-.183.482-.356.625-.48.436-1.246.784-2.446 1.305-1.855.812-4.865 1.328-7.66 1.31-1.001-.022-1.968-.133-2.817-.232-1.743-.197-3.161-.357-4.026.269A12 12 0 0 0 10.724 24a12 12 0 0 0 12-12 12 12 0 0 0-12-12zM13.4 6.963a3.503 3.503 0 0 0-2.521.942 3.498 3.498 0 0 0-1.114 2.449 3.528 3.528 0 0 0 3.39 3.64 3.48 3.48 0 0 0 2.524-.946 3.504 3.504 0 0 0 1.114-2.446 3.527 3.527 0 0 0-3.393-3.64zm-.03 1.035a2.458 2.458 0 0 1 2.368 2.539 2.43 2.43 0 0 1-.774 1.706 2.456 2.456 0 0 1-1.762.659 2.461 2.461 0 0 1-2.364-2.542c.02-.655.3-1.26.777-1.707a2.419 2.419 0 0 1 1.756-.655zm.402 1.23c-.602 0-1.087.325-1.087.727 0 .4.485.725 1.087.725.6 0 1.088-.326 1.088-.725 0-.402-.487-.726-1.088-.726Z"/></svg>',
     tag:"La rolling release d'openSUSE : toujours à jour, testée par openQA.",
-    site:"opensuse.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"opensuse.org", dl:"get.opensuse.org/tumbleweed", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -3381,7 +3381,7 @@ window.OS_DATA = [
     id:"fedorakde", name:"Fedora KDE", version:"40", cat:"desktop", color:"#294172", icon:"fedora",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#294172"><path d="M12.001 0C5.376 0 .008 5.369.004 11.992H.002v9.287h.002A2.726 2.726 0 0 0 2.73 24h9.275c6.626-.004 11.993-5.372 11.993-11.997C23.998 5.375 18.628 0 12 0zm2.431 4.94c2.015 0 3.917 1.543 3.917 3.671 0 .197.001.395-.03.619a1.002 1.002 0 0 1-1.137.893 1.002 1.002 0 0 1-.842-1.175 2.61 2.61 0 0 0 .013-.337c0-1.207-.987-1.672-1.92-1.672-.934 0-1.775.784-1.777 1.672.016 1.027 0 2.046 0 3.07l1.732-.012c1.352-.028 1.368 2.009.016 1.998l-1.748.013c-.004.826.006.677.002 1.093 0 0 .015 1.01-.016 1.776-.209 2.25-2.124 4.046-4.424 4.046-2.438 0-4.448-1.993-4.448-4.437.073-2.515 2.078-4.492 4.603-4.469l1.409-.01v1.996l-1.409.013h-.007c-1.388.04-2.577.984-2.6 2.47a2.438 2.438 0 0 0 2.452 2.439c1.356 0 2.441-.987 2.441-2.437l-.001-7.557c0-.14.005-.252.02-.407.23-1.848 1.883-3.256 3.754-3.256z"/></svg>',
     tag:"Le spin officiel de Fedora avec KDE Plasma à la place de GNOME.",
-    site:"fedoraproject.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"fedoraproject.org", dl:"spins.fedoraproject.org/kde", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"—",
     req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
@@ -3591,7 +3591,7 @@ window.OS_DATA = [
   {
     id:"trisquel", name:"Trisquel GNU/Linux", version:"11 Aramo", cat:"advanced", color:"#0060A9", icon:null,
     tag:"Distribution 100% libre approuvée par la FSF. Aucun blob propriétaire.",
-    site:"trisquel.info", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"trisquel.info", dl:"trisquel.info/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Ubuntu",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -3637,7 +3637,7 @@ window.OS_DATA = [
   {
     id:"hyperbola", name:"Hyperbola", version:"0.4", cat:"advanced", color:"#12A5DF", icon:null,
     tag:"Distro libre stable (ex-Arch, en migration vers un noyau BSD). Puriste et minimaliste.",
-    site:"hyperbola.info", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"hyperbola.info", dl:"www.hyperbola.info/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Expert", base:"Arch / BSD",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 (temps de compilation important selon le projet)"},
     steps:[
@@ -3660,7 +3660,7 @@ window.OS_DATA = [
   {
     id:"photon", name:"Photon OS", version:"5.0", cat:"container", color:"#7CB342", icon:null,
     tag:"OS minimal de VMware, optimisé pour les conteneurs et les hyperviseurs.",
-    site:"github.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"github.com", dl:"github.com/vmware/photon", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"—",
     req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
@@ -3684,7 +3684,7 @@ window.OS_DATA = [
   {
     id:"rancheros", name:"RancherOS / k3OS", version:"legacy", cat:"container", color:"#0075A8", icon:null,
     tag:"OS minimal où tout est un conteneur Docker. Idéal edge/Kubernetes (héritage SUSE).",
-    site:"github.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"github.com", dl:"github.com/rancher/os", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"—",
     req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
@@ -3733,7 +3733,7 @@ window.OS_DATA = [
     id:"androidx86", name:"Android-x86", version:"9.0", cat:"mobile", color:"#3DDC84", icon:"android",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#3DDC84"><path d="M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 0 0-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 0 0-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 0 0-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z"/></svg>',
     tag:"Android porté sur PC/x86. Faire tourner des apps Android sur un vrai ordinateur.",
-    site:"android-x86.org", license:"Libre / Open-source", popular:true, isNew:true,
+    site:"android-x86.org", dl:"www.android-x86.org/download.html", license:"Libre / Open-source", popular:true, isNew:true,
     time:"~12 min", diff:"Intermédiaire", base:"Android",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"8-16 Go de stockage libre", cpu:"PC/laptop x86 ou x86_64 classique (pas un smartphone)"},
     steps:[
@@ -3756,7 +3756,7 @@ window.OS_DATA = [
   {
     id:"libreelec", name:"LibreELEC", version:"12", cat:"media", color:"#00A9E0", icon:null,
     tag:"« Just enough OS for Kodi » : media center minimal qui démarre direct sur Kodi.",
-    site:"libreelec.tv", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"libreelec.tv", dl:"libreelec.tv/downloads", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~8 min", diff:"Facile", base:"Linux",
     req:{ram:"1-2 Go suffisent généralement", disk:"carte SD/clé USB 8 Go min. (stockage séparé pour les médias)", cpu:"Mini-PC ou boîtier TV compatible (x86 ou ARM selon le projet)"},
     steps:[
@@ -3780,7 +3780,7 @@ window.OS_DATA = [
     id:"osmc", name:"OSMC", version:"2024", cat:"media", color:"#17394E", icon:"osmc",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#17394E"><path d="M22.768 12.002c0 5.935-4.829 10.768-10.768 10.768-5.935-.005-10.763-4.833-10.763-10.768 0-5.94 4.828-10.767 10.768-10.767 5.934 0 10.763 4.828 10.763 10.767m.292-4.673a11.913 11.913 0 0 0-2.57-3.813 11.963 11.963 0 0 0-3.813-2.57A11.857 11.857 0 0 0 12.005 0a11.926 11.926 0 0 0-8.486 3.516A11.963 11.963 0 0 0 .948 7.33C.318 8.811.002 10.38.002 12.002s.316 3.192.942 4.673a11.913 11.913 0 0 0 2.57 3.813A11.963 11.963 0 0 0 12 24c1.619 0 3.191-.32 4.673-.942a11.913 11.913 0 0 0 3.813-2.57 11.963 11.963 0 0 0 3.512-8.486c0-1.623-.311-3.191-.938-4.673M8.566 14.631V9.263l2.574 2.684-2.574 2.684zM7.327 6.296v11.422l8.116-8.455v6.767c0 .343.279.618.617.618a.622.622 0 0 0 .622-.622v-9.74l-4.677 4.77-4.678-4.76z"/></svg>',
     tag:"Media center Debian + Kodi, soigné et convivial. Star du Raspberry Pi.",
-    site:"osmc.tv", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"osmc.tv", dl:"osmc.tv/download", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~8 min", diff:"Facile", base:"Debian",
     req:{ram:"1-2 Go suffisent généralement", disk:"carte SD/clé USB 8 Go min. (stockage séparé pour les médias)", cpu:"Mini-PC ou boîtier TV compatible (x86 ou ARM selon le projet)"},
     steps:[
@@ -3803,7 +3803,7 @@ window.OS_DATA = [
   {
     id:"recalbox", name:"Recalbox", version:"9", cat:"gaming", color:"#F67E1B", icon:null,
     tag:"Rétro-gaming clé en main, ultra-accessible. EmulationStation + Kodi intégré.",
-    site:"recalbox.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"recalbox.com", dl:"www.recalbox.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Linux",
     req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
     steps:[
@@ -3826,7 +3826,7 @@ window.OS_DATA = [
   {
     id:"rescuezilla", name:"Rescuezilla", version:"2.5", cat:"recovery", color:"#2C82C9", icon:null,
     tag:"Le « Clonezilla graphique » : sauvegarde, restauration et clonage de disques en clics.",
-    site:"rescuezilla.com", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"rescuezilla.com", dl:"rescuezilla.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Ubuntu",
     req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
@@ -3921,7 +3921,7 @@ window.OS_DATA = [
     id:"lineageos", name:"LineageOS", version:"23.2", cat:"mobile", color:"#167C80", icon:"lineageos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#167C80"><path d="M21.64526 12.05735a2.40391 2.40391 0 0 0-1.80293.7993l-.13823-.0541a17.80096 17.80096 0 0 0-2.86666-.8594 4.80782 4.80782 0 0 0-9.61565 0h-.13221a17.74687 17.74687 0 0 0-2.7645.83537l-.13822.05409a2.40391 2.40391 0 1 0 .5589 1.06974 16.599 16.599 0 0 1 2.5782-.77526 4.80782 4.80782 0 0 0 9.35722 0 16.55693 16.55693 0 0 1 2.5782.76925 2.40391 2.40391 0 1 0 2.38588-1.839zM2.41397 15.6632a1.20196 1.20196 0 1 1 1.20196-1.20195 1.20196 1.20196 0 0 1-1.20196 1.20195zm9.61565 0a3.60587 3.60587 0 1 1 3.60586-3.60586 3.60587 3.60587 0 0 1-3.60586 3.60586zm9.61564 0a1.20196 1.20196 0 1 1 1.20196-1.20195 1.20196 1.20196 0 0 1-1.20196 1.20195zm-7.81271-3.60586a1.80293 1.80293 0 1 1-1.80293-1.80294 1.80293 1.80293 0 0 1 1.80293 1.80294z"/></svg>',
     tag:"Le grand classique des ROM Android alternatives. Continue de faire vivre les smartphones abandonnés par leur marque.",
-    site:"lineageos.org", license:"Libre / Open-source", popular:true, isNew:false,
+    site:"lineageos.org", dl:"wiki.lineageos.org/devices", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~40 min", diff:"Avancé", base:"Android (AOSP)",
     req:{ram:"2 Go min. (4 Go conseillés)", disk:"8 Go de stockage libre", cpu:"Smartphone compatible (voir wiki officiel)"},
     steps:[
@@ -3948,7 +3948,7 @@ window.OS_DATA = [
     id:"grapheneos", name:"GrapheneOS", version:"2024", cat:"mobile", color:"#0F5132", icon:"grapheneos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0F5132"><path d="m6.953 7.244 3.458-1.97a1.901 1.901 0 0 1-.108-.608c0-.835.608-1.525 1.407-1.67V0h.58v2.995a1.704 1.704 0 0 1 1.407 1.67c0 .219-.045.418-.118.609l3.468 1.97c.127-.146.281-.273.454-.382a1.705 1.705 0 0 1 2.151.382l2.596-1.498.29.508-2.595 1.498a1.69 1.69 0 0 1-1.244 2.242v4.012a1.69 1.69 0 0 1 1.244 2.242l2.596 1.498-.29.508-2.597-1.498a1.705 1.705 0 0 1-2.151.382 2.065 2.065 0 0 1-.454-.382c-1.153.654-2.306 1.317-3.468 1.97.073.19.118.39.118.608 0 .835-.608 1.525-1.407 1.67V24h-.58v-2.995a1.704 1.704 0 0 1-1.407-1.67c0-.219.045-.418.108-.609l-3.458-1.97a2.065 2.065 0 0 1-.454.382 1.705 1.705 0 0 1-2.151-.382l-2.596 1.498-.29-.508 2.595-1.498a1.69 1.69 0 0 1 1.244-2.242V9.994a1.69 1.69 0 0 1-1.244-2.242L1.461 6.254l.29-.508 2.597 1.498a1.705 1.705 0 0 1 2.151-.382c.173.11.327.236.454.382Zm9.803 9.004a1.682 1.682 0 0 1 .128-1.425 1.702 1.702 0 0 1 1.234-.835v-3.976a1.702 1.702 0 0 1-1.234-.835 1.682 1.682 0 0 1-.128-1.425L13.29 5.773c-.318.363-.772.59-1.289.59-.517 0-.971-.227-1.289-.59L7.244 7.752c.163.454.136.98-.128 1.425a1.702 1.702 0 0 1-1.234.835v3.976c.5.073.962.363 1.234.835.264.445.291.971.128 1.425l3.467 1.979c.318-.363.772-.59 1.289-.59.517 0 .971.227 1.289.59z"/></svg>',
     tag:"ROM Android durcie, focalisée vie privée et sécurité. Compatible uniquement avec les Google Pixel.",
-    site:"grapheneos.org", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"grapheneos.org", dl:"grapheneos.org/install", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~25 min", diff:"Intermédiaire", base:"Android (AOSP)",
     req:{ram:"4 Go min.", disk:"128 Go conseillés", cpu:"Google Pixel (série 4a et plus récente)"},
     steps:[
@@ -3973,7 +3973,7 @@ window.OS_DATA = [
     id:"ubuntutouch", name:"Ubuntu Touch", version:"24.04-1.3", cat:"mobile", color:"#772953", icon:"ubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#772953"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"Portage mobile d'Ubuntu par la communauté UBports. Une alternative complète à Android/iOS, convergente avec le bureau.",
-    site:"ubuntu-touch.io", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"ubuntu-touch.io", dl:"ubuntu-touch.io/get-ubuntu-touch", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"Ubuntu / Halium",
     req:{ram:"2 Go min.", disk:"16 Go de stockage", cpu:"Smartphone de la liste officielle des appareils pris en charge"},
     steps:[
@@ -3998,7 +3998,7 @@ window.OS_DATA = [
   {
     id:"coreelec", name:"CoreELEC", version:"21 Kodi", cat:"media", color:"#5AC8FA", icon:null,
     tag:"Fork de LibreELEC optimisé pour les mini-PC ARM (Amlogic, Rockchip). Centre multimédia Kodi ultra-léger.",
-    site:"coreelec.org", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"coreelec.org", dl:"coreelec.org/#downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Linux embarqué",
     req:{ram:"1 Go suffisant", disk:"carte micro-SD 8 Go min.", cpu:"Boîtier TV ARM (Amlogic S905/S922 etc.)"},
     steps:[
@@ -4022,7 +4022,7 @@ window.OS_DATA = [
     id:"win10", name:"Windows 10", version:"22H2", cat:"desktop", color:"#0078D6", icon:null,
     svg:"<svg viewBox=\"0 0 24 24\" width=\"30\" height=\"30\" fill=\"#0078D6\"><path d=\"M2.5 2.5h8.5v8.5H2.5zM13 2.5h8.5v8.5H13zM2.5 13h8.5v8.5H2.5zM13 13h8.5v8.5H13z\"/></svg>",
     tag:"Le prédécesseur de Windows 11. Fin de support standard en octobre 2025, mais prolongeable via le programme ESU jusqu'en octobre 2027.",
-    site:"microsoft.com", license:"Propriétaire", popular:false, isNew:true,
+    site:"microsoft.com", dl:"microsoft.com/software-download/windows10", license:"Propriétaire", popular:false, isNew:true,
     time:"~15 min", diff:"Facile", base:"Windows NT",
     req:{ram:"2 Go min. (64 bits, officiel) ; 4 Go+ conseillés en pratique", disk:"32 Go min. (exigence officielle Microsoft récente)", cpu:"64 bits, 1 GHz, 1 cœur min."},
     steps:[
@@ -4070,7 +4070,7 @@ window.OS_DATA = [
   {
     id:"eos", name:"/e/OS", version:"4.1.1", cat:"mobile", color:"#0B7261", icon:null,
     tag:"ROM Android « dégooglisée » : vie privée par défaut, micro-G en remplacement des services Google, sans sacrifier la compatibilité applicative.",
-    site:"e.foundation", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"e.foundation", dl:"doc.e.foundation/devices", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~35 min", diff:"Avancé", base:"LineageOS",
     req:{ram:"3 Go min. (selon l'appareil)", disk:"16 Go de stockage libre min.", cpu:"Smartphone compatible parmi les 200+ appareils supportés (voir doc.e.foundation)"},
     steps:[
@@ -4117,7 +4117,7 @@ window.OS_DATA = [
   {
     id:"calyxos", name:"CalyxOS", version:"7.2.2.0", cat:"mobile", color:"#5B3A9E", icon:null,
     tag:"ROM Android axée vie privée, développée par l'association à but non lucratif Calyx Institute. Micro-G optionnel, VPN Tor intégré (Orbot).",
-    site:"calyxos.org", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"calyxos.org", dl:"calyxos.org/install", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~30 min", diff:"Avancé", base:"Android (AOSP)",
     req:{ram:"4 Go min. (selon l'appareil)", disk:"16 Go de stockage libre min.", cpu:"Google Pixel, Fairphone ou modèles Motorola/SHIFTphone supportés"},
     steps:[
@@ -4187,7 +4187,7 @@ window.OS_DATA = [
   {
     id:"kolibrios", name:"KolibriOS", version:"0.7.7.0+ (nightly)", cat:"retro", color:"#2E86C1", icon:null,
     tag:"Système d'exploitation graphique complet écrit intégralement en assembleur FASM, tient sur quelques Mo et démarre en quelques secondes.",
-    site:"kolibrios.org", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"kolibrios.org", dl:"kolibrios.org/en/download", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~5 min", diff:"Facile", base:"—",
     req:{ram:"8 Mo min. (12 Mo conseillés)", disk:"quelques Mo seulement (tient sur une disquette 1,44 Mo dans sa version minimale)", cpu:"x86 32 bits, y compris un i586 très ancien"},
     steps:[
@@ -4210,7 +4210,7 @@ window.OS_DATA = [
   {
     id:"zentyal", name:"Zentyal Server", version:"8.1 (Ubuntu 24.04 LTS)", cat:"server", color:"#1F6FB2", icon:null,
     tag:"Serveur Linux tout-en-un pensé comme remplaçant direct d'un contrôleur de domaine Active Directory, basé sur Ubuntu Server.",
-    site:"zentyal.com", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"zentyal.com", dl:"zentyal.com/community", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~30 min", diff:"Avancé", base:"Ubuntu",
     req:{ram:"4 Go min. (8 Go+ conseillés en production)", disk:"20 Go min. selon les services activés", cpu:"x86_64, Intel Core i5 ou équivalent recommandé en production"},
     steps:[
@@ -4233,11 +4233,11 @@ window.OS_DATA = [
   {
     id:"openmandriva", name:"OpenMandriva Lx", version:"6.0 (Rock stable / ROME rolling)", cat:"desktop", color:"#3DA5D9", icon:null,
     tag:"Distribution RPM indépendante héritière de Mandriva, l'une des rares à compiler l'essentiel du système avec Clang/LLVM plutôt que GCC.",
-    site:"openmandriva.org", license:"Libre / Open-source", popular:false, isNew:true,
+    site:"openmandriva.org", dl:"www.openmandriva.org/release-picking", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~20 min", diff:"Intermédiaire", base:"—",
     req:{ram:"2 Go min. (4 Go+ conseillés pour Plasma)", disk:"10 Go min.", cpu:"x86_64 uniquement (32 bits non supporté), carte graphique compatible OpenGL 2.0+"},
     steps:[
-      {t:"Télécharger l'ISO", d:"openmandriva.org/downloads, choisir Rock (stable, releases fixes) ou ROME (rolling, paquets récents en continu)."},
+      {t:"Télécharger l'ISO", d:"openmandriva.org/release-picking, choisir Rock (stable, releases fixes) ou ROME (rolling, paquets récents en continu)."},
       {t:"Graver la clé USB", d:"Rufus, balenaEtcher ou dd."},
       {t:"Tester en live puis lancer l'installation", d:"Le bureau Plasma tourne directement depuis la clé ; l'installateur graphique Calamares se lance depuis le bureau live."},
       {t:"Partitionnement et compte utilisateur", d:"Assistant Calamares classique, avec chiffrement de disque en option."}

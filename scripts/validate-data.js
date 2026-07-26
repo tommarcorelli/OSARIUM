@@ -79,6 +79,25 @@ DATA.forEach((os, i) => {
   if (os.color && !/^#[0-9a-f]{6}$/i.test(os.color)) fail(id, `couleur mal formée « ${os.color} »`);
   if (os.site && /^https?:\/\//.test(os.site)) fail(id, `« site » doit être un domaine nu, pas une URL (« ${os.site} »)`);
 
+  /* Lien de téléchargement : même convention que `site` (sans schéma, il est
+     ajouté à l'affichage). Deux garde-fous appris en le constituant : une URL
+     de fichier est figée sur une version et périme au tirage suivant, et un
+     lien vers un domaine sans rapport avec le projet est un faux positif
+     (un site avait renvoyé vers un miroir tiers arbitraire). */
+  if (os.dl) {
+    if (/^https?:\/\//.test(os.dl)) fail(id, `« dl » doit être sans schéma http(s) (« ${os.dl} »)`);
+    if (!os.dl.includes('/')) fail(id, `« dl » pointe sur une racine de domaine, sans plus-value sur « site » (« ${os.dl} »)`);
+    if (/\.(iso|img|exe|zip|gz|xz|bz2|torrent|dmg|raw)$/i.test(os.dl)) {
+      fail(id, `« dl » pointe un fichier plutôt qu'une page — figé sur une version (« ${os.dl} »)`);
+    }
+    const host = os.dl.split('/')[0].replace(/^www\./, '');
+    const base = (os.site || '').replace(/^www\./, '');
+    const tok = base.split('.')[0];
+    if (base && !(host.endsWith(base) || host.includes(tok))) {
+      fail(id, `« dl » est sur un domaine étranger au projet (site : ${os.site}, dl : ${host})`);
+    }
+  }
+
   /* config minimale : c'est ce qui alimente « Vérifier mon PC » */
   if (os.req) {
     ['cpu', 'ram', 'disk'].forEach((k) => {

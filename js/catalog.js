@@ -15,6 +15,37 @@ if (grid) {
   /* accent-insensitive normalize, used for search */
   const norm = (s) => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
+  /* ============ INDEX DE RECHERCHE ============
+     La recherche ne couvrait que nom, description, base et cat\u00e9gorie :
+     chercher \u00ab TPM \u00bb, \u00ab Secure Boot \u00bb ou \u00ab chiffrement \u00bb ne remontait rien
+     alors que ces termes sont \u00e9crits dans les \u00e9tapes, les erreurs fr\u00e9quentes
+     et les FAQ. On indexe donc aussi le contenu des guides.
+
+     Deux champs distincts : une correspondance dans le titre n'a pas le m\u00eame
+     sens qu'une correspondance en page 3 d'une FAQ, et l'affichage le signale.
+     L'index est construit une fois au chargement \u2014 le recalculer \u00e0 chaque
+     frappe sur 170 fiches serait inutilement co\u00fbteux. */
+  const searchIndex = new Map();
+  data.forEach((os) => {
+    const surface = [os.name, os.tag, os.base, os.version, cats[os.cat].label, os.license].join(' ');
+    const deep = [
+      ...os.steps.map((s) => `${s.t} ${s.d} ${s.code || ''}`),
+      ...(os.errors || []).map((e) => `${e.q} ${e.a}`),
+      ...(os.faq || []).map((f) => `${f.q} ${f.a}`),
+      os.req ? `${os.req.cpu} ${os.req.ram} ${os.req.disk}` : '',
+    ].join(' ');
+    searchIndex.set(os.id, { surface: norm(surface), deep: norm(deep) });
+  });
+
+  /* 'surface' | 'deep' | null */
+  function matchKind(os) {
+    if (!query) return null;
+    const ix = searchIndex.get(os.id);
+    if (ix.surface.includes(query)) return 'surface';
+    if (ix.deep.includes(query)) return 'deep';
+    return null;
+  }
+
   /* ============ \u00c9TAT DANS L'URL ============
      Recherche, filtres, tri et comparateur sont refl\u00e9t\u00e9s dans la barre
      d'adresse : un lien devient partageable et rejouable tel quel.
@@ -142,6 +173,9 @@ if (grid) {
       os.popular ? '<span class="badge badge-pop">★ Populaire</span>' : '',
       os.isNew ? '<span class="badge badge-new">✦ Nouveau</span>' : '',
       hwBadgeHTML(os),
+      /* le terme n'apparaît ni dans le nom ni dans la description : on le dit,
+         sinon la carte semble arriver dans les résultats sans raison */
+      matchKind(os) === 'deep' ? '<span class="badge badge-deep" title="Le terme recherché apparaît dans les étapes, les erreurs fréquentes ou la FAQ de ce guide">≡ Trouvé dans le guide</span>' : '',
     ].join('');
     /* Le titre porte le vrai lien (étiré sur toute la carte via .card-link::after) :
        la carte reste cliquable en entier tout en devenant navigable au clavier,
@@ -175,10 +209,16 @@ if (grid) {
       const okDiff = activeDiff === 'all' || os.diff === activeDiff;
       const okLicense = activeLicense === 'all' || os.license === activeLicense;
       const okFav = !favOnly || (window.Favorites && window.Favorites.has(os.id));
-      const okQ = !query || norm(os.name + ' ' + os.tag + ' ' + os.base + ' ' + cats[os.cat].label).includes(query);
+      const okQ = !query || matchKind(os) !== null;
       const okHw = !hwActive || !hwHideIncompatible || window.HwCheck.status(os, hwRamMB) !== 'no';
       return okCat && okDiff && okLicense && okFav && okQ && okHw;
     });
+
+    /* En tri par défaut, une correspondance sur le nom ou la description passe
+       devant une correspondance trouvée au fond d'un guide. */
+    if (query && sortMode === 'default') {
+      list = [...list].sort((a, b) => (matchKind(a) === 'deep') - (matchKind(b) === 'deep'));
+    }
 
     if (sortMode === 'name') list = [...list].sort((a, b) => a.name.localeCompare(b.name));
     else if (sortMode === 'diff') list = [...list].sort((a, b) => diffRank[a.diff] - diffRank[b.diff]);

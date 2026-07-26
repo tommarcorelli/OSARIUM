@@ -57,9 +57,31 @@ navigateurs déjà passés garderont l'ancienne version.
 AJOUTER UN SYSTÈME
 ------------------
 Ajoute un objet dans OS_DATA (data.js). La carte, la page détail et le
-comparateur se génèrent automatiquement. Pour un logo officiel, renseigne
-`icon:"slug-simpleicons"`. Sinon laisse `icon:null` : un monogramme aux
-couleurs du projet est généré. Nouvelle catégorie ? Complète OS_CATS en bas.
+comparateur se génèrent automatiquement. Nouvelle catégorie ? Complète
+OS_CATS en bas du fichier.
+
+Logo : renseigne `svg:'<svg viewBox="0 0 24 24" …>'` avec le tracé de la
+marque, colorisé avec la couleur de la fiche. Les logos ne sont plus chargés
+depuis un CDN — voir icons/BRAND-LOGOS.txt pour la provenance et la méthode
+de régénération. Sans `svg`, un monogramme aux couleurs du projet est généré.
+
+Lien de téléchargement : `dl:"domaine.tld/chemin"` (sans http://). Le bouton
+« Télécharger » n'apparaît que si ce champ est renseigné. À ne remplir qu'avec
+une URL réellement vérifiée : ni un fichier .iso direct (figé sur une version),
+ni un domaine tiers. Le validateur refuse ces deux cas.
+
+VALIDER AVANT DE COMMITER
+-------------------------
+    node scripts/validate-data.js
+
+Contrôle les champs requis, les catégories, difficultés et licences (croisées
+avec les <select> de index.html, car une valeur inconnue de l'UI rend les
+fiches concernées introuvables), le champ req.ram relu par le vrai parseur de
+js/hardware-check.js, les 3 « erreurs fréquentes » par fiche, les liens
+« Systèmes similaires », la cohérence des `base` avec les familles de
+js/arbre.js, les compteurs affichés, les URLs du sitemap et la complétude du
+cache offline. Le même script tourne en CI à chaque push
+(.github/workflows/validate.yml).
 
 SITEMAP
 -------

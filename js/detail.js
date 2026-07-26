@@ -47,6 +47,10 @@
         ${os.license ? `<span class="pill mono">LICENCE · <b>${os.license}</b></span>` : ''}
         ${os.site ? `<a class="pill mono pill-link" href="https://${os.site}" target="_blank" rel="noopener">SITE OFFICIEL · <b>${os.site} ↗</b></a>` : ''}
       </div>
+      ${os.dl ? `<a class="dl-btn mono" href="https://${os.dl}" target="_blank" rel="noopener" data-testid="download-link">
+        <span class="dl-ic" aria-hidden="true">↓</span>
+        <span class="dl-txt"><b>Télécharger ${os.name}</b><span class="dl-sub">page officielle · ${os.dl.split('/')[0]}</span></span>
+      </a>` : ''}
     </section>
     ${os.req ? `
     <section class="req-block">

@@ -23,6 +23,20 @@
 .pill b{color:var(--c);}
 .pill-link{cursor:pointer;transition:border-color .2s;}
 .pill-link:hover{border-color:var(--c);}
+/* Bouton de téléchargement : la première étape de chaque guide dit
+   « télécharger l'ISO » sans que rien ne soit cliquable. Il ne s'affiche que
+   sur les fiches dont l'URL a été vérifiée (champ `dl`). */
+.dl-btn{position:relative;z-index:2;display:inline-flex;align-items:center;gap:14px;margin-top:22px;
+  padding:14px 22px 14px 18px;border:1px solid color-mix(in srgb,var(--c) 45%,transparent);
+  background:color-mix(in srgb,var(--c) 10%,transparent);color:var(--text);
+  transition:border-color .2s,background .2s,transform .2s;}
+.dl-btn:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 18%,transparent);transform:translateY(-2px);}
+.dl-ic{width:30px;height:30px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;
+  border:1px solid color-mix(in srgb,var(--c) 55%,transparent);color:var(--c);font-size:15px;}
+.dl-txt{display:flex;flex-direction:column;line-height:1.3;}
+.dl-txt b{font-size:14px;color:var(--c);}
+.dl-sub{font-size:11px;color:var(--muted-2);margin-top:2px;}
+
 .detail-actions{display:flex;gap:10px;margin-left:auto;}
 .icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);background:var(--panel);
   color:var(--muted);display:grid;place-items:center;cursor:pointer;font-size:17px;transition:all .2s;flex-shrink:0;}

@@ -116,5 +116,127 @@ window.TOOLS_DATA = [
       { t: "Calculer le hash sous Linux", d: "Ouvrir un terminal :", code: "sha256sum fichier.iso" },
       { t: "Comparer et conclure", d: "Comparer caractère par caractère la valeur obtenue avec celle du site officiel. Si elles diffèrent, ne pas graver : retélécharger l'ISO, idéalement depuis une autre source ou connexion." }
     ]
+  },
+  {
+    id: "rpi-imager",
+    name: "Raspberry Pi Imager",
+    color: "#C51A4A",
+    category: "Carte SD / SBC",
+    platforms: ["Windows", "macOS", "Linux"],
+    tag: "Le seul outil d'ici qui configure le système avant même le premier démarrage : nom de machine, SSH, Wi-Fi et compte utilisateur sont écrits directement dans l'image.",
+    time: "~10 min",
+    site: "raspberrypi.com/software",
+    idealFor: "Tout ce qui démarre sur carte microSD plutôt que sur clé USB : Raspberry Pi OS bien sûr, mais aussi LibreELEC, Batocera, RecalBox, OpenWrt ou Ubuntu Server sur carte ARM. Indispensable pour un Pi sans écran ni clavier, puisqu'il permet d'activer SSH et le Wi-Fi à l'avance.",
+    pros: [
+      "Pré-configuration avant le premier boot : nom d'hôte, compte utilisateur, mot de passe, clé SSH, réseau Wi-Fi, fuseau horaire et clavier",
+      "Catalogue intégré : télécharge l'image officielle lui-même, sans passer par un site tiers",
+      "Vérifie l'écriture après coup, et sait aussi écrire un fichier .img ou .iso local",
+      "Gère les cartes microSD comme les clés USB et les SSD externes"
+    ],
+    cons: [
+      "Pensé pour les cartes ARM : sans intérêt pour installer un OS de bureau x86 sur un PC",
+      "La pré-configuration ne s'applique qu'aux systèmes qui la comprennent (famille Raspberry Pi OS et dérivés)",
+      "Le téléchargement intégré passe par le réseau à chaque écriture si l'image n'est pas déjà en cache"
+    ],
+    steps: [
+      { t: "Installer Raspberry Pi Imager", d: "Depuis raspberrypi.com/software. Sous Linux, il est aussi packagé dans la plupart des dépôts.", code: "sudo apt install rpi-imager" },
+      { t: "Choisir le modèle de carte", d: "Premier menu : le modèle de Raspberry Pi visé. Ce choix filtre ensuite le catalogue pour ne proposer que des images compatibles — une carte ARM64 et une ARMv6 n'acceptent pas les mêmes." },
+      { t: "Choisir le système", d: "Second menu : soit une image du catalogue intégré (Raspberry Pi OS, mais aussi LibreELEC, Batocera, Ubuntu…), soit « Use custom » pour pointer un fichier .img/.iso déjà téléchargé." },
+      { t: "Sélectionner la carte SD ou la clé", d: "Troisième menu. Vérifier la capacité affichée : c'est le seul garde-fou avant un effacement complet du support." },
+      { t: "Pré-configurer le système (l'étape qui change tout)", d: "Avant de lancer l'écriture, ouvrir les options de personnalisation. Renseigner le nom d'hôte, le compte utilisateur et son mot de passe, le réseau Wi-Fi et surtout activer SSH. Un Pi ainsi préparé est joignable au réseau dès son premier démarrage, sans jamais y brancher d'écran.", code: "ssh utilisateur@nomdhote.local" },
+      { t: "Écrire et vérifier", d: "Lancer l'écriture, puis laisser la phase de vérification aller au bout. Retirer la carte seulement quand l'outil annonce que le support peut être débranché." }
+    ]
+  },
+  {
+    id: "dd",
+    name: "La commande dd",
+    mono: "dd",
+    color: "#546E7A",
+    category: "Ligne de commande",
+    platforms: ["macOS", "Linux", "BSD"],
+    tag: "Pas un logiciel : une commande présente d'origine sur tout système Unix. Aucune interface, aucun garde-fou — elle écrit exactement où on lui dit, y compris sur le mauvais disque.",
+    time: "~5 min",
+    site: null,
+    idealFor: "Graver depuis un système sans interface graphique (serveur, live de secours, machine distante en SSH), ou quand aucun outil n'est installable. C'est aussi la méthode citée par la documentation officielle de la plupart des distributions et des BSD.",
+    pros: [
+      "Déjà présente sur Linux, macOS et les BSD : rien à installer, rien à télécharger",
+      "Fonctionne en SSH sur une machine sans écran, là où un outil graphique est inutilisable",
+      "Écrit l'image octet pour octet, sans interprétation : convient aux images qu'un graveur classique refuse",
+      "Se scripte, donc se répète à l'identique"
+    ],
+    cons: [
+      "Aucune protection : une lettre de périphérique erronée efface le disque système, sans confirmation ni annulation possible",
+      "N'affiche rien par défaut pendant l'écriture — on peut croire qu'elle a planté",
+      "Ne vérifie pas ce qu'elle a écrit : la vérification est une étape manuelle séparée",
+      "La syntaxe diffère légèrement entre macOS et Linux"
+    ],
+    steps: [
+      { t: "Identifier le périphérique — l'étape critique", d: "Lister les disques et repérer la clé par sa taille, jamais par sa position dans la liste (elle change d'un branchement à l'autre). Se tromper ici détruit le disque visé.", code: "lsblk -o NAME,SIZE,MODEL,MOUNTPOINT   # Linux\ndiskutil list                          # macOS" },
+      { t: "Démonter les partitions montées", d: "Le support doit être démonté, mais pas éjecté : le périphérique doit rester présent dans /dev.", code: "sudo umount /dev/sdX*          # Linux\ndiskutil unmountDisk /dev/diskN  # macOS" },
+      { t: "Écrire l'image", d: "Cibler le disque entier (/dev/sdb), pas une partition (/dev/sdb1). Sous macOS, /dev/rdiskN — avec le « r » — est nettement plus rapide que /dev/diskN.", code: "sudo dd if=image.iso of=/dev/sdX bs=4M status=progress conv=fsync   # Linux\nsudo dd if=image.iso of=/dev/rdiskN bs=1m                          # macOS" },
+      { t: "Suivre la progression sur macOS", d: "macOS n'a pas status=progress. Envoyer un SIGINFO avec Ctrl+T dans le terminal affiche l'avancement sans interrompre l'écriture." },
+      { t: "Vider les tampons avant de débrancher", d: "dd peut rendre la main alors que le noyau n'a pas fini d'écrire. Forcer la synchronisation, puis attendre qu'elle se termine avant de retirer la clé.", code: "sync" },
+      { t: "Vérifier l'écriture (optionnel mais recommandé)", d: "Relire depuis la clé exactement le nombre d'octets de l'image et comparer l'empreinte à celle du fichier source.", code: "sudo dd if=/dev/sdX bs=4M count=$(( $(stat -c %s image.iso) / 4194304 + 1 )) | sha256sum" }
+    ]
+  },
+  {
+    id: "mediacreationtool",
+    name: "Media Creation Tool",
+    color: "#0078D4",
+    category: "Graveur ISO",
+    platforms: ["Windows"],
+    tag: "L'outil officiel de Microsoft : il télécharge Windows depuis les serveurs Microsoft et prépare la clé dans la foulée, sans ISO à récupérer soi-même.",
+    time: "~30 min (téléchargement inclus)",
+    site: "microsoft.com/software-download",
+    idealFor: "Installer Windows sur une machine qui remplit les prérequis officiels, quand on veut la certitude d'une image authentique et à jour sans avoir à vérifier soi-même une empreinte SHA-256.",
+    pros: [
+      "L'image vient directement de Microsoft : ni miroir, ni empreinte à contrôler manuellement",
+      "Télécharge la version la plus récente, avec les correctifs déjà intégrés",
+      "Prépare la clé bootable dans la même opération, sans second logiciel",
+      "Peut aussi produire un simple fichier ISO, à graver ensuite avec Rufus ou Ventoy"
+    ],
+    cons: [
+      "Windows uniquement, et pour installer Windows uniquement",
+      "Aucun contrôle du schéma de partition : impossible de forcer GPT ou MBR",
+      "Ne permet aucun contournement des exigences TPM 2.0 / Secure Boot — c'est précisément ce que Rufus sait faire",
+      "Long : le téléchargement complet de Windows précède la gravure"
+    ],
+    steps: [
+      { t: "Récupérer l'outil", d: "Sur microsoft.com/software-download, à la page de la version de Windows visée, section « Créer un support d'installation ». Le fichier est un exécutable à lancer, pas un installeur." },
+      { t: "Accepter et choisir le mode", d: "Sélectionner « Créer un support d'installation pour un autre PC » plutôt que la mise à niveau de la machine courante." },
+      { t: "Langue, édition, architecture", d: "Décocher « Utiliser les options recommandées » pour choisir explicitement, notamment si la clé doit servir sur une autre machine que celle utilisée pour la créer." },
+      { t: "Choisir le support", d: "« Disque mémoire flash USB » écrit directement sur la clé (8 Go minimum, contenu effacé). « Fichier ISO » produit une image à graver ensuite avec un autre outil — utile pour Ventoy ou pour archiver." },
+      { t: "Laisser télécharger puis écrire", d: "L'outil télécharge Windows puis prépare la clé. Compter l'essentiel du temps sur le téléchargement ; ne pas débrancher la clé ni mettre le PC en veille pendant l'opération." },
+      { t: "Si le PC cible ne remplit pas les prérequis", d: "Media Creation Tool ne contourne rien. Dans ce cas, produire un ISO ici puis le graver avec Rufus, qui propose explicitement de retirer les exigences TPM 2.0, Secure Boot et compte en ligne." }
+    ]
+  },
+  {
+    id: "fedora-media-writer",
+    name: "Fedora Media Writer",
+    color: "#51A2DA",
+    category: "Graveur ISO",
+    platforms: ["Windows", "macOS", "Linux"],
+    tag: "L'outil officiel du projet Fedora : il liste les éditions disponibles, télécharge celle qu'on choisit, vérifie son authenticité et grave la clé — le tout sans quitter l'application.",
+    time: "~15 min (téléchargement inclus)",
+    site: "fedoraproject.org",
+    idealFor: "Toute la famille Fedora présente dans le catalogue — Fedora Workstation et KDE, les variantes atomiques Silverblue et Kinoite, Nobara, Bazzite, Bluefin, Aurora, Ultramarine, Asahi Remix. Il grave aussi n'importe quelle autre ISO, et sait écrire les images pour cartes ARM.",
+    pros: [
+      "Télécharge et vérifie l'image automatiquement : la signature est contrôlée sans intervention",
+      "Présente les éditions et variantes Fedora en clair, sans avoir à naviguer sur le site",
+      "Disponible sur les trois systèmes, y compris en Flatpak",
+      "Accepte aussi une ISO quelconque déjà téléchargée, et gère les images pour cartes ARM"
+    ],
+    cons: [
+      "Intérêt limité hors de la famille Fedora : pour une ISO quelconque, Etcher ou Rufus font le même travail",
+      "Pas de choix manuel GPT/MBR, comme Etcher",
+      "Le catalogue intégré ne connaît que les éditions officielles Fedora — les dérivés se gravent par l'option ISO locale"
+    ],
+    steps: [
+      { t: "Installer Fedora Media Writer", d: "Depuis fedoraproject.org, ou via Flathub sous Linux.", code: "flatpak install flathub org.fedoraproject.MediaWriter" },
+      { t: "Choisir l'édition ou une ISO locale", d: "L'écran d'accueil liste les éditions officielles (Workstation, KDE, Server, les variantes atomiques, les spins). Pour un dérivé comme Nobara ou Bazzite, télécharger l'ISO depuis son site puis utiliser l'option d'image locale." },
+      { t: "Laisser télécharger et vérifier", d: "L'outil récupère l'image et contrôle son intégrité et sa signature avant d'écrire — l'équivalent automatique de l'étape SHA-256 faite à la main ailleurs." },
+      { t: "Sélectionner la clé USB", d: "Vérifier la capacité affichée. Le contenu du support sera intégralement effacé." },
+      { t: "Écrire", d: "Lancer l'écriture et attendre la fin de la phase de vérification. L'outil propose ensuite de restaurer la clé en support de stockage normal — pratique, la partition d'installation n'étant pas reconnue par Windows après coup." }
+    ]
   }
 ];
