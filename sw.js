@@ -2,7 +2,7 @@
    La liste ASSETS doit rester exhaustive : `addAll` échoue en bloc si un seul
    fichier manque, et tout fichier absent d'ici n'est pas disponible hors-ligne
    au premier chargement. À compléter à chaque nouveau css/js ajouté aux pages. */
-const CACHE = 'osarium-v7';
+const CACHE = 'osarium-v8';
 const ASSETS = [
   './',
   './index.html',
@@ -34,6 +34,7 @@ const ASSETS = [
   './js/guide-tabs.js',
   './js/hardware-check.js',
   './js/logo.js',
+  './js/modal-a11y.js',
   './js/pcage.js',
   './js/progress.js',
   './js/pwa.js',
