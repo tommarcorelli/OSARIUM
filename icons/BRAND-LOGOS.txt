@@ -1,0 +1,48 @@
+LOGOS DE MARQUE DES SYSTÈMES
+============================
+
+Les logos affichés sur les cartes et les fiches ne sont pas des fichiers de ce
+dossier : leurs tracés SVG sont intégrés directement dans data.js, champ `svg`
+de chaque système. Aucune requête réseau n'est donc nécessaire pour les
+afficher, et ils fonctionnent hors-ligne.
+
+PROVENANCE
+----------
+Deux origines coexistent :
+
+1. Simple Icons (https://simpleicons.org) — 65 tracés officiels, récupérés
+   depuis le dépôt du projet. Collection publiée sous CC0 1.0 (domaine public),
+   qui autorise la redistribution sans condition. Les marques et logos restent
+   la propriété de leurs détenteurs respectifs ; ils sont utilisés ici à des
+   fins d'identification descriptive.
+   Le champ `icon` de chaque fiche conserve le slug d'origine pour pouvoir
+   régénérer le tracé si la marque met son logo à jour.
+
+2. Tracés dessinés pour le projet — pour les systèmes absents de Simple Icons,
+   quand une forme reconnaissable existait (Oracle Linux, antiX…). Ceux-là
+   utilisent parfois `stroke` plutôt que `fill`, c'est normal.
+
+Les 27 systèmes sans logo disponible affichent un monogramme généré (initiale
+du nom, aux couleurs officielles du projet) — voir js/logo.js.
+
+HISTORIQUE
+----------
+Jusqu'ici les logos Simple Icons étaient chargés à l'exécution depuis
+cdn.simpleicons.org, colorisés via l'URL. Trois problèmes : aucun logo
+hors-ligne (le service worker ne met en cache que le même domaine), une
+requête vers un tiers par logo et par page, et un slug pouvait disparaître
+sans prévenir — c'était déjà arrivé à « postmarketos », retiré de Simple Icons,
+dont le logo ne s'affichait donc plus en production.
+
+RÉGÉNÉRER UN TRACÉ
+------------------
+Récupérer https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/<slug>.svg
+en extraire l'attribut `d` du <path>, et remplacer le champ `svg` de la fiche
+par :
+    svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#COULEUR"><path d="…"/></svg>'
+où #COULEUR est la couleur officielle déjà présente dans le champ `color`.
+
+Attention aux homonymes : dans Simple Icons, le slug « photon » désigne Photon
+Engine (SDK de jeu multijoueur) et non VMware Photon OS. Toujours vérifier le
+champ `source` de https://raw.githubusercontent.com/simple-icons/simple-icons/develop/data/simple-icons.json
+avant d'associer un slug à un système.

@@ -2,7 +2,7 @@
    La liste ASSETS doit rester exhaustive : `addAll` échoue en bloc si un seul
    fichier manque, et tout fichier absent d'ici n'est pas disponible hors-ligne
    au premier chargement. À compléter à chaque nouveau css/js ajouté aux pages. */
-const CACHE = 'osarium-v6';
+const CACHE = 'osarium-v7';
 const ASSETS = [
   './',
   './index.html',
@@ -17,6 +17,7 @@ const ASSETS = [
   './css/cards.css',
   './css/detail.css',
   './css/effects.css',
+  './css/fonts.css',
   './css/hero.css',
   './css/hw.css',
   './css/nav.css',
@@ -44,6 +45,21 @@ const ASSETS = [
   './js/theme.js',
   './js/toast.js',
   './js/tool-detail.js',
+  './js/vendor/lenis.min.js',
+  // polices locales : seul le sous-ensemble latin est pré-chargé (il couvre
+  // tout le français accentué, ligature œ comprise). Les fichiers latin-ext
+  // restent déclarés dans css/fonts.css et se chargent à la demande.
+  './fonts/chakra-petch-400-latin.woff2',
+  './fonts/chakra-petch-500-latin.woff2',
+  './fonts/chakra-petch-600-latin.woff2',
+  './fonts/chakra-petch-700-latin.woff2',
+  './fonts/ibm-plex-sans-400-latin.woff2',
+  './fonts/ibm-plex-sans-500-latin.woff2',
+  './fonts/ibm-plex-sans-600-latin.woff2',
+  './fonts/jetbrains-mono-400-latin.woff2',
+  './fonts/jetbrains-mono-500-latin.woff2',
+  './fonts/jetbrains-mono-700-latin.woff2',
+  './fonts/jetbrains-mono-800-latin.woff2',
   './icons/apple-touch-icon.png',
   './icons/favicon-32.png',
   './icons/icon-192.png',

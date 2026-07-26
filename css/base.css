@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+/* Les polices sont désormais chargées par css/fonts.css (fichiers locaux,
+   voir fonts/LICENSE.txt) au lieu d'un @import vers fonts.googleapis.com :
+   ce dernier bloquait le rendu le temps d'un aller-retour réseau et faisait
+   perdre toute la typographie hors-ligne. */
 
 :root{
   --void:#06080C;

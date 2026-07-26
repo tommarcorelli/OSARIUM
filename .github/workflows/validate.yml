@@ -1,0 +1,38 @@
+name: Validation du catalogue
+
+# Rejoue les contrôles d'intégrité du site à chaque push et sur chaque pull
+# request. Ces contrôles étaient jusqu'ici refaits à la main avec un script
+# jetable à chaque session d'ajout de fiches ; les figer ici évite qu'une
+# incohérence passe inaperçue — c'est exactement ce qui s'est produit avec la
+# difficulté "Expert", deux licences non canoniques (invisibles dans les
+# filtres du catalogue) et la liste ASSETS de sw.js restée à la v4.
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Fiches, outils, cohérence avec les filtres de l'UI, compteurs,
+      # URLs du sitemap et complétude du cache offline.
+      - name: Validation des données et des assets
+        run: node scripts/validate-data.js
+
+      # Aucune dépendance : les scripts et le site sont en JS natif.
+      - name: Contrôle syntaxique des scripts du site
+        run: |
+          set -e
+          for f in js/*.js scripts/*.js sw.js data.js tools-data.js; do
+            node --check "$f"
+          done
+          echo "OK : tous les fichiers JS sont syntaxiquement valides."

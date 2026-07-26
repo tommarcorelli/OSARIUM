@@ -1,17 +1,22 @@
 /* ============ SHARED: OS logo markup ============
- * Used by both the catalog grid (small, lazy) and the detail page (large, eager).
- * Single source of truth so a fix here can't drift between pages like it did before.
+ * Utilisé par la grille du catalogue (petit, lazy) et par la page détail
+ * (grand, eager). Source unique pour qu'un correctif ici ne puisse pas
+ * diverger entre les deux pages, comme c'était arrivé auparavant.
+ *
+ * Les logos étaient auparavant chargés à l'exécution depuis
+ * https://cdn.simpleicons.org/<slug>/<hex>, soit une requête vers un tiers
+ * par logo et par page — et surtout aucun logo hors-ligne, alors que le site
+ * se présente comme une PWA utilisable sans connexion (le service worker ne
+ * met en cache que les réponses de même origine). Les tracés sont désormais
+ * intégrés dans data.js (champ `svg`), donc plus aucune requête réseau.
+ *
+ * Le champ `icon` ne sert plus qu'à mémoriser le slug Simple Icons d'origine,
+ * pour pouvoir régénérer un tracé si le logo de la marque change.
+ * Voir icons/BRAND-LOGOS.txt pour la provenance et la licence.
  */
 function logoInner(os, { size = 30, lazy = true } = {}) {
   if (os.svg) return os.svg;
+  // Pas de tracé disponible : monogramme aux couleurs du projet.
   const letter = os.name.replace(/^[^A-Za-z]+/, '').charAt(0).toUpperCase() || os.name.charAt(0);
-  if (os.icon) {
-    const hex = os.color.replace('#', '');
-    const loadingAttr = lazy ? 'loading="lazy" fetchpriority="low"' : '';
-    // La lettre reste dans le DOM (fallback) mais cachée tant que le logo est affiché ;
-    // si l'image échoue à charger, onerror la réaffiche au lieu de laisser les deux superposées.
-    return `<span class="mg" style="display:none">${letter}</span>` +
-      `<img src="https://cdn.simpleicons.org/${os.icon}/${hex}" alt="${os.name}" width="${size}" height="${size}" decoding="async" ${loadingAttr} style="position:absolute" onerror="this.style.display='none'; if(this.previousElementSibling) this.previousElementSibling.style.display='';">`;
-  }
   return `<span class="mg">${letter}</span>`;
 }

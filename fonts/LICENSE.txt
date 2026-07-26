@@ -1,0 +1,50 @@
+POLICES EMBARQUÉES DANS OSARIUM
+================================
+
+Les trois familles utilisées par le site sont redistribuées ici sous SIL Open
+Font License 1.1 (OFL-1.1), qui autorise explicitement la redistribution, y
+compris embarquée dans un site ou une application, tant que les polices ne
+sont pas vendues seules et que cette notice est conservée.
+
+Les fichiers .woff2 de ce dossier proviennent de Google Fonts
+(sous-ensembles « latin » et « latin-ext » uniquement).
+
+
+Chakra Petch
+------------
+Copyright (c) Cadson Demak
+Licence  : SIL Open Font License 1.1
+Source   : https://fonts.google.com/specimen/Chakra+Petch
+Usage    : titres et éléments d'affichage (classe .disp)
+
+JetBrains Mono
+--------------
+Copyright (c) JetBrains s.r.o.
+Licence  : SIL Open Font License 1.1
+Source   : https://fonts.google.com/specimen/JetBrains+Mono
+Usage    : monospace, code, étiquettes techniques (classe .mono)
+
+IBM Plex Sans
+-------------
+Copyright (c) IBM Corp. (dessin : Bold Monday)
+Licence  : SIL Open Font License 1.1
+Source   : https://fonts.google.com/specimen/IBM+Plex+Sans
+Usage    : texte courant
+
+
+Texte intégral de la licence : https://openfontlicense.org/
+
+
+POURQUOI EN LOCAL
+-----------------
+Ces polices étaient chargées depuis fonts.googleapis.com par un @import en
+tête de css/base.css. Deux conséquences : hors-ligne (ou derrière un réseau
+filtré) le site perdait toute sa typographie alors qu'il se présente comme une
+PWA utilisable sans connexion ; et chaque visite déclenchait une requête vers
+Google. En local, le rendu est identique, disponible hors-ligne, et sans tiers.
+
+Seuls les fichiers « latin » sont pré-chargés par le service worker : le
+contenu du site est en français et le sous-ensemble latin couvre déjà tout
+l'alphabet accentué français, y compris la ligature œ (U+0153). Les fichiers
+« latin-ext » restent déclarés dans css/fonts.css et seront téléchargés à la
+demande si un caractère les nécessite un jour.
