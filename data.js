@@ -814,7 +814,7 @@ window.OS_DATA = [
     tag:"Sécurité par compartimentation. Chaque tâche dans une VM Xen isolée. Snowden approuve.",
     site:"qubes-os.org", dl:"www.qubes-os.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~35 min", diff:"Expert", base:"Fedora",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"6 Go min., 16 Go conseillés (chiffres officiels Qubes)", disk:"32 Go min., 128 Go conseillés — installation sur disque : Qubes ne s'utilise pas depuis une clé USB persistante", cpu:"64 bits Intel ou AMD avec VT-x + EPT (ou AMD-V + RVI) ET VT-d (ou AMD-Vi) : ces extensions de virtualisation sont obligatoires, pas optionnelles"},
     steps:[
       {t:"Télécharger l'ISO", d:"qubes-os.org → dernière version stable. Vérifier la signature PGP."},
       {t:"Vérifier le matériel", d:"Consulter la HCL : VT-x/AMD-V + VT-d/AMD-Vi obligatoires."},
@@ -916,7 +916,7 @@ window.OS_DATA = [
     tag:"Minuscule (~130 Mo), sécurisée, la star des conteneurs Docker.",
     site:"alpinelinux.org", dl:"alpinelinux.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"—",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"128 Mo min. pour une installation sur disque", disk:"130 Mo pour une installation minimale sur disque (chiffre officiel Alpine) ; environ 8 Mo en conteneur", cpu:"x86_64, ARM et plusieurs autres architectures ; fonctionne sur du matériel très modeste"},
     steps:[
       {t:"Télécharger l'ISO", d:"alpinelinux.org → Standard ou Extended."},
       {t:"Graver la clé", d:"dd de l'ISO."},
@@ -992,7 +992,7 @@ window.OS_DATA = [
     tag:"Sans systemd, ultra-frugal (~256 Mo RAM). Pour les machines vraiment vieilles.",
     site:"antixlinux.com", dl:"antixlinux.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"256 Mo min. pour l'édition complète, moins encore pour antiX-core", disk:"5 Go d'espace disque", cpu:"x86 ou x86_64 anciens — le projet cible explicitement les machines vraiment vieilles"},
     steps:[
       {t:"Télécharger l'ISO", d:"antixlinux.com → full, base ou net."},
       {t:"Graver la clé", d:"balenaEtcher ou l'outil live-usb intégré."},
@@ -1017,7 +1017,7 @@ window.OS_DATA = [
     tag:"Tout tient en RAM. Démarre sur n'importe quoi, même sans disque dur.",
     site:"puppylinux.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Debian/Ubuntu",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"512 Mo conseillés — le système entier se charge en RAM, c'est elle qui compte, bien plus que le processeur", disk:"Aucun disque nécessaire : Puppy démarre depuis une clé ou un CD. Prévoir ~1,5 Go pour les variantes les plus complètes", cpu:"x86 ou x86_64, machines très anciennes comprises"},
     steps:[
       {t:"Télécharger l'ISO", d:"puppylinux.com → BookwormPup64 (base Debian)."},
       {t:"Graver la clé", d:"balenaEtcher ou l'outil natif."},
@@ -1042,7 +1042,7 @@ window.OS_DATA = [
     tag:"Un bureau complet en ~20 Mo. Modulaire à l'extrême, tout se charge en RAM.",
     site:"tinycorelinux.net", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Avancé", base:"—",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"46 Mo min. — le système refuse de démarrer en dessous ; 128 Mo et un peu de swap pour un usage bureau", disk:"Quelques dizaines de Mo : l'image Core fait 11 Mo, TinyCore 16 Mo, et le système réside en RAM", cpu:"i486DX minimum (chiffre officiel du projet) ; un Pentium 2 ou mieux pour un bureau confortable"},
     steps:[
       {t:"Télécharger l'ISO", d:"tinycorelinux.net → Core (CLI), TinyCore ou CorePlus selon le besoin."},
       {t:"Graver la clé", d:"balenaEtcher ou dd, l'image fait quelques Mo seulement."},
@@ -1680,7 +1680,7 @@ window.OS_DATA = [
     tag:"« Linux-libretro » : distribution minimaliste entièrement bâtie autour de RetroArch.",
     site:"lakka.tv", dl:"www.lakka.tv/get", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Linux",
-    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
+    req:{ram:"1 Go suffit sur un Raspberry Pi ; davantage seulement pour les émulateurs les plus exigeants", disk:"4 Go min. pour le système, puis selon la taille de la logithèque", cpu:"Raspberry Pi ou PC x86_64 ; un GPU dédié ne devient utile que pour les émulateurs de consoles récentes"},
     steps:[
       {t:"Télécharger l'image", d:"lakka.tv → choisir l'image pour ton matériel (PC, Pi, Switch…)."},
       {t:"Graver la carte/clé", d:"balenaEtcher, écriture image brute."},
@@ -1780,7 +1780,7 @@ window.OS_DATA = [
     tag:"OS minimaliste pour Raspberry Pi / SBC, avec un menu d'installation de services en un clic.",
     site:"dietpi.com", dl:"dietpi.com/#download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"256 Mo suffisent — l'image est optimisée pour une empreinte mémoire minimale, journalisation en RAM par défaut", disk:"Carte microSD de 4 Go min.", cpu:"Carte ARM avant tout (Raspberry Pi et une centaine d'autres SBC) ; des images x86_64 existent aussi pour PC et machines virtuelles"},
     steps:[
       {t:"Télécharger l'image", d:"dietpi.com/#download → choisir la carte/SBC cible."},
       {t:"Graver la carte SD", d:"balenaEtcher ou Raspberry Pi Imager."},
@@ -1909,7 +1909,7 @@ window.OS_DATA = [
     tag:"Routeur/pare-feu open source « as code », CLI façon Cisco/Juniper, config versionnable.",
     site:"vyos.io", dl:"vyos.net/get/nightly-builds", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
+    req:{ram:"1 Go min., 2 Go et plus conseillés en production", disk:"4 Go de stockage min.", cpu:"x86_64, machine physique ou virtuelle"},
     steps:[
       {t:"Télécharger l'image", d:"vyos.net/get/nightly-builds → build rolling, librement téléchargeable. Les images LTS ne sont plus distribuées gratuitement : elles passent par un abonnement (vyos.io/subscriptions/software). Le code source reste libre, une image LTS peut donc aussi être compilée soi-même."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -2266,7 +2266,7 @@ window.OS_DATA = [
     tag:"Micro-distribution (boot depuis un CD, tient en quelques dizaines de Mo) : maintenance, multimédia, mini-serveur.",
     site:"4mlinux.com", dl:"4mlinux.com/index.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~6 min", diff:"Facile", base:"—",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"256 Mo suffisent pour le système de base", disk:"Quelques centaines de Mo : l'image tient sur un CD", cpu:"x86 ou x86_64, machines anciennes comprises"},
     steps:[
       {t:"Télécharger l'ISO", d:"4mlinux.com/index.php?page=download → édition Core ou complète."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2420,7 +2420,7 @@ window.OS_DATA = [
     tag:"Firmware libre pour routeurs. Remplace le firmware d'usine par un vrai Linux configurable.",
     site:"openwrt.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Linux",
-    req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
+    req:{ram:"128 Mo conseillés sur le matériel réseau récent ; les modèles limités à 32 Mo ne reçoivent plus toutes les versions", disk:"16 Mo de mémoire flash conseillés sur un routeur ; quelques centaines de Mo sur x86", cpu:"Routeur ou point d'accès supporté (MIPS, ARM…), ou machine x86_64 — vérifier le modèle dans la table de compatibilité du projet"},
     steps:[
       {t:"Vérifier la compatibilité", d:"Chercher son routeur sur le Table of Hardware d'OpenWrt avant tout."},
       {t:"Télécharger le firmware", d:"openwrt.org → image factory (1er flash) ou sysupgrade (mise à jour)."},
@@ -2750,7 +2750,7 @@ window.OS_DATA = [
     tag:"Hyperviseur illumos taillé pour le cloud : zones légères + KVM, ZFS natif, live USB uniquement.",
     site:"smartos.org", dl:"smartos.org/get-smartos", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"illumos",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"2 Go min., nettement plus en production : le système entier tourne en RAM", disk:"Aucun disque système : SmartOS démarre depuis une clé USB ou en PXE. Les disques ne servent qu'au pool ZFS de données", cpu:"x86_64 avec extensions de virtualisation (VT-x / AMD-V) pour les machines virtuelles KVM et bhyve"},
     steps:[
       {t:"Télécharger l'image", d:"smartos.org/get-smartos → image USB officielle."},
       {t:"Graver la clé", d:"dd (SmartOS s'exécute toujours en live, jamais installé sur disque)."},
@@ -3524,7 +3524,7 @@ window.OS_DATA = [
     tag:"Live portable qui tient sur une clé et sauvegarde les changements. Debian dessous.",
     site:"slax.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~6 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"512 Mo conseillés — le système tourne depuis la clé", disk:"Une clé USB de 2 Go suffit, les modifications étant écrites dessus", cpu:"x86_64, machines anciennes comprises"},
     steps:[
       {t:"Télécharger l'ISO", d:"slax.org → édition Debian."},
       {t:"Copier sur clé", d:"Extraire le dossier /slax sur une clé FAT32 puis lancer bootinst."},
@@ -3547,7 +3547,7 @@ window.OS_DATA = [
     tag:"Distro modulaire ultra-rapide qui vit en RAM. Bureaux au choix, taille minuscule.",
     site:"porteus.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Slackware",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"512 Mo conseillés — le système se charge en RAM, d'où sa rapidité", disk:"Une clé USB de 1 Go suffit largement", cpu:"x86 ou x86_64, machines anciennes comprises"},
     steps:[
       {t:"Télécharger l'ISO", d:"porteus.org → choisir le bureau (KDE, XFCE, MATE, LXQt…)."},
       {t:"Graver la clé", d:"Script Porteus USB installer ou dd."},
@@ -3805,7 +3805,7 @@ window.OS_DATA = [
     tag:"Rétro-gaming clé en main, ultra-accessible. EmulationStation + Kodi intégré.",
     site:"recalbox.com", dl:"www.recalbox.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Linux",
-    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
+    req:{ram:"1 Go suffit sur un Raspberry Pi ; davantage pour émuler des consoles récentes", disk:"8 Go min. sur carte microSD, puis selon la taille de la logithèque", cpu:"Raspberry Pi (générations récentes), Odroid ou PC x86_64"},
     steps:[
       {t:"Télécharger l'image", d:"recalbox.com → image pour PC x86_64, Pi, Odroid…"},
       {t:"Graver la carte/clé", d:"Raspberry Pi Imager ou balenaEtcher."},
