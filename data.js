@@ -967,7 +967,7 @@ window.OS_DATA = [
     tag:"Ubuntu + Xfce : léger, stable et hautement personnalisable.",
     site:"xubuntu.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"1 Go min., 2 Go conseillés (chiffres officiels Xubuntu)", disk:"8,6 Go min., 20 Go conseillés", cpu:"Processeur 64 bits Intel ou AMD ; un double cœur à 1,5 GHz conseillé pour un usage fluide"},
     steps:[
       {t:"Télécharger l'ISO", d:"xubuntu.org → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -1406,7 +1406,7 @@ window.OS_DATA = [
     tag:"Pare-feu open source. Fork de pfSense, UI moderne, community-friendly. FreeBSD dessous.",
     site:"opnsense.org", dl:"opnsense.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"FreeBSD",
-    req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
+    req:{ram:"3 Go min. — l'installeur lui-même ne démarre pas en dessous ; 4 Go conseillés, 8 Go pour un usage intensif", disk:"40 Go de SSD conseillés ; 4 Go de carte SD/CF suffisent avec les images « nano »", cpu:"Processeur double cœur à 1 GHz min. (1,5 GHz multi-cœurs pour un usage soutenu)"},
     steps:[
       {t:"Télécharger l'image", d:"opnsense.org/download → image DVD (ISO) ou USB (img.bz2)."},
       {t:"Graver la clé", d:"dd de l'image décompressée."},
@@ -1431,7 +1431,7 @@ window.OS_DATA = [
     tag:"Le standard du pare-feu open source. Netgate. Ultra-fiable en prod.",
     site:"pfsense.org", dl:"pfsense.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"FreeBSD",
-    req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
+    req:{ram:"1 Go min. (chiffre officiel Netgate) ; davantage dès que le proxy ou l'IDS sont activés", disk:"8 Go de disque min. (SSD ou disque dur)", cpu:"Processeur compatible amd64 (x86-64) 64 bits"},
     steps:[
       {t:"Télécharger l'ISO", d:"pfsense.org/download → Community Edition (gratuite)."},
       {t:"Graver la clé", d:"Décompresser puis dd de l'image mémoire.", code:"gunzip pfSense-CE-*.iso.gz && dd if=pfSense.iso of=/dev/sdX"},
@@ -1456,7 +1456,7 @@ window.OS_DATA = [
     tag:"Pare-feu segmenté par zones (GREEN/RED/ORANGE/BLUE). IDS/IPS Suricata intégré.",
     site:"ipfire.org", dl:"ipfire.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Linux From Scratch",
-    req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
+    req:{ram:"1 Go min. recommandé par le projet ; 8 Go si le proxy web, l'IDS/IPS et le pare-feu DNS sont tous activés (5 à 6 Go de consommation)", disk:"2 Go min., 4 Go conseillés pour les journaux et les extensions", cpu:"x86_64, y compris du matériel modeste tant que les modules gourmands restent désactivés"},
     steps:[
       {t:"Télécharger l'ISO", d:"ipfire.org/download → image ISO pour installation classique."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -1606,7 +1606,7 @@ window.OS_DATA = [
     tag:"Distro Debian ultra-légère, pensée pour ressusciter les vieux PC.",
     site:"q4os.org", dl:"q4os.org/downloads1.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"512 Mo min. avec le bureau Trinity, 2 Go avec Plasma", disk:"6 Go avec Trinity, 8 Go avec Plasma", cpu:"500 MHz suffisent avec le bureau Trinity ; 1 GHz pour le bureau Plasma (chiffres officiels Q4OS)"},
     steps:[
       {t:"Télécharger l'ISO", d:"q4os.org/downloads1.html → édition Desktop ou Core (sans bureau)."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
