@@ -511,7 +511,7 @@ window.OS_DATA = [
     tag:"Le successeur de CentOS. Binaire-compatible RHEL, gratuit et communautaire.",
     site:"rockylinux.org", dl:"rockylinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64-v2 min. (Nehalem/Bulldozer et plus), ARM64, POWER9 ou IBM Z"},
     steps:[
       {t:"Télécharger l'ISO", d:"rockylinux.org → DVD ou Minimal ISO."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -536,7 +536,7 @@ window.OS_DATA = [
     tag:"Clone RHEL 1:1 par CloudLinux. Stable, gratuit, orienté production.",
     site:"almalinux.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64-v2 min. (Nehalem/Bulldozer et plus), ARM64, POWER9 ou IBM Z"},
     steps:[
       {t:"Télécharger l'ISO", d:"almalinux.org → DVD ou Minimal."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -561,7 +561,7 @@ window.OS_DATA = [
     tag:"L'amont continu de RHEL. Pour tester ce qui arrive dans Red Hat Enterprise.",
     site:"centos.org", dl:"www.centos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64-v2 min. (Nehalem/Bulldozer et plus), ARM64, POWER9 ou IBM Z"},
     steps:[
       {t:"Télécharger l'ISO", d:"centos.org → CentOS Stream 9, DVD ou boot."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -586,7 +586,7 @@ window.OS_DATA = [
     tag:"Sans interface graphique, pour héberger sites, bases de données et conteneurs.",
     site:"ubuntu.com", dl:"ubuntu.com/download/server", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"1,5 Go min. pour l'installeur ISO (3 Go+ conseillés)", disk:"5 Go min., 25 Go+ conseillés", cpu:"amd64, arm64, ppc64el, s390x ou riscv64"},
     steps:[
       {t:"Télécharger l'ISO", d:"ubuntu.com/download/server → Server 24.04 LTS."},
       {t:"Graver la clé", d:"dd ou Rufus."},
@@ -611,7 +611,7 @@ window.OS_DATA = [
     tag:"Clone RHEL gratuit par Oracle. Kernel UEK optionnel, support entreprise disponible.",
     site:"oracle.com", dl:"oracle.com/linux/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64-v2 min. (Nehalem/Bulldozer et plus), ARM64, POWER9 ou IBM Z"},
     steps:[
       {t:"Télécharger l'ISO", d:"oracle.com/linux/downloads → image complète ou boot minimal."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -636,7 +636,7 @@ window.OS_DATA = [
     tag:"Le serveur Microsoft : Active Directory, Hyper-V, IIS. Standard en entreprise.",
     site:"microsoft.com", dl:"microsoft.com/evalcenter", license:"Propriétaire", popular:false, isNew:false,
     time:"~20 min", diff:"Intermédiaire", base:"Windows NT",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"1 Go min. en Server Core, 2 Go avec l'expérience de bureau", disk:"32 Go minimum absolu pour la partition système", cpu:"1,4 GHz 64 bits avec NX/DEP et SLAT (EPT ou NPT)"},
     steps:[
       {t:"Télécharger l'ISO", d:"microsoft.com/evalcenter → évaluation 180 jours gratuite."},
       {t:"Créer la clé bootable", d:"Rufus en GPT/UEFI, ou monter l'ISO directement en VM."},
@@ -687,7 +687,7 @@ window.OS_DATA = [
     tag:"NAS sous stéroïdes. ZFS, conteneurs, VMs, réplication. Debian sous le capot.",
     site:"truenas.com", dl:"truenas.com/download-truenas-scale", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Debian",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"8 Go min. (prérequis officiel ZFS), +1 Go par disque au-delà de 8", disk:"20 Go de SSD dédié au démarrage, en plus des disques du pool", cpu:"x86_64 Intel ou AMD"},
     steps:[
       {t:"Télécharger l'ISO", d:"truenas.com/download-truenas-scale → dernière ISO Scale."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -1705,7 +1705,7 @@ window.OS_DATA = [
     tag:"La dernière génération serveur de Microsoft : Hyper-V, Active Directory, sécurité renforcée.",
     site:"microsoft.com", license:"Propriétaire", popular:false, isNew:false,
     time:"~20 min", diff:"Intermédiaire", base:"Windows NT",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"2 Go min. (4 Go conseillés avec l'expérience de bureau)", disk:"32 Go minimum absolu pour la partition système", cpu:"1,4 GHz 64 bits avec SLAT, SSE4.2 et POPCNT"},
     steps:[
       {t:"Télécharger l'ISO d'évaluation", d:"Depuis le Centre d'évaluation Microsoft (180 jours)."},
       {t:"Créer la clé bootable", d:"Rufus, schéma GPT / UEFI.", code:"Rufus → GPT → UEFI"},
@@ -1725,14 +1725,14 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"clearos", name:"ClearOS", version:"7.x Community", cat:"server", color:"#4CAF50", icon:null,
+    id:"clearos", name:"ClearOS", version:"7.6 — arrêtée (2024)", cat:"server", color:"#4CAF50", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4CAF50" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4CAF50">Cl</text></svg>',
-    tag:"Serveur/passerelle tout-en-un pour PME : pare-feu, VPN, messagerie, partage de fichiers.",
+    tag:"Serveur/passerelle tout-en-un pour PME : pare-feu, VPN, messagerie, partage de fichiers — maintenance arrêtée en juin 2024.",
     site:"clearos.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"RHEL",
     req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"clearos.com → bouton « Free Download » de la page d'accueil, édition Community. Le projet ne publie plus de page de téléchargement dédiée."},
+      {t:"Télécharger l'ISO", d:"Projet arrêté : la dernière version publiée est la 7.6.0 de mai 2019 et ClearFoundation a mis fin à sa maintenance en juin 2024. Les images restent téléchargeables depuis clearos.com (bouton « Free Download » de la page d'accueil, le projet ne publie plus de page dédiée), mais elles reposent sur CentOS 7, lui-même sans mise à jour de sécurité depuis juin 2024 — fiche conservée à titre documentaire, à ne pas exposer sur un réseau."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
       {t:"Installeur texte", d:"Partitionnement automatique conseillé pour débuter."},
       {t:"Assistant Marketplace", d:"Choisir les modules à activer (pare-feu, proxy, antivirus…)."},
@@ -2139,7 +2139,7 @@ window.OS_DATA = [
     tag:"NAS libre basé sur Debian. Partage réseau, RAID logiciel, plugins pour Docker/Nextcloud.",
     site:"openmediavault.org", dl:"www.openmediavault.org/download.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"1 Go min. (4 Go conseillés par le projet)", disk:"4 Go min. pour le disque système, séparé des disques de données", cpu:"x86_64, i386 ou ARM (Raspberry Pi 2B et plus, cartes Armbian)"},
     steps:[
       {t:"Télécharger l'ISO", d:"openmediavault.org/?page_id=195 → dernière image stable."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2164,7 +2164,7 @@ window.OS_DATA = [
     tag:"Hyperviseur libre basé sur Xen, alternative sérieuse à ESXi. Géré via Xen Orchestra.",
     site:"xcp-ng.org", dl:"xcp-ng.org/#easy-to-install", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Xen",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"2 Go min. pour l'hyperviseur (8 Go+ conseillés), hors RAM des VM", disk:"46 Go min. (70 Go+ conseillés), ni clé USB ni carte SD", cpu:"x86_64 1,5 GHz min., VT-x/AMD-V et SLAT obligatoires"},
     steps:[
       {t:"Télécharger l'ISO", d:"xcp-ng.org/#easy-to-install → image d'installation officielle."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
@@ -2724,7 +2724,7 @@ window.OS_DATA = [
     tag:"Serveur d'annuaire/identité open source (compatible Active Directory) basé sur Debian.",
     site:"univention.com", dl:"www.univention.com/products/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Debian",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"1 Go min. publié, davantage selon le nombre d'utilisateurs", disk:"8 Go min. publié, davantage selon les données du domaine", cpu:"amd64 (64 bits) uniquement, UEFI et Secure Boot pris en charge"},
     steps:[
       {t:"Télécharger l'ISO", d:"univention.com/products/download → édition Core (gratuite)."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2776,7 +2776,7 @@ window.OS_DATA = [
     tag:"Plateforme hyperconvergée open source (KubeVirt + Kubernetes) par SUSE/Rancher, pour VM et conteneurs.",
     site:"harvesterhci.io", dl:"github.com/harvester/harvester/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"openSUSE",
-    req:{ram:"2 Go min. (4 Go+ conseillés en production)", disk:"20-40 Go selon les services hébergés", cpu:"x86_64 (physique ou VM)"},
+    req:{ram:"32 Go min. par nœud pour un test, 64 Go+ en production", disk:"250 Go min. en test, 500 Go+ en production (SSD/NVMe, 5 000 IOPS)", cpu:"8 cœurs min. (16+ en production), virtualisation matérielle obligatoire"},
     steps:[
       {t:"Télécharger l'ISO", d:"github.com/harvester/harvester/releases → image ISO d'installation de la dernière version."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
