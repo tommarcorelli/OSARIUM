@@ -28,15 +28,15 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"ubuntu", name:"Ubuntu", version:"24.04 LTS", cat:"desktop", color:"#E95420", icon:"ubuntu",
+    id:"ubuntu", name:"Ubuntu", version:"26.04 LTS Resolute Raccoon", cat:"desktop", color:"#E95420", icon:"ubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#E95420"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"La distribution Linux la plus populaire. Idéale pour débuter.",
     site:"ubuntu.com", dl:"ubuntu.com/download/desktop", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"25 Go min. (officiel Ubuntu)", cpu:"2 GHz dual-core, 64 bits"},
+    req:{ram:"6 Go min. (8 Go+ conseillés)", disk:"25 Go min. (officiel Ubuntu)", cpu:"2 GHz dual-core, 64 bits"},
     steps:[
       {t:"Télécharger l'ISO", d:"Sur ubuntu.com/download/desktop, choisir la version Desktop LTS (support 5 ans)."},
-      {t:"Vérifier le SHA-256", d:"Comparer l'empreinte avec le fichier SHA256SUMS publié.", code:"sha256sum ubuntu-24.04-desktop-amd64.iso"},
+      {t:"Vérifier le SHA-256", d:"Comparer l'empreinte avec le fichier SHA256SUMS publié.", code:"sha256sum ubuntu-26.04-desktop-amd64.iso"},
       {t:"Graver la clé", d:"Utiliser balenaEtcher ou Rufus en mode image/DD."},
       {t:"Essayer avant d'installer", d:"Booter sur la clé et choisir « Try Ubuntu » pour tester le live sans rien modifier."},
       {t:"Installer", d:"Lancer l'installeur, choisir dual-boot ou effacement disque, puis créer l'utilisateur."}
@@ -48,7 +48,8 @@ window.OS_DATA = [
       {q:"Pas de Wi-Fi pendant l'installation",a:"Certains pilotes Wi-Fi propriétaires (Broadcom, Realtek récents) ne sont pas inclus par défaut. Branche un câble Ethernet pour l'installation, ou utilise une ISO alternative incluant les pilotes non-libres si disponible."}
     ],
     faq:[
-      {q:"Quelle est la différence entre la version LTS et les versions intermédiaires ?", a:"La LTS (comme 24.04) est supportée 5 ans et pensée pour la stabilité ; les versions intermédiaires (24.10, 25.04…) sortent tous les 6 mois avec des logiciels plus récents mais seulement 9 mois de support."},
+      {q:"Quelle est la différence entre la version LTS et les versions intermédiaires ?", a:"La LTS (comme 26.04) est supportée 5 ans et pensée pour la stabilité ; les versions intermédiaires sortent tous les 6 mois avec des logiciels plus récents mais seulement 9 mois de support."},
+      {q:"Pourquoi la RAM minimale est-elle passée à 6 Go ?", a:"Canonical a relevé ce seuil avec la 26.04, une première depuis 2019 (le minimum était alors passé de 2 à 4 Go) — le système s'installe toujours avec moins, mais l'expérience se dégrade nettement en dessous. Xubuntu ou Lubuntu restent recommandés sur du matériel plus limité."},
       {q:"Faut-il des connaissances techniques pour l'utiliser au quotidien ?", a:"Non, ce système est pensé pour un usage grand public, avec une interface graphique complète dès le premier démarrage."}
     ]
   },
@@ -739,7 +740,7 @@ window.OS_DATA = [
     tag:"L'OS de l'anonymat. Amnésique, tout passe par Tor. Utilisé par les journalistes.",
     site:"tails.net", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"3 Go conseillés (fonctionne avec moins, instabilité possible)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'image USB", d:"tails.net → image .img. Vérifier la signature OpenPGP."},
       {t:"Graver la clé", d:"balenaEtcher ou GNOME Disks. Tails vit sur la clé, pas sur le disque."},
@@ -789,7 +790,7 @@ window.OS_DATA = [
     tag:"2800+ outils de pentest sur base Arch. Le rasoir des professionnels.",
     site:"blackarch.org", dl:"blackarch.org/downloads.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~40 min", diff:"Expert", base:"Arch",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"1 Go min. (2 Go conseillés, plus selon les outils utilisés)", disk:"8-32 Go pour une clé USB persistante (jusqu'à ~100 Go si tous les outils sont installés)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'ISO", d:"blackarch.org → Full ISO (~20 Go) ou Slim ISO."},
       {t:"Graver la clé", d:"dd obligatoire pour l'image hybride.", code:"sudo dd if=blackarch.iso of=/dev/sdX bs=4M"},
@@ -839,7 +840,7 @@ window.OS_DATA = [
     tag:"Deux VM : une passerelle Tor + un poste isolé. Impossible à désanonymiser.",
     site:"whonix.org", dl:"www.whonix.org/wiki/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"1 Go min. (8 Go conseillés pour de bonnes performances)", disk:"10 Go min. (prévoir plus pour les mises à jour)", cpu:"x86_64, virtualisation matérielle (VT-x/AMD-V) obligatoire — architecture à deux VM"},
     steps:[
       {t:"Télécharger les VMs", d:"whonix.org → images VirtualBox (Gateway + Workstation)."},
       {t:"Installer VirtualBox", d:"Depuis virtualbox.org, la dernière version stable."},
@@ -1755,7 +1756,7 @@ window.OS_DATA = [
     tag:"Debian durci par défaut (les mêmes protections que Whonix, sans le routage Tor obligatoire).",
     site:"kicksecure.com", dl:"kicksecure.com/wiki/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"512 Mo min. en CLI (2 Go conseillés avec bureau graphique)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64/ARM64 — utilisable en VM (usage le plus courant) ou installé directement sur machine physique"},
     steps:[
       {t:"Télécharger l'ISO", d:"kicksecure.com/wiki/Download → image ISO ou VM."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -1800,7 +1801,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"silverblue", name:"Fedora Silverblue", version:"40", cat:"advanced", color:"#3C6EB4", icon:null,
+    id:"silverblue", name:"Fedora Silverblue", version:"43", cat:"advanced", color:"#3C6EB4", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#3C6EB4" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#3C6EB4">Sb</text></svg>',
     tag:"Fedora immuable façon image atomique (rpm-ostree). Rollbacks natifs, apps en Flatpak.",
     site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/silverblue", license:"Libre / Open-source", popular:false, isNew:false,
@@ -2311,7 +2312,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"kinoite", name:"Fedora Kinoite", version:"40", cat:"advanced", color:"#294172", icon:null,
+    id:"kinoite", name:"Fedora Kinoite", version:"43", cat:"advanced", color:"#294172", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#294172" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#294172">Kn</text></svg>',
     tag:"Équivalent KDE Plasma de Silverblue : bureau immuable, mises à jour atomiques, Flatpak par défaut.",
     site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/kinoite", license:"Libre / Open-source", popular:false, isNew:false,
@@ -2363,7 +2364,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"guix", name:"Guix System", version:"1.4", cat:"advanced", color:"#FFB400", icon:null,
+    id:"guix", name:"Guix System", version:"1.5.0", cat:"advanced", color:"#FFB400", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#FFB400" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#FFB400">Gx</text></svg>',
     tag:"Distro GNU 100% libre, configuration déclarative en Scheme, rollbacks transactionnels façon NixOS.",
     site:"gnu.org", dl:"guix.gnu.org/en/download", license:"Libre / Open-source", popular:false, isNew:false,
@@ -2542,12 +2543,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"talos", name:"Talos Linux", version:"1.7", cat:"container", color:"#4B32C3", icon:"talos",
+    id:"talos", name:"Talos Linux", version:"1.13", cat:"container", color:"#4B32C3", icon:"talos",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#4B32C3"><path d="M9.678 11.98c0-2.664-1.13-6.896-2.867-10.804a12 12 0 0 0-1.585.917c1.608 3.668 2.647 7.553 2.647 9.886 0 2.254-1.08 6.145-2.735 9.865a12 12 0 0 0 1.576.93c1.79-3.976 2.964-8.229 2.964-10.795m6.442 0c0-2.336 1.042-6.22 2.646-9.89a12 12 0 0 0-1.608-.922c-1.756 3.957-2.843 8.166-2.843 10.816 0 2.564 1.177 6.819 2.965 10.797a12 12 0 0 0 1.575-.931c-1.655-3.723-2.735-7.616-2.735-9.87m5.45 6.525.31.307a12 12 0 0 0 .936-1.612c-1.866-1.893-3.457-3.938-3.47-5.233-.012-1.264 1.57-3.308 3.446-5.222a12 12 0 0 0-.945-1.603l-.259.258c-2.739 2.766-4.063 4.92-4.047 6.583.016 1.662 1.332 3.81 4.028 6.522M2.411 5.405l-.26-.259a12 12 0 0 0-.946 1.608c3.123 3.173 3.452 4.704 3.448 5.217-.012 1.3-1.603 3.34-3.47 5.229a12 12 0 0 0 .939 1.608c.106-.106.207-.204.31-.308 2.694-2.711 4.01-4.842 4.026-6.516s-1.308-3.809-4.047-6.58M12.002 24c.303 0 .602-.016.898-.037V.037A12 12 0 0 0 12 0c-.304 0-.605.015-.905.037v23.925q.448.035.903.038z"/></svg>',
     tag:"OS minimal sans SSH ni shell, piloté uniquement par API, conçu spécifiquement pour Kubernetes.",
-    site:"talos.de", license:"Libre / Open-source", popular:false, isNew:false,
+    site:"talos.dev", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Linux",
-    req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
+    req:{ram:"1 Go (worker) / 2 Go (control-plane) min.", disk:"10-20 Go d'espace disque", cpu:"x86_64-v2 requis depuis la 1.0, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
       {t:"Télécharger l'ISO", d:"talos.dev → image ISO ou image cloud selon la cible."},
       {t:"Booter les nœuds", d:"Démarrer les machines (control-plane et workers) sur l'image Talos."},
@@ -2573,7 +2574,7 @@ window.OS_DATA = [
     tag:"Live minimaliste dédié au partitionnement graphique (redimensionner, déplacer, formater).",
     site:"gparted.org", dl:"gparted.org/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~5 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"gparted.org/download.php → image stable amd64."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2593,14 +2594,14 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"hirensbootcd", name:"Hiren's BootCD PE", version:"1.0.3", cat:"recovery", color:"#2980B9", icon:null,
+    id:"hirensbootcd", name:"Hiren's BootCD PE", version:"1.0.8", cat:"recovery", color:"#2980B9", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2980B9" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2980B9">Hb</text></svg>',
     tag:"Environnement de secours basé sur Windows PE : dépannage, récupération de données, antivirus hors ligne.",
     site:"hirensbootcd.org", dl:"www.hirensbootcd.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Windows PE",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"4 Go min.", disk:"8 Go+ (clé USB bootable, ISO ~3,1 Go)", cpu:"x86_64 (build 64 bits uniquement)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"hirensbootcd.org → dernière version PE."},
+      {t:"Télécharger l'ISO", d:"hirensbootcd.org → dernière version PE (build Windows 11 PE x64, ~3,1 Go)."},
       {t:"Graver la clé", d:"Rufus en mode DD (respecter les instructions du site pour l'UEFI)."},
       {t:"Démarrer", d:"Booter sur la clé, un bureau Windows PE minimal se lance."},
       {t:"Outils", d:"Accéder aux utilitaires de partitionnement, récupération de mots de passe, antivirus."},
@@ -2609,7 +2610,7 @@ window.OS_DATA = [
     alt:["gpartedlive","rescatux","ubcd"],
     errors:[
       {q:"Mauvais disque sélectionné pendant un clonage",a:"C'est l'erreur la plus dangereuse possible avec ce type d'outil : une cible mal choisie efface définitivement le disque de destination. Vérifie toujours deux fois la taille et le nom exact du disque affiché avant de valider."},
-      {q:"Les modifications ne sont pas conservées",a:"Ces systèmes tournent en RAM depuis la clé USB et ne conservent rien au redémarrage par conception — toute donnée à garder doit être copiée sur un support externe avant d'éteindre."},
+      {q:"Erreur « 0xc0000017 » au démarrage",a:"Le projet documente lui-même cette erreur de RAM insuffisante pour créer le disque virtuel : en dessous de 4 Go, utiliser l'ancienne image plus légère (v1.0.1) ; entre 2 et 4 Go, réduire la taille du ramdisk X: dans la configuration."},
       {q:"Un contrôleur RAID/NVMe exotique n'est pas reconnu",a:"Le noyau embarqué sur ces outils est parfois plus ancien que celui du système d'origine et peut manquer un pilote récent. Une version plus à jour de l'outil règle souvent le problème."}
     ],
     faq:[
@@ -2925,7 +2926,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"crux", name:"CRUX", version:"3.7", cat:"advanced", color:"#C0392B", icon:null,
+    id:"crux", name:"CRUX", version:"3.8", cat:"advanced", color:"#C0392B", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#C0392B" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#C0392B">Cx</text></svg>',
     tag:"Distro source-based minimaliste, gestionnaire de ports façon BSD, pour puristes du « fait main ».",
     site:"crux.nu", dl:"crux.nu/Download", license:"Libre / Open-source", popular:false, isNew:false,
@@ -3187,7 +3188,7 @@ window.OS_DATA = [
     tag:"Live orienté maintenance de parc : scan antivirus hors ligne, réinitialisation de mots de passe Windows.",
     site:"trinityhome.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Linux",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"256 Mo min. (512 Mo conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"trinityhome.org → dernière version disponible."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3202,8 +3203,8 @@ window.OS_DATA = [
       {q:"Un contrôleur RAID/NVMe exotique n'est pas reconnu",a:"Le noyau embarqué sur ces outils est parfois plus ancien que celui du système d'origine et peut manquer un pilote récent. Une version plus à jour de l'outil règle souvent le problème."}
     ],
     faq:[
-      {q:"L'outil modifie-t-il le disque automatiquement ?", a:"Non, il s'utilise en mode Live et ne touche au disque que sur action explicite (formatage, restauration, écriture d'image)."},
-      {q:"Peut-on l'utiliser sur n'importe quel PC en panne ?", a:"Dans la majorité des cas oui, tant que le PC peut démarrer sur une clé USB ; en cas de panne matérielle plus grave, un diagnostic matériel reste nécessaire."}
+      {q:"Le projet est-il toujours maintenu ?", a:"Non : la dernière version (3.4 build 372) date d'avril 2011, et le site n'a plus été mis à jour depuis 2016. Les liens de téléchargement officiels sont cassés ; les images ne se trouvent plus que sur des miroirs tiers (MajorGeeks, Softpedia)."},
+      {q:"Peut-on l'utiliser sur n'importe quel PC en panne ?", a:"Sur du matériel ancien oui ; sur du matériel récent, l'absence de mise à jour depuis 2011 peut poser des problèmes de pilotes réseau/stockage ou de démarrage UEFI Secure Boot."}
     ]
   },
   {
@@ -3212,9 +3213,9 @@ window.OS_DATA = [
     tag:"OS minimal orienté conteneurs porté par AWS, pensé pour EKS/ECS, sans shell ni gestionnaire de paquets classique.",
     site:"bottlerocket.dev", dl:"github.com/bottlerocket-os/bottlerocket/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"Linux",
-    req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
+    req:{ram:"512 Mo min. (1 vCPU)", disk:"2 Go (volume racine, fixe) + 20 Go (volume données, ajustable)", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
-      {t:"Choisir la variante", d:"bottlerocket.dev → choisir la variante adaptée (EKS, ECS, VMware, bare metal). Images et notes de version : github.com/bottlerocket-os/bottlerocket/releases."},
+      {t:"Choisir la variante", d:"github.com/bottlerocket-os/bottlerocket → choisir la variante adaptée (EKS, ECS, VMware, bare metal). Images et notes de version dans les releases."},
       {t:"Déployer l'image", d:"Sur AWS, lancer via AMI Bottlerocket dans un Auto Scaling Group ou nodegroup EKS."},
       {t:"Configuration utilisateur", d:"Fournir un user-data TOML décrivant réseau et paramètres kubelet."},
       {t:"Accès admin", d:"Passer par le conteneur « admin container » plutôt qu'un shell SSH classique."},
@@ -3682,11 +3683,11 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"rancheros", name:"RancherOS / k3OS", version:"legacy", cat:"container", color:"#0075A8", icon:null,
+    id:"rancheros", name:"RancherOS / k3OS", version:"1.5.8 (RancherOS, 2021) / archivé (k3OS, 2023)", cat:"container", color:"#0075A8", icon:null,
     tag:"OS minimal où tout est un conteneur Docker. Idéal edge/Kubernetes (héritage SUSE).",
     site:"github.com", dl:"github.com/rancher/os", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Avancé", base:"—",
-    req:{ram:"2-4 Go min.", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
+    req:{ram:"512 Mo min. (boot ISO), 1 Go pour une installation sur disque", disk:"10-20 Go d'espace disque", cpu:"x86_64, virtualisation matérielle recommandée (VT-x/AMD-V)"},
     steps:[
       {t:"Récupérer l'image", d:"github.com/rancher/os → ISO (ou k3OS pour du k3s intégré)."},
       {t:"Graver / booter", d:"dd sur clé, ou déployer l'image en VM/cloud."},
@@ -3702,7 +3703,7 @@ window.OS_DATA = [
     faq:[
       {q:"Quelle différence avec Docker Desktop ?", a:"Il s'agit ici d'un système d'exploitation complet dédié aux conteneurs/à l'orchestration, alors que Docker Desktop est une application installée sur un OS classique."},
       {q:"Faut-il des connaissances en Kubernetes/conteneurs pour s'en servir ?", a:"Oui, ce type de système cible des usages d'infrastructure ; des bases solides en conteneurisation sont recommandées avant de se lancer."},
-      {q:"RancherOS / k3OS est-il toujours recommandé pour un nouveau projet ?", a:"Non : le projet est en fin de vie (legacy), Rancher recommande désormais k3s sur une distribution standard, ou Harvester pour une infrastructure HCI complète."}
+      {q:"RancherOS / k3OS est-il toujours recommandé pour un nouveau projet ?", a:"Non : RancherOS a atteint sa fin de vie officielle en juin 2021 et son dépôt GitHub est archivé depuis octobre 2023 ; k3OS a suivi le même sort, avec un dépôt archivé en décembre 2023 après le rachat de Rancher par SUSE. Rancher recommande désormais k3s sur une distribution standard, ou Harvester pour une infrastructure HCI complète."}
     ]
   },
   {
@@ -3730,27 +3731,28 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"androidx86", name:"Android-x86", version:"9.0", cat:"mobile", color:"#3DDC84", icon:"android",
+    id:"androidx86", name:"Android-x86", version:"9.0-r2 (mars 2020)", cat:"mobile", color:"#3DDC84", icon:"android",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#3DDC84"><path d="M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 0 0-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 0 0-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 0 0-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z"/></svg>',
     tag:"Android porté sur PC/x86. Faire tourner des apps Android sur un vrai ordinateur.",
-    site:"android-x86.org", dl:"www.android-x86.org/download.html", license:"Libre / Open-source", popular:true, isNew:true,
+    site:"android-x86.org", dl:"www.android-x86.org/download.html", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Android",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"8-16 Go de stockage libre", cpu:"PC/laptop x86 ou x86_64 classique (pas un smartphone)"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"8-16 Go de stockage libre", cpu:"PC/laptop x86 ou x86_64 classique (pas un smartphone)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"android-x86.org → dernière release stable."},
+      {t:"Télécharger l'ISO", d:"android-x86.org → dernière release stable (9.0-r2, basée sur Android Pie)."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
       {t:"Live ou install", d:"Tester en live, ou installer sur une partition dédiée."},
       {t:"GRUB", d:"Installer le bootloader, choisir ext4, puis configurer Android."}
     ],
     alt:["postmarketos","lineageos","grapheneos"],
     errors:[
-      {q:"Le déverrouillage du bootloader efface toutes les données",a:"C'est systématique et volontaire (mesure anti-vol) : sauvegarde impérativement tes données avant de lancer le déverrouillage, il n'existe aucun moyen de l'éviter."},
-      {q:"Mauvaise image flashée pour l'appareil",a:"Chaque modèle a son propre nom de code et sa propre image. Flasher l'image d'un autre appareil, même très proche, peut rendre le téléphone temporairement inutilisable — vérifie trois fois le nom de code exact avant de flasher."},
-      {q:"Les paiements sans contact / apps bancaires refusent de fonctionner",a:"Beaucoup d'apps bancaires exigent une attestation d'intégrité que ces systèmes ne passent pas nativement. C'est une limitation connue de l'écosystème, pas un bug d'installation."}
+      {q:"Écran noir ou résolution figée après le boot",a:"Le rendu logiciel (SwiftShader) prend le relais quand le pilote GPU natif n'est pas reconnu : ajoute le paramètre de démarrage GRUB `nomodeset` ou force une résolution VESA si l'écran reste noir."},
+      {q:"Le Wi-Fi ou le pavé tactile ne fonctionnent pas",a:"Le portage dépend des pilotes Linux disponibles pour la puce concernée, souvent absents ou incomplets sur du matériel récent — c'est la limitation la plus fréquente, pas une erreur d'installation."},
+      {q:"Le Play Store / les apps bancaires refusent de s'installer",a:"Le projet ne fournit pas nativement les Google Apps (GApps) ni une attestation d'intégrité certifiée : il faut les ajouter séparément, et certaines apps bancaires resteront bloquées quoi qu'il arrive."}
     ],
     faq:[
       {q:"Toutes les applications Android fonctionnent-elles après l'installation ?", a:"Cela dépend du matériel : le tactile, la caméra ou le GPS sont absents sur un PC classique, et certaines apps pensées pour un écran de smartphone s'affichent mal sur un grand écran."},
-      {q:"L'installation efface-t-elle les données du PC ?", a:"Seulement la partition choisie durant l'installation ; en mode Live (sans installation), rien n'est écrit sur le disque et le PC repart intact au redémarrage."}
+      {q:"L'installation efface-t-elle les données du PC ?", a:"Seulement la partition choisie durant l'installation ; en mode Live (sans installation), rien n'est écrit sur le disque et le PC repart intact au redémarrage."},
+      {q:"Le projet est-il toujours à jour ?", a:"Non : la dernière version stable (9.0-r2, basée sur Android 9 Pie) date de mars 2020, sans nouvelle version stable depuis. Pour une base Android plus récente sur PC, des forks comme Bliss OS sont plus actifs."}
     ]
   },
   {
@@ -3824,11 +3826,11 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"rescuezilla", name:"Rescuezilla", version:"2.5", cat:"recovery", color:"#2C82C9", icon:null,
+    id:"rescuezilla", name:"Rescuezilla", version:"2.6.2", cat:"recovery", color:"#2C82C9", icon:null,
     tag:"Le « Clonezilla graphique » : sauvegarde, restauration et clonage de disques en clics.",
     site:"rescuezilla.com", dl:"rescuezilla.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"rescuezilla.com → dernière image."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3847,7 +3849,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"redorescue", name:"Redo Rescue", version:"4", cat:"recovery", color:"#1ABC9C", icon:null,
+    id:"redorescue", name:"Redo Rescue", version:"4.0.0", cat:"recovery", color:"#1ABC9C", icon:null,
     tag:"Sauvegarde et restauration bare-metal en un clic. Live minimal et rapide.",
     site:"redorescue.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~6 min", diff:"Facile", base:"Debian",
@@ -3861,12 +3863,12 @@ window.OS_DATA = [
     alt:["finnix","gpartedlive","rescatux"],
     errors:[
       {q:"Mauvais disque sélectionné pendant un clonage",a:"C'est l'erreur la plus dangereuse possible avec ce type d'outil : une cible mal choisie efface définitivement le disque de destination. Vérifie toujours deux fois la taille et le nom exact du disque affiché avant de valider."},
-      {q:"Les modifications ne sont pas conservées",a:"Ces systèmes tournent en RAM depuis la clé USB et ne conservent rien au redémarrage par conception — toute donnée à garder doit être copiée sur un support externe avant d'éteindre."},
+      {q:"La clé ne démarre pas sur un PC Windows en Secure Boot",a:"Bug connu depuis novembre 2024 : un certificat UEFI révoqué dans le système sous-jacent empêche la version 4.0.0 (la dernière, listée « finale » par le projet) de démarrer sur les machines avec Secure Boot activé. Désactiver temporairement Secure Boot dans le BIOS/UEFI reste le contournement le plus fiable."},
       {q:"Un contrôleur RAID/NVMe exotique n'est pas reconnu",a:"Le noyau embarqué sur ces outils est parfois plus ancien que celui du système d'origine et peut manquer un pilote récent. Une version plus à jour de l'outil règle souvent le problème."}
     ],
     faq:[
       {q:"L'outil modifie-t-il le disque automatiquement ?", a:"Non, il s'utilise en mode Live et ne touche au disque que sur action explicite (formatage, restauration, écriture d'image)."},
-      {q:"Peut-on l'utiliser sur n'importe quel PC en panne ?", a:"Dans la majorité des cas oui, tant que le PC peut démarrer sur une clé USB ; en cas de panne matérielle plus grave, un diagnostic matériel reste nécessaire."}
+      {q:"Le projet est-il toujours actif ?", a:"Après une reprise en 2020, la version 4.0.0 (sept./oct. 2021) est actuellement listée comme « Final Release » par le projet — aucune mise à jour n'est prévue, y compris pour corriger le bug Secure Boot ci-dessus."}
     ]
   },
   {
@@ -3874,7 +3876,7 @@ window.OS_DATA = [
     tag:"Live antivirus hors-ligne pour désinfecter un système Windows infecté sans le démarrer.",
     site:"kaspersky.fr", license:"Propriétaire", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Linux",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"kaspersky.fr → Kaspersky Rescue Disk (gratuit)."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -3883,7 +3885,7 @@ window.OS_DATA = [
     ],
     alt:["trinityrescuekit","redorescue","finnix"],
     errors:[
-      {q:"Mauvais disque sélectionné pendant un clonage",a:"C'est l'erreur la plus dangereuse possible avec ce type d'outil : une cible mal choisie efface définitivement le disque de destination. Vérifie toujours deux fois la taille et le nom exact du disque affiché avant de valider."},
+      {q:"Message « Not enough RAM » au démarrage",a:"Kaspersky documente lui-même ce message en dessous de 1 Go de RAM : l'outil peut se lancer quand même (bouton « Yes »), mais son fonctionnement n'est alors plus garanti — un scan peut échouer ou planter en cours de route."},
       {q:"Les modifications ne sont pas conservées",a:"Ces systèmes tournent en RAM depuis la clé USB et ne conservent rien au redémarrage par conception — toute donnée à garder doit être copiée sur un support externe avant d'éteindre."},
       {q:"Un contrôleur RAID/NVMe exotique n'est pas reconnu",a:"Le noyau embarqué sur ces outils est parfois plus ancien que celui du système d'origine et peut manquer un pilote récent. Une version plus à jour de l'outil règle souvent le problème."}
     ],
@@ -3893,13 +3895,13 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"finnix", name:"Finnix", version:"126", cat:"recovery", color:"#B01E28", icon:null,
+    id:"finnix", name:"Finnix", version:"251", cat:"recovery", color:"#B01E28", icon:null,
     tag:"Live CD d'administration système, minuscule et sans interface. L'outil du sysadmin.",
     site:"finnix.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~5 min", diff:"Avancé", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"128 Mo min. (256 Mo pour tourner entièrement en RAM)", disk:"2-4 Go (clé USB bootable, ISO ~577 Mo)", cpu:"x86_64 uniquement (32 bits abandonné depuis la version 120)"},
     steps:[
-      {t:"Télécharger l'ISO", d:"finnix.org → dernière image (~450 Mo)."},
+      {t:"Télécharger l'ISO", d:"finnix.org → dernière image (~577 Mo, AMD64)."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
       {t:"Booter en console", d:"Environnement root en ligne de commande, très rapide."},
       {t:"Maintenance", d:"Réparer partitions, LVM, RAID, chroot, réseau depuis les outils inclus."}
