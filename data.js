@@ -184,7 +184,7 @@ window.OS_DATA = [
     tag:"Par System76. Depuis la 24.04, le bureau maison COSMIC (Rust, Wayland) remplace GNOME + Pop Shell. Top pour dev et gaming.",
     site:"system76.com", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20 Go min.", cpu:"64 bits ; GPU compatible Wayland pour de bonnes performances avec COSMIC"},
+    req:{ram:"2 Go min. (4 Go conseillés, chiffres officiels System76)", disk:"20 Go min.", cpu:"64 bits ; GPU compatible Wayland pour de bonnes performances avec COSMIC"},
     steps:[
       {t:"Télécharger l'ISO", d:"pop.system76.com → choisir la variante NVIDIA ou AMD/Intel."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -204,12 +204,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"zorin", name:"Zorin OS", version:"17", cat:"desktop", color:"#0CC1F3", icon:"zorin",
+    id:"zorin", name:"Zorin OS", version:"18.1", cat:"desktop", color:"#0CC1F3", icon:"zorin",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0CC1F3"><path d="M4 18.944L5.995 22.4h12.01L20 18.944H4zM24 12l-2.013 3.488H9.216l12.771-6.976L24 12zM0 12l2.013-3.488h12.771L2.013 15.488 0 12zm4-6.944L5.995 1.6h12.01L20 5.056H4z"/></svg>',
     tag:"Conçu pour les migrants de Windows/macOS. Look configurable en un clic.",
     site:"zorin.com", dl:"zorin.com/os/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"1,5 Go min. (2 Go conseillés, officiel Zorin — fonctionne sur du matériel jusqu'à 15 ans)", disk:"15 Go min. (édition Core)", cpu:"1 GHz dual-core, 64 bits"},
     steps:[
       {t:"Télécharger l'ISO", d:"zorin.com → édition Core (gratuite) ou Pro."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -229,7 +229,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"elementary", name:"elementary OS", version:"7 Horus", cat:"desktop", color:"#64BAFF", icon:"elementary",
+    id:"elementary", name:"elementary OS", version:"8.1.1", cat:"desktop", color:"#64BAFF", icon:"elementary",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#64BAFF"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm0 1a11 11 0 0 1 10.59 8.01 19.09 19.09 0 0 1-4.66 6.08c-.94.81-1.96 1.53-3.08 2.04-1.13.5-2.37.8-3.6.72a6.23 6.23 0 0 1-2.66-.76 20.02 20.02 0 0 0 5.68-4.58 9.97 9.97 0 0 0 2.31-4.17c.18-.79.2-1.6.04-2.4a4.42 4.42 0 0 0-1.08-2.11 4.33 4.33 0 0 0-2-1.19 5.25 5.25 0 0 0-2.33-.08A7.8 7.8 0 0 0 7.2 4.85a9.77 9.77 0 0 0-2.94 7.49 7.88 7.88 0 0 0 1.95 4.59 18 18 0 0 1-3.56.85A11 11 0 0 1 12 1zm.07 2.22c.77 0 1.55.24 2.17.7.55.42.97 1.02 1.2 1.68.23.65.3 1.37.21 2.06a7.85 7.85 0 0 1-1.7 3.76 16.22 16.22 0 0 1-6.37 4.96c-.48-.42-.9-.92-1.2-1.48a6.61 6.61 0 0 1-.75-3.87c.12-1.32.58-2.6 1.2-3.79a7.92 7.92 0 0 1 3.02-3.42c.68-.37 1.45-.6 2.22-.6zm10.83 7.3A11 11 0 0 1 3.52 19a19.8 19.8 0 0 0 3.63-1.2c.51.4 1.08.71 1.67.94a8 8 0 0 0 5.44-.04 13.3 13.3 0 0 0 4.64-2.95 20 20 0 0 0 4-5.22z"/></svg>',
     tag:"Le plus beau Linux. Design soigné à la macOS, philosophie « pay what you want ».",
     site:"elementary.io", license:"Libre / Open-source", popular:false, isNew:false,
@@ -254,12 +254,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"linuxlite", name:"Linux Lite", version:"6.6", cat:"desktop", color:"#66B32E", icon:null,
+    id:"linuxlite", name:"Linux Lite", version:"8.0", cat:"desktop", color:"#66B32E", icon:null,
     svg:'<svg viewBox="0 0 24 24" fill="#66B32E"><path d="M12 2C8 2 5 5.5 5 10c0 6.5 5.5 10.5 7 11.7 1.5-1.2 7-5.2 7-11.7 0-4.5-3-8-7-8zm0 4.2c1.9 0 3.4 1.6 3.4 3.6S13.9 13.4 12 13.4 8.6 11.8 8.6 9.8 10.1 6.2 12 6.2z"/></svg>',
     tag:"Pensé pour les migrants de Windows sur du matériel modeste. Xfce simplifié.",
     site:"linuxliteos.com", dl:"linuxliteos.com/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (officiel — le projet a relevé ce seuil depuis la version 7.6, historiquement 768 Mo)", disk:"40 Go min. (officiel)", cpu:"1,5 GHz dual-core ou mieux, 64 bits"},
     steps:[
       {t:"Télécharger l'ISO", d:"linuxliteos.com/download.php → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus, mode image."},
@@ -279,14 +279,14 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"deepin", name:"Deepin", version:"23", cat:"desktop", color:"#0080FF", icon:"deepin",
+    id:"deepin", name:"Deepin", version:"25.2", cat:"desktop", color:"#0080FF", icon:"deepin",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0080FF"><path d="M16.104.696c-1.724-.63-3.49-.8-5.205-.64-1.988.157-2.958.772-2.9.661-3.251 1.16-6 3.657-7.272 7.157-2.266 6.234.944 13.128 7.168 15.398 6.228 2.27 13.111-.945 15.378-7.179C25.54 9.86 22.33 2.966 16.104.696zM8.305 22.145a10.767 10.767 0 0 1-1.867-.904c2.9.223 6.686-.445 9.239-2.834 0 0 4.866-3.888 1.345-10.269 0 0 .568 2.572-.156 4.687 0 0-.69 2.877-3.757 3.712-4.517 1.231-9.664-1.93-11.816-3.463-.162-1.574-.018-3.2.56-4.788.855-2.352 2.463-4.188 4.427-5.42-.49 3.436-.102 6.6.456 7.925.749 1.777 2.05 3.85 4.59 4.115 2.54.267 3.94-2.11 3.94-2.11 1.304-1.98 1.508-4.823 1.488-4.892-.02-.07-.347-.257-.347-.257-.877 3.549-2.323 4.734-2.323 4.734-2.28 2.201-3.895.675-3.895.675-1.736-1.865-.52-4.895-.52-4.895.68-2.064 2.66-5.084 4.905-6.62.374.092.75.15 1.12.284a10.712 10.712 0 0 1 3.554 2.16c-1.641.599-4.291 1.865-4.291 1.865-4.201 1.77-4.485 4.446-4.485 4.446-.435 2.758 1.754 1.59 1.754 1.59 2.252-1.097 3.359-4.516 3.359-4.516-.703-.134-1.257.08-1.257.08-.899 2.22-2.733 3.132-2.733 3.132-.722.382-.89-.293-.89-.293-.122-.506.522-.592.522-.592 1-.389 1.639-1.439 1.784-1.868.144-.43.412-.464.412-.464a12.998 12.998 0 0 1 2.619-.535c1.7-.209 4.303.602 4.303.602.584.235 1.144.41 1.641.551.954 2.384 1.105 5.098.16 7.7-2.039 5.61-8.236 8.504-13.841 6.462z"/></svg>',
     tag:"Le Linux chinois le plus élégant. DDE : environnement de bureau signature.",
     site:"deepin.org", dl:"www.deepin.org/en/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Facile", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"8 Go min. (officiel deepin.org — en dessous, installation risquée/système au ralenti)", disk:"64 Go min. (officiel)", cpu:"2 GHz multi-cœurs ou mieux"},
     steps:[
-      {t:"Télécharger l'ISO", d:"deepin.org → version 23 stable, ISO complète."},
+      {t:"Télécharger l'ISO", d:"deepin.org → version 25 stable, ISO complète."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus, mode DD."},
       {t:"Live + installeur", d:"Booter puis lancer l'installeur graphique Deepin."},
       {t:"Partitionner", d:"Mode simple (auto) ou personnalisé avec Btrfs recommandé."},
@@ -359,7 +359,7 @@ window.OS_DATA = [
     tag:"Google Chrome OS pour vieux PC/Mac. Cloud-first, ultra-léger, gestion entreprise.",
     site:"chromeenterprise.google", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"ChromeOS",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"16 Go min. (officiel Google)", cpu:"x86_64, conçu pour redonner vie à du matériel ancien (composants d'avant 2010 déconseillés, pas l'inverse)"},
     steps:[
       {t:"Installer l'extension", d:"Sur Chrome : Chromebook Recovery Utility depuis le Chrome Web Store."},
       {t:"Créer le média", d:"Lancer l'utilitaire → « ChromeOS Flex » → sélectionner la clé USB (8 Go min)."},
@@ -765,7 +765,7 @@ window.OS_DATA = [
     tag:"L'alternative à Kali. Pentest + confidentialité + dev, sur base Debian testing.",
     site:"parrotsec.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20 Go min. (édition Home), 40 Go conseillés (édition Security)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'ISO", d:"parrotsec.org → Security Edition (pentest) ou Home."},
       {t:"Graver la clé", d:"balenaEtcher ou Ventoy."},
@@ -867,7 +867,7 @@ window.OS_DATA = [
     tag:"Distribution d'audit basée sur Ubuntu. Interface légère XFCE, orientée pentest et forensic.",
     site:"backbox.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"1 Go min. (2-4 Go conseillés)", disk:"30 Go d'espace disque (officiel BackBox 9)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'ISO", d:"backbox.org → section Downloads, édition Desktop."},
       {t:"Vérifier le hash", d:"Comparer le SHA256 fourni sur le site.", code:"sha256sum backbox-9-desktop-amd64.iso"},
@@ -2191,7 +2191,7 @@ window.OS_DATA = [
     tag:"Distro pentest basée sur Arch, orientée personnalisation (BlackArch/Kali repos en option).",
     site:"athenaos.org", dl:"github.com/Athena-OS/athena/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Arch",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. (4-8 Go conseillés)", disk:"20 Go min. (30 Go conseillés, SSD de préférence)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'ISO", d:"github.com/Athena-OS/athena/releases → image ISO officielle de la dernière version publiée."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2212,12 +2212,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"caine", name:"CAINE", version:"12", cat:"security", color:"#1F3A5F", icon:null,
+    id:"caine", name:"CAINE", version:"14 (Lightstream)", cat:"security", color:"#1F3A5F", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1F3A5F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1F3A5F">Ca</text></svg>',
     tag:"Distro forensique (Computer Aided INvestigative Environment), basée sur Ubuntu. Écriture bloquée par défaut.",
     site:"caine-live.net", dl:"caine-live.net/page5/page5.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'ISO", d:"caine-live.net/page5/page5.html → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher (attention : ne pas monter les disques à analyser en écriture)."},
@@ -2803,7 +2803,7 @@ window.OS_DATA = [
     tag:"Version défensive (blue team) de Kali : SIEM, IDS et outils SOC préinstallés aux côtés des classiques.",
     site:"kali.org", dl:"kali.org/get-kali", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. pour l'OS seul (8 Go+ conseillés dès qu'Elastic SIEM est déployé)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'ISO", d:"kali.org/get-kali → sélectionner l'image Purple."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2829,7 +2829,7 @@ window.OS_DATA = [
     tag:"Distro forensique/DFIR basée sur Ubuntu LTS, orientée investigation numérique et OSINT.",
     site:"tsurugi-linux.org", dl:"tsurugi-linux.org/downloads.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"110 Go d'espace disque (configuration officielle recommandée)", cpu:"x86_64, 4 GHz dual-core ou mieux recommandé par le projet"},
     steps:[
       {t:"Télécharger l'ISO", d:"tsurugi-linux.org/downloads.php → édition DFIR ou Lab (avec Windows Sandbox)."},
       {t:"Graver la clé", d:"balenaEtcher, écriture en lecture seule recommandée pour l'analyse."},
@@ -2855,7 +2855,7 @@ window.OS_DATA = [
     tag:"Overlay pentest pour Gentoo. Compilation source, kernel durci (hardened), pour utilisateurs avancés.",
     site:"pentoo.ch", dl:"pentoo.ch/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Gentoo",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"512 Mo-2 Go suggérés (selon le wiki officiel du projet)", disk:"20 Go min. (30 Go+ conseillés)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
     steps:[
       {t:"Télécharger l'ISO", d:"pentoo.ch/downloads → image live amd64 (hardened)."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -3264,7 +3264,7 @@ window.OS_DATA = [
     tag:"Ubuntu avec le bureau MATE traditionnel : familier, léger et configurable.",
     site:"ubuntu-mate.org", dl:"ubuntu-mate.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"1 Go min. (2 Go conseillés, officiel Ubuntu MATE)", disk:"16 Go min.", cpu:"Dual-core 1 GHz ou mieux, 64 bits"},
     steps:[
       {t:"Télécharger l'ISO", d:"ubuntu-mate.org/download → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus, mode image."},
@@ -3283,7 +3283,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"ubuntubudgie", name:"Ubuntu Budgie", version:"24.04 LTS", cat:"desktop", color:"#4B4C6E", icon:"ubuntu",
+    id:"ubuntubudgie", name:"Ubuntu Budgie", version:"26.04 LTS", cat:"desktop", color:"#4B4C6E", icon:"ubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#4B4C6E"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"Ubuntu avec le bureau Budgie : élégant, moderne et épuré.",
     site:"ubuntubudgie.org", dl:"ubuntubudgie.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
@@ -3307,7 +3307,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"ubuntukylin", name:"Ubuntu Kylin", version:"24.04 LTS", cat:"desktop", color:"#EA1D2C", icon:"ubuntu",
+    id:"ubuntukylin", name:"Ubuntu Kylin", version:"26.04 LTS", cat:"desktop", color:"#EA1D2C", icon:"ubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#EA1D2C"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"L'édition officielle d'Ubuntu pour le public chinois, bureau UKUI soigné.",
     site:"ubuntukylin.com", license:"Libre / Open-source", popular:false, isNew:false,
@@ -3331,12 +3331,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"lmde", name:"LMDE 6", version:"Faye", cat:"desktop", color:"#87CF3E", icon:"linuxmint",
+    id:"lmde", name:"LMDE 7", version:"Gigi", cat:"desktop", color:"#87CF3E", icon:"linuxmint",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#87CF3E"><path d="M5.438 5.906v8.438c0 2.06 1.69 3.75 3.75 3.75h5.625c2.06 0 3.75-1.69 3.75-3.75V9.656a2.827 2.827 0 0 0-2.813-2.812 2.8 2.8 0 0 0-1.875.737A2.8 2.8 0 0 0 12 6.844a2.827 2.827 0 0 0-2.812 2.812v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688a1.86 1.86 0 0 1-1.875 1.875H9.188a1.86 1.86 0 0 1-1.875-1.875V5.906ZM12 0C5.384 0 0 5.384 0 12s5.384 12 12 12 12-5.384 12-12S18.616 0 12 0m0 1.875A10.11 10.11 0 0 1 22.125 12 10.11 10.11 0 0 1 12 22.125 10.11 10.11 0 0 1 1.875 12 10.11 10.11 0 0 1 12 1.875"/></svg>',
     tag:"Linux Mint Debian Edition : le confort de Mint, directement sur base Debian.",
     site:"linuxmint.com", dl:"linuxmint.com/download_lmde.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
       {t:"Télécharger l'ISO", d:"linuxmint.com/download_lmde.php → édition Cinnamon."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3407,7 +3407,7 @@ window.OS_DATA = [
     tag:"OS immuable pensé pour l'éducation, riche en contenu hors-ligne. GNOME simplifié.",
     site:"endlessos.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go usage léger, 8 Go multitâche)", disk:"16 Go min. (édition Basic), 32 Go+ (édition Full avec contenu préinstallé)", cpu:"x86_64 requis (32 bits non supporté), conçu pour redonner vie à du matériel ancien"},
     steps:[
       {t:"Télécharger l'image", d:"endlessos.com → image de base ou complète (apps préinstallées)."},
       {t:"Graver la clé", d:"Endless USB Tool ou balenaEtcher."},

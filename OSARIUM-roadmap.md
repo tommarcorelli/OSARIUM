@@ -2,7 +2,46 @@
 
 *Dernière mise à jour : juillet 2026*
 
-## ✅ Fait (cette session — Ubuntu 26.04 + début du cluster sécurité/anonymat)
+## ✅ Fait (cette session — suite du cluster desktop mainstream, 6 fiches)
+
+Suite du chantier sur les 22 fiches "4 Go min./8 Go conseillés" : les flavors Ubuntu (MATE/Budgie/Kylin), Deepin, elementary OS et Linux Lite.
+
+- **Ubuntu MATE** : RAM très surestimée (4 Go→**1 Go min., 2 Go conseillés**) d'après le guide officiel des flavors Ubuntu — MATE reste volontairement l'édition la plus légère du projet, contrairement à Budgie et Kylin qui, eux, demandent bien 4 Go d'après leurs pages officielles respectives (aucun changement nécessaire pour ces deux-là). Point notable ajouté : Ubuntu MATE ne sera pas LTS pour la 26.04 (contrairement aux autres flavors), une première.
+- **Ubuntu Budgie / Ubuntu Kylin** : version mise à jour (24.04→**26.04 LTS**, sortie avril 2026).
+- **Deepin** : **la correction la plus spectaculaire de la session** — version très obsolète (23→**25.2**, deux générations de retard) ET RAM/disque massivement sous-estimés. Le site officiel deepin.org précise noir sur blanc, dans le guide d'installation de la version 25 : en dessous de 8 Go de RAM ou 64 Go de stockage, "l'installation peut échouer ou le système ralentir sévèrement". La fiche affichait 4 Go/20-25 Go — un écart du simple au double sur la RAM et au-delà du triple sur le disque.
+- **elementary OS** : version très obsolète corrigée (**7 Horus → 8.1.1**, sortie février 2026) ; RAM/disque déjà cohérents avec la doc officielle, aucun changement nécessaire là-dessus.
+- **Linux Lite** : trouvaille surprenante — ce projet historiquement ultra-léger (768 Mo de RAM pendant des années) a discrètement **relevé ses propres exigences officielles à 4 Go de RAM et 40 Go de disque** à partir de la version 7.6 (2025). Version mise à jour (6.6→**8.0**, juin 2026, base Ubuntu 26.04) ; RAM de la fiche se trouvait donc juste, mais le disque (20-25 Go) restait en dessous du nouveau minimum officiel de 40 Go — corrigé, avec le contexte de ce changement inhabituel noté dans le champ RAM.
+- **Reste du cluster (9 fiches, à faire)** : KDE neon (déjà vérifié, chiffres jugés défendables, non modifié), Solus, PCLinuxOS, Ultramarine, Mageia, Nitrux, KaOS, Fereon OS, Regolith, Fedora KDE.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches toujours sans erreur, dette de template ramenée de **15 formulations / 86 fiches à 15 / 83**. Parseur RAM rejoué sur les 6 nouvelles valeurs. Sitemap régénéré (180 URLs).
+
+## ✅ Fait (session précédente — début du cluster desktop mainstream, 7 fiches)
+
+Début de la relecture du dernier gros cluster restant : les 22 fiches partageant `req.ram:"4 Go min. (8 Go conseillés)"` côté desktop mainstream (ChromeOS Flex, Endless, LMDE, Pop!_OS, Zorin, plus les flavors Ubuntu et KDE non encore vues). 7 fiches traitées ce lot-ci.
+
+- **ChromeOS Flex** : CPU corrigé — la fiche demandait un "processeur 64 bits récent (dernières générations conseillées)", alors que le projet Google vise explicitement l'inverse : redonner vie à du matériel ancien (le seul avertissement officiel porte sur les composants d'avant 2010, pas sur l'absence de matériel récent). Disque précisé sur le chiffre officiel Google (16 Go min.).
+- **Endless OS** : RAM surestimée (4 Go→**2 Go min.**, 4-8 Go conseillés selon l'usage) d'après support.endlessos.org. Disque distingué par édition (**16 Go Basic / 32 Go+ Full**) au lieu d'une fourchette générique. CPU corrigé sur le même principe que ChromeOS Flex : le projet cible du matériel ancien, pas récent.
+- **LMDE** : version obsolète (**6 "Faye" → 7 "Gigi"**, sortie oct. 2025, rebasée sur Debian 13). RAM surestimée (4 Go→**2 Go min., 4 Go conseillés**) d'après la FAQ officielle linuxmint.com.
+- **Pop!_OS** : RAM alignée sur les chiffres officiels System76 (4 Go→**2 Go min., 4 Go conseillés**).
+- **Zorin OS** : version très obsolète (**17→18.1**, sortie oct. 2025/avril 2026, base Ubuntu 24.04). RAM/disque fortement surestimés (4 Go/20-25 Go→**1,5 Go min., 2 Go conseillés / 15 Go**) d'après help.zorin.com — Zorin a justement supprimé la distinction Lite/Core dans ses versions récentes en abaissant les besoins de l'édition standard, ce qui rendait la fiche doublement datée.
+- **Reste du cluster (15 fiches, à faire)** : Pop!_OS traité, mais Ubuntu MATE/Budgie/Kylin, KDE neon, Deepin, elementary OS, Linux Lite, Solus, PCLinuxOS, Ultramarine, Mageia, Nitrux, KaOS, Fereon OS, Regolith, Fedora KDE — pas encore vérifiées individuellement.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches toujours sans erreur, dette de template ramenée de **15 formulations / 89 fiches à 15 / 86**. Parseur RAM rejoué sur les 5 nouvelles valeurs, y compris un format avec virgule décimale française ("1,5 Go" → 1536 Mo reconnu correctement). Sitemap régénéré (180 URLs).
+
+## ✅ Fait (session précédente — fin du cluster sécurité/anonymat, 7 fiches restantes)
+
+Suite et fin de la relecture du sous-cluster sécurité/anonymat (11 fiches) entamé en session précédente (Tails, Whonix, Kicksecure, BlackArch). Les 7 fiches restantes (Parrot OS, BackBox, Athena OS, CAINE, Kali Purple, Tsurugi, Pentoo) ont été vérifiées une par une sur leur documentation officielle.
+
+- **Parrot OS** : RAM surestimée (4 Go→**2 Go min., 4 Go conseillés**) d'après la doc officielle parrotsec.org. Disque reformulé pour refléter les deux éditions réelles du projet (**20 Go Home / 40 Go Security**) plutôt qu'un générique "clé USB persistante" qui ne correspondait à aucune donnée officielle.
+- **BackBox** : version 9 déjà correcte. RAM surestimée (4 Go→**1 Go min., 2-4 Go conseillés**) et disque corrigé (→**30 Go**, chiffre venant de l'annonce officielle de la version 9 sur le blog du projet).
+- **Athena OS** : RAM/disque alignés sur athenaos.org (2 Go min./20 Go→**4-8 Go et 30 Go conseillés**, chiffres tirés de la doc d'installation officielle).
+- **CAINE** : version très obsolète (12→**14 "Lightstream"**, la dernière release du projet). RAM ajustée à **2 Go min. (4 Go conseillés)**, la fourchette la plus recoupée par les sources indépendantes.
+- **Kali Purple** : correction la plus nuancée du lot — la RAM de l'OS Kali de base (2 Go selon kali.org) est très inférieure à ce qu'il faut réellement pour la fonctionnalité phare de Kali Purple (le SIEM Elastic, qu'Elastic recommande lui-même à partir de 8 Go). La fiche indique désormais les deux : **"2 Go min. pour l'OS seul (8 Go+ conseillés dès qu'Elastic SIEM est déployé)"**.
+- **Tsurugi Linux** : **la correction la plus importante du lot** — le disque était sous-estimé d'un facteur ~5 (8-32 Go→**110 Go**, chiffre officiel publié sur tsurugi-linux.org). CPU précisé (4 GHz dual-core recommandé par le projet, une exigence CPU inhabituellement élevée pour ce type de distribution, cohérente avec le poids de ses outils forensiques).
+- **Pentoo** : RAM surestimée (4 Go→**512 Mo-2 Go suggérés**) d'après le wiki officiel du projet (GitHub pentoo/pentoo-overlay), qui insiste surtout sur l'espace disque (compilation source oblige) plutôt que sur la RAM.
+- **Le cluster sécurité/anonymat des 11 fiches partageant "4 Go min. (8 Go conseillés)" est maintenant entièrement relu**, entre cette session et la précédente.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches toujours sans erreur, dette de template ramenée de **16 formulations / 92 fiches à 15 / 89** (une formulation entière — "4 Go min. (8 Go conseillés)" appliquée aux 11 fiches sécurité — est sortie du cluster). Parseur RAM rejoué sur les 7 nouvelles valeurs (512 Mo → 4 Go, toutes reconnues correctement). Sitemap régénéré (180 URLs).
+- **Point de vigilance noté pour la suite** : plusieurs remplacements de texte ont, par erreur, supprimé le `steps:[` juste avant la première étape (5 fiches touchées ce lot-ci et le précédent). Chaque fois détecté immédiatement par `validate-data.js` et corrigé dans la foulée — mais bon rappel de toujours inclure `steps:[` + la première étape dans les deux côtés d'un remplacement quand on édite juste au-dessus.
+
+## ✅ Fait (session précédente — Ubuntu 26.04 + début du cluster sécurité/anonymat)
 
 Deux chantiers en parallèle : la mise à jour de la fiche la plus visible du catalogue (Ubuntu), et le début de la relecture du cluster `req.ram:"4 Go min. (8 Go conseillés)"` côté sécurité/anonymat (11 fiches, sous-ensemble du plus gros cluster desktop, 33 fiches au total).
 
