@@ -2,7 +2,34 @@
 
 *Dernière mise à jour : juillet 2026*
 
-## ✅ Fait (cette session — suite du cluster desktop mainstream, 6 fiches)
+## ✅ Fait (cette session — début du cluster lightweight « vieux PC », 3 fiches)
+
+Nouveau chantier ouvert : le cluster des 10 fiches "revival de vieux PC" (MX Linux, Lubuntu, Bodhi, Peppermint, SparkyLinux, BunsenLabs, Absolute Linux, Trisquel Mini, CrunchBang++, Emmabuntüs), qui partagent RAM "512 Mo à 1 Go", disque "5-8 Go" et CPU "Pentium 4/Core 2 Duo et plus". Une session antérieure avait tenté ce cluster mais s'était heurtée à des pages de specs en 403/404 ; cette fois les recherches ont abouti pour 3 fiches.
+
+- **MX Linux** : version obsolète (**23 Libretto → 25 Infinity**, sortie nov. 2025, base Debian 13). RAM alignée sur le manuel officiel du projet (512 Mo→**1 Go min., 2 Go conseillés**) ; disque précisé (5-8 Go→**6-8 Go min., 20 Go conseillés**).
+- **Lubuntu** : version obsolète (**24.04 LTS → 26.04 LTS**, sortie avril 2026, LXQt 2.3 basé sur Qt 6). RAM laissée en l'état — le projet a officiellement cessé de publier des specs minimales strictes après la 18.04, et le repère communautaire actuel ("moins de 2 Go → choisir Lubuntu") reste cohérent avec le générique actuel.
+- **SparkyLinux** : version très obsolète (**7 Orion Belt → 8.3 "Seven Sisters"**, base Debian 13 Trixie, mise à jour de mai 2026).
+- **Bodhi Linux** : vérifié, non modifié — toujours en version 7.0 (dernière stable confirmée), aucune version 8 n'a été officiellement publiée malgré des billets de blog évoquant son développement depuis 2024.
+- **Reste du cluster (6 fiches, à faire)** : Peppermint OS, BunsenLabs, Absolute Linux, Trisquel Mini, CrunchBang++, Emmabuntüs.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches toujours sans erreur, dette de template stable à **13 formulations / 78 fiches** (ce lot ne touchait que des versions et un cas RAM, pas les textes génériques eux-mêmes). Parseur RAM rejoué sur les 3 fiches modifiées. Sitemap régénéré (180 URLs).
+
+## ✅ Fait (session précédente — fin du cluster desktop mainstream, 9 fiches, cluster clos)
+
+Dernier lot du chantier sur les 22 fiches "4 Go min./8 Go conseillés" : Fedora KDE, Ultramarine, Solus, PCLinuxOS, Mageia, Nitrux, KaOS, Feren OS, Regolith. **Le cluster est maintenant entièrement relu**, sur les deux sessions.
+
+- **Fedora KDE** : version obsolète corrigée (40→**43**) ; disque corrigé sur le standard officiel Fedora (20-25 Go→**40 Go**, la page officielle fedoraproject.org/kde/download précise noir sur blanc "40 Go et 4 Go de RAM recommandés, le double pour un meilleur confort").
+- **Ultramarine Linux** : version très obsolète (**41→44**, sortie juillet 2026, base Fedora 44) ; disque aligné sur le même standard Fedora officiel que ci-dessus (40 Go).
+- **Solus** : version obsolète (4.5→**4.9**) ; disque/CPU précisés sur le tableau officiel très récent d'help.getsol.us (mis à jour avril 2026) — 10 Go min./25 Go conseillés, et x86-64-v2 quad-core conseillé, un détail absent de la fiche.
+- **PCLinuxOS** : RAM surestimée (4 Go→**2 Go min.**) d'après le wiki communautaire officiel du projet.
+- **Mageia** : **version très en retard** (9→**10**, sortie le 30 juin 2026 après presque 3 ans d'attente — c'était l'écart de version le plus important trouvé sur l'ensemble du catalogue cette session). RAM corrigée (4 Go→**2 Go** pour un bureau Plasma/GNOME utilisable, 512 Mo étant l'absolu minimum officiel mais non praticable).
+- **Nitrux** : **changement architectural majeur non reflété par la fiche** — le projet a abandonné KDE Plasma et son NX Desktop maison au profit de Hyprland (Wayland) depuis la version 5.0 (nov. 2025). Version, tag, étapes et FAQ mis à jour en conséquence. CPU précisé : le projet exige désormais AVX2 (x86-64-v3), une condition plus stricte qu'un simple "64 bits" qui exclut du matériel pourtant fonctionnel ailleurs.
+- **KaOS** : **même type de changement majeur** — le projet a quitté KDE Plasma pour Niri/Noctalia (Wayland) par défaut ET systemd pour Dinit, en 2026 (Plasma reste disponible en dépôt). Version très obsolète corrigée (2024.05→**2026.06**). RAM alignée sur l'officiel kaosx.us (4 Go→**2 Go min., 4 Go conseillés**).
+- **Feren OS** : version obsolète (2024.03→**2025.03**, seule version stable disponible, le projet a annoncé des retards de développement). RAM revue à la baisse (4 Go→**1-2 Go min.**) pour refléter le positionnement marketing du projet lui-même (cibler explicitement du matériel ancien).
+- **Regolith Linux** : RAM/disque surestimés (4 Go/20-25 Go→**2 Go/10 Go**) — un tiling window manager (i3/Sway) consomme nettement moins que GNOME ou KDE, ce que confirment plusieurs sources indépendantes convergentes.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches toujours sans erreur, dette de template ramenée de **15 formulations / 83 fiches à 13 / 78** — deux formulations entières ont disparu du cluster ce lot-ci. Parseur RAM rejoué sur les 9 nouvelles valeurs, y compris un cas à double chiffre ("512 Mo l'absolu minimum, mais 2 Go pour un usage réel") où le parseur retient bien la valeur la plus haute et la plus honnête plutôt que le chiffre le plus bas et trompeur. Sitemap régénéré (180 URLs).
+- **Bilan du chantier "cluster desktop mainstream" (33 fiches, deux sessions)** : Ubuntu (RAM Canonical relevée à 6 Go), Tails/Whonix/Kicksecure/BlackArch/Parrot/BackBox/Athena/CAINE/Kali Purple/Tsurugi/Pentoo (sécurité), ChromeOS Flex/Endless/LMDE/Pop!_OS/Zorin/Ubuntu MATE-Budgie-Kylin/Deepin/elementary/Linux Lite (desktop grand public), et ce dernier lot de 9 — **le chantier est terminé**. Restent dans la dette de template globale : le cluster "2 Go/4 Go" advanced (déjà relu en grande partie), les paires disque "15-20 Go"/"20-25 Go" isolées, et le cluster BSD (volontairement laissé en l'état, cf. sessions antérieures).
+
+## ✅ Fait (session précédente — suite du cluster desktop mainstream, 6 fiches)
 
 Suite du chantier sur les 22 fiches "4 Go min./8 Go conseillés" : les flavors Ubuntu (MATE/Budgie/Kylin), Deepin, elementary OS et Linux Lite.
 

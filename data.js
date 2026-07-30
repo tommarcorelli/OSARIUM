@@ -329,12 +329,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"solus", name:"Solus", version:"4.5 Resilience", cat:"desktop", color:"#5294E2", icon:"solus",
+    id:"solus", name:"Solus", version:"4.9", cat:"desktop", color:"#5294E2", icon:"solus",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#5294E2"><path d="M7.453 0c-.18.587-.369 1.167-.565 1.75A11.638 11.638 0 0 0 0 12.364a11.638 11.638 0 0 0 .516 3.403l-.339.598L0 16.73l.279.143a3.448 3.448 0 0 0 .741.222A11.638 11.638 0 0 0 2 18.868c4.034.343 8.55.512 12.446-.056 3.192-.463 5.94-1.423 7.735-3.117.252-.233.474-.474.674-.722.019-.038.037-.053.06-.076.011 0 .026-.037.038-.052.015 0 .03-.038.041-.057.008 0 .015-.038.023-.038.33-.444.587-.892.801-1.31l.181-.365-.365-.365a5.936 5.936 0 0 0-.361-.35A11.638 11.638 0 0 0 11.635.722a11.638 11.638 0 0 0-3.211.463C7.96.508 7.596.041 7.453 0zm.365 1.637C9.06 3.82 10.13 5.06 11.454 7.457c.132 1.524.67 9.45.727 10.181-.392-.037-2.485-.24-5.104-.515-1.43-.147-2.899-.316-4.092-.49l-1.9-.447c2.149-3.787 5.551-9.727 6.737-14.548zm4.543 6.18s4.991 3.927 7.092 8.73c-2.56 1.26-4.916 1.098-6.361 1.09 1.023-2.634 1.023-6.21-.73-9.82zm3.456 2.184a45.14 45.14 0 0 1 2.91.907c1.768.629 3.417 1.49 4.365 2.364a6.956 6.956 0 0 1-2.91 2.91c.151-1.495-.39-2.933-1.456-4.002-.787-.787-1.822-1.453-2.91-2.183zm6.707 6.478c-2.352 1.667-5.126 2.68-7.965 3.112a41.026 41.026 0 0 1-3.715.34h-.323a53.48 53.48 0 0 1-3.727 0 85.763 85.763 0 0 1-4.178-.23h-.003c2.555 3.255 6.993 4.893 11.092 4.102a11.367 11.367 0 0 0 4.498-1.852 11.638 11.638 0 0 0 .007 0c.312-.214.614-.444.903-.685a11.638 11.638 0 0 0 .038-.037 11.555 11.555 0 0 0 3.376-4.762zM2.511 19.584a11.638 11.638 0 0 0 .023.038c-.008 0-.015-.038-.023-.038z"/></svg>',
     tag:"Rolling curated, indépendante. Budgie, GNOME, KDE ou Xfce. Pas basée sur autre chose.",
     site:"getsol.us", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel)", disk:"10 Go min. (25 Go conseillés, officiel)", cpu:"x86_64 (x86-64-v2 quad-core 2 GHz conseillé, officiel)"},
     steps:[
       {t:"Télécharger l'ISO", d:"getsol.us → édition Budgie (signature), GNOME, KDE ou Xfce."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus en mode image."},
@@ -887,12 +887,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"mxlinux", name:"MX Linux", version:"23 Libretto", cat:"lightweight", color:"#8AA5C4", icon:"mxlinux",
+    id:"mxlinux", name:"MX Linux", version:"25 Infinity", cat:"lightweight", color:"#8AA5C4", icon:"mxlinux",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#8AA5C4"><path d="M12.001 13.301l3.277 3.819-.75.9-2.133-2.521-1.131-1.338.737-.86zM24 2.41v19.182c0 .655-.531 1.186-1.186 1.186H1.186A1.186 1.186 0 0 1 0 21.591V2.409c0-.655.531-1.186 1.186-1.186h21.628c.655 0 1.186.53 1.186 1.186zm-2.241 17.09l-2.116-2.542-2.115-2.541-.586.704-3.25-3.788 4.913-5.73-1.175-1.008-4.76 5.549-4.743-5.527-1.947 1.67 5 5.827-.73.851-1.24-1.465-3.384 4-3.385 4h19.518z"/></svg>',
     tag:"Léger, rapide, ultra-stable. Debian + Xfce, plébiscité sur DistroWatch.",
     site:"mxlinux.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"1 Go min. (2 Go conseillés, manuel officiel MX)", disk:"6-8 Go min. (20 Go conseillés)", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
       {t:"Télécharger l'ISO", d:"mxlinux.org → Xfce (par défaut), KDE ou Fluxbox."},
       {t:"Graver la clé", d:"balenaEtcher ou l'outil MX Live USB Maker."},
@@ -938,7 +938,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"lubuntu", name:"Lubuntu", version:"24.04 LTS", cat:"lightweight", color:"#2E7CD6", icon:"lubuntu",
+    id:"lubuntu", name:"Lubuntu", version:"26.04 LTS", cat:"lightweight", color:"#2E7CD6", icon:"lubuntu",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#2E7CD6"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m1.287 4.723q.316-.031.63.004a3.17 3.17 0 0 1 2.41 1.642l5.665.781h-6.458a2.58 2.58 0 0 0-1.66-.955 2.57 2.57 0 0 0-1.371.192c-.43.19-.8.495-1.068.88-.268.387-.424.84-.451 1.31-.026.468.078.935.3 1.349a3.13 3.13 0 0 1-.795-1.68 3.13 3.13 0 0 1 .305-1.832 3.14 3.14 0 0 1 1.299-1.332 3.1 3.1 0 0 1 1.195-.36m-9.88 1.09 8.673 6.232-7.154-4.012a3.6 3.6 0 0 0-.072 2.022 3.57 3.57 0 0 0 1.998 2.34l4.748 1.334-6.002-.983c.061.58.275 1.133.619 1.604a3.33 3.33 0 0 0 2.652 1.33 3.95 3.95 0 0 1-3.062-.451 3.9 3.9 0 0 1-1.432-1.563 3.9 3.9 0 0 1-.398-2.08l1.32.371a4.7 4.7 0 0 1-1.246-.986 4.7 4.7 0 0 1-1.111-2.48 4.67 4.67 0 0 1 .466-2.678m11.667 3.132q-.01.138-.008.278c.007 1.143.535 2.21 1.057 3.226.523 1.017 1.064 2.076 1.094 3.22.024.95-.32 1.895-.899 2.651-.578.756-1.377 1.328-2.255 1.696a6.5 6.5 0 0 1-3.91.338l-1 2.373v-3.327a6.23 6.23 0 0 0 3.665-.31c.7-.285 1.352-.707 1.862-1.264s.875-1.255.986-2.002c.15-1-.151-2.007-.447-2.974s-.595-1.977-.436-2.975a3.3 3.3 0 0 1 .291-.93"/></svg>',
     tag:"Ubuntu ultra-léger avec LXQt. Ressuscite les PC anciens.",
     site:"lubuntu.me", dl:"lubuntu.me/downloads", license:"Libre / Open-source", popular:false, isNew:false,
@@ -1632,7 +1632,7 @@ window.OS_DATA = [
     tag:"Distro rolling indépendante historique. Stable, sans systemd, communauté fidèle.",
     site:"pclinuxos.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go conseillés, officiel)", disk:"15 Go min. (20 Go+ conseillés, officiel)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
       {t:"Télécharger l'ISO", d:"pclinuxos.com/?page_id=13 → édition KDE, MATE ou Xfce."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2060,12 +2060,12 @@ window.OS_DATA = [
   },
   /* ===================== AJOUTS v3.3 ===================== */
   {
-    id:"ultramarine", name:"Ultramarine Linux", version:"41", cat:"desktop", color:"#4169E1", icon:null,
+    id:"ultramarine", name:"Ultramarine Linux", version:"44", cat:"desktop", color:"#4169E1", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4169E1" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4169E1">Um</text></svg>',
     tag:"Fedora repensée grand public : préconfigurée, codecs inclus, plusieurs bureaux au choix.",
     site:"ultramarine-linux.org", dl:"ultramarine-linux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Fedora",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés, hérité du standard Fedora officiel)", disk:"40 Go conseillés (standard Fedora officiel, pas 20-25 Go)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
       {t:"Télécharger l'ISO", d:"ultramarine-linux.org/download → édition GNOME, Budgie ou Flagship."},
       {t:"Graver la clé", d:"balenaEtcher ou Fedora Media Writer."},
@@ -2085,12 +2085,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"mageia", name:"Mageia", version:"9", cat:"desktop", color:"#1E88E5", icon:null,
+    id:"mageia", name:"Mageia", version:"10", cat:"desktop", color:"#1E88E5", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1E88E5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1E88E5">Mg</text></svg>',
     tag:"Fork communautaire de Mandriva. Installeur DrakX réputé, très complet.",
     site:"mageia.org", dl:"mageia.org/fr/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. pour un bureau utilisable (Plasma/GNOME), 512 Mo l'absolu minimum officiel", disk:"20 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
       {t:"Télécharger l'ISO", d:"mageia.org/fr/downloads → édition Live ou Classic (netinstall)."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2237,7 +2237,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"sparkylinux", name:"SparkyLinux", version:"7 Orion Belt", cat:"lightweight", color:"#E67E22", icon:null,
+    id:"sparkylinux", name:"SparkyLinux", version:"8.3 (Seven Sisters)", cat:"lightweight", color:"#E67E22", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E67E22" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E67E22">Sp</text></svg>',
     tag:"Basée sur Debian Testing, légère et rapide, avec des éditions spécialisées (multimédia, gaming).",
     site:"sparkylinux.org", dl:"sparkylinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
@@ -2620,24 +2620,24 @@ window.OS_DATA = [
   },
   /* ===================== AJOUTS v3.4 ===================== */
   {
-    id:"nitrux", name:"Nitrux", version:"3.7", cat:"desktop", color:"#5E2CA5", icon:null,
+    id:"nitrux", name:"Nitrux", version:"5.0", cat:"desktop", color:"#5E2CA5", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#5E2CA5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#5E2CA5">Nx</text></svg>',
-    tag:"Bureau NX Desktop maison au-dessus de KDE Frameworks, tout en AppImage via NX Software Center.",
+    tag:"Depuis la version 5.0, bureau Hyprland (Wayland) exclusivement — KDE Plasma et NX Desktop ont été abandonnés.",
     site:"nxos.org", dl:"nxos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel nxos.org)", disk:"20-25 Go d'espace disque", cpu:"x86_64 avec support AVX2 (x86-64-v3) exigé — exclut une partie du matériel pourtant 64 bits"},
     steps:[
-      {t:"Télécharger l'ISO", d:"nxos.org/download → dernière image stable."},
+      {t:"Télécharger l'ISO", d:"nxos.org/download → image Liquorix (AMD/Mesa) ou CachyOS (NVIDIA open)."},
       {t:"Graver la clé", d:"balenaEtcher (image spécifique, éviter Rufus en mode ISO)."},
-      {t:"Live", d:"Booter et découvrir le bureau NX Desktop maison."},
+      {t:"Live", d:"Booter et découvrir le bureau Hyprland (Wayland, tiling) préconfiguré."},
       {t:"Installer", d:"Lancer Calamares depuis le bureau live."},
-      {t:"NX Software Center", d:"Installer des applis packagées en AppImage plutôt qu'en paquets système."}
+      {t:"NX AppHub", d:"Installer des applis packagées en AppBox plutôt qu'en paquets système."}
     ],
     alt:["lmde","endless","deepin"],
     errors:[
       {q:"Secure Boot empêche le démarrage sur la clé",a:"Désactive temporairement Secure Boot dans le BIOS/UEFI, ou laisse-le activé si la distribution utilise un shim signé (cas de la plupart des distributions grand public) — le souci vient alors plutôt d'un pilote tiers non signé."},
       {q:"La clé USB ne boote pas ou plante au démarrage",a:"Vérifie l'empreinte SHA-256 de l'ISO avant de graver, et utilise balenaEtcher ou Rufus en mode DD (pas ISO) si le choix est proposé. Une ISO corrompue est la cause la plus fréquente d'un échec silencieux."},
-      {q:"Pas de Wi-Fi pendant l'installation",a:"Certains pilotes Wi-Fi propriétaires (Broadcom, Realtek récents) ne sont pas inclus par défaut. Branche un câble Ethernet pour l'installation, ou utilise une ISO alternative incluant les pilotes non-libres si disponible."}
+      {q:"Le CPU n'est pas reconnu comme compatible malgré un 64 bits",a:"Depuis la version 5.0, Nitrux exige un processeur avec le jeu d'instructions AVX2 (x86-64-v3) — une exigence plus stricte que le simple 64 bits, qui exclut une partie du matériel plus ancien pourtant fonctionnel sur d'autres distributions."}
     ],
     faq:[
       {q:"Peut-on l'installer en dual-boot avec Windows ?", a:"Oui, la plupart des installateurs proposent un partitionnement automatique aux côtés d'un Windows existant. Sauvegarder ses données avant reste indispensable."},
@@ -2645,16 +2645,16 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"kaos", name:"KaOS", version:"2024.05", cat:"desktop", color:"#21B6A8", icon:null,
+    id:"kaos", name:"KaOS", version:"2026.06", cat:"desktop", color:"#21B6A8", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#21B6A8" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#21B6A8">Ka</text></svg>',
-    tag:"Distro indépendante 100% KDE Plasma/Qt, rolling, philosophie « un seul bureau fait bien ».",
+    tag:"Distro indépendante rolling. Depuis 2026, bureau Niri/Noctalia (Wayland) par défaut et Dinit remplace systemd — KDE Plasma reste disponible en dépôt.",
     site:"kaosx.us", dl:"kaosx.us/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go conseillés, officiel kaosx.us)", disk:"8 Go min. (25 Go conseillés, officiel)", cpu:"x86_64 uniquement (aucun paquet 32 bits)"},
     steps:[
       {t:"Télécharger l'ISO", d:"kaosx.us/download → image live la plus récente."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
-      {t:"Live", d:"Session live Plasma pure, sans autre environnement disponible."},
+      {t:"Live", d:"Session live Niri/Noctalia par défaut (Plasma 6 installable ensuite depuis les dépôts)."},
       {t:"Calamares", d:"Installer via l'assistant graphique."},
       {t:"Octopi", d:"Gérer les paquets avec Octopi (interface graphique de pacman)."}
     ],
@@ -2662,7 +2662,7 @@ window.OS_DATA = [
     errors:[
       {q:"Secure Boot empêche le démarrage sur la clé",a:"Désactive temporairement Secure Boot dans le BIOS/UEFI, ou laisse-le activé si la distribution utilise un shim signé (cas de la plupart des distributions grand public) — le souci vient alors plutôt d'un pilote tiers non signé."},
       {q:"La clé USB ne boote pas ou plante au démarrage",a:"Vérifie l'empreinte SHA-256 de l'ISO avant de graver, et utilise balenaEtcher ou Rufus en mode DD (pas ISO) si le choix est proposé. Une ISO corrompue est la cause la plus fréquente d'un échec silencieux."},
-      {q:"Pas de Wi-Fi pendant l'installation",a:"Certains pilotes Wi-Fi propriétaires (Broadcom, Realtek récents) ne sont pas inclus par défaut. Branche un câble Ethernet pour l'installation, ou utilise une ISO alternative incluant les pilotes non-libres si disponible."}
+      {q:"KDE Plasma n'est plus sur l'ISO par défaut",a:"C'est un changement volontaire du projet depuis 2026.02 : Niri/Noctalia (Wayland) est devenu le bureau par défaut de l'ISO, mais Plasma 6 reste installable depuis les dépôts officiels pour qui préfère l'ancien environnement."}
     ],
     faq:[
       {q:"Peut-on l'installer en dual-boot avec Windows ?", a:"Oui, la plupart des installateurs proposent un partitionnement automatique aux côtés d'un Windows existant. Sauvegarder ses données avant reste indispensable."},
@@ -2670,12 +2670,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"ferenos", name:"Feren OS", version:"2024.03", cat:"desktop", color:"#0F6FC5", icon:null,
+    id:"ferenos", name:"Feren OS", version:"2025.03", cat:"desktop", color:"#0F6FC5", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#0F6FC5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#0F6FC5">Fr</text></svg>',
     tag:"Base Ubuntu/Mint, bureau Cinnamon personnalisé façon Windows pour une transition en douceur.",
     site:"weebly.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"1-2 Go min. (4 Go conseillés) — le projet cible explicitement du matériel ancien", disk:"20 Go min. (50 Go conseillés pour un usage étendu)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
       {t:"Télécharger l'ISO", d:"ferenos.weebly.com → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2700,7 +2700,7 @@ window.OS_DATA = [
     tag:"Ubuntu avec un gestionnaire de fenêtres en tuiles (i3/Sway) préconfiguré, pour les claviéristes.",
     site:"regolith-desktop.com", dl:"regolith-desktop.com/docs/using-regolith/install", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go conseillés — i3/Sway consomment nettement moins que GNOME/KDE)", disk:"10 Go min.", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
       {t:"Télécharger l'ISO", d:"regolith-desktop.com/docs/using-regolith/install → procédure officielle (dépôt à ajouter sur une Ubuntu/Debian existante, ou image ISO)."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3379,12 +3379,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"fedorakde", name:"Fedora KDE", version:"40", cat:"desktop", color:"#294172", icon:"fedora",
+    id:"fedorakde", name:"Fedora KDE", version:"43", cat:"desktop", color:"#294172", icon:"fedora",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#294172"><path d="M12.001 0C5.376 0 .008 5.369.004 11.992H.002v9.287h.002A2.726 2.726 0 0 0 2.73 24h9.275c6.626-.004 11.993-5.372 11.993-11.997C23.998 5.375 18.628 0 12 0zm2.431 4.94c2.015 0 3.917 1.543 3.917 3.671 0 .197.001.395-.03.619a1.002 1.002 0 0 1-1.137.893 1.002 1.002 0 0 1-.842-1.175 2.61 2.61 0 0 0 .013-.337c0-1.207-.987-1.672-1.92-1.672-.934 0-1.775.784-1.777 1.672.016 1.027 0 2.046 0 3.07l1.732-.012c1.352-.028 1.368 2.009.016 1.998l-1.748.013c-.004.826.006.677.002 1.093 0 0 .015 1.01-.016 1.776-.209 2.25-2.124 4.046-4.424 4.046-2.438 0-4.448-1.993-4.448-4.437.073-2.515 2.078-4.492 4.603-4.469l1.409-.01v1.996l-1.409.013h-.007c-1.388.04-2.577.984-2.6 2.47a2.438 2.438 0 0 0 2.452 2.439c1.356 0 2.441-.987 2.441-2.437l-.001-7.557c0-.14.005-.252.02-.407.23-1.848 1.883-3.256 3.754-3.256z"/></svg>',
     tag:"Le spin officiel de Fedora avec KDE Plasma à la place de GNOME.",
     site:"fedoraproject.org", dl:"spins.fedoraproject.org/kde", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel fedoraproject.org)", disk:"40 Go conseillés (officiel — le double pour un meilleur confort)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
     steps:[
       {t:"Télécharger l'ISO", d:"spins.fedoraproject.org/kde → image live KDE."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
