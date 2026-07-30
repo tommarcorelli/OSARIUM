@@ -2,7 +2,34 @@
 
 *Dernière mise à jour : juillet 2026*
 
-## ✅ Fait (cette session — début du cluster lightweight « vieux PC », 3 fiches)
+## ✅ Fait (cette session — cluster CPU « Processeur 64 bits récent », 11 fiches)
+
+Après la clôture du cluster "vieux PC", le détecteur de dérive de template (`--dupes`) a mis en évidence le champ `req.cpu` "Processeur 64 bits récent (dernières générations conseillées)", partagé par 11 fiches desktop très hétérogènes (elementary OS, KDE neon, PCLinuxOS, Ultramarine, Mageia, Feren OS, Regolith, Ubuntu Budgie, Ubuntu Kylin, LMDE 7, Fedora KDE). Vérification une par une contre la doc officielle de chaque projet.
+
+- **Contradictions internes flagrantes, corrigées en priorité** : **Feren OS** et **Regolith** affichaient déjà, dans leur propre champ RAM, que le projet cible du matériel ancien ou qu'un tiling WM (i3/Sway) est peu gourmand — tout en réclamant un CPU "récent" dans le champ juste à côté. Corrigé pour lever la contradiction.
+- **Mageia** : la correction la plus nette du lot — le site officiel demande "any AMD, Intel, or VIA processor", sans aucune exigence de génération, et le projet maintient même une édition 32 bits (Xfce) avec Mageia 10 (sortie le 30 juin 2026), une rareté en 2026. La fiche exigeait pourtant un "processeur 64 bits récent".
+- **PCLinuxOS** : même type de correction (wiki officiel : "Any Intel, AMD or VIA x86_64 processor", dual-core conseillé mais aucune génération précisée). Version obsolète corrigée en même temps (2024 KDE→**2025.09**, la dernière release officielle).
+- **elementary OS, KDE neon, Ubuntu Budgie, Ubuntu Kylin** : aucune source officielle ne documente d'exigence de génération pour ces quatre système basés Ubuntu — "récent" reformulé en simple 64 bits.
+- **LMDE 7** : nuance apportée — le 32 bits a bien été abandonné avec la base Debian 13 (donc le 64 bits est désormais *obligatoire*, pas juste conseillé), mais aucune exigence de génération au-delà.
+- **Fedora KDE et Ultramarine** (héritée de Fedora) : la formulation "récent" a été remplacée par la vraie contrainte officielle, plus précise et plus nuancée — **x86-64-v2 obligatoire depuis Fedora 33+** (exclut les CPU antérieurs à Nehalem/Bulldozer, ~2008-2011), ce qui exclut du matériel ancien sans pour autant exiger un CPU de dernière génération.
+- **Point de vigilance** : un remplacement de texte a supprimé par erreur le `steps:[` et le début de la première étape sur la fiche elementary OS — détecté immédiatement par `validate-data.js` (erreur de syntaxe JS), corrigé dans la foulée.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches valides, dette de template ramenée de **10 formulations / 71 fiches à 9 / 61** — la formulation "Processeur 64 bits récent" a totalement disparu du cluster. Rendu contrôlé au navigateur (Playwright headless) sur les 11 fiches modifiées : aucune erreur console. Sitemap régénéré (180 URLs).
+
+## ✅ Fait (session précédente — fin du cluster lightweight « vieux PC », 7 fiches, cluster clos)
+
+Fin du chantier ouvert en session précédente sur le cluster des 10 fiches "revival de vieux PC". Les 6 fiches restantes (Peppermint OS, BunsenLabs, Absolute Linux, Trisquel Mini, CrunchBang++, Emmabuntüs) ont été vérifiées une par une contre la documentation officielle de chaque projet, plus une correction trouvée en chemin sur la fiche Trisquel standard.
+
+- **Peppermint OS** : le projet affiche explicitement sur sa page "About" qu'il refuse de publier un minimum strict ("Minimum Requirements" jugées "pretty meaningless in the real world"). RAM/disque alignés sur son dernier chiffre officiel connu (512 Mo-1 Go/5-8 Go→**1 Go min. (4 Go conseillés) / 10 Go min. (32 Go conseillés)**), avec la position du projet notée dans le champ RAM plutôt que passée sous silence.
+- **BunsenLabs** : **version très obsolète** (Boron, base Debian 12→**Carbon**, base Debian 13, sortie le 11 février 2026). Le support 32 bits a été abandonné avec ce passage à Trixie. RAM/disque alignés sur l'officiel (512 Mo-1 Go/5-8 Go→**1 Go min. (2 Go conseillés) / 20 Go**).
+- **Absolute Linux** : erreur factuelle corrigée — le champ version affichait "15.0", un numéro de style Slackware qui n'a jamais existé pour ce projet. La vraie dernière version (avant l'arrêt de déc. 2024 et la reprise par eXybit Technologies, toujours sans image distribuée) est le build daté **20240602** de Paul Sherman.
+- **Trisquel Mini** : **la correction la plus nette du lot** — version très obsolète (11→**12.0 "Ecne"**), et le générique "vieux PC" contredisait franchement le wiki officiel de Trisquel : **2 Go de RAM minimum et 7,4 Go de disque** (contre 512 Mo-1 Go/5-8 Go annoncés), le nom "Mini" ne désignant que le bureau LXDE léger et non des besoins matériels réduits.
+- **CrunchBang++** : version obsolète (12→**13.0**, base Debian 13, sortie août 2025), 32 bits abandonné avec ce passage. RAM/disque réalignés sur des mesures indépendantes convergentes (512 Mo min., 1 Go conseillé ; 5-10 Go).
+- **Emmabuntüs** : **la correction la plus spectaculaire de la session** — version très obsolète (DE5→**DE6 1.01**, base Debian 13.4, sortie le 20 mars 2026, nouvelles éditions Core/Full) ET disque massivement sous-estimé. La page officielle "Configuration matérielle" du Collectif exige **80 Go de disque, un dual-core à 2,0 GHz et 2 Go de RAM en 64 bits** — la fiche affichait 5-8 Go, un écart d'un facteur ~10 sur le disque.
+- **Trisquel (standard) — trouvaille en vérifiant Trisquel Mini** : version obsolète (11 Aramo→**12.0 "Ecne"**), RAM/disque également sous-estimés par rapport au wiki officiel (2 Go/15-20 Go→**4 Go min. physique, 2 Go en VM / 16-27 Go selon mises à jour**).
+- **Le cluster "vieux PC" des 10 fiches est maintenant entièrement relu**, entre cette session et la précédente.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches toujours sans erreur, dette de template ramenée de **13 formulations / 78 fiches à 10 / 71** (trois formulations entières sorties du cluster générique ce lot-ci). Parseur RAM de production rejoué sur les 8 nouvelles valeurs (512 Mo → 80 Go, y compris les formulations longues avec parenthèses et tirets), toutes reconnues. Rendu contrôlé au navigateur (Playwright headless) sur les 7 fiches modifiées : aucune erreur console, blocs de config vérifiés en gros plan sur les 3 fiches au texte le plus long (Emmabuntüs, Trisquel Mini, CrunchBang++) — absorbent le texte plus long sans débordement. Sitemap régénéré (180 URLs).
+
+## ✅ Fait (session précédente — début du cluster lightweight « vieux PC », 3 fiches)
 
 Nouveau chantier ouvert : le cluster des 10 fiches "revival de vieux PC" (MX Linux, Lubuntu, Bodhi, Peppermint, SparkyLinux, BunsenLabs, Absolute Linux, Trisquel Mini, CrunchBang++, Emmabuntüs), qui partagent RAM "512 Mo à 1 Go", disque "5-8 Go" et CPU "Pentium 4/Core 2 Duo et plus". Une session antérieure avait tenté ce cluster mais s'était heurtée à des pages de specs en 403/404 ; cette fois les recherches ont abouti pour 3 fiches.
 

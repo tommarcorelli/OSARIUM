@@ -234,7 +234,7 @@ window.OS_DATA = [
     tag:"Le plus beau Linux. Design soigné à la macOS, philosophie « pay what you want ».",
     site:"elementary.io", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
     steps:[
       {t:"Télécharger l'ISO", d:"elementary.io → payer 0 € ou plus, puis télécharger."},
       {t:"Graver la clé", d:"balenaEtcher (recommandé par le projet)."},
@@ -309,7 +309,7 @@ window.OS_DATA = [
     tag:"La dernière version de KDE Plasma, sur base Ubuntu LTS. Vitrine officielle.",
     site:"kde.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
     steps:[
       {t:"Télécharger l'ISO", d:"neon.kde.org → User Edition (stable) ou Testing/Unstable."},
       {t:"Graver la clé", d:"balenaEtcher, Rufus ou dd."},
@@ -1582,7 +1582,7 @@ window.OS_DATA = [
     tag:"Xfce léger orienté cloud/apps web, taillé pour les machines modestes.",
     site:"peppermintos.com", dl:"peppermintos.com/trixie-base-downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"1 Go min. (4 Go conseillés) — le projet refuse volontairement de publier un minimum plus bas, jugé peu honnête à l'usage", disk:"10 Go min. (32 Go conseillés)", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
     steps:[
       {t:"Télécharger l'ISO", d:"peppermintos.com/trixie-base-downloads → édition Debian (base Trixie). Une édition Devuan (Excalibur) est également publiée, pour un système sans systemd."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -1627,12 +1627,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"pclinuxos", name:"PCLinuxOS", version:"2024 KDE", cat:"desktop", color:"#0C5A9D", icon:null,
+    id:"pclinuxos", name:"PCLinuxOS", version:"2025.09", cat:"desktop", color:"#0C5A9D", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#0C5A9D" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#0C5A9D">Pc</text></svg>',
     tag:"Distro rolling indépendante historique. Stable, sans systemd, communauté fidèle.",
     site:"pclinuxos.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés, officiel)", disk:"15 Go min. (20 Go+ conseillés, officiel)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go conseillés, officiel)", disk:"15 Go min. (20 Go+ conseillés, officiel)", cpu:"N'importe quel Intel, AMD ou VIA x86_64 d'après le wiki officiel (dual-core conseillé) — pas d'exigence de génération récente"},
     steps:[
       {t:"Télécharger l'ISO", d:"pclinuxos.com/?page_id=13 → édition KDE, MATE ou Xfce."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2065,7 +2065,7 @@ window.OS_DATA = [
     tag:"Fedora repensée grand public : préconfigurée, codecs inclus, plusieurs bureaux au choix.",
     site:"ultramarine-linux.org", dl:"ultramarine-linux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Fedora",
-    req:{ram:"4 Go min. (8 Go conseillés, hérité du standard Fedora officiel)", disk:"40 Go conseillés (standard Fedora officiel, pas 20-25 Go)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés, hérité du standard Fedora officiel)", disk:"40 Go conseillés (standard Fedora officiel, pas 20-25 Go)", cpu:"x86-64-v2 obligatoire, hérité de la base Fedora (exclut les CPU antérieurs à ~2008-2011) — pas besoin d'un CPU de dernière génération pour autant"},
     steps:[
       {t:"Télécharger l'ISO", d:"ultramarine-linux.org/download → édition GNOME, Budgie ou Flagship."},
       {t:"Graver la clé", d:"balenaEtcher ou Fedora Media Writer."},
@@ -2090,7 +2090,7 @@ window.OS_DATA = [
     tag:"Fork communautaire de Mandriva. Installeur DrakX réputé, très complet.",
     site:"mageia.org", dl:"mageia.org/fr/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. pour un bureau utilisable (Plasma/GNOME), 512 Mo l'absolu minimum officiel", disk:"20 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. pour un bureau utilisable (Plasma/GNOME), 512 Mo l'absolu minimum officiel", disk:"20 Go d'espace disque", cpu:"N'importe quel processeur Intel, AMD ou VIA d'après le site officiel — Mageia maintient même une édition 32 bits (Xfce) en 2026, contrairement à la quasi-totalité des distributions de ce cluster"},
     steps:[
       {t:"Télécharger l'ISO", d:"mageia.org/fr/downloads → édition Live ou Classic (netinstall)."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2287,12 +2287,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"bunsenlabs", name:"BunsenLabs", version:"Boron", cat:"lightweight", color:"#2C9F9F", icon:null,
+    id:"bunsenlabs", name:"BunsenLabs", version:"Carbon", cat:"lightweight", color:"#2C9F9F", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2C9F9F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2C9F9F">Bl</text></svg>',
     tag:"Successeur communautaire de CrunchBang. Openbox minimaliste sur base Debian, très clavier-friendly.",
     site:"www.bunsenlabs.org", dl:"www.bunsenlabs.org/installation.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"20 Go d'espace disque", cpu:"Processeur 64 bits (le support 32 bits a été abandonné avec Carbon, suivant Debian 13)"},
     steps:[
       {t:"Télécharger l'ISO", d:"www.bunsenlabs.org/installation.html → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2307,7 +2307,7 @@ window.OS_DATA = [
       {q:"La carte SD se corrompt ou l'installation échoue au boot",a:"Sur carte SD, utilise une carte de qualité (classe A1/A2) et vérifie l'intégrité de l'image après écriture — une carte bas de gamme est la cause n°1 de corruption silencieuse sur ce type d'installation."}
     ],
     faq:[
-      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Conçu pour tourner sur du matériel ancien, souvent avec 512 Mo à 1 Go de RAM, redonnant une seconde vie à des PC de plus de 10-15 ans."},
+      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Conçu pour tourner sur du matériel ancien, avec 1 Go de RAM minimum, redonnant une seconde vie à des PC de plus de 10-15 ans."},
       {q:"Perd-on beaucoup de fonctionnalités par rapport à un OS classique ?", a:"L'essentiel (navigateur, bureautique, multimédia) reste disponible ; c'est surtout l'environnement graphique qui est allégé pour préserver les ressources."}
     ]
   },
@@ -2675,7 +2675,7 @@ window.OS_DATA = [
     tag:"Base Ubuntu/Mint, bureau Cinnamon personnalisé façon Windows pour une transition en douceur.",
     site:"weebly.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"1-2 Go min. (4 Go conseillés) — le projet cible explicitement du matériel ancien", disk:"20 Go min. (50 Go conseillés pour un usage étendu)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"1-2 Go min. (4 Go conseillés) — le projet cible explicitement du matériel ancien", disk:"20 Go min. (50 Go conseillés pour un usage étendu)", cpu:"Processeur 64 bits, aucune exigence de génération récente — contredirait le positionnement du projet sur du matériel ancien"},
     steps:[
       {t:"Télécharger l'ISO", d:"ferenos.weebly.com → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2700,7 +2700,7 @@ window.OS_DATA = [
     tag:"Ubuntu avec un gestionnaire de fenêtres en tuiles (i3/Sway) préconfiguré, pour les claviéristes.",
     site:"regolith-desktop.com", dl:"regolith-desktop.com/docs/using-regolith/install", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés — i3/Sway consomment nettement moins que GNOME/KDE)", disk:"10 Go min.", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go conseillés — i3/Sway consomment nettement moins que GNOME/KDE)", disk:"10 Go min.", cpu:"Processeur 64 bits, aucune exigence de génération récente — un tiling WM comme i3/Sway est justement peu gourmand en CPU"},
     steps:[
       {t:"Télécharger l'ISO", d:"regolith-desktop.com/docs/using-regolith/install → procédure officielle (dépôt à ajouter sur une Ubuntu/Debian existante, ou image ISO)."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2876,7 +2876,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"absolutelinux", name:"Absolute Linux", version:"15.0", cat:"lightweight", color:"#2F4F4F", icon:null,
+    id:"absolutelinux", name:"Absolute Linux", version:"20240602 (dernière de Paul Sherman, avant la reprise eXybit)", cat:"lightweight", color:"#2F4F4F", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2F4F4F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2F4F4F">Ab</text></svg>',
     tag:"Slackware simplifiée avec IceWM, pensée pour rester légère et rapide sans sacrifier la stabilité.",
     site:"absolutelinux.org", license:"Libre / Open-source", popular:false, isNew:false,
@@ -2901,12 +2901,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"trisquelmini", name:"Trisquel Mini", version:"11", cat:"lightweight", color:"#4A90D9", icon:null,
+    id:"trisquelmini", name:"Trisquel Mini", version:"12.0 \"Ecne\"", cat:"lightweight", color:"#4A90D9", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4A90D9" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4A90D9">Tq</text></svg>',
     tag:"Édition légère (LXDE) de Trisquel, distro 100% logiciel libre approuvée par la FSF, basée sur Ubuntu.",
     site:"trisquel.info", dl:"trisquel.info/en/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"2 Go min. pour une install physique (1 Go en VM), d'après le wiki officiel — nettement plus que ce que le nom \"Mini\" suggère", disk:"7,4 Go d'espace disque (chiffre officiel, sans mises à jour téléchargées)", cpu:"64 bits (amd64, arm64, ppc64el, riscv64 ou armhf 32 bits)"},
     steps:[
       {t:"Télécharger l'ISO", d:"trisquel.info/en/download → édition Mini."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2921,7 +2921,7 @@ window.OS_DATA = [
       {q:"La carte SD se corrompt ou l'installation échoue au boot",a:"Sur carte SD, utilise une carte de qualité (classe A1/A2) et vérifie l'intégrité de l'image après écriture — une carte bas de gamme est la cause n°1 de corruption silencieuse sur ce type d'installation."}
     ],
     faq:[
-      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Conçu pour tourner sur du matériel ancien, souvent avec 512 Mo à 1 Go de RAM, redonnant une seconde vie à des PC de plus de 10-15 ans."},
+      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Le nom \"Mini\" fait référence au bureau LXDE léger plutôt qu'à des besoins matériels minuscules : la version 12 officielle demande 2 Go de RAM, plus que beaucoup d'autres distributions de ce cluster."},
       {q:"Perd-on beaucoup de fonctionnalités par rapport à un OS classique ?", a:"L'essentiel (navigateur, bureautique, multimédia) reste disponible ; c'est surtout l'environnement graphique qui est allégé pour préserver les ressources."}
     ]
   },
@@ -3288,7 +3288,7 @@ window.OS_DATA = [
     tag:"Ubuntu avec le bureau Budgie : élégant, moderne et épuré.",
     site:"ubuntubudgie.org", dl:"ubuntubudgie.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
     steps:[
       {t:"Télécharger l'ISO", d:"ubuntubudgie.org → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3312,7 +3312,7 @@ window.OS_DATA = [
     tag:"L'édition officielle d'Ubuntu pour le public chinois, bureau UKUI soigné.",
     site:"ubuntukylin.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
     steps:[
       {t:"Télécharger l'ISO", d:"ubuntukylin.com → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3336,7 +3336,7 @@ window.OS_DATA = [
     tag:"Linux Mint Debian Edition : le confort de Mint, directement sur base Debian.",
     site:"linuxmint.com", dl:"linuxmint.com/download_lmde.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"64 bits obligatoire (le 32 bits a été abandonné avec la LMDE 7, base Debian 13), sans exigence de génération particulière"},
     steps:[
       {t:"Télécharger l'ISO", d:"linuxmint.com/download_lmde.php → édition Cinnamon."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3384,7 +3384,7 @@ window.OS_DATA = [
     tag:"Le spin officiel de Fedora avec KDE Plasma à la place de GNOME.",
     site:"fedoraproject.org", dl:"spins.fedoraproject.org/kde", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés, officiel fedoraproject.org)", disk:"40 Go conseillés (officiel — le double pour un meilleur confort)", cpu:"Processeur 64 bits récent (dernières générations conseillées)"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel fedoraproject.org)", disk:"40 Go conseillés (officiel — le double pour un meilleur confort)", cpu:"x86-64-v2 obligatoire depuis Fedora 33+ (exclut les CPU antérieurs à Nehalem/Bulldozer, ~2008-2011) — pas besoin d'un CPU de dernière génération pour autant"},
     steps:[
       {t:"Télécharger l'ISO", d:"spins.fedoraproject.org/kde → image live KDE."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -3498,11 +3498,11 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"crunchbang", name:"CrunchBang++", version:"12", cat:"lightweight", color:"#2E2E2E", icon:null,
+    id:"crunchbang", name:"CrunchBang++", version:"13.0 (base Debian 13 Trixie, août 2025)", cat:"lightweight", color:"#2E2E2E", icon:null,
     tag:"Debian minimaliste + Openbox. L'esprit #! ressuscité, ultra-léger et sobre.",
     site:"crunchbangplusplus.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"512 Mo min. (1 Go conseillé) — ~350-600 Mo utilisés au repos d'après des tests indépendants", disk:"5 Go min. (10 Go conseillés), l'installation par défaut tenant sur ~4 Go", cpu:"64 bits — le support 32 bits a été abandonné avec le passage à la base Debian 13 Trixie"},
     steps:[
       {t:"Télécharger l'ISO", d:"crunchbangplusplus.org → dernière ISO."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3516,7 +3516,7 @@ window.OS_DATA = [
       {q:"La carte SD se corrompt ou l'installation échoue au boot",a:"Sur carte SD, utilise une carte de qualité (classe A1/A2) et vérifie l'intégrité de l'image après écriture — une carte bas de gamme est la cause n°1 de corruption silencieuse sur ce type d'installation."}
     ],
     faq:[
-      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Conçu pour tourner sur du matériel ancien, souvent avec 512 Mo à 1 Go de RAM, redonnant une seconde vie à des PC de plus de 10-15 ans."},
+      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Conçu pour tourner sur du matériel ancien, avec 512 Mo de RAM minimum, redonnant une seconde vie à des PC de plus de 10-15 ans — à condition qu'ils soient 64 bits, le 32 bits n'étant plus proposé depuis la version 13."},
       {q:"Perd-on beaucoup de fonctionnalités par rapport à un OS classique ?", a:"L'essentiel (navigateur, bureautique, multimédia) reste disponible ; c'est surtout l'environnement graphique qui est allégé pour préserver les ressources."}
     ]
   },
@@ -3567,13 +3567,13 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"emmabuntus", name:"Emmabuntüs", version:"DE5", cat:"lightweight", color:"#E9573F", icon:null,
+    id:"emmabuntus", name:"Emmabuntüs", version:"DE6 1.01 (Core/Full, base Debian 13.4 Trixie, mars 2026)", cat:"lightweight", color:"#E9573F", icon:null,
     tag:"Dérivée d'Ubuntu/Debian pour reconditionner les vieux PC. Solidaire et clé en main.",
     site:"emmabuntus.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"2 Go min. en 64 bits (1 Go en 32 bits)", disk:"80 Go min. d'après la page officielle \"Configuration matérielle\" — bien au-delà de ce qu'un profil \"vieux PC\" laisse supposer, pour laisser de la place aux logiciels et données", cpu:"Dual-core à partir de 2,0 GHz (Intel ou AMD), chiffre officiel plus exigeant qu'un simple \"Pentium 4\""},
     steps:[
-      {t:"Télécharger l'ISO", d:"emmabuntus.org → édition Debian (Xfce/LXQt)."},
+      {t:"Télécharger l'ISO", d:"emmabuntus.org → édition Debian (Xfce/LXQt), déclinée en Core (allégée) et Full (avec logiciels éducatifs et accessibilité) depuis la DE6."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
       {t:"Live", d:"Tester le bureau organisé en dock thématique."},
       {t:"Installer", d:"Assistant Calamares puis script post-install groupé."}
@@ -3585,16 +3585,16 @@ window.OS_DATA = [
       {q:"La carte SD se corrompt ou l'installation échoue au boot",a:"Sur carte SD, utilise une carte de qualité (classe A1/A2) et vérifie l'intégrité de l'image après écriture — une carte bas de gamme est la cause n°1 de corruption silencieuse sur ce type d'installation."}
     ],
     faq:[
-      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Conçu pour tourner sur du matériel ancien, souvent avec 512 Mo à 1 Go de RAM, redonnant une seconde vie à des PC de plus de 10-15 ans."},
+      {q:"Jusqu'à quel âge de machine ça fonctionne ?", a:"Conçu pour reconditionner du matériel ancien (dual-core 2 GHz et 2 Go de RAM d'après les prérequis officiels du Collectif), mais le disque demandé (80 Go) est nettement plus généreux que ce que le profil \"vieux PC\" suggère habituellement."},
       {q:"Perd-on beaucoup de fonctionnalités par rapport à un OS classique ?", a:"L'essentiel (navigateur, bureautique, multimédia) reste disponible ; c'est surtout l'environnement graphique qui est allégé pour préserver les ressources."}
     ]
   },
   {
-    id:"trisquel", name:"Trisquel GNU/Linux", version:"11 Aramo", cat:"advanced", color:"#0060A9", icon:null,
+    id:"trisquel", name:"Trisquel GNU/Linux", version:"12.0 \"Ecne\"", cat:"advanced", color:"#0060A9", icon:null,
     tag:"Distribution 100% libre approuvée par la FSF. Aucun blob propriétaire.",
     site:"trisquel.info", dl:"trisquel.info/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
+    req:{ram:"4 Go min. pour une install physique (2 Go en VM), chiffre officiel du wiki trisquel.info", disk:"16 Go min. sans mises à jour téléchargées (jusqu'à 27 Go avec), officiel — la fourchette précédente était sous-estimée", cpu:"64 bits (amd64, arm64, ppc64el, riscv64), paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"trisquel.info/download → édition standard (MATE) ou Sugar/Mini."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
