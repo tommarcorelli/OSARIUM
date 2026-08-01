@@ -2,7 +2,17 @@
 
 *Dernière mise à jour : juillet 2026*
 
-## ✅ Fait (cette session — cluster CPU « Processeur 64 bits récent », 11 fiches)
+## ✅ Fait (cette session — 4 dernières fiches recovery, cluster CPU générique éliminé)
+
+Suite du chantier recovery ouvert il y a deux sessions (Rescuezilla, Kaspersky, Trinity Rescue Kit, Redo Rescue traités, UBCD volontairement laissé). Les 4 fiches non encore vérifiées de ce cluster (Clonezilla Live, SystemRescue, Rescatux, GParted Live) ont été relues contre leur doc officielle respective.
+
+- **Clonezilla Live** : version très obsolète (**3.1→3.3.3-15**, dernière stable, base Debian Sid de juillet 2026). RAM officielle bien plus basse que le générique (196 Mo min. d'après la doc du projet, contre 512 Mo-1 Go affichés). Le support i386 a été abandonné depuis la version 3.2.0-8.
+- **SystemRescue** : version très obsolète (**11→13.00**, sortie le 28 mars 2026). RAM officielle nettement plus haute que le générique cette fois (2 Go min. pour le démarrage par défaut, 4 Go conseillés en mode cache RAM, d'après system-rescue.org — contre 512 Mo-1 Go affichés). 32 bits abandonné depuis la version 10.00 (déc. 2023).
+- **Rescatux** : correction factuelle — la fiche affichait la version "0.75", qui n'a **jamais été publiée en stable** (seulement des tags bêta internes sur le dépôt de développement) ; la vraie dernière version stable reste **0.74** (novembre 2021), confirmée par trois sources indépendantes. RAM laissée en l'état, aucune source officielle solide trouvée pour la contredire.
+- **GParted Live** : version obsolète (**1.6.0→1.8.1-2**, sortie le 19 mars 2026). RAM déjà correcte (1 Go min., conforme à l'officiel actuel), non modifiée.
+- **Vérifications** : `node scripts/validate-data.js` : 170/170 fiches valides, dette de template ramenée de **9 formulations / 61 fiches à 8 / 61** — la formulation CPU "x86_64, fonctionne sur la plupart des PC" a totalement disparu du cluster recovery. Rendu contrôlé au navigateur (Playwright headless) sur les 4 fiches modifiées : aucune erreur console. Sitemap régénéré (180 URLs).
+
+## ✅ Fait (session précédente — cluster CPU « Processeur 64 bits récent », 11 fiches)
 
 Après la clôture du cluster "vieux PC", le détecteur de dérive de template (`--dupes`) a mis en évidence le champ `req.cpu` "Processeur 64 bits récent (dernières générations conseillées)", partagé par 11 fiches desktop très hétérogènes (elementary OS, KDE neon, PCLinuxOS, Ultramarine, Mageia, Feren OS, Regolith, Ubuntu Budgie, Ubuntu Kylin, LMDE 7, Fedora KDE). Vérification une par une contre la doc officielle de chaque projet.
 

@@ -1984,12 +1984,12 @@ window.OS_DATA = [
   },
   /* ===================== OUTILS / SECOURS ===================== */
   {
-    id:"clonezilla", name:"Clonezilla Live", version:"3.1", cat:"recovery", color:"#F7B500", icon:null,
+    id:"clonezilla", name:"Clonezilla Live", version:"3.3.3-15", cat:"recovery", color:"#F7B500", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#F7B500" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#F7B500">Cz</text></svg>',
     tag:"Outil de clonage/sauvegarde d'images disque, l'équivalent libre de Norton Ghost.",
     site:"clonezilla.org", dl:"clonezilla.org/downloads.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"196 Mo min. d'après la doc officielle (bien en dessous du générique habituel)", disk:"2-4 Go (clé USB bootable)", cpu:"amd64 (x86-64) uniquement — le support i386 a été abandonné depuis la version 3.2.0-8"},
     steps:[
       {t:"Télécharger l'ISO", d:"clonezilla.org/downloads.php → édition stable amd64."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
@@ -2009,12 +2009,12 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"systemrescue", name:"SystemRescue", version:"11", cat:"recovery", color:"#2ECC71", icon:null,
+    id:"systemrescue", name:"SystemRescue", version:"13.00", cat:"recovery", color:"#2ECC71", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2ECC71" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2ECC71">Sr</text></svg>',
     tag:"Live Linux de dépannage (Arch-based) : partitionnement, récupération de données, réseau.",
     site:"system-rescue.org", dl:"www.system-rescue.org/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Arch",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"2 Go min. pour les options de démarrage par défaut, 4 Go conseillés en mode mise en cache RAM — chiffre officiel plus élevé que le générique habituel", disk:"2-4 Go (clé USB bootable)", cpu:"64 bits (x86-64) uniquement — le support 32 bits (i686) a été abandonné depuis la version 10.00 (déc. 2023)"},
     steps:[
       {t:"Télécharger l'ISO", d:"www.system-rescue.org/Download → image amd64."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2034,7 +2034,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"rescatux", name:"Rescatux", version:"0.75", cat:"recovery", color:"#E74C3C", icon:null,
+    id:"rescatux", name:"Rescatux", version:"0.74 (dernière stable, novembre 2021 — aucune version 0.75 stable n'a jamais été publiée malgré des tags bêta internes)", cat:"recovery", color:"#E74C3C", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E74C3C" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E74C3C">Rt</text></svg>',
     tag:"Live de secours guidé par menus (Rescapp) : réparer GRUB, mots de passe, permissions.",
     site:"rescatux.org", license:"Libre / Open-source", popular:false, isNew:false,
@@ -2569,7 +2569,7 @@ window.OS_DATA = [
     ]
   },
   {
-    id:"gpartedlive", name:"GParted Live", version:"1.6.0", cat:"recovery", color:"#1ABC9C", icon:null,
+    id:"gpartedlive", name:"GParted Live", version:"1.8.1-2", cat:"recovery", color:"#1ABC9C", icon:null,
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1ABC9C" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1ABC9C">Gp</text></svg>',
     tag:"Live minimaliste dédié au partitionnement graphique (redimensionner, déplacer, formater).",
     site:"gparted.org", dl:"gparted.org/download.php", license:"Libre / Open-source", popular:false, isNew:false,
