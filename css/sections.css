@@ -23,7 +23,7 @@
   transition:transform .3s,border-color .3s;position:relative;overflow:hidden;}
 .tool:hover{transform:translateY(-6px);border-color:var(--line-2);}
 .tool .ti{font-family:'JetBrains Mono';font-size:11px;color:var(--muted-2);}
-.tool h4{font-family:'Chakra Petch';font-size:20px;margin:10px 0 8px;}
+.tool h3{font-family:'Chakra Petch';font-size:20px;margin:10px 0 8px;}
 .tool p{font-size:13.5px;color:var(--muted);}
 .tool .tag{display:inline-block;margin-top:14px;font-family:'JetBrains Mono';font-size:10.5px;color:var(--phos);
   border:1px solid var(--phos-dim);padding:3px 9px;border-radius:3px;}
@@ -42,7 +42,7 @@
 .guide-step{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);}
 .guide-step:last-child{border-bottom:none;}
 .guide-step>b{font-family:'Chakra Petch';font-weight:700;font-size:22px;color:color-mix(in srgb,var(--amber) 55%,var(--muted-2));line-height:1;}
-.guide-step h5{font-family:'Chakra Petch';font-size:17px;text-transform:uppercase;margin-bottom:8px;letter-spacing:.01em;}
+.guide-step h3{font-family:'Chakra Petch';font-size:17px;text-transform:uppercase;margin-bottom:8px;letter-spacing:.01em;}
 .guide-step p{color:var(--muted);font-size:14.5px;max-width:680px;line-height:1.65;}
 .guide-step .mono{color:var(--phos);font-size:13px;}
 .guide-step .code{margin-top:12px;background:var(--void-2);border:1px solid var(--line);border-left:2px solid var(--amber);

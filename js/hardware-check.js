@@ -11,14 +11,26 @@ window.HwCheck = (function () {
      Gère "4 Go min. (...)", "512 Mo à 1 Go", "1-2 Go min.", "96 Mo min. (...)"…
      Sur une plage ("1-2 Go"), on retient la borne basse (la plus permissive,
      cohérent avec le sens de "min."). */
+  /* Le filtre matériel relit ce champ pour chaque fiche à chaque rendu du
+     catalogue (recherche, tri, changement de filtre...) — la chaîne req.ram
+     d'un OS donné ne change jamais, donc reparser la même regex à chaque
+     frappe est du travail perdu. Un petit cache par chaîne suffit (170
+     fiches max, donc mémoire négligeable). */
+  const ramParseCache = new Map();
   function parseMinRamMB(str) {
     if (!str) return null;
+    if (ramParseCache.has(str)) return ramParseCache.get(str);
     let m = str.match(/^(\d+(?:[.,]\d+)?)\s*(Go|Mo)/i);
     if (!m) m = str.match(/^(\d+(?:[.,]\d+)?)\s*[-–à]\s*\d+(?:[.,]\d+)?\s*(Go|Mo)/i);
-    if (!m) return null;
-    const n = parseFloat(m[1].replace(',', '.'));
-    const unit = m[2].toLowerCase();
-    return unit === 'go' ? n * 1024 : n;
+    let result;
+    if (!m) result = null;
+    else {
+      const n = parseFloat(m[1].replace(',', '.'));
+      const unit = m[2].toLowerCase();
+      result = unit === 'go' ? n * 1024 : n;
+    }
+    ramParseCache.set(str, result);
+    return result;
   }
 
   /* navigator.deviceMemory : Chrome/Edge/Android uniquement, valeur plafonnée

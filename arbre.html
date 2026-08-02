@@ -24,11 +24,12 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 </head>
 <body>
+<a class="skip-link" href="#tree-main">Aller directement à l'arbre</a>
 <div class="fx vig"></div>
 <div class="progress" id="progress"></div>
 
 <nav class="nav" id="nav">
-  <a class="brand" href="index.html#top"><img class="mark" src="icons/icon-192.png" alt="" width="22" height="22"><span class="blk"></span>OSA<b>·</b>RIUM</a>
+  <a class="brand" href="index.html#top"><img class="mark" src="icons/favicon-32.png" alt="" width="22" height="22"><span class="blk"></span>OSA<b>·</b>RIUM</a>
   <div class="links">
     <a href="index.html#prep">Préparer</a>
     <a href="index.html#catalog">Catalogue</a>
@@ -42,6 +43,7 @@
   </div>
 </nav>
 
+<main id="tree-main" tabindex="-1">
 <section class="sec" style="padding-bottom:0">
   <div class="sec-head">
     <div class="eyebrow"><span class="n">03</span> Comprendre les familles</div>
@@ -76,13 +78,15 @@
   <div class="aindep-grid" id="atreeIndep"></div>
 </div>
 
+</main>
+
 <footer>
   <p><b>OSARIUM</b> — la collection ultime de systèmes d'exploitation. Conçu pour être complété au fil des systèmes ajoutés.</p>
 </footer>
 
-<script src="data.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/pwa.js"></script>
-<script src="js/arbre.js"></script>
+<script src="data.js" defer></script>
+<script src="js/theme.js" defer></script>
+<script src="js/pwa.js" defer></script>
+<script src="js/arbre.js" defer></script>
 </body>
 </html>

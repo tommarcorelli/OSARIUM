@@ -93,7 +93,11 @@ if (grid) {
     const cat = p.get('cat');
     if (cat && cats[cat]) {
       activeCat = cat;
-      filtersEl.querySelectorAll('.chip').forEach((x) => x.classList.toggle('on', x.dataset.cat === cat));
+      filtersEl.querySelectorAll('.chip').forEach((x) => {
+        const on = x.dataset.cat === cat;
+        x.classList.toggle('on', on);
+        x.setAttribute('aria-pressed', String(on));
+      });
     }
 
     const diff = p.get('diff');
@@ -105,7 +109,7 @@ if (grid) {
     const sort = p.get('sort');
     if (SORT_MODES.includes(sort)) { sortMode = sort; if (sortSelect) sortSelect.value = sort; }
 
-    if (p.get('fav') === '1' && favChip) { favOnly = true; favChip.classList.add('on'); }
+    if (p.get('fav') === '1' && favChip) { favOnly = true; favChip.classList.add('on'); favChip.setAttribute('aria-pressed', 'true'); }
 
     const ram = Number(p.get('ram'));
     if (RAM_OPTIONS.some(([v]) => v === ram)) {
@@ -127,14 +131,26 @@ if (grid) {
   /* filters (category chips) */
   const filtersEl = document.getElementById('filters');
   filtersEl.innerHTML = Object.entries(cats).map(([k, v]) =>
-    `<button class="chip${k === 'all' ? ' on' : ''}" data-cat="${k}" data-testid="filter-${k}">${v.label}</button>`).join('');
+    `<button class="chip${k === 'all' ? ' on' : ''}" data-cat="${k}" data-testid="filter-${k}" aria-pressed="${k === 'all'}">${v.label}</button>`).join('');
   filtersEl.querySelectorAll('.chip').forEach((c) => c.addEventListener('click', () => {
-    filtersEl.querySelectorAll('.chip').forEach((x) => x.classList.remove('on'));
-    c.classList.add('on'); activeCat = c.dataset.cat; render(); syncURL();
+    filtersEl.querySelectorAll('.chip').forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+    c.classList.add('on'); c.setAttribute('aria-pressed', 'true'); activeCat = c.dataset.cat; render(); syncURL();
   }));
 
+  /* La saisie déclenchait un filtre + un re-rendu complet de la grille à
+     CHAQUE frappe. Sur une frappe rapide (ou sur un clavier tactile qui
+     envoie les événements en rafale), ça empile des rendus jetés aussitôt
+     que le suivant arrive. Un court debounce (durée d'une frappe humaine
+     normale, imperceptible) laisse la saisie se stabiliser avant de
+     recalculer — un seul rendu par pause au lieu d'un par caractère. */
   const searchEl = document.getElementById('search');
-  searchEl.addEventListener('input', (e) => { rawQuery = e.target.value; query = norm(rawQuery.trim()); render(); syncURL(); });
+  let searchDebounce = null;
+  searchEl.addEventListener('input', (e) => {
+    rawQuery = e.target.value;
+    query = norm(rawQuery.trim());
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(() => { render(); syncURL(); }, 90);
+  });
 
   /* difficulty + sort selects */
   const diffSelect = document.getElementById('diffSelect');
@@ -149,6 +165,7 @@ if (grid) {
   if (favChip) favChip.addEventListener('click', () => {
     favOnly = !favOnly;
     favChip.classList.toggle('on', favOnly);
+    favChip.setAttribute('aria-pressed', String(favOnly));
     render(); syncURL();
   });
 
@@ -227,7 +244,6 @@ if (grid) {
 
     grid.innerHTML = list.length ? list.map(cardHTML).join('')
       : `<div class="no-result">// aucun système ne correspond à ces critères${favOnly ? ' (essaie de retirer le filtre Favoris)' : ''}${hwActive && hwHideIncompatible ? ' (essaie de retirer le filtre matériel)' : ''}</div>`;
-    bindCards();
     observeReveals();
   }
 
@@ -238,24 +254,35 @@ if (grid) {
     if (el) el.focus();
   }
 
-  function bindCards() {
-    /* pas de handler de clic sur la carte : c'est .card-link (lien étiré) qui
-       gère la navigation, y compris au clavier et au clic milieu. */
-    grid.querySelectorAll('.cmp').forEach((btn) => btn.addEventListener('click', (e) => {
+  /* ============ DÉLÉGATION D'ÉVÉNEMENTS ============
+     Auparavant, bindCards() reposait un addEventListener sur CHAQUE bouton
+     ★ et + après CHAQUE render() — donc à chaque frappe dans la recherche,
+     chaque clic de filtre, chaque tri. Sur 170 fiches ça fait des centaines
+     de listeners recréés pour rien à chaque rendu. Un seul listener, posé une
+     fois sur le conteneur, capte les clics de tous les boutons présents et
+     futurs via closest() — le DOM peut être entièrement remplacé sans jamais
+     rebrancher quoi que ce soit.
+     Pas de handler sur la carte elle-même : c'est .card-link (lien étiré) qui
+     gère la navigation, y compris au clavier et au clic milieu. */
+  grid.addEventListener('click', (e) => {
+    const cmpBtn = e.target.closest('.cmp');
+    if (cmpBtn) {
       e.stopPropagation();
-      const id = btn.dataset.cmp;
+      const id = cmpBtn.dataset.cmp;
       toggleCompare(id);
       refocus(`.cmp[data-cmp="${id}"]`);
-    }));
-    grid.querySelectorAll('.fav').forEach((btn) => btn.addEventListener('click', (e) => {
+      return;
+    }
+    const favBtn = e.target.closest('.fav');
+    if (favBtn) {
       e.stopPropagation();
       if (!window.Favorites) return;
-      const id = btn.dataset.fav;
+      const id = favBtn.dataset.fav;
       window.Favorites.toggle(id);
       render();
       refocus(`.fav[data-fav="${id}"]`);
-    }));
-  }
+    }
+  });
 
   /* comparator */
   const bar = document.getElementById('cmpBar'), slots = document.getElementById('cmpSlots');

@@ -37,7 +37,7 @@
 <div class="progress" id="progress"></div>
 
 <nav class="nav" id="nav">
-  <a class="brand" href="#top"><img class="mark" src="icons/icon-192.png" alt="" width="22" height="22"><span class="blk"></span>OSA<b>·</b>RIUM</a>
+  <a class="brand" href="#top"><img class="mark" src="icons/favicon-32.png" alt="" width="22" height="22"><span class="blk"></span>OSA<b>·</b>RIUM</a>
   <div class="links">
     <a href="#pcage">Quel OS pour mon PC ?</a>
     <a href="#prep">Préparer</a>
@@ -57,6 +57,7 @@
   </div>
 </nav>
 
+<main id="main">
 <header class="hero" id="top">
   <div class="hero-grid"></div>
   <div class="hero-orb" id="orb"></div>
@@ -108,14 +109,14 @@
     <p class="lead">Quel que soit l'OS, la préparation suit le même schéma : télécharger l'ISO, vérifier son intégrité, puis rendre une clé USB bootable. Chaque outil fonctionne différemment — clique sur une carte pour son guide complet.</p>
   </div>
   <div class="tools">
-    <a class="tool rv" href="tool.html?id=rufus" data-testid="tool-card-rufus"><div class="ti">01 // GRAVEUR</div><h4>Rufus</h4><p>Outil Windows rapide pour créer une clé bootable. Gère GPT/UEFI et le mode DD.</p><span class="tag">Windows</span><span class="tgo">Voir le guide →</span></a>
-    <a class="tool rv" href="tool.html?id=etcher" data-testid="tool-card-etcher"><div class="ti">02 // GRAVEUR</div><h4>balenaEtcher</h4><p>Multiplateforme, interface minimale : ISO → clé → graver. Trois clics.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
-    <a class="tool rv" href="tool.html?id=ventoy" data-testid="tool-card-ventoy"><div class="ti">03 // MULTI-BOOT</div><h4>Ventoy</h4><p>Installé une fois, copie plusieurs ISO sur la clé et choisit au démarrage.</p><span class="tag">Multi-boot</span><span class="tgo">Voir le guide →</span></a>
-    <a class="tool rv" href="tool.html?id=checksum" data-testid="tool-card-checksum"><div class="ti">04 // SÉCURITÉ</div><h4>Checksum</h4><p>Comparer le SHA-256 de l'ISO avec celui du site officiel avant de graver.</p><span class="tag">Vérification</span><span class="tgo">Voir le guide →</span></a>
-    <a class="tool rv" href="tool.html?id=rpi-imager" data-testid="tool-card-rpi-imager"><div class="ti">05 // CARTE SD</div><h4>Raspberry Pi Imager</h4><p>Pour les cartes ARM. Configure SSH, Wi-Fi et compte avant le premier boot.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
-    <a class="tool rv" href="tool.html?id=dd" data-testid="tool-card-dd"><div class="ti">06 // TERMINAL</div><h4>La commande dd</h4><p>Présente d'origine sur tout Unix. Aucun garde-fou : écrit où on lui dit.</p><span class="tag">macOS · Linux · BSD</span><span class="tgo">Voir le guide →</span></a>
-    <a class="tool rv" href="tool.html?id=mediacreationtool" data-testid="tool-card-mediacreationtool"><div class="ti">07 // OFFICIEL</div><h4>Media Creation Tool</h4><p>Télécharge Windows chez Microsoft et prépare la clé dans la foulée.</p><span class="tag">Windows</span><span class="tgo">Voir le guide →</span></a>
-    <a class="tool rv" href="tool.html?id=fedora-media-writer" data-testid="tool-card-fedora-media-writer"><div class="ti">08 // OFFICIEL</div><h4>Fedora Media Writer</h4><p>Télécharge, vérifie la signature et grave toute la famille Fedora.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=rufus" data-testid="tool-card-rufus"><div class="ti">01 // GRAVEUR</div><h3>Rufus</h3><p>Outil Windows rapide pour créer une clé bootable. Gère GPT/UEFI et le mode DD.</p><span class="tag">Windows</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=etcher" data-testid="tool-card-etcher"><div class="ti">02 // GRAVEUR</div><h3>balenaEtcher</h3><p>Multiplateforme, interface minimale : ISO → clé → graver. Trois clics.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=ventoy" data-testid="tool-card-ventoy"><div class="ti">03 // MULTI-BOOT</div><h3>Ventoy</h3><p>Installé une fois, copie plusieurs ISO sur la clé et choisit au démarrage.</p><span class="tag">Multi-boot</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=checksum" data-testid="tool-card-checksum"><div class="ti">04 // SÉCURITÉ</div><h3>Checksum</h3><p>Comparer le SHA-256 de l'ISO avec celui du site officiel avant de graver.</p><span class="tag">Vérification</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=rpi-imager" data-testid="tool-card-rpi-imager"><div class="ti">05 // CARTE SD</div><h3>Raspberry Pi Imager</h3><p>Pour les cartes ARM. Configure SSH, Wi-Fi et compte avant le premier boot.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=dd" data-testid="tool-card-dd"><div class="ti">06 // TERMINAL</div><h3>La commande dd</h3><p>Présente d'origine sur tout Unix. Aucun garde-fou : écrit où on lui dit.</p><span class="tag">macOS · Linux · BSD</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=mediacreationtool" data-testid="tool-card-mediacreationtool"><div class="ti">07 // OFFICIEL</div><h3>Media Creation Tool</h3><p>Télécharge Windows chez Microsoft et prépare la clé dans la foulée.</p><span class="tag">Windows</span><span class="tgo">Voir le guide →</span></a>
+    <a class="tool rv" href="tool.html?id=fedora-media-writer" data-testid="tool-card-fedora-media-writer"><div class="ti">08 // OFFICIEL</div><h3>Fedora Media Writer</h3><p>Télécharge, vérifie la signature et grave toute la famille Fedora.</p><span class="tag">Win · macOS · Linux</span><span class="tgo">Voir le guide →</span></a>
   </div>
 </section>
 
@@ -133,27 +134,27 @@
     </div>
 
     <div class="guide-panel on" data-panel="cwin">
-      <div class="guide-step"><b>01</b><div><h5>Ouvrir diskpart</h5><p>Touche Windows, taper <span class="mono">diskpart</span>, exécuter en administrateur.</p></div></div>
-      <div class="guide-step"><b>02</b><div><h5>Repérer la clé</h5><p>Lister les disques et identifier le bon numéro <b>par la taille</b> — une erreur ici efface le mauvais disque :</p><div class="code"><span>list disk</span></div></div></div>
-      <div class="guide-step"><b>03</b><div><h5>Sélectionner et nettoyer</h5><div class="code"><span>select disk N
+      <div class="guide-step"><b>01</b><div><h3>Ouvrir diskpart</h3><p>Touche Windows, taper <span class="mono">diskpart</span>, exécuter en administrateur.</p></div></div>
+      <div class="guide-step"><b>02</b><div><h3>Repérer la clé</h3><p>Lister les disques et identifier le bon numéro <b>par la taille</b> — une erreur ici efface le mauvais disque :</p><div class="code"><span>list disk</span></div></div></div>
+      <div class="guide-step"><b>03</b><div><h3>Sélectionner et nettoyer</h3><div class="code"><span>select disk N
 clean</span></div><p style="margin-top:10px">Supprime toutes les partitions et tables de partition existantes.</p></div></div>
-      <div class="guide-step"><b>04</b><div><h5>Recréer une partition et formater</h5><div class="code"><span>create partition primary
+      <div class="guide-step"><b>04</b><div><h3>Recréer une partition et formater</h3><div class="code"><span>create partition primary
 format fs=exfat quick
 assign</span></div><p style="margin-top:10px">ExFAT convient aux gros fichiers et fonctionne sur Windows/macOS/Linux. FAT32 si compatibilité maximale avec de vieux appareils.</p></div></div>
     </div>
 
     <div class="guide-panel" data-panel="cmac">
-      <div class="guide-step"><b>01</b><div><h5>Ouvrir Utilitaire de disque</h5><p>Spotlight → « Utilitaire de disque ». Afficher tous les périphériques (menu Présentation).</p></div></div>
-      <div class="guide-step"><b>02</b><div><h5>Sélectionner le disque physique</h5><p>Cliquer sur la clé USB elle-même (le disque parent en haut de la liste), pas le volume affiché en dessous.</p></div></div>
-      <div class="guide-step"><b>03</b><div><h5>Effacer</h5><p>Bouton « Effacer » → format <span class="mono">ExFAT</span> (ou MS-DOS FAT pour compatibilité maximale), schéma <span class="mono">Table de partition GUID</span>.</p></div></div>
-      <div class="guide-step"><b>04</b><div><h5>Confirmer</h5><p>La clé réapparaît avec sa capacité totale et redevient un support de stockage classique.</p></div></div>
+      <div class="guide-step"><b>01</b><div><h3>Ouvrir Utilitaire de disque</h3><p>Spotlight → « Utilitaire de disque ». Afficher tous les périphériques (menu Présentation).</p></div></div>
+      <div class="guide-step"><b>02</b><div><h3>Sélectionner le disque physique</h3><p>Cliquer sur la clé USB elle-même (le disque parent en haut de la liste), pas le volume affiché en dessous.</p></div></div>
+      <div class="guide-step"><b>03</b><div><h3>Effacer</h3><p>Bouton « Effacer » → format <span class="mono">ExFAT</span> (ou MS-DOS FAT pour compatibilité maximale), schéma <span class="mono">Table de partition GUID</span>.</p></div></div>
+      <div class="guide-step"><b>04</b><div><h3>Confirmer</h3><p>La clé réapparaît avec sa capacité totale et redevient un support de stockage classique.</p></div></div>
     </div>
 
     <div class="guide-panel" data-panel="clinux">
-      <div class="guide-step"><b>01</b><div><h5>Identifier le périphérique</h5><div class="code"><span>lsblk</span></div></div></div>
-      <div class="guide-step"><b>02</b><div><h5>Démonter toutes ses partitions</h5><div class="code"><span>sudo umount /dev/sdX*</span></div></div></div>
-      <div class="guide-step"><b>03</b><div><h5>Effacer les signatures de partition</h5><div class="code"><span>sudo wipefs -a /dev/sdX</span></div><p style="margin-top:10px">Pour un effacement complet des données (plus lent) : <span class="mono">sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress</span></p></div></div>
-      <div class="guide-step"><b>04</b><div><h5>Recréer une table de partitions et formater</h5><div class="code"><span>sudo parted /dev/sdX mklabel msdos
+      <div class="guide-step"><b>01</b><div><h3>Identifier le périphérique</h3><div class="code"><span>lsblk</span></div></div></div>
+      <div class="guide-step"><b>02</b><div><h3>Démonter toutes ses partitions</h3><div class="code"><span>sudo umount /dev/sdX*</span></div></div></div>
+      <div class="guide-step"><b>03</b><div><h3>Effacer les signatures de partition</h3><div class="code"><span>sudo wipefs -a /dev/sdX</span></div><p style="margin-top:10px">Pour un effacement complet des données (plus lent) : <span class="mono">sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress</span></p></div></div>
+      <div class="guide-step"><b>04</b><div><h3>Recréer une table de partitions et formater</h3><div class="code"><span>sudo parted /dev/sdX mklabel msdos
 sudo parted /dev/sdX mkpart primary fat32 1MiB 100%
 sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus simple : GParted (interface graphique) fait les quatre étapes en quelques clics.</p></div></div>
     </div>
@@ -195,21 +196,21 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
   </label>
   <div class="filters" id="filters"></div>
   <div class="subcontrols">
-    <button class="chip fav-chip" id="favChip" data-testid="filter-favorites">★ Favoris</button>
+    <button class="chip fav-chip" id="favChip" data-testid="filter-favorites" aria-pressed="false">★ Favoris</button>
     <button class="chip fav-chip hw-chip" id="hwStatusChip" data-testid="filter-hw" style="display:none"></button>
-    <select class="select mono" id="diffSelect" data-testid="filter-difficulty">
+    <select class="select mono" id="diffSelect" data-testid="filter-difficulty" aria-label="Filtrer par niveau de difficulté">
       <option value="all">Tous niveaux</option>
       <option value="Facile">Facile</option>
       <option value="Intermédiaire">Intermédiaire</option>
       <option value="Avancé">Avancé</option>
       <option value="Expert">Expert</option>
     </select>
-    <select class="select mono" id="licenseSelect" data-testid="filter-license">
+    <select class="select mono" id="licenseSelect" data-testid="filter-license" aria-label="Filtrer par licence">
       <option value="all">Toutes licences</option>
       <option value="Libre / Open-source">Libre / Open-source</option>
       <option value="Propriétaire">Propriétaire</option>
     </select>
-    <select class="select mono" id="sortSelect" data-testid="sort-select">
+    <select class="select mono" id="sortSelect" data-testid="sort-select" aria-label="Trier les résultats">
       <option value="default">Tri : par défaut</option>
       <option value="name">Nom (A→Z)</option>
       <option value="diff">Difficulté (croissant)</option>
@@ -272,26 +273,28 @@ sudo mkfs.vfat -F32 /dev/sdX1</span></div><p style="margin-top:10px">Ou plus sim
   </div>
 </div>
 
+</main>
+
 <footer>
   <p><b>OSARIUM</b> — la collection ultime de systèmes d'exploitation. Conçu pour être complété au fil des systèmes ajoutés.</p>
 </footer>
 
-<script src="js/vendor/lenis.min.js"></script>
-<script src="data.js"></script>
-<script src="js/toast.js"></script>
-<script src="js/modal-a11y.js"></script>
-<script src="js/hardware-check.js"></script>
-<script src="js/logo.js"></script>
-<script src="js/favorites.js"></script>
-<script src="js/recent.js"></script>
-<script src="js/pcage.js"></script>
-<script src="js/shortcuts.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/reveal.js"></script>
-<script src="js/scroll.js"></script>
-<script src="js/catalog.js"></script>
-<script src="js/recent-strip.js"></script>
-<script src="js/guide-tabs.js"></script>
-<script src="js/pwa.js"></script>
+<script src="js/vendor/lenis.min.js" defer></script>
+<script src="data.js" defer></script>
+<script src="js/toast.js" defer></script>
+<script src="js/modal-a11y.js" defer></script>
+<script src="js/hardware-check.js" defer></script>
+<script src="js/logo.js" defer></script>
+<script src="js/favorites.js" defer></script>
+<script src="js/recent.js" defer></script>
+<script src="js/pcage.js" defer></script>
+<script src="js/shortcuts.js" defer></script>
+<script src="js/theme.js" defer></script>
+<script src="js/reveal.js" defer></script>
+<script src="js/scroll.js" defer></script>
+<script src="js/catalog.js" defer></script>
+<script src="js/recent-strip.js" defer></script>
+<script src="js/guide-tabs.js" defer></script>
+<script src="js/pwa.js" defer></script>
 </body>
 </html>
