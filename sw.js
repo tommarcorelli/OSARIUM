@@ -2,7 +2,7 @@
    La liste ASSETS doit rester exhaustive : `addAll` échoue en bloc si un seul
    fichier manque, et tout fichier absent d'ici n'est pas disponible hors-ligne
    au premier chargement. À compléter à chaque nouveau css/js ajouté aux pages. */
-const CACHE = 'osarium-v9'; // v9 : icônes PNG recompressées (pngquant, ~446 Ko en moins)
+const CACHE = 'osarium-v10'; // v10 : recherche floue (repli "Vouliez-vous dire...?") dans le catalogue
 const ASSETS = [
   './',
   './index.html',

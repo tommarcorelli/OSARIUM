@@ -46,6 +46,52 @@ if (grid) {
     return null;
   }
 
+  /* ============ RECHERCHE FLOUE (repli) ============
+     La recherche ci-dessus est un match exact (juste insensible aux accents/casse) :
+     une faute de frappe (« manjago », « unbuntu », « fedroa ») ne remonte donc rien,
+     alors que l'intention est évidente. Plutôt que de mélanger des résultats
+     approximatifs aux résultats exacts dans la grille (ce qui rendrait la recherche
+     par contenu profond moins fiable), la tolérance aux fautes n'intervient qu'en
+     dernier recours, quand la recherche exacte ne renvoie STRICTEMENT rien : un
+     rappel « Vouliez-vous dire... ? » cliquable, plutôt qu'un remplacement silencieux
+     de la requête de l'utilisateur. */
+  function levenshtein(a, b) {
+    if (a === b) return 0;
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+      const cur = [i];
+      for (let j = 1; j <= b.length; j++) {
+        cur[j] = a[i - 1] === b[j - 1]
+          ? prev[j - 1]
+          : 1 + Math.min(prev[j - 1], prev[j], cur[j - 1]);
+      }
+      prev = cur;
+    }
+    return prev[b.length];
+  }
+
+  /* Comparé au nom d'affichage ET à l'id interne (on garde la meilleure des
+     deux distances) : beaucoup de noms complets ne sont pas ce qu'on tape
+     spontanément (« Linux Mint », « Pop!_OS », « Qubes OS »...) alors que
+     l'id, lui-même dérivé de l'alias le plus courant, matche bien mieux
+     (« mint », « popos », « qubes »). Ni la description ni le contenu profond
+     n'entrent en jeu ici : la faute de frappe porte sur un nom de système, pas
+     sur un mot au hasard dans une FAQ. Seuil resserré sur les requêtes courtes
+     pour éviter les faux positifs (2 caractères d'écart sur « KaOS » ou « Q4OS »
+     matcherait à peu près n'importe quoi). */
+  function fuzzySuggestions(q) {
+    if (!q || q.length < 3) return [];
+    const maxDist = q.length <= 5 ? 1 : 2;
+    return data
+      .map((os) => ({ os, dist: Math.min(levenshtein(q, norm(os.name)), levenshtein(q, norm(os.id))) }))
+      .filter((r) => r.dist > 0 && r.dist <= maxDist)
+      .sort((a, b) => a.dist - b.dist)
+      .slice(0, 3)
+      .map((r) => r.os);
+  }
+
   /* ============ \u00c9TAT DANS L'URL ============
      Recherche, filtres, tri et comparateur sont refl\u00e9t\u00e9s dans la barre
      d'adresse : un lien devient partageable et rejouable tel quel.
@@ -242,9 +288,18 @@ if (grid) {
     else if (sortMode === 'time') list = [...list].sort((a, b) => (parseInt(a.time) || 0) - (parseInt(b.time) || 0));
     else if (sortMode === 'popular') list = [...list].sort((a, b) => (b.popular === true) - (a.popular === true));
 
-    grid.innerHTML = list.length ? list.map(cardHTML).join('')
-      : `<div class="no-result">// aucun système ne correspond à ces critères${favOnly ? ' (essaie de retirer le filtre Favoris)' : ''}${hwActive && hwHideIncompatible ? ' (essaie de retirer le filtre matériel)' : ''}</div>`;
+    grid.innerHTML = list.length ? list.map(cardHTML).join('') : noResultHTML();
     observeReveals();
+  }
+
+  function noResultHTML() {
+    const suggestions = query ? fuzzySuggestions(query) : [];
+    const fuzzyHTML = suggestions.length
+      ? `<div class="fuzzy-block mono">Vouliez-vous dire :
+          ${suggestions.map((os) => `<button type="button" class="chip fuzzy-sugg" data-fuzzy="${os.name.replace(/"/g, '&quot;')}">${os.name}</button>`).join(' ')}
+        </div>`
+      : '';
+    return `<div class="no-result">// aucun système ne correspond à ces critères${favOnly ? ' (essaie de retirer le filtre Favoris)' : ''}${hwActive && hwHideIncompatible ? ' (essaie de retirer le filtre matériel)' : ''}${fuzzyHTML}</div>`;
   }
 
   /* render() reconstruit toute la grille : sans ça, activer ★ ou + au clavier
@@ -265,6 +320,15 @@ if (grid) {
      Pas de handler sur la carte elle-même : c'est .card-link (lien étiré) qui
      gère la navigation, y compris au clavier et au clic milieu. */
   grid.addEventListener('click', (e) => {
+    const fuzzyBtn = e.target.closest('.fuzzy-sugg');
+    if (fuzzyBtn) {
+      e.stopPropagation();
+      const name = fuzzyBtn.dataset.fuzzy;
+      rawQuery = name; query = norm(name);
+      searchEl.value = name;
+      render(); syncURL();
+      return;
+    }
     const cmpBtn = e.target.closest('.cmp');
     if (cmpBtn) {
       e.stopPropagation();

@@ -52,6 +52,8 @@
 .badge-new{background:var(--phos-dim);color:var(--phos);border:1px solid rgba(92,242,176,.35);}
 .badge-deep{background:rgba(66,214,255,.12);color:var(--cyan);border:1px solid rgba(66,214,255,.35);}
 .no-result{grid-column:1/-1;text-align:center;padding:80px 0;color:var(--muted);font-family:'JetBrains Mono';}
+.fuzzy-block{margin-top:18px;font-size:12px;color:var(--muted-2);display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;}
+.fuzzy-block .chip{color:var(--text);}
 @media(pointer:coarse){.card .cmp,.card .fav{opacity:1;pointer-events:auto;}}
 
 /* ---------- COMPARATOR ---------- */

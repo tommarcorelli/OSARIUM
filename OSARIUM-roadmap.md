@@ -1,8 +1,114 @@
 # OSARIUM — Roadmap d'évolution
 
-*Dernière mise à jour : juillet 2026*
+*Dernière mise à jour : août 2026*
 
-## ✅ Fait (cette session — 4 dernières fiches recovery, cluster CPU générique éliminé)
+## ✅ Fait (cette session — recherche floue dans le catalogue)
+
+La recherche (`js/catalog.js`) ne faisait qu'un match exact de sous-chaîne (insensible aux accents/casse) : une faute de frappe (« manjago », « unbuntu », « fedroa »…) ne remontait donc rien, alors que l'intention est évidente pour un humain.
+
+- **Repli flou, pas un remplacement** : la tolérance aux fautes n'intervient qu'en dernier recours, quand la recherche exacte renvoie strictement 0 résultat — pas de mélange avec les résultats exacts, pour ne pas dégrader la fiabilité de la recherche en profondeur (TPM, Secure Boot…) déjà en place.
+- **Levenshtein maison** (aucune dépendance, ~15 lignes), comparé au **nom d'affichage ET à l'id interne**, en gardant la meilleure des deux distances — nécessaire car beaucoup de noms complets (« Linux Mint », « Pop!_OS », « Qubes OS ») ne sont pas ce qu'on tape spontanément, contrairement à l'id (`mint`, `popos`, `qubes`). Sans ce second axe de comparaison, `minnt`, `popos2` ou `qbes` ne remontaient rien.
+- **Seuil resserré sur les requêtes courtes** (1 caractère d'écart si ≤5 caractères, 2 sinon) pour éviter les faux positifs sur les noms courts (KaOS, Q4OS).
+- **UI** : bloc « Vouliez-vous dire… ? » sous le message d'absence de résultat, jusqu'à 3 suggestions cliquables (relancent la recherche), style réutilisant `.chip` déjà en place — aucun nouvel élément visuel introduit.
+- **Vérifications** : `node --check` sur `js/catalog.js`, `node scripts/validate-data.js` (170/170 fiches toujours valides), simulation Node rejouée sur le catalogue réel avec une dizaine de fautes de frappe typiques — toutes corrigées, aucun faux positif observé (Arch ne remonte pas pour BlackArch, par exemple). Cache offline (`sw.js`) passé en `osarium-v10` — `js/catalog.js` et `css/cards.css` étaient déjà dans `ASSETS`, seul le numéro de version a changé pour forcer le rafraîchissement chez les visiteurs déjà passés. Sitemap régénéré (180 URLs, structure inchangée).
+
+## ✅ Fait (session précédente — dette de template : cluster BSD entièrement différencié, 9 fiches)
+
+Premier chantier « dette de template » attaqué en profondeur : les 9 fiches de la catégorie `bsd` (FreeBSD, OpenBSD, NetBSD, DragonFly BSD, GhostBSD, OpenIndiana, MidnightBSD, HardenedBSD, NomadBSD) partageaient toutes le même texte générique « 1-2 Go min. / 10-20 Go d'espace disque / x86_64 (ARM selon le projet) », alors que leurs besoins réels varient énormément d'un projet à l'autre. Chaque fiche a été revérifiée individuellement sur sa documentation officielle :
+
+- **FreeBSD** : le Handbook officiel distingue clairement un minimum technique (96 Mo RAM / 1,5 Go disque, usage embarqué uniquement) d'un minimum réaliste pour un bureau (4 Go+ RAM, 8 Go+ disque avec interface graphique) — la fiche reflète maintenant cette nuance au lieu d'un chiffre unique.
+- **OpenBSD** : le projet ne publie *aucun* minimum matériel officiel strict (confirmé par la FAQ et les discussions de la liste de diffusion) — la fiche le dit maintenant explicitement plutôt que d'inventer une fourchette, tout en donnant un ordre de grandeur réaliste pour un usage avec X11.
+- **NetBSD** : inchangé sur ce champ (déjà traité lors d'une session antérieure pour la version).
+- **DragonFly BSD** : la documentation officielle recommande au moins **50 Go** pour le système de fichiers HAMMER par défaut (bien au-delà du "10-20 Go" générique) — corrigé, avec mention de l'alternative UFS sur petit disque.
+- **GhostBSD** : la doc officielle du projet (GitHub `ghostbsd/documentation`) est sans ambiguïté — **8 Gio de RAM conseillés**, un système avec 4 Gio ou moins peut rencontrer des problèmes pendant l'installation (tampon vidéo de l'installeur). Chiffre très supérieur au "1-2 Go" générique, corrigé avec la source citée.
+- **OpenIndiana** : la documentation officielle actuelle distingue serveur (16 Go disque / 2 Go RAM min.) et bureau (20 Go disque / 4 Go RAM min.) — la fiche reprend ce tableau au lieu du texte générique.
+- **MidnightBSD** : documentation officielle — 96 Mo RAM pour l'installation, 15 Go conseillés pour un usage avec mports (paquets) sur un bureau.
+- **HardenedBSD** : pas de page de specs officielle dédiée trouvée ; le texte reste proche du générique mais est explicitement présenté comme un héritage des besoins FreeBSD plutôt qu'une fourchette isolée, avec ARM64 mentionné (architecture supportée par le projet).
+- **NomadBSD** : confirmé directement sur `nomadbsd.org` — 1 Go de RAM (2 Go si version ZFS), clé USB de 5 Go minimum pour une image qui pèse ~4,7 Go décompressée. Chiffres très spécifiques à ce format live-USB persistant, remplace le "10-20 Go" générique qui n'avait aucun sens pour ce cas d'usage.
+- **Résultat mesuré** : le validateur passe de 8 formulations partagées par 61 fiches à **5 formulations partagées par 47 fiches**. Une correction en cours de route : le premier texte OpenBSD (« Aucun minimum... — 1 Go+ conseillé ») a été rejeté par le validateur car il ne commençait pas par un nombre analysable par la fonctionnalité de vérification matérielle du site (`hardware-check.js`) — reformulé pour commencer par « 1 Go+ conseillé... » tout en gardant la nuance.
+- `validate-data.js` : 170/170 fiches valides. Sitemap régénéré (180 URLs, structure inchangée).
+- **Reste (47 fiches, 5 formulations)** : les autres clusters de la dette de template (recovery, sécurité VM, containers, etc. — voir `node scripts/validate-data.js --dupes` pour le détail à jour) n'ont pas encore été traités ce lot-ci.
+
+## ✅ Fait (session précédente — gros lot final : 16 fiches supplémentaires, 142 → 158/170, 1 erreur de domaine corrigée)
+
+Quatrième et cinquième lots de la même session, jusqu'à quasi-épuisement du chantier « lien de téléchargement manquant » :
+
+- **Ubuntu Kylin** : `ubuntukylin.com/downloads/download-en.html`.
+- **Unraid** : `unraid.net/download`.
+- **Mobian** : `images.mobian.org/` (le site vitrine `mobian.org` ne distribue pas directement les images).
+- **Talos Linux** : `factory.talos.dev/` — l'Image Factory officielle, plus utile qu'un simple lien vers `talos.dev`.
+- **Bluefin** : `docs.projectbluefin.io/downloads`.
+- **Aurora** : **erreur corrigée** — la fiche indiquait `getaurora.de` (un domaine qui n'appartient pas au projet), alors que le vrai domaine officiel est `getaurora.dev`. Corrigé + lien `getaurora.dev/en` ajouté.
+- **Redo Rescue** : `sourceforge.net/projects/redobackup` — le site vitrine `redorescue.com` ne distribue pas lui-même l'ISO, seul SourceForge le fait officiellement.
+- **Kaspersky Rescue Disk** : `kaspersky.com/downloads/free-rescue-disk` (site vitrine FR `kaspersky.fr`, téléchargement sur le domaine `.com` — cas normal, même éditeur).
+- **Trinity Rescue Kit** : `trinityhome.org/trinity_rescue_kit_download`.
+- **Porteus** : `porteus.org/downloads`.
+- **Emmabuntüs** : `emmabuntus.org/download` (version DE6 1.01 confirmée exacte par la recherche).
+- **CrunchBang++** : `crunchbangplusplus.org/download.html`.
+- **Windows Server 2025** : `microsoft.com/en-us/evalcenter/download-windows-server-2025` (édition d'évaluation 180 jours — c'est la seule voie de téléchargement public officielle, la version complète nécessite une licence).
+- **Endless OS** : `endlessos.com/download`.
+- **blendOS** : `blendos.co/download`.
+
+**Décisions de prudence — pas de lien ajouté volontairement, documenté ici pour la prochaine session :**
+- **Ultimate Boot CD** : plusieurs retours d'utilisateurs (SourceForge) signalent que le site officiel aurait par le passé servi des exécutables vérolés lors du téléchargement. Face à ce doute non résolu, mieux vaut ne pas recommander ce lien qu'exposer un utilisateur — à ré-investiguer si une clarification fiable émerge.
+- **Slax** : le téléchargement se fait uniquement sur la page d'accueil elle-même (`slax.org`), avec un formulaire optionnel de collecte d'email — aucune page « Download » distincte à ajouter sans dupliquer le champ `site`.
+- **Sailfish OS** : pas de téléchargement gratuit classique — les images officielles ne s'obtiennent que via l'achat d'une licence sur la boutique Jolla, par modèle d'appareil. Cas hors du gabarit « lien de téléchargement » habituel du projet.
+- **PCLinuxOS** : `pclinuxos.com` bloque les requêtes automatisées (anti-bot) et un fil de forum ancien évoque un incendie ayant mis le site hors service à une époque — statut du site trop incertain pour committer un lien sans vérification humaine directe.
+- **ClearOS** et **Clear Linux OS** : tous deux définitivement arrêtés (respectivement ~2020-2021 et juillet 2025). La page de téléchargement ClearOS trouvée vit sur un sous-domaine legacy (`www1.clearos.com`) dont la fiabilité à long terme est incertaine ; pour Clear Linux, Intel a retiré le site en mars 2026. Dans les deux cas, ajouter un lien de téléchargement sur un projet mort n'apporte aucune valeur et risque de pourrir plus vite qu'un projet actif — volontairement laissé sans `dl`, cohérent avec la fiche qui documente déjà l'arrêt.
+- **elementary OS** et **Bazzite** : cas déjà actés lors d'une session antérieure (lien à jeton à usage unique pour elementary ; téléchargement uniquement via un sélecteur sur la page d'accueil sans chemin dédié pour Bazzite).
+
+- Validateur : 170/170 fiches valides après l'ensemble de ces deux lots. Sitemap régénéré (180 URLs, structure inchangée).
+- **Reste (12 fiches encore sans `dl`)** : elementary, bazzite, pclinuxos, clearos, serenityos, rescatux, ferenos, absolutelinux, ubcd, clearlinux, slax, sailfishos — dont 6 relèvent d'une limitation structurelle documentée ci-dessus plutôt que d'un simple oubli.
+
+## ✅ Fait (session précédente — suite : 8 fiches supplémentaires, 134 → 142/170)
+
+Troisième lot dans la foulée des deux précédents :
+
+- **Tails** : `tails.net/install` (RAM déjà correctement à 3 Go depuis le relèvement de la config minimale par Tails 7.0).
+- **Parrot OS** : `parrotsec.org/download` (confirmé via le compte X officiel du projet).
+- **BackBox** : `linux.backbox.org/download` — le vrai domaine de téléchargement (`linux.backbox.org`) diffère du domaine marketing (`backbox.org`), cas normal accepté par le validateur car un sous-domaine du même projet.
+- **Puppy Linux** : `puppylinux-woof-ce.github.io/download.html` — cas similaire, le site vitrine est `puppylinux.com` mais la page de téléchargement réelle vit sur le GitHub Pages du projet Woof-CE qui construit les images.
+- **Tiny Core Linux** : `tinycorelinux.net/downloads.html`.
+- **Vanilla OS** : `github.com/Vanilla-OS/live-iso/releases` — pas de page de téléchargement dédiée sur `vanillaos.org` lui-même, la distribution est publiée directement via les releases GitHub du dépôt `live-iso` (accepté par l'exception « forges » du validateur, comme Athena OS ou Bottlerocket).
+- **postmarketOS** : `postmarketos.org/install`.
+- **Parabola** : `parabola.nu/download`.
+- Validateur : 170/170 fiches valides après ce lot. Sitemap régénéré (180 URLs, inchangé en structure).
+- **Reste (28 fiches encore sans `dl`)** : elementary (lien à jeton à usage unique, cas déjà identifié comme problématique dans une session antérieure), bazzite (voir plus haut, exclusion volontaire), pclinuxos, winserver2025, clearos, serenityos, rescatux, talos, ferenos, absolutelinux, bluefin, aurora, ubcd, trinityrescuekit, ubuntukylin, endless, blendos, clearlinux, crunchbang, slax, porteus, emmabuntus, redorescue, kasperskyrescue, finnix, unraid, sailfishos, mobian.
+
+## ✅ Fait (session précédente — suite : 6 fiches supplémentaires, dont 2 versions obsolètes corrigées)
+
+Deuxième lot dans la foulée du précédent (128 → 134 fiches sur 170 avec un lien de téléchargement vérifié) :
+
+- **MX Linux** : `mxlinux.org/download-links`.
+- **Xubuntu** : `xubuntu.org/download` (version 26.04 LTS déjà correcte sur la fiche).
+- **EndeavourOS** : `endeavouros.com/latest-release` (version « rolling » toujours correcte — dernière image ISO « Titan », mars 2026, mais le projet reste rolling-release).
+- **Slackware** : `slackware.com/getslack` (version 15.0 confirmée toujours d'actualité — Slackware n'a pas de 16.0 stable malgré des années de rumeurs, cycle de sortie extrêmement long assumé par le projet).
+- **NetBSD** : **version corrigée 10.1 → 11.0** — NetBSD 11.0 est sorti le 30 juillet 2026, quelques jours seulement avant cette session, ce qui rendait la fiche obsolète immédiatement. Lien `netbsd.org/releases/formal-11` vérifié par fetch direct de la page d'annonce officielle.
+- **OpenWrt** : `firmware-selector.openwrt.org/` — volontairement pas le simple répertoire `downloads.openwrt.org` (liste de fichiers bruts, aucune valeur d'orientation pour un utilisateur), mais le vrai sélecteur interactif du projet qui identifie le firmware par modèle de routeur. Version 25.12 déjà correcte.
+- Validateur : 170/170 fiches valides après ce lot (une correction en cours de route : le premier essai sur OpenWrt pointait une racine de domaine sans chemin, rejeté puis corrigé avec un `/` final vers le sélecteur). Sitemap régénéré (180 URLs, inchangé en structure).
+- **Reste (36 fiches encore sans `dl`)** : puppy, tinycore, netbsd ✅ traité, pclinuxos, winserver2025, clearos, serenityos, rescatux, talos, ferenos, absolutelinux, bluefin, aurora, ubcd, trinityrescuekit, ubuntukylin, endless, vanillaos, blendos, clearlinux, crunchbang, slax, porteus, emmabuntus, parabola, postmarketos, redorescue, kasperskyrescue, finnix, unraid, sailfishos, mobian, et quelques autres — non traitées ce lot-ci.
+
+## ✅ Fait (session précédente — liens de téléchargement manquants sur les fiches les plus consultées, 54 → 42 fiches sans `dl`)
+
+Le chantier « lien de téléchargement vérifié » (voir plus bas, session d'origine : 116/170 fiches équipées) laissait 54 fiches sans bouton, dont plusieurs parmi les plus consultées du catalogue (Debian, Fedora, Linux Mint, openSUSE, Manjaro, Pop!_OS). Douze fiches traitées ce lot-ci, toutes vérifiées à la main (page réellement étiquetée « Download » par le projet, jamais un `.iso` figé ni un domaine tiers) :
+
+- **Debian** : `debian.org/distrib` (page « Getting Debian », non versionnée).
+- **Fedora** : `getfedora.org/en/workstation/download` (redirige vers la page officielle Fedora Workstation, vérifiée en direct — actuellement version 44).
+- **Linux Mint** : `linuxmint.com/download.php` (page protégée par un contrôle JS mais authentique, confirmée par plusieurs sources indépendantes).
+- **Manjaro** : `manjaro.org/products/download/x86` — la première tentative (`manjaro.org/download`, un chemin qui n'existe plus depuis la refonte du site) a été rejetée par le validateur (domaine étranger/racine sans plus-value une fois corrigée), le vrai chemin a été retrouvé en fetchant la page d'accueil et son bouton « Download ».
+- **Pop!_OS** : `system76.com/pop/download` (page officielle System76, specs RAM/disque déjà exactes).
+- **openSUSE** : **version obsolète corrigée** en même temps que le lien — la fiche était sur **Leap 15.6**, dont le support s'est arrêté fin avril 2026, alors que **Leap 16.0** (sortie le 1er octobre 2025) est la version stable actuelle. Changement plus important que le simple numéro : Leap 16 **exige désormais x86-64-v2** (CPU 2008+) et **a totalement abandonné le 32 bits** (c'était une simple recommandation avant), champ CPU reformulé en conséquence. RAM/disque légèrement resserrés sur le wiki officiel (1 Go min./8-40 Go). Lien : `get.opensuse.org/leap`.
+- **KDE neon** : `neon.kde.org/download` (le nom de domaine du site, `kde.org`, diffère de celui du produit lui-même — cas normal, KDE neon est un sous-projet).
+- **Solus** : `getsol.us/download`.
+- **ChromeOS Flex** : `chromeenterprise.google/os/chromeosflex`.
+- **Garuda Linux** : `garudalinux.org/downloads`.
+- **AlmaLinux** : `almalinux.org/get-almalinux`.
+- **Proxmox VE** : `proxmox.com/en/downloads` (version encore affichée en générique « 9.x », cohérente avec la 9.2 actuelle — pas besoin de préciser le point-release vu la cadence de sortie rapide du projet).
+- **Volontairement pas de lien ajouté : Bazzite**. Le téléchargement se fait via un formulaire de sélection matériel/GPU sur la page d'accueil elle-même (`bazzite.gg/#image-picker`) — pas une page « Download » distincte avec un vrai chemin, donc ajouter `dl:"bazzite.gg"` n'aurait aucune plus-value sur le champ `site` déjà présent (le validateur le refuse d'ailleurs pour cette raison).
+- **Reste du lot (42 fiches encore sans `dl`)** : almalinux ✅ traité, mais restent notamment kdeneon ✅, chromeosflex ✅, garuda ✅ — en fait tous les noms cités dans le lot précédent sont traités ; les fiches encore sans lien sont surtout des systèmes moins consultés (bazzite volontairement exclu, mxlinux, xubuntu, puppy, tinycore, endeavouros, slackware, netbsd, pclinuxos, winserver2025, clearos, serenityos, rescatux, openwrt, talos, ferenos, absolutelinux, bluefin, aurora, ubcd, trinityrescuekit, ubuntukylin, endless, vanillaos, blendos, clearlinux, crunchbang, slax, porteus, emmabuntus, parabola, postmarketos, redorescue, kasperskyrescue, finnix, unraid, sailfishos, mobian) — non traitées ce lot-ci, faute de temps, pas parce qu'aucun lien fiable n'existe pour elles.
+- **Vérifications** : chaque lien a été vérifié par fetch réel (pas une supposition d'URL) avant d'être committé — deux erreurs de frappe détectées et corrigées en cours de route par `validate-data.js` (Fedora pointait d'abord vers `fedoraproject.org`, un domaine que le validateur juge étranger à `getfedora.org` malgré l'appartenance au même projet ; openSUSE pointait d'abord vers une racine de domaine sans chemin). `node scripts/validate-data.js` : 170/170 fiches valides. Sitemap régénéré (180 URLs, aucun changement de structure — cette session ne touchait que `data.js`).
+
+## ✅ Fait (session précédente — 4 dernières fiches recovery, cluster CPU générique éliminé)
 
 Suite du chantier recovery ouvert il y a deux sessions (Rescuezilla, Kaspersky, Trinity Rescue Kit, Redo Rescue traités, UBCD volontairement laissé). Les 4 fiches non encore vérifiées de ce cluster (Clonezilla Live, SystemRescue, Rescatux, GParted Live) ont été relues contre leur doc officielle respective.
 
