@@ -23,6 +23,8 @@
 .pill b{color:var(--c);}
 .pill-link{cursor:pointer;transition:border-color .2s;}
 .pill-link:hover{border-color:var(--c);}
+.pill-stale{border-color:var(--amber);color:var(--amber);}
+.pill-stale b{color:var(--amber);}
 /* Bouton de téléchargement : la première étape de chaque guide dit
    « télécharger l'ISO » sans que rien ne soit cliquable. Il ne s'affiche que
    sur les fiches dont l'URL a été vérifiée (champ `dl`). */

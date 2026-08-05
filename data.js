@@ -4,11 +4,12 @@ window.OS_DATA = [
   /* ===================== BUREAU ===================== */
   {
     id:"win11", name:"Windows 11", version:"25H2", cat:"desktop", color:"#2F9BE6", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#2F9BE6"><path d="M2.5 2.5h8.5v8.5H2.5zM13 2.5h8.5v8.5H13zM2.5 13h8.5v8.5H2.5zM13 13h8.5v8.5H13z"/></svg>',
     tag:"Le système grand public de Microsoft, moderne et hardware-exigeant.",
     site:"microsoft.com", dl:"microsoft.com/software-download/windows11", license:"Propriétaire", popular:true, isNew:false,
     time:"~15 min", diff:"Facile", base:"Windows NT",
-    req:{ram:"4 Go min. (officiellement ; 8 Go+ conseillés en pratique)", disk:"64 Go min. (exigence officielle Microsoft)", cpu:"64 bits, 1 GHz, 2 cœurs min. + TPM 2.0 et UEFI Secure Boot obligatoires"},
+    req:{ram:"4 Go min. (officiellement ; 8 Go+ conseillés en pratique)", disk:"64 Go min. (exigence officielle Microsoft)", cpu:"64 bits, 1 GHz, 2 cœurs min. + TPM 2.0 et UEFI Secure Boot obligatoires", gpu:{open:"Bon — pilotes AMD/Intel via Windows Update ou le site du fabricant", nvidia:"Bon — pilote GeForce officiel installable via Windows Update ou le site Nvidia"}},
     steps:[
       {t:"Télécharger l'ISO officiel", d:"Depuis microsoft.com/software-download/windows11, section « Télécharger l'image disque (ISO) »."},
       {t:"Créer la clé bootable", d:"Ouvrir Rufus, sélectionner l'ISO et la clé USB. Choisir le schéma GPT / UEFI.", code:"Rufus → GPT → UEFI (non CSM)"},
@@ -29,11 +30,12 @@ window.OS_DATA = [
   },
   {
     id:"ubuntu", name:"Ubuntu", version:"26.04 LTS Resolute Raccoon", cat:"desktop", color:"#E95420", icon:"ubuntu",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#E95420"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"La distribution Linux la plus populaire. Idéale pour débuter.",
     site:"ubuntu.com", dl:"ubuntu.com/download/desktop", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"6 Go min. (8 Go+ conseillés)", disk:"25 Go min. (officiel Ubuntu)", cpu:"2 GHz dual-core, 64 bits"},
+    req:{ram:"6 Go min. (8 Go+ conseillés)", disk:"25 Go min. (officiel Ubuntu)", cpu:"2 GHz dual-core, 64 bits", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — pilote propriétaire proposé automatiquement via « Pilotes additionnels » dès l'installation"}},
     steps:[
       {t:"Télécharger l'ISO", d:"Sur ubuntu.com/download/desktop, choisir la version Desktop LTS (support 5 ans)."},
       {t:"Vérifier le SHA-256", d:"Comparer l'empreinte avec le fichier SHA256SUMS publié.", code:"sha256sum ubuntu-26.04-desktop-amd64.iso"},
@@ -55,11 +57,12 @@ window.OS_DATA = [
   },
   {
     id:"debian", name:"Debian", version:"13 Trixie", cat:"desktop", color:"#D2094A", icon:"debian",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#D2094A"><path d="M13.88 12.685c-.4 0 .08.2.601.28.14-.1.27-.22.39-.33a3.001 3.001 0 01-.99.05m2.14-.53c.23-.33.4-.69.47-1.06-.06.27-.2.5-.33.73-.75.47-.07-.27 0-.56-.8 1.01-.11.6-.14.89m.781-2.05c.05-.721-.14-.501-.2-.221.07.04.13.5.2.22M12.38.31c.2.04.45.07.42.12.23-.05.28-.1-.43-.12m.43.12l-.15.03.14-.01V.43m6.633 9.944c.02.64-.2.95-.38 1.5l-.35.181c-.28.54.03.35-.17.78-.44.39-1.34 1.22-1.62 1.301-.201 0 .14-.25.19-.34-.591.4-.481.6-1.371.85l-.03-.06c-2.221 1.04-5.303-1.02-5.253-3.842-.03.17-.07.13-.12.2a3.551 3.552 0 012.001-3.501 3.361 3.362 0 013.732.48 3.341 3.342 0 00-2.721-1.3c-1.18.01-2.281.76-2.651 1.57-.6.38-.67 1.47-.93 1.661-.361 2.601.66 3.722 2.38 5.042.27.19.08.21.12.35a4.702 4.702 0 01-1.53-1.16c.23.33.47.66.8.91-.55-.18-1.27-1.3-1.48-1.35.93 1.66 3.78 2.921 5.261 2.3a6.203 6.203 0 01-2.33-.28c-.33-.16-.77-.51-.7-.57a5.802 5.803 0 005.902-.84c.44-.35.93-.94 1.07-.95-.2.32.04.16-.12.44.44-.72-.2-.3.46-1.24l.24.33c-.09-.6.74-1.321.66-2.262.19-.3.2.3 0 .97.29-.74.08-.85.15-1.46.08.2.18.42.23.63-.18-.7.2-1.2.28-1.6-.09-.05-.28.3-.32-.53 0-.37.1-.2.14-.28-.08-.05-.26-.32-.38-.861.08-.13.22.33.34.34-.08-.42-.2-.75-.2-1.08-.34-.68-.12.1-.4-.3-.34-1.091.3-.25.34-.74.54.77.84 1.96.981 2.46-.1-.6-.28-1.2-.49-1.76.16.07-.26-1.241.21-.37A7.823 7.824 0 0017.702 1.6c.18.17.42.39.33.42-.75-.45-.62-.48-.73-.67-.61-.25-.65.02-1.06 0C15.082.73 14.862.8 13.8.4l.05.23c-.77-.25-.9.1-1.73 0-.05-.04.27-.14.53-.18-.741.1-.701-.14-1.431.03.17-.13.36-.21.55-.32-.6.04-1.44.35-1.18.07C9.6.68 7.847 1.3 6.867 2.22L6.838 2c-.45.54-1.96 1.611-2.08 2.311l-.131.03c-.23.4-.38.85-.57 1.261-.3.52-.45.2-.4.28-.6 1.22-.9 2.251-1.16 3.102.18.27 0 1.65.07 2.76-.3 5.463 3.84 10.776 8.363 12.006.67.23 1.65.23 2.49.25-.99-.28-1.12-.15-2.08-.49-.7-.32-.85-.7-1.34-1.13l.2.35c-.971-.34-.57-.42-1.361-.67l.21-.27c-.31-.03-.83-.53-.97-.81l-.34.01c-.41-.501-.63-.871-.61-1.161l-.111.2c-.13-.21-1.52-1.901-.8-1.511-.13-.12-.31-.2-.5-.55l.14-.17c-.35-.44-.64-1.02-.62-1.2.2.24.32.3.45.33-.88-2.172-.93-.12-1.601-2.202l.15-.02c-.1-.16-.18-.34-.26-.51l.06-.6c-.63-.74-.18-3.102-.09-4.402.07-.54.53-1.1.88-1.981l-.21-.04c.4-.71 2.341-2.872 3.241-2.761.43-.55-.09 0-.18-.14.96-.991 1.26-.7 1.901-.88.7-.401-.6.16-.27-.151 1.2-.3.85-.7 2.421-.85.16.1-.39.14-.52.26 1-.49 3.151-.37 4.562.27 1.63.77 3.461 3.011 3.531 5.132l.08.02c-.04.85.13 1.821-.17 2.711l.2-.42M9.54 13.236l-.05.28c.26.35.47.73.8 1.01-.24-.47-.42-.66-.75-1.3m.62-.02c-.14-.15-.22-.34-.31-.52.08.32.26.6.43.88l-.12-.36m10.945-2.382l-.07.15c-.1.76-.34 1.511-.69 2.212.4-.73.65-1.541.75-2.362M12.45.12c.27-.1.66-.05.95-.12-.37.03-.74.05-1.1.1l.15.02M3.006 5.142c.07.57-.43.8.11.42.3-.66-.11-.18-.1-.42m-.64 2.661c.12-.39.15-.62.2-.84-.35.44-.17.53-.2.83"/></svg>',
     tag:"La distribution universelle, socle de milliers d'autres. Stable comme un roc.",
     site:"debian.org", dl:"debian.org/distrib", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"1 Go min. (2 Go conseillés, 4 Go pour un bureau GNOME/KDE confortable)", disk:"10 Go min. (20-25 Go conseillés avec environnement de bureau)", cpu:"1 GHz, 64 bits (i686 minimum sur les architectures 32 bits)"},
+    req:{ram:"1 Go min. (2 Go conseillés, 4 Go pour un bureau GNOME/KDE confortable)", disk:"10 Go min. (20-25 Go conseillés avec environnement de bureau)", cpu:"1 GHz, 64 bits (i686 minimum sur les architectures 32 bits)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (micrologiciels non-free inclus par défaut depuis Debian 12)", nvidia:"Correct — pilote propriétaire disponible mais dépôt non-free à activer manuellement (non inclus par défaut)"}},
     steps:[
       {t:"Télécharger l'ISO", d:"Sur debian.org, prendre l'image netinst (petite) ou l'image DVD complète."},
       {t:"Graver la clé", d:"cp/dd sous Linux, Rufus (mode DD) sous Windows.", code:"sudo dd if=debian-13.iso of=/dev/sdX bs=4M status=progress"},
@@ -80,11 +83,12 @@ window.OS_DATA = [
   },
   {
     id:"fedora", name:"Fedora", version:"44 Workstation", cat:"desktop", color:"#51A2DA", icon:"fedora",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#51A2DA"><path d="M12.001 0C5.376 0 .008 5.369.004 11.992H.002v9.287h.002A2.726 2.726 0 0 0 2.73 24h9.275c6.626-.004 11.993-5.372 11.993-11.997C23.998 5.375 18.628 0 12 0zm2.431 4.94c2.015 0 3.917 1.543 3.917 3.671 0 .197.001.395-.03.619a1.002 1.002 0 0 1-1.137.893 1.002 1.002 0 0 1-.842-1.175 2.61 2.61 0 0 0 .013-.337c0-1.207-.987-1.672-1.92-1.672-.934 0-1.775.784-1.777 1.672.016 1.027 0 2.046 0 3.07l1.732-.012c1.352-.028 1.368 2.009.016 1.998l-1.748.013c-.004.826.006.677.002 1.093 0 0 .015 1.01-.016 1.776-.209 2.25-2.124 4.046-4.424 4.046-2.438 0-4.448-1.993-4.448-4.437.073-2.515 2.078-4.492 4.603-4.469l1.409-.01v1.996l-1.409.013h-.007c-1.388.04-2.577.984-2.6 2.47a2.438 2.438 0 0 0 2.452 2.439c1.356 0 2.441-.987 2.441-2.437l-.001-7.557c0-.14.005-.252.02-.407.23-1.848 1.883-3.256 3.754-3.256z"/></svg>',
     tag:"À la pointe de la technologie, sponsorisée par Red Hat. GNOME pur.",
     site:"getfedora.org", dl:"getfedora.org/en/workstation/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés, 8 Go pour un usage confortable)", disk:"15 Go min. (40 Go conseillés officiellement)", cpu:"2 GHz dual-core (x86_64 ou ARM)"},
+    req:{ram:"2 Go min. (4 Go conseillés, 8 Go pour un usage confortable)", disk:"15 Go min. (40 Go conseillés officiellement)", cpu:"2 GHz dual-core (x86_64 ou ARM)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Correct — pilote propriétaire non fourni par Fedora (politique du projet), à installer via le dépôt tiers RPM Fusion"}},
     steps:[
       {t:"Télécharger l'ISO", d:"getfedora.org → Workstation. Ou utiliser Fedora Media Writer."},
       {t:"Graver la clé", d:"Fedora Media Writer automatise tout, ou balenaEtcher."},
@@ -105,11 +109,12 @@ window.OS_DATA = [
   },
   {
     id:"mint", name:"Linux Mint", version:"22.3 Zena", cat:"desktop", color:"#87CF3E", icon:"linuxmint",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#87CF3E"><path d="M5.438 5.906v8.438c0 2.06 1.69 3.75 3.75 3.75h5.625c2.06 0 3.75-1.69 3.75-3.75V9.656a2.827 2.827 0 0 0-2.813-2.812 2.8 2.8 0 0 0-1.875.737A2.8 2.8 0 0 0 12 6.844a2.827 2.827 0 0 0-2.812 2.812v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688a1.86 1.86 0 0 1-1.875 1.875H9.188a1.86 1.86 0 0 1-1.875-1.875V5.906ZM12 0C5.384 0 0 5.384 0 12s5.384 12 12 12 12-5.384 12-12S18.616 0 12 0m0 1.875A10.11 10.11 0 0 1 22.125 12 10.11 10.11 0 0 1 12 22.125 10.11 10.11 0 0 1 1.875 12 10.11 10.11 0 0 1 12 1.875"/></svg>',
     tag:"L'alternative Windows la plus douce. Cinnamon, élégant et familier.",
     site:"linuxmint.com", dl:"linuxmint.com/download.php", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20 Go min. (100 Go conseillés officiellement)", cpu:"64 bits (32 bits non supporté depuis Mint 20)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20 Go min. (100 Go conseillés officiellement)", cpu:"64 bits (32 bits non supporté depuis Mint 20)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — le Gestionnaire de pilotes propose le pilote propriétaire dès le premier démarrage"}},
     steps:[
       {t:"Télécharger l'ISO", d:"linuxmint.com → édition Cinnamon (ou MATE / Xfce)."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher, mode image."},
@@ -130,11 +135,12 @@ window.OS_DATA = [
   },
   {
     id:"opensuse", name:"openSUSE", version:"Leap 16.0", cat:"desktop", color:"#73BA25", icon:"opensuse",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#73BA25"><path d="M10.724 0a12 12 0 0 0-9.448 4.623c1.464.391 2.5.727 2.81.832.005-.19.037-1.893.037-1.893s.004-.04.025-.06c.026-.026.065-.018.065-.018.385.056 8.602 1.274 12.066 3.292.427.25.638.517.902.786.958.99 2.223 5.108 2.359 5.957.005.033-.036.07-.054.083a5.177 5.177 0 0 1-.313.228c-.82.55-2.708 1.872-5.13 1.656-2.176-.193-5.018-1.44-8.445-3.699.336.79.668 1.58 1 2.371.497.258 5.287 2.7 7.651 2.651 1.904-.04 3.941-.968 4.756-1.458 0 0 .179-.108.257-.048.085.066.061.167.041.27-.05.234-.164.66-.242.863l-.065.165c-.093.25-.183.482-.356.625-.48.436-1.246.784-2.446 1.305-1.855.812-4.865 1.328-7.66 1.31-1.001-.022-1.968-.133-2.817-.232-1.743-.197-3.161-.357-4.026.269A12 12 0 0 0 10.724 24a12 12 0 0 0 12-12 12 12 0 0 0-12-12zM13.4 6.963a3.503 3.503 0 0 0-2.521.942 3.498 3.498 0 0 0-1.114 2.449 3.528 3.528 0 0 0 3.39 3.64 3.48 3.48 0 0 0 2.524-.946 3.504 3.504 0 0 0 1.114-2.446 3.527 3.527 0 0 0-3.393-3.64zm-.03 1.035a2.458 2.458 0 0 1 2.368 2.539 2.43 2.43 0 0 1-.774 1.706 2.456 2.456 0 0 1-1.762.659 2.461 2.461 0 0 1-2.364-2.542c.02-.655.3-1.26.777-1.707a2.419 2.419 0 0 1 1.756-.655zm.402 1.23c-.602 0-1.087.325-1.087.727 0 .4.485.725 1.087.725.6 0 1.088-.326 1.088-.725 0-.402-.487-.726-1.088-.726Z"/></svg>',
     tag:"Robuste et pro. YaST, l'outil de config le plus puissant du monde Linux.",
     site:"opensuse.org", dl:"get.opensuse.org/leap", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"1 Go min. (1,5 Go avec dépôts en ligne, 4 Go+ conseillés)", disk:"8 Go min. pour une installation minimale (40 Go si snapshots Btrfs activés)", cpu:"x86-64-v2 obligatoire depuis Leap 16 (CPU 2008+ ; le support 32 bits a été totalement retiré, ce n'était qu'une recommandation auparavant)"},
+    req:{ram:"1 Go min. (1,5 Go avec dépôts en ligne, 4 Go+ conseillés)", disk:"8 Go min. pour une installation minimale (40 Go si snapshots Btrfs activés)", cpu:"x86-64-v2 obligatoire depuis Leap 16 (CPU 2008+ ; le support 32 bits a été totalement retiré, ce n'était qu'une recommandation auparavant)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — dépôt communautaire officiel (NVIDIA) facile à ajouter via YaST"}},
     steps:[
       {t:"Télécharger l'ISO", d:"get.opensuse.org → Leap (stable) ou Tumbleweed (rolling)."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -155,11 +161,12 @@ window.OS_DATA = [
   },
   {
     id:"manjaro", name:"Manjaro", version:"rolling", cat:"desktop", color:"#35BF5C", icon:"manjaro",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#35BF5C"><path d="M2.182 0A2.177 2.177 0 0 0 0 2.182v19.636C0 23.027.973 24 2.182 24h4.363V6.545h8.728V0Zm15.273 0v24h4.363A2.177 2.177 0 0 0 24 21.818V2.182A2.177 2.177 0 0 0 21.818 0ZM8.727 8.727V24h6.546V8.727Z"/></svg>',
     tag:"La puissance d'Arch, sans la douleur de l'installation. Rolling accessible.",
     site:"manjaro.org", dl:"manjaro.org/products/download/x86", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Facile", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"30 Go conseillés (rolling release, les mises à jour s'accumulent)", cpu:"x86_64, 1 GHz dual-core"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"30 Go conseillés (rolling release, les mises à jour s'accumulent)", cpu:"x86_64, 1 GHz dual-core", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — détection et installation assistées via l'outil mhwd (Manjaro Hardware Detection)"}},
     steps:[
       {t:"Télécharger l'ISO", d:"manjaro.org → édition KDE, GNOME ou Xfce."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -180,11 +187,12 @@ window.OS_DATA = [
   },
   {
     id:"popos", name:"Pop!_OS", version:"24.04 LTS (COSMIC)", cat:"desktop", color:"#48B9C7", icon:"popos",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#48B9C7"><path d="M12 0C5.372 0 0 5.373 0 12c0 6.628 5.372 12 12 12 6.627 0 12-5.372 12-12 0-6.627-5.373-12-12-12ZM9.64 2.918c1.091-.026 1.548.229 2.182.635a4.459 4.459 0 0 1 1.902 2.764c.254 1.141.178 2.029-.127 2.664v.05c-.609 1.294-1.622 2.335-3.043 2.842l1.217 3.172c.228.583.432 1.192.254 1.75-.177.558-.989.736-1.572.127-1.116-1.192-4.871-8.702-5.15-9.26-.279-.558-.584-1.016-.584-1.574.026-.837 1.318-1.7 1.953-2.131.634-.431 1.877-1.014 2.968-1.039Zm-.996 2.311c-.789.022-.358 1.669-.197 2.129.178.507.661 1.572 1.193 2.105.127.127.254.229.407.254.152.027.457-.127.584-.33a.932.932 0 0 0 .15-.559 3.232 3.232 0 0 0-.049-1.216c-.228-.787-.711-1.548-1.346-2.055-.127-.102-.279-.229-.457-.279a.901.901 0 0 0-.285-.049Zm8.414 2.027a2.283 2.283 0 0 1 1.588.636c.305.279.33.582.229.963-.102.38-.457 1.194-.736 1.777l-.709 1.344c-1.37 2.435-1.649 2.689-2.03 2.537-.456-.178-.304-2.614.127-5.582.127-.812.329-1.217.557-1.42.171-.152.6-.248.975-.254l-.001-.001Zm-1.859 8.332c.554.011.789.7.656 1.232a.861.861 0 0 1-.379.559c-.203.127-.685.127-.965-.102-.278-.228-.33-.609-.254-.914.076-.304.331-.635.686-.736a.757.757 0 0 1 .256-.039Zm-8.604 2.805h10.809c.52 0 .938.419.938.939v.074c0 .52-.418.94-.938.94H6.595a.936.936 0 0 1-.937-.94v-.074c0-.52.417-.939.937-.939Z"/></svg>',
     tag:"Par System76. Depuis la 24.04, le bureau maison COSMIC (Rust, Wayland) remplace GNOME + Pop Shell. Top pour dev et gaming.",
     site:"system76.com", dl:"system76.com/pop/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés, chiffres officiels System76)", disk:"20 Go min.", cpu:"64 bits ; GPU compatible Wayland pour de bonnes performances avec COSMIC"},
+    req:{ram:"2 Go min. (4 Go conseillés, chiffres officiels System76)", disk:"20 Go min.", cpu:"64 bits ; GPU compatible Wayland pour de bonnes performances avec COSMIC", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Excellent — édition ISO dédiée avec pilote propriétaire déjà installé, à choisir au téléchargement"}},
     steps:[
       {t:"Télécharger l'ISO", d:"pop.system76.com → choisir la variante NVIDIA ou AMD/Intel."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -381,11 +389,12 @@ window.OS_DATA = [
   /* ===================== GAMING ===================== */
   {
     id:"steamos", name:"SteamOS", version:"3.8 (Holo)", cat:"gaming", color:"#66C0F4", icon:"steam",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#66C0F4"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>',
     tag:"L'OS du Steam Deck. Arch + KDE + Gamescope, pensé pour le jeu.",
     site:"steampowered.com", dl:"store.steampowered.com/steamos/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~20 min", diff:"Intermédiaire", base:"Arch",
-    req:{ram:"4 Go min. (8-16 Go conseillés)", disk:"64 Go min. sur SSD NVMe (SATA non supporté officiellement), 200 Go+ conseillés selon la ludothèque", cpu:"CPU 64 bits récent, GPU AMD recommandé (meilleur support pilotes que Nvidia)"},
+    req:{ram:"4 Go min. (8-16 Go conseillés)", disk:"64 Go min. sur SSD NVMe (SATA non supporté officiellement), 200 Go+ conseillés selon la ludothèque", cpu:"CPU 64 bits récent, GPU AMD recommandé (meilleur support pilotes que Nvidia)", gpu:{open:"Excellent sur AMD (matériel de référence du Steam Deck) ; Intel Arc pris en charge depuis SteamOS 3.8 (juin 2026)", nvidia:"Non pris en charge officiellement à ce jour — Valve développe le support avec Nvidia, arrivée espérée fin 2026/2027 ; Bazzite reste l'alternative recommandée sur du matériel Nvidia"}},
     steps:[
       {t:"Télécharger le Recovery", d:"store.steampowered.com/steamos/download → image de récupération Steam Deck."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -406,11 +415,12 @@ window.OS_DATA = [
   },
   {
     id:"garuda", name:"Garuda Linux", version:"rolling", cat:"gaming", color:"#FF4C60", icon:"garudalinux",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#FF4C60"><path d="M10.24 3.179C6.82 6.579 3.366 10.064 0 13.465c2.4 2.406 4.889 4.898 7.319 7.332l7.504.024 6.334-6.316-13.754-.012-1.525 1.54 11.512.024-3.198 3.197H7.956L2.172 13.47l8.74-8.74h6.284l4.815 4.815-7.501-.01v-2.12l-3.68 3.68c3.873.004 7.746.003 11.62 0v2.102l1.55-1.55-.003-2.306-6.16-6.159z"/></svg>',
     tag:"Arch dopé pour le gaming. BTRFS + snapshots, look néon spectaculaire.",
     site:"garudalinux.org", dl:"garudalinux.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Arch",
-    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
+    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — l'assistant d'installation propose le pilote propriétaire au choix (quelques retours de friction rapportés sur certaines configs hybrides Optimus)"}},
     steps:[
       {t:"Télécharger l'ISO", d:"garudalinux.org → édition Dragonized (KDE) recommandée."},
       {t:"Graver la clé", d:"balenaEtcher ou Ventoy."},
@@ -431,11 +441,12 @@ window.OS_DATA = [
   },
   {
     id:"nobara", name:"Nobara", version:"43", cat:"gaming", color:"#8657D8", icon:"nobaralinux",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#8657D8"><path d="M23.808 11.808v8.281a3.542 3.542 0 0 1-3.542 3.527h-.46a3.543 3.543 0 0 1-3.083-3.513v-7.282l3.543-1.013-3.66-1.045a4.724 4.724 0 0 0-9.33 1.045v2.362a2.362 2.362 0 0 0 2.362 2.362 3.543 3.543 0 0 1 3.543 3.542V24a3.539 3.539 0 0 0-3.542-3.542 3.537 3.537 0 0 0-3.063 1.76 3.54 3.54 0 0 1-2.382 1.398h-.46A3.542 3.542 0 0 1 .192 20.09V3.543a3.542 3.542 0 0 1 6.323-2.194A11.756 11.756 0 0 1 12 0c6.521 0 11.808 5.287 11.808 11.808zm-9.446 0A2.359 2.359 0 0 1 12 14.17a2.362 2.362 0 1 1 2.362-2.362z"/></svg>',
     tag:"Fedora modifiée par GloriousEggroll (proton-ge). Patches gaming et codecs prêts à l'emploi.",
     site:"nobaraproject.org", dl:"nobaraproject.org/download.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Facile", base:"Fedora",
-    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
+    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible", gpu:{open:"Excellent — AMD/Intel pris en charge nativement, ISO standard", nvidia:"Excellent — ISO dédiées avec pilote propriétaire préinstallé, portées par le créateur de Proton-GE"}},
     steps:[
       {t:"Télécharger l'ISO", d:"nobaraproject.org → édition GNOME ou KDE, variante standard ou gaming pur."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -456,11 +467,12 @@ window.OS_DATA = [
   },
   {
     id:"bazzite", name:"Bazzite", version:"44", cat:"gaming", color:"#5A4FCF", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" fill="#5A4FCF"><path d="M12 2 4 9l8 13 8-13-8-7zm0 2.7L17.8 9H6.2L12 4.7zM6 11h5.1l-1.4 8.4L6 11zm7 8.4L11.6 11H16L13 19.4z"/></svg>',
     tag:"Fedora Atomic (immuable) façon SteamOS. Idéal pour Steam Deck, handhelds et salon.",
     site:"bazzite.gg", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Fedora",
-    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
+    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible", gpu:{open:"Excellent — AMD/Intel pris en charge nativement, image standard", nvidia:"Excellent — image dédiée (bazzite-nvidia) avec pilote propriétaire préinstallé, cartes GTX 900 et plus récentes"}},
     steps:[
       {t:"Télécharger l'image", d:"bazzite.gg → choisir la variante (Deck, desktop KDE/GNOME, HTPC)."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -1553,11 +1565,12 @@ window.OS_DATA = [
   /* ===================== AJOUTS v3.2 ===================== */
   {
     id:"kubuntu", name:"Kubuntu", version:"26.04 LTS", cat:"desktop", color:"#0079C1", icon:"kubuntu",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0079C1"><path d="M21.257 14.292a.2065.2065 0 01.1097.2374l-.5765 1.5293a.2063.2063 0 01-.2033.155l-2.3369-.2283c-.0628.001-.1623-.008-.2776.1255-.0178.0207-.7472.9328-.9783 1.1832-.079.0708-.1067.1652-.0878.281l.5521 2.1962a.2064.2064 0 01-.098.2314l-1.513.8906a.2063.2063 0 01-.2556-.0418l-1.5494-1.7055c-.0516-.0555-.1551-.0994-.2271-.0759l-1.645.2391c-.0804.011-.1267.0635-.1603.1164l-.9938 2.0793a.2063.2063 0 01-.2353.089l-1.6687-.3945a.2065.2065 0 01-.1462-.1824.209.209 0 01.0105-.0815l.8812-3.244a.222.222 0 01.2828-.1373l.0033-.001a5.8423 5.8423 0 002.7168.2176c2.3222-.3696 4.1964-2.0953 4.756-4.3791l.011-.0407c.0277-.1194.1768-.1827.2963-.155 0 0 2.8684.9737 3.2936 1.0816a.2089.2089 0 01.0394.0143zM5.539 4.9898l.0001.0001a.2051.2051 0 01.0659.0489l2.392 2.3567a.222.222 0 01-.0186.3138l-.0008.0034A5.8422 5.8422 0 006.4594 9.976c-.8132 2.2063-.2244 4.685 1.494 6.29l.0353.0396c.0906.0827.0678.2335-.0148.3241 0 0-2.2452 2.0243-2.5472 2.3425a.2064.2064 0 01-.2924.007l-1.0521-1.2507a.2063.2063 0 01-.0358-.253l1.335-1.9253c.0297-.0553.0863-.1376.0262-.3035-.0092-.0256-.4482-1.108-.5536-1.432-.0232-.1035-.092-.1738-.2022-.214l-2.1789-.594a.2064.2064 0 01-.154-.1986l-.0368-1.7552a.2065.2065 0 01.1615-.2026l2.2384-.516c.0737-.0177.1625-.0866.1772-.1609l.5958-1.5517c.0298-.0755.0068-.1417-.023-.1968L4.111 6.5396a.2064.2064 0 01.0374-.2488l1.1602-1.2626a.2066.2066 0 01.2305-.0385zm10.4906-1.747a.2139.2139 0 01.0313.0147l1.5385.8455a.2065.2065 0 01.0947.2412l-.6793 2.198c-.0214.0727-.0062.1841.0508.234l1.046 1.2918c.0505.0636.1193.0767.182.0785l2.3-.2029a.2064.2064 0 01.1968.1567l.5134 1.6361a.2064.2064 0 01-.082.2189h-.0001a.205.205 0 01-.0753.0326l-3.244.8946a.222.222 0 01-.2624-.1729.012.012 0 01-.0025-.0024 5.8422 5.8422 0 00-1.201-2.4466c-1.5041-1.8073-3.9452-2.5368-6.1943-1.851l-.0402.0123c-.1169.0371-.248-.0597-.285-.1766 0 0-.6236-2.958-.7481-3.3786a.2063.2063 0 01.14-.2568l1.6093-.2858a.2063.2063 0 01.237.0955l.9929 2.1203c.033.0534.076.1436.2498.1744.0268.0048 1.1835.1658 1.5169.2366.1012.0316.1966.0073.2864-.068l1.6107-1.5916a.2064.2064 0 01.2177-.0486zM16.021.6955A11.9968 11.9968 0 007.794.763C1.5889 3.086-1.5582 9.9993.7647 16.2044c2.323 6.205 9.2362 9.3522 15.4413 7.0293 6.2051-2.3229 9.3522-9.2362 7.0293-15.4413A11.997 11.997 0 0016.021.6955z"/></svg>',
     tag:"Ubuntu avec KDE Plasma. Un bureau élégant, fluide et hautement personnalisable.",
     site:"kubuntu.org", dl:"kubuntu.org/getkubuntu", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés, Plasma étant plus gourmand que GNOME)", disk:"25 Go min.", cpu:"2 GHz dual-core, 64 bits"},
+    req:{ram:"4 Go min. (8 Go conseillés, Plasma étant plus gourmand que GNOME)", disk:"25 Go min.", cpu:"2 GHz dual-core, 64 bits", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — pilote propriétaire proposé automatiquement via « Pilotes additionnels » dès l'installation"}},
     steps:[
       {t:"Télécharger l'ISO", d:"Sur kubuntu.org/getkubuntu, choisir l'édition LTS."},
       {t:"Vérifier le SHA-256", d:"Comparer l'empreinte avec le fichier SHA256SUMS publié.", code:"sha256sum kubuntu-26.04-desktop-amd64.iso"},

@@ -23,6 +23,22 @@
   const prev = data[(idx - 1 + data.length) % data.length];
   const next = data[(idx + 1) % data.length];
 
+  /* Badge de fraîcheur : "lastVerified" (format "AAAA-MM") n'existe que sur les
+     fiches effectivement revérifiées contre leur doc officielle depuis
+     l'introduction du champ — ce n'est pas une garantie rétroactive sur les
+     170 fiches, juste un suivi qui démarre maintenant et s'enrichira fiche
+     après fiche. Absence de champ = pas de badge, plutôt que d'inventer une
+     date ou d'afficher une alerte "à vérifier" non fondée. */
+  const MONTHS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  function freshnessPill(lastVerified) {
+    if (!lastVerified || !/^\d{4}-(0[1-9]|1[0-2])$/.test(lastVerified)) return '';
+    const [y, m] = lastVerified.split('-').map(Number);
+    const ageMonths = (new Date().getFullYear() - y) * 12 + (new Date().getMonth() + 1 - m);
+    const stale = ageMonths > 12;
+    return `<span class="pill mono ${stale ? 'pill-stale' : ''}" title="${stale ? 'Dernière vérification il y a plus de 12 mois — les infos ci-dessus peuvent avoir changé' : 'Dernière vérification de cette fiche contre la documentation officielle'}">
+      VÉRIFIÉ · <b>${MONTHS_FR[m - 1]} ${y}</b>${stale ? ' ⚠' : ''}</span>`;
+  }
+
   app.innerHTML = `
     <section class="detail-hero" style="--c:${os.color}">
       <div class="glowbg"></div>
@@ -45,6 +61,7 @@
         <span class="pill mono">BASE · <b>${os.base === '—' ? 'indépendant' : os.base}</b></span>
         <span class="pill mono">ÉTAPES · <b>${os.steps.length}</b></span>
         ${os.license ? `<span class="pill mono">LICENCE · <b>${os.license}</b></span>` : ''}
+        ${freshnessPill(os.lastVerified)}
         ${os.site ? `<a class="pill mono pill-link" href="https://${os.site}" target="_blank" rel="noopener">SITE OFFICIEL · <b>${os.site} ↗</b></a>` : ''}
       </div>
       ${os.dl ? `<a class="dl-btn mono" href="https://${os.dl}" target="_blank" rel="noopener" data-testid="download-link">
@@ -59,6 +76,8 @@
         ${os.req.cpu ? `<div class="req-item"><span class="req-k">Processeur</span><span class="req-v">${os.req.cpu}</span></div>` : ''}
         ${os.req.ram ? `<div class="req-item"><span class="req-k">Mémoire</span><span class="req-v">${os.req.ram}</span></div>` : ''}
         ${os.req.disk ? `<div class="req-item"><span class="req-k">Stockage</span><span class="req-v">${os.req.disk}</span></div>` : ''}
+        ${os.req.gpu ? `<div class="req-item"><span class="req-k">GPU (AMD/Intel)</span><span class="req-v">${os.req.gpu.open || '—'}</span></div>
+        <div class="req-item"><span class="req-k">GPU (Nvidia)</span><span class="req-v">${os.req.gpu.nvidia || '—'}</span></div>` : ''}
       </div>
     </section>` : ''}
     <div class="steps">

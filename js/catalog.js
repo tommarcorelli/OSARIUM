@@ -382,19 +382,30 @@ if (grid) {
       ['Difficulté', (o) => o.diff],
       ['Étapes', (o) => o.steps.length],
       ['RAM min.', (o) => o.req && o.req.ram ? o.req.ram : '—'],
+      ['GPU AMD/Intel', (o) => o.req && o.req.gpu && o.req.gpu.open ? o.req.gpu.open : '—'],
+      ['GPU Nvidia', (o) => o.req && o.req.gpu && o.req.gpu.nvidia ? o.req.gpu.nvidia : '—'],
       ['En bref', (o) => o.tag],
     ];
     document.getElementById('cmpTableWrap').innerHTML =
       `<table class="cmp-table"><thead><tr><th></th>${os.map((o) => `<th style="color:${o.color}">${o.name}</th>`).join('')}</tr></thead>
       <tbody>${rows.map(([k, fn]) => `<tr><td class="k">${k}</td>${os.map((o) => `<td>${fn(o)}</td>`).join('')}</tr>`).join('')}</tbody></table>
-      <div class="cmp-actions"><button class="btn" id="cmpShare" data-testid="compare-share">🔗 Copier le lien de cette comparaison</button></div>`;
+      <div class="cmp-actions"><button class="btn" id="cmpShare" data-testid="compare-share">🔗 Partager cette comparaison</button></div>`;
     document.getElementById('cmpShare').addEventListener('click', async () => {
       const url = shareURL();
-      try { await navigator.clipboard.writeText(url); } catch (e) {
-        const ta = document.createElement('textarea'); ta.value = url;
-        document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); } catch (e2) {}
-        ta.remove();
+      const title = `Comparatif OSARIUM : ${os.map((o) => o.name).join(' vs ')}`;
+      /* Même pattern que le bouton ⇱ des fiches individuelles (js/detail.js,
+         js/tool-detail.js) : menu de partage natif si le navigateur l'expose
+         (mobile), sinon copie dans le presse-papiers (desktop, où l'API Share
+         n'existe quasiment jamais). */
+      try {
+        if (navigator.share) { await navigator.share({ title, url }); return; }
+        await navigator.clipboard.writeText(url);
+      } catch (e) {
+        try {
+          const ta = document.createElement('textarea'); ta.value = url;
+          document.body.appendChild(ta); ta.select();
+          document.execCommand('copy'); ta.remove();
+        } catch (e2) {}
       }
       window.Toast.ok('Lien copié — il rouvrira le catalogue avec ces systèmes déjà comparés.');
     });

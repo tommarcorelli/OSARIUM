@@ -2,7 +2,35 @@
 
 *Dernière mise à jour : août 2026*
 
-## ✅ Fait (cette session — recherche floue dans le catalogue)
+## ✅ Fait (cette session — badge de fraîcheur)
+
+Idée écartée dans une session précédente « pour l'instant », reprise ici sous une forme volontairement honnête : plutôt que de dater rétroactivement 170 fiches sans preuve réelle de quand chacune a été vérifiée pour la dernière fois, le suivi **démarre maintenant** et s'enrichira fiche après fiche à mesure des vérifications réelles.
+
+- **Nouveau champ optionnel `lastVerified` (fiche, format `"AAAA-MM"`)**, posé uniquement sur les 13 fiches vérifiées par recherche web cette session-ci et la précédente (compatibilité GPU) — pas sur les 157 autres, où on ne connaît pas de date de vérification fiable.
+- **Badge « VÉRIFIÉ · mois année »** sur la fiche (`js/detail.js`), dans la même rangée de pills que VERSION/DURÉE/NIVEAU. Absence du champ = pas de badge (pas d'alerte non fondée). Au-delà de 12 mois, le badge bascule en style ambre avec un ⚠ (`css/detail.css`, `.pill-stale`) — aucune fiche n'atteint ce seuil pour l'instant, c'est une bascule qui s'activera d'elle-même avec le temps.
+- **Validateur renforcé** (`scripts/validate-data.js`) : format `AAAA-MM` contrôlé, et rejet si la date est dans le futur.
+- **Non fait volontairement** : badge sur la carte du catalogue (`js/catalog.js`) — avec seulement 13/170 fiches datées, l'afficher sur la grille aurait semblé arbitraire (pourquoi ces 13-là et pas les autres) ; à reconsidérer une fois la couverture plus large.
+- **Vérifications** : `node --check` sur les 3 fichiers touchés, simulation Node du calcul de fraîcheur (mapping des mois, bascule à 12 mois) sur plusieurs dates de test, `node scripts/validate-data.js` (170/170 fiches toujours valides). Cache offline passé en `osarium-v13`.
+
+## ✅ Fait (session précédente — compatibilité GPU, AMD/Intel vs Nvidia)
+
+Le champ `req` (CPU/RAM/disque) ne distinguait jamais AMD/Intel de Nvidia, alors que c'est la vraie question qui revient sur les fiches desktop et gaming — plusieurs FAQ existantes en témoignaient déjà (écran noir après mise à jour des pilotes propriétaires Nvidia, etc.) sans qu'aucune donnée structurée ne le capture.
+
+- **Nouveau champ optionnel `req.gpu:{open, nvidia}`** — `open` couvre AMD/Intel (quasi toujours identiques : pilotes libres mainline, amdgpu/i915), `nvidia` isole le vrai point de divergence entre distributions.
+- **Renseigné sur 13 fiches** où le choix GPU compte vraiment : Windows 11, Ubuntu, Kubuntu, Linux Mint, Pop!_OS, Debian, Fedora, openSUSE, Manjaro (desktop) + SteamOS, Garuda, Nobara, Bazzite (gaming). Chaque fait vérifié par recherche web avant écriture plutôt que sorti de mémoire (ex. : statut exact du support Nvidia sur SteamOS 3.8 mi-2026, existence des images `bazzite-nvidia`/ISOs Nvidia Nobara, politique non-free de Fedora/Debian). **Volontairement pas étendu** aux 157 autres fiches ni à CachyOS/Batocera/Lakka/Recalbox/ChimeraOS cette session — soit hors du scope initial choisi, soit une question différente (émulation) que le même champ représenterait mal.
+- **Affiché** sur la fiche individuelle (`js/detail.js`, deux nouvelles cases dans la grille CONFIG MINIMALE, qui accueille l'ajout sans changement CSS grâce à `auto-fit`) et dans le **comparateur** (`js/catalog.js`, deux nouvelles lignes sous RAM min.).
+- **Validateur renforcé** (`scripts/validate-data.js`) : contrôle de forme sur `req.gpu` quand il est présent (objet non vide), pour que l'UI puisse s'y fier sans vérification défensive.
+- **Vérifications** : `node --check` sur les 4 fichiers touchés, `node scripts/validate-data.js` (170/170 fiches toujours valides), inspection visuelle du rendu de grille (`auto-fit`, pas de contrôle possible en CLI mais la règle CSS est générique et déjà exercée par 3 cases). Cache offline passé en `osarium-v12`.
+
+## ✅ Fait (session précédente — bouton « partager la comparaison » homogénéisé)
+
+Le bouton du comparateur (« 🔗 Copier le lien de cette comparaison ») n'utilisait que `navigator.clipboard`, contrairement au bouton ⇱ des fiches individuelles (`js/detail.js`, `js/tool-detail.js`) qui ouvre déjà le menu de partage natif du système (`navigator.share`) quand le navigateur l'expose (mobile), avec repli clipboard sur desktop. Petite incohérence — même fonctionnalité, deux comportements différents selon l'endroit du site.
+
+- **Même pattern exactement repris** (pas juste équivalent) : `navigator.share({title, url})` avec un titre dédié (« Comparatif OSARIUM : X vs Y »), repli sur `navigator.clipboard.writeText`, lui-même secouru par un `execCommand('copy')` si le presse-papiers est indisponible.
+- Libellé du bouton adapté (« Partager cette comparaison » au lieu de « Copier le lien ») puisqu'il ne se contente plus toujours de copier.
+- **Vérifications** : `node --check js/catalog.js`. Cache offline passé en `osarium-v11`.
+
+## ✅ Fait (session précédente — recherche floue dans le catalogue)
 
 La recherche (`js/catalog.js`) ne faisait qu'un match exact de sous-chaîne (insensible aux accents/casse) : une faute de frappe (« manjago », « unbuntu », « fedroa »…) ne remontait donc rien, alors que l'intention est évidente pour un humain.
 

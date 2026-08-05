@@ -79,6 +79,22 @@ DATA.forEach((os, i) => {
   if (os.color && !/^#[0-9a-f]{6}$/i.test(os.color)) fail(id, `couleur mal formée « ${os.color} »`);
   if (os.site && /^https?:\/\//.test(os.site)) fail(id, `« site » doit être un domaine nu, pas une URL (« ${os.site} »)`);
 
+  /* Fraîcheur (optionnelle) : format "AAAA-MM", jamais dans le futur. Pas de
+     champ requis — il ne serait pas honnête de dater rétroactivement les 170
+     fiches d'un coup ; le suivi démarre à partir des fiches effectivement
+     revérifiées depuis l'introduction du champ. */
+  if (os.lastVerified !== undefined) {
+    if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(os.lastVerified)) {
+      fail(id, `lastVerified mal formé, attendu « AAAA-MM » (« ${os.lastVerified} »)`);
+    } else {
+      const [y, m] = os.lastVerified.split('-').map(Number);
+      const now = new Date();
+      if (y > now.getFullYear() || (y === now.getFullYear() && m > now.getMonth() + 1)) {
+        fail(id, `lastVerified est dans le futur (« ${os.lastVerified} »)`);
+      }
+    }
+  }
+
   /* Lien de téléchargement : même convention que `site` (sans schéma, il est
      ajouté à l'affichage). Deux garde-fous appris en le constituant : une URL
      de fichier est figée sur une version et périme au tirage suivant, et un
@@ -112,6 +128,17 @@ DATA.forEach((os, i) => {
     });
     if (os.req.ram && HwCheck.parseMinRamMB(os.req.ram) === null) {
       fail(id, `req.ram illisible par HwCheck : « ${os.req.ram} »`);
+    }
+    /* req.gpu est optionnel (renseigné seulement là où le choix AMD/Intel/Nvidia
+       compte vraiment : desktop populaire, gaming) — mais s'il est présent, sa
+       forme doit rester cohérente pour que le comparateur et la fiche puissent
+       s'y fier sans vérif défensive à chaque affichage. */
+    if (os.req.gpu !== undefined) {
+      if (typeof os.req.gpu !== 'object' || os.req.gpu === null) {
+        fail(id, 'req.gpu doit être un objet ({open, nvidia})');
+      } else if (!os.req.gpu.open && !os.req.gpu.nvidia) {
+        fail(id, 'req.gpu présent mais vide (ni open ni nvidia renseigné)');
+      }
     }
   }
 
