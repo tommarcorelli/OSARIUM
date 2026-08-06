@@ -114,7 +114,7 @@ window.OS_DATA = [
     tag:"L'alternative Windows la plus douce. Cinnamon, élégant et familier.",
     site:"linuxmint.com", dl:"linuxmint.com/download.php", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20 Go min. (100 Go conseillés officiellement)", cpu:"64 bits (32 bits non supporté depuis Mint 20)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — le Gestionnaire de pilotes propose le pilote propriétaire dès le premier démarrage"}},
+    req:{ram:"2 Go min. (4 Go conseillés), chiffres confirmés par la FAQ officielle Linux Mint", disk:"20 Go min. (100 Go conseillés officiellement)", cpu:"64 bits (32 bits non supporté depuis Mint 20)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — le Gestionnaire de pilotes propose le pilote propriétaire dès le premier démarrage"}},
     steps:[
       {t:"Télécharger l'ISO", d:"linuxmint.com → édition Cinnamon (ou MATE / Xfce)."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher, mode image."},
@@ -166,7 +166,7 @@ window.OS_DATA = [
     tag:"La puissance d'Arch, sans la douleur de l'installation. Rolling accessible.",
     site:"manjaro.org", dl:"manjaro.org/products/download/x86", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Facile", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"30 Go conseillés (rolling release, les mises à jour s'accumulent)", cpu:"x86_64, 1 GHz dual-core", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — détection et installation assistées via l'outil mhwd (Manjaro Hardware Detection)"}},
+    req:{ram:"1 Go (recommandation officielle du wiki Manjaro — pas de minimum strict publié) ; 4 Go+ conseillés en pratique pour un usage quotidien confortable", disk:"30 Go conseillés (rolling release, les mises à jour s'accumulent)", cpu:"x86_64, 1 GHz dual-core", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Bon — détection et installation assistées via l'outil mhwd (Manjaro Hardware Detection)"}},
     steps:[
       {t:"Télécharger l'ISO", d:"manjaro.org → édition KDE, GNOME ou Xfce."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -213,11 +213,12 @@ window.OS_DATA = [
   },
   {
     id:"zorin", name:"Zorin OS", version:"18.1", cat:"desktop", color:"#0CC1F3", icon:"zorin",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0CC1F3"><path d="M4 18.944L5.995 22.4h12.01L20 18.944H4zM24 12l-2.013 3.488H9.216l12.771-6.976L24 12zM0 12l2.013-3.488h12.771L2.013 15.488 0 12zm4-6.944L5.995 1.6h12.01L20 5.056H4z"/></svg>',
     tag:"Conçu pour les migrants de Windows/macOS. Look configurable en un clic.",
     site:"zorin.com", dl:"zorin.com/os/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"1,5 Go min. (2 Go conseillés, officiel Zorin — fonctionne sur du matériel jusqu'à 15 ans)", disk:"15 Go min. (édition Core)", cpu:"1 GHz dual-core, 64 bits"},
+    req:{ram:"1,5 Go min. (2 Go conseillés, officiel Zorin — fonctionne sur du matériel jusqu'à 15 ans)", disk:"15 Go min. (édition Core)", cpu:"1 GHz dual-core, 64 bits", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"zorin.com → édition Core (gratuite) ou Pro."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -238,11 +239,12 @@ window.OS_DATA = [
   },
   {
     id:"elementary", name:"elementary OS", version:"8.1.1", cat:"desktop", color:"#64BAFF", icon:"elementary",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#64BAFF"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm0 1a11 11 0 0 1 10.59 8.01 19.09 19.09 0 0 1-4.66 6.08c-.94.81-1.96 1.53-3.08 2.04-1.13.5-2.37.8-3.6.72a6.23 6.23 0 0 1-2.66-.76 20.02 20.02 0 0 0 5.68-4.58 9.97 9.97 0 0 0 2.31-4.17c.18-.79.2-1.6.04-2.4a4.42 4.42 0 0 0-1.08-2.11 4.33 4.33 0 0 0-2-1.19 5.25 5.25 0 0 0-2.33-.08A7.8 7.8 0 0 0 7.2 4.85a9.77 9.77 0 0 0-2.94 7.49 7.88 7.88 0 0 0 1.95 4.59 18 18 0 0 1-3.56.85A11 11 0 0 1 12 1zm.07 2.22c.77 0 1.55.24 2.17.7.55.42.97 1.02 1.2 1.68.23.65.3 1.37.21 2.06a7.85 7.85 0 0 1-1.7 3.76 16.22 16.22 0 0 1-6.37 4.96c-.48-.42-.9-.92-1.2-1.48a6.61 6.61 0 0 1-.75-3.87c.12-1.32.58-2.6 1.2-3.79a7.92 7.92 0 0 1 3.02-3.42c.68-.37 1.45-.6 2.22-.6zm10.83 7.3A11 11 0 0 1 3.52 19a19.8 19.8 0 0 0 3.63-1.2c.51.4 1.08.71 1.67.94a8 8 0 0 0 5.44-.04 13.3 13.3 0 0 0 4.64-2.95 20 20 0 0 0 4-5.22z"/></svg>',
     tag:"Le plus beau Linux. Design soigné à la macOS, philosophie « pay what you want ».",
     site:"elementary.io", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire disponible via « Pilotes additionnels » (AppCenter ne le gère pas directement)"}},
     steps:[
       {t:"Télécharger l'ISO", d:"elementary.io → payer 0 € ou plus, puis télécharger."},
       {t:"Graver la clé", d:"balenaEtcher (recommandé par le projet)."},
@@ -263,11 +265,12 @@ window.OS_DATA = [
   },
   {
     id:"linuxlite", name:"Linux Lite", version:"8.0", cat:"desktop", color:"#66B32E", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" fill="#66B32E"><path d="M12 2C8 2 5 5.5 5 10c0 6.5 5.5 10.5 7 11.7 1.5-1.2 7-5.2 7-11.7 0-4.5-3-8-7-8zm0 4.2c1.9 0 3.4 1.6 3.4 3.6S13.9 13.4 12 13.4 8.6 11.8 8.6 9.8 10.1 6.2 12 6.2z"/></svg>',
     tag:"Pensé pour les migrants de Windows sur du matériel modeste. Xfce simplifié.",
     site:"linuxliteos.com", dl:"linuxliteos.com/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (officiel — le projet a relevé ce seuil depuis la version 7.6, historiquement 768 Mo)", disk:"40 Go min. (officiel)", cpu:"1,5 GHz dual-core ou mieux, 64 bits"},
+    req:{ram:"4 Go min. (officiel — le projet a relevé ce seuil depuis la version 7.6, historiquement 768 Mo)", disk:"40 Go min. (officiel)", cpu:"1,5 GHz dual-core ou mieux, 64 bits", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"linuxliteos.com/download.php → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus, mode image."},
@@ -288,11 +291,12 @@ window.OS_DATA = [
   },
   {
     id:"deepin", name:"Deepin", version:"25.2", cat:"desktop", color:"#0080FF", icon:"deepin",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#0080FF"><path d="M16.104.696c-1.724-.63-3.49-.8-5.205-.64-1.988.157-2.958.772-2.9.661-3.251 1.16-6 3.657-7.272 7.157-2.266 6.234.944 13.128 7.168 15.398 6.228 2.27 13.111-.945 15.378-7.179C25.54 9.86 22.33 2.966 16.104.696zM8.305 22.145a10.767 10.767 0 0 1-1.867-.904c2.9.223 6.686-.445 9.239-2.834 0 0 4.866-3.888 1.345-10.269 0 0 .568 2.572-.156 4.687 0 0-.69 2.877-3.757 3.712-4.517 1.231-9.664-1.93-11.816-3.463-.162-1.574-.018-3.2.56-4.788.855-2.352 2.463-4.188 4.427-5.42-.49 3.436-.102 6.6.456 7.925.749 1.777 2.05 3.85 4.59 4.115 2.54.267 3.94-2.11 3.94-2.11 1.304-1.98 1.508-4.823 1.488-4.892-.02-.07-.347-.257-.347-.257-.877 3.549-2.323 4.734-2.323 4.734-2.28 2.201-3.895.675-3.895.675-1.736-1.865-.52-4.895-.52-4.895.68-2.064 2.66-5.084 4.905-6.62.374.092.75.15 1.12.284a10.712 10.712 0 0 1 3.554 2.16c-1.641.599-4.291 1.865-4.291 1.865-4.201 1.77-4.485 4.446-4.485 4.446-.435 2.758 1.754 1.59 1.754 1.59 2.252-1.097 3.359-4.516 3.359-4.516-.703-.134-1.257.08-1.257.08-.899 2.22-2.733 3.132-2.733 3.132-.722.382-.89-.293-.89-.293-.122-.506.522-.592.522-.592 1-.389 1.639-1.439 1.784-1.868.144-.43.412-.464.412-.464a12.998 12.998 0 0 1 2.619-.535c1.7-.209 4.303.602 4.303.602.584.235 1.144.41 1.641.551.954 2.384 1.105 5.098.16 7.7-2.039 5.61-8.236 8.504-13.841 6.462z"/></svg>',
     tag:"Le Linux chinois le plus élégant. DDE : environnement de bureau signature.",
     site:"deepin.org", dl:"www.deepin.org/en/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Facile", base:"Debian",
-    req:{ram:"8 Go min. (officiel deepin.org — en dessous, installation risquée/système au ralenti)", disk:"64 Go min. (officiel)", cpu:"2 GHz multi-cœurs ou mieux"},
+    req:{ram:"8 Go min. (officiel deepin.org — en dessous, installation risquée/système au ralenti)", disk:"64 Go min. (officiel)", cpu:"2 GHz multi-cœurs ou mieux", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Debian, micrologiciels non-free inclus)", nvidia:"Correct — pilote propriétaire disponible mais dépôt non-free à activer manuellement, comme sur Debian"}},
     steps:[
       {t:"Télécharger l'ISO", d:"deepin.org → version 25 stable, ISO complète."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus, mode DD."},
@@ -313,11 +317,12 @@ window.OS_DATA = [
   },
   {
     id:"kdeneon", name:"KDE Neon", version:"User Edition", cat:"desktop", color:"#1D99F3", icon:"kde",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#1D99F3"><path d="M13.881 0L9.89.382v16.435l3.949-.594V9.216l5.308 7.772 4.162-1.317-5.436-7.475 5.479-7.05L19.105.17 13.84 7.22zM4.834 4.005a.203.203 0 0 0-.123.059L3.145 5.63a.203.203 0 0 0-.03.248L4.949 8.9a7.84 7.84 0 0 0-.772 1.759l-3.367.7a.203.203 0 0 0-.162.199v2.215c0 .093.064.174.155.196l3.268.8a7.83 7.83 0 0 0 .801 2.03L2.98 19.683a.203.203 0 0 0 .027.254l1.566 1.567a.204.204 0 0 0 .249.03l2.964-1.8c.582.336 1.21.6 1.874.78l.692 3.325c.02.094.102.161.198.161h2.215a.202.202 0 0 0 .197-.155l.815-3.332a7.807 7.807 0 0 0 1.927-.811l2.922 1.915c.08.053.186.042.254-.026l1.567-1.566a.202.202 0 0 0 .03-.248l-1.067-1.758-.345.11a.12.12 0 0 1-.135-.047L17.371 15.8a6.347 6.347 0 1 1-8.255-8.674V5.488c-.401.14-.79.31-1.159.511l-.001-.002-2.99-1.96a.203.203 0 0 0-.132-.033Z"/></svg>',
     tag:"La dernière version de KDE Plasma, sur base Ubuntu LTS. Vitrine officielle.",
     site:"kde.org", dl:"neon.kde.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"neon.kde.org → User Edition (stable) ou Testing/Unstable."},
       {t:"Graver la clé", d:"balenaEtcher, Rufus ou dd."},
@@ -338,11 +343,12 @@ window.OS_DATA = [
   },
   {
     id:"solus", name:"Solus", version:"4.9", cat:"desktop", color:"#5294E2", icon:"solus",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#5294E2"><path d="M7.453 0c-.18.587-.369 1.167-.565 1.75A11.638 11.638 0 0 0 0 12.364a11.638 11.638 0 0 0 .516 3.403l-.339.598L0 16.73l.279.143a3.448 3.448 0 0 0 .741.222A11.638 11.638 0 0 0 2 18.868c4.034.343 8.55.512 12.446-.056 3.192-.463 5.94-1.423 7.735-3.117.252-.233.474-.474.674-.722.019-.038.037-.053.06-.076.011 0 .026-.037.038-.052.015 0 .03-.038.041-.057.008 0 .015-.038.023-.038.33-.444.587-.892.801-1.31l.181-.365-.365-.365a5.936 5.936 0 0 0-.361-.35A11.638 11.638 0 0 0 11.635.722a11.638 11.638 0 0 0-3.211.463C7.96.508 7.596.041 7.453 0zm.365 1.637C9.06 3.82 10.13 5.06 11.454 7.457c.132 1.524.67 9.45.727 10.181-.392-.037-2.485-.24-5.104-.515-1.43-.147-2.899-.316-4.092-.49l-1.9-.447c2.149-3.787 5.551-9.727 6.737-14.548zm4.543 6.18s4.991 3.927 7.092 8.73c-2.56 1.26-4.916 1.098-6.361 1.09 1.023-2.634 1.023-6.21-.73-9.82zm3.456 2.184a45.14 45.14 0 0 1 2.91.907c1.768.629 3.417 1.49 4.365 2.364a6.956 6.956 0 0 1-2.91 2.91c.151-1.495-.39-2.933-1.456-4.002-.787-.787-1.822-1.453-2.91-2.183zm6.707 6.478c-2.352 1.667-5.126 2.68-7.965 3.112a41.026 41.026 0 0 1-3.715.34h-.323a53.48 53.48 0 0 1-3.727 0 85.763 85.763 0 0 1-4.178-.23h-.003c2.555 3.255 6.993 4.893 11.092 4.102a11.367 11.367 0 0 0 4.498-1.852 11.638 11.638 0 0 0 .007 0c.312-.214.614-.444.903-.685a11.638 11.638 0 0 0 .038-.037 11.555 11.555 0 0 0 3.376-4.762zM2.511 19.584a11.638 11.638 0 0 0 .023.038c-.008 0-.015-.038-.023-.038z"/></svg>',
     tag:"Rolling curated, indépendante. Budgie, GNOME, KDE ou Xfce. Pas basée sur autre chose.",
     site:"getsol.us", dl:"getsol.us/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés, officiel)", disk:"10 Go min. (25 Go conseillés, officiel)", cpu:"x86_64 (x86-64-v2 quad-core 2 GHz conseillé, officiel)"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel)", disk:"10 Go min. (25 Go conseillés, officiel)", cpu:"x86_64 (x86-64-v2 quad-core 2 GHz conseillé, officiel)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement", nvidia:"Bon — pilote propriétaire disponible directement via le centre logiciels (Linux Driver Management), y compris la variante open-source du noyau"}},
     steps:[
       {t:"Télécharger l'ISO", d:"getsol.us → édition Budgie (signature), GNOME, KDE ou Xfce."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus en mode image."},
@@ -493,11 +499,12 @@ window.OS_DATA = [
   },
   {
     id:"cachyos", name:"CachyOS", version:"rolling", cat:"gaming", color:"#00E5B0", icon:"cachyos",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#00E5B0"><path d="M5.301 2.646 0 11.771l5.541 9.583h11.486l2.904-5.017H8.102l-2.56-4.429L8.067 7.54h6.063l2.83-4.893ZM20.058 4.12a.748.748 0 0 0 0 1.496.748.748 0 0 0 0-1.496m-1.983 4.303a1.45 1.45 0 0 0 0 2.9 1.45 1.45 0 0 0 0-2.9m4.02 3.98a1.904 1.904 0 0 0 0 3.809 1.904 1.904 0 0 0 0-3.81"/></svg>',
     tag:"Arch optimisée à l'extrême : noyau BORE, paquets x86-64-v3/v4. Perf pure.",
     site:"cachyos.org", dl:"cachyos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Arch",
-    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible"},
+    req:{ram:"8 Go min. (16 Go conseillés)", disk:"64 Go min., bien plus selon la bibliothèque de jeux", cpu:"CPU récent + GPU dédié compatible", gpu:{open:"Excellent — AMD/Intel pris en charge nativement", nvidia:"Excellent — pilote proposé dès le menu de démarrage de l'ISO (nvidia-open par défaut, cartes Turing et plus récentes), installé automatiquement par le Kernel Manager avec le noyau choisi"}},
     steps:[
       {t:"Télécharger l'ISO", d:"cachyos.org → ISO Desktop."},
       {t:"Graver la clé", d:"balenaEtcher ou Ventoy."},
@@ -1129,11 +1136,12 @@ window.OS_DATA = [
   },
   {
     id:"nixos", name:"NixOS", version:"26.05", cat:"advanced", color:"#5277C3", icon:"nixos",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#5277C3"><path d="M7.352 1.592l-1.364.002L5.32 2.75l1.557 2.713-3.137-.008-1.32 2.34H14.11l-1.353-2.332-3.192-.006-2.214-3.865zm6.175 0l-2.687.025 5.846 10.127 1.341-2.34-1.59-2.765 2.24-3.85-.683-1.182h-1.336l-1.57 2.705-1.56-2.72zm6.887 4.195l-5.846 10.125 2.696-.008 1.601-2.76 4.453.016.682-1.183-.666-1.157-3.13-.008L21.778 8.1l-1.365-2.313zM9.432 8.086l-2.696.008-1.601 2.76-4.453-.016L0 12.02l.666 1.157 3.13.008-1.575 2.71 1.365 2.315L9.432 8.086zM7.33 12.25l-.006.01-.002-.004-1.342 2.34 1.59 2.765-2.24 3.85.684 1.182H7.35l.004-.006h.001l1.567-2.698 1.558 2.72 2.688-.026-.004-.006h.01L7.33 12.25zm2.55 3.93l1.354 2.332 3.192.006 2.215 3.865 1.363-.002.668-1.156-1.557-2.713 3.137.008 1.32-2.34H9.881Z"/></svg>',
     tag:"Config déclarative & reproductible. Ton système entier dans un seul fichier.",
     site:"nixos.org", dl:"nixos.org/download", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~25 min", diff:"Expert", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — paquets binaires récupérés depuis le cache officiel ; la compilation locale n'intervient que pour un paquet absent du cache"},
+    req:{ram:"2 Go pour le mode minimal en ligne de commande (fonctionne de façon fiable) ; l'installateur graphique Calamares exige au moins 3 Go (officiel) ; 4 Go conseillés pour un bureau complet GNOME/KDE", disk:"20 Go min., mais /nix/store conserve les anciennes générations : prévoir plus large avec le temps (30-60 Go pour un usage desktop selon les retours communautaires)", cpu:"x86_64 — paquets binaires récupérés depuis le cache officiel ; la compilation locale n'intervient que pour un paquet absent du cache"},
     steps:[
       {t:"Télécharger l'ISO", d:"nixos.org → ISO graphique (Calamares) ou minimal."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -1154,11 +1162,12 @@ window.OS_DATA = [
   },
   {
     id:"endeavouros", name:"EndeavourOS", version:"rolling", cat:"advanced", color:"#7F3FBF", icon:"endeavouros",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#7F3FBF"><path d="M14.03 2.036v.002C13.303 2.138 0 18.46 0 18.46s.957.272 3.135.588c0 0 10.435-17.061 10.904-17.008-.001 0-.01-.006-.01-.004zM3.135 19.048c-.95 1.562-1.71 2.818-1.71 2.818s10.218.46 18.165-.606c11.308-1.516-2.324-15.96-5.537-19.214 2.542 3.36 13.473 17.751 2.459 17.937-3.89.066-13.377-.935-13.377-.935zm10.906-17.01v.002c.022.01 0 .002 0-.002zm-.037.797c-.055.073-.09.112-.156.205a61.39 61.39 0 0 0-1.285 1.9 356.805 356.805 0 0 0-3.723 5.842c-2.448 3.908-4.467 7.208-4.846 7.826 1.034.107 8.948.935 12.508.875 1.322-.022 2.274-.26 2.926-.623.652-.363 1.022-.839 1.228-1.447.413-1.217.063-3.047-.753-5.018-1.537-3.711-4.485-7.686-5.899-9.56z"/></svg>',
     tag:"Arch presque pur, avec un installeur. Le pont idéal vers le vanilla Arch.",
     site:"endeavouros.com", dl:"endeavouros.com/latest-release", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
+    req:{ram:"4 Go (officiel endeavouros.com) ; les environnements légers (Xfce, LXQt, i3) fonctionnent avec 2 Go", disk:"15 Go min. (officiel endeavouros.com)", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"endeavouros.com → dernière ISO (Cassini/Galileo)."},
       {t:"Graver la clé", d:"balenaEtcher ou Ventoy."},
@@ -1179,11 +1188,12 @@ window.OS_DATA = [
   },
   {
     id:"voidlinux", name:"Void Linux", version:"rolling", cat:"advanced", color:"#478061", icon:"voidlinux",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#478061"><path d="M15.818 12a3.82 3.82 0 0 1-3.82 3.82A3.82 3.82 0 0 1 8.178 12a3.82 3.82 0 0 1 3.82-3.82 3.82 3.82 0 0 1 3.82 3.82Zm3.179 9.73-2.726-2.725A8.212 8.212 0 0 1 12 20.212 8.212 8.212 0 0 1 3.788 12a8.212 8.212 0 0 1 1.209-4.269l-2.73-2.73A12 12 0 0 0 0 12c0 6.627 5.373 12 12 12a12 12 0 0 0 6.997-2.27zM12 0a12 12 0 0 0-6.997 2.27L7.73 4.994A8.212 8.212 0 0 1 12 3.788 8.212 8.212 0 0 1 20.212 12a8.212 8.212 0 0 1-1.209 4.269l2.73 2.73A12 12 0 0 0 24 12c0-6.627-5.373-12-12-12Z"/></svg>',
     tag:"Indépendante, sans systemd. Runit + XBPS, rolling maîtrisée.",
     site:"voidlinux.org", dl:"voidlinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires via xbps (la compilation par xbps-src reste optionnelle)"},
+    req:{ram:"96 Mo min. pour le système de base (officiel Void Handbook) ; les images graphiques (Xfce, etc.) demandent nettement plus, sans chiffre officiel précis", disk:"700 Mo min. pour le système de base (officiel) ; largement plus pour une image graphique complète", cpu:"x86_64, paquets binaires via xbps (la compilation par xbps-src reste optionnelle)"},
     steps:[
       {t:"Télécharger l'ISO", d:"voidlinux.org → base (glibc ou musl) ou live avec DE."},
       {t:"Graver la clé", d:"dd de l'ISO hybride."},
@@ -1205,11 +1215,12 @@ window.OS_DATA = [
   },
   {
     id:"gentoo", name:"Gentoo", version:"rolling", cat:"advanced", color:"#54487A", icon:"gentoo",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#54487A"><path d="M9.94 0a7.31 7.31 0 00-1.26.116c-4.344.795-7.4 4.555-7.661 7.031-.126 1.215.53 2.125.89 2.526.977 1.085 2.924 1.914 4.175 2.601-1.81 1.543-2.64 2.296-3.457 3.154C1.403 16.712.543 18.125.54 19.138c0 .325-.053 1.365.371 2.187.16.309.613 1.338 1.98 2.109.874.494 2.119.675 3.337.501 3.772-.538 8.823-3.737 12.427-6.716 2.297-1.9 3.977-3.739 4.462-4.644.39-.731.434-2.043.207-2.866-.645-2.337-5.887-7.125-10.172-9.051A7.824 7.824 0 009.94 0zm-.008.068a7.4 7.4 0 013.344.755c3.46 1.7 9.308 6.482 9.739 8.886.534 2.972-9.931 11.017-16.297 12.272-2.47.485-4.576.618-5.537-1.99-.832-2.262.783-3.916 3.16-6.09a92.546 92.546 0 012.96-2.576c.065-.069-5.706-2.059-5.89-4.343C1.221 4.634 4.938.3 9.697.076c.08-.004.157-.007.235-.008zm-.112.52a5.647 5.647 0 00-.506.032c-2.337.245-2.785.547-4.903 2.149-.71.537-2.016 1.844-2.35 3.393-.128.59.024 1.1.448 1.458 1.36 1.144 3.639 2.072 5.509 2.97.547.263.185.74-.698 1.505-2.227 1.928-5.24 4.276-5.45 6.066-.099.842.19 1.988 1.213 2.574 1.195.685 3.676.238 5.333-.379 2.422-.902 5.602-2.892 8.127-4.848 2.625-2.034 5.067-4.617 5.188-5.038.148-.517.133-.996-.154-1.546-.448-.862-1.049-1.503-1.694-2.22-1.732-1.825-3.563-3.43-5.754-4.658C12.694 1.242 11.417.564 9.82.588zm1.075 3.623c.546 0 1.176.173 1.853.5 1.688.817 3.422 2.961-.015 4.195-.935.336-3.9-.824-3.81-2.407.09-1.57.854-2.289 1.972-2.288zm.285 1.367c-.317-.002-.575.079-.694.263-.557.861-.303 1.472.212 1.862.192-.457 2.156.043 2.148.472a.32.32 0 00.055-.032c1.704-1.282-.472-2.557-1.72-2.565z"/></svg>',
     tag:"Tout compiler depuis les sources. Optimisations chirurgicales, apprentissage total.",
     site:"gentoo.org", dl:"gentoo.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~2-6 h", diff:"Expert", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — système construit depuis les sources : prévoir un CPU rapide et plusieurs heures pour la compilation initiale"},
+    req:{ram:"140 Mo min. pour amorcer l'ISO minimale (officiel Gentoo Handbook) ; au moins 2 Go pour le LiveGUI KDE — en pratique, prévoir bien plus pour compiler dans des délais raisonnables", disk:"40 Go conseillés pour la partition racine (officiel Gentoo Handbook) — le stockage des sources et du cache de compilation s'ajoute", cpu:"x86_64 — système construit depuis les sources : prévoir un CPU rapide et plusieurs heures pour la compilation initiale"},
     steps:[
       {t:"Télécharger le stage3", d:"gentoo.org/downloads → ISO minimal + tarball stage3 selon l'archi."},
       {t:"Booter et partitionner", d:"Booter l'ISO, partitionner (parted), formater et monter /mnt/gentoo."},
@@ -1231,11 +1242,12 @@ window.OS_DATA = [
   },
   {
     id:"slackware", name:"Slackware", version:"15.0", cat:"advanced", color:"#333333", icon:"slackware",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#333333"><path d="M12.924 1.228c-.584-.01-1.251 0-1.485.027-2.46.282-4.138 1.3-4.753 2.891-.218.552-.274 1.002-.243 1.772.048 1.21.419 2.004 1.262 2.742 1.225 1.06 2.98 1.508 5.998 1.508 2.737 0 3.71.413 3.916 1.675.313 1.867-1.57 3.07-4.414 2.827-1.878-.16-3.496-.912-4.223-1.967a7.772 7.772 0 01-.355-.62c-.382-.76-.64-.978-1.176-.978-.43.005-.732.165-.918.494l-.133.24v4.03l.137.296c.165.344.4.546.744.63.35.09.794-.036 1.42-.402l.5-.29.826.185c1.82.403 2.75.523 4.065.523 1.103.005 1.548-.046 2.455-.285 1.124-.297 1.974-.785 2.717-1.57.8-.844 1.15-1.853 1.097-3.147-.069-1.628-.695-2.698-2-3.414-.96-.525-2.292-.79-4.377-.88-2.042-.086-2.794-.155-3.515-.32-.51-.12-.785-.25-1.076-.515-.653-.589-.59-1.755.136-2.482.642-.637 1.511-.928 2.774-.928 1.432.005 2.393.27 3.412.955.185.127.721.62 1.193 1.092.886.902 1.135 1.082 1.506 1.082.244 0 .59-.163.732-.344.26-.329.303-.63.303-2.2 0-1.66-.043-1.91-.377-2.282-.387-.425-.848-.42-1.75.031l-.59.297-.63-.17c-1.496-.392-2.038-.477-3.178-.504zM0 13.775v9h24v-1H1v-8z"/></svg>',
     tag:"La plus ancienne distribution encore active (1993). Unix-like, pas de dépendances auto.",
     site:"slackware.com", dl:"slackware.com/getslack", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires (les SlackBuilds, qui compilent, restent optionnels)"},
+    req:{ram:"64 Mo min. (officiel slackware.com), 1 Go+ conseillé en pratique", disk:"5 Go+ conseillés pour une installation complète (officiel slackware.com)", cpu:"x86_64, paquets binaires (les SlackBuilds, qui compilent, restent optionnels)"},
     steps:[
       {t:"Télécharger l'ISO", d:"slackware.com → miroir officiel, DVD complet."},
       {t:"Graver la clé", d:"dd de l'ISO."},
@@ -1258,11 +1270,12 @@ window.OS_DATA = [
   },
   {
     id:"artix", name:"Artix Linux", version:"rolling", cat:"advanced", color:"#20B1F2", icon:"artixlinux",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#20B1F2"><path d="M12 0L7.873 8.462l11.358 6.363zM6.626 11.018L.295 24l18.788-7.762zm13.846 6.352l-5.926 3.402L23.706 24Z"/></svg>',
     tag:"Arch Linux sans systemd. Choix entre OpenRC, runit ou s6 comme init.",
     site:"artixlinux.org", dl:"artixlinux.org/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
+    req:{ram:"300 Mo pour l'édition « low memory » en CLI (base sans systemd) — nettement plus avec un environnement de bureau complet", disk:"20 Go conseillés pour une installation desktop complète (pas de minimum strict publié par le projet)", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"artixlinux.org/download.php → variante base (OpenRC, runit, s6, dinit)."},
       {t:"Graver la clé", d:"dd de l'ISO sur la clé USB.", code:"dd if=artix.iso of=/dev/sdX bs=4M status=progress"},
@@ -1641,11 +1654,12 @@ window.OS_DATA = [
   },
   {
     id:"pclinuxos", name:"PCLinuxOS", version:"2025.09", cat:"desktop", color:"#0C5A9D", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#0C5A9D" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#0C5A9D">Pc</text></svg>',
     tag:"Distro rolling indépendante historique. Stable, sans systemd, communauté fidèle.",
     site:"pclinuxos.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés, officiel)", disk:"15 Go min. (20 Go+ conseillés, officiel)", cpu:"N'importe quel Intel, AMD ou VIA x86_64 d'après le wiki officiel (dual-core conseillé) — pas d'exigence de génération récente"},
+    req:{ram:"2 Go min. (4 Go conseillés, officiel)", disk:"15 Go min. (20 Go+ conseillés, officiel)", cpu:"N'importe quel Intel, AMD ou VIA x86_64 d'après le wiki officiel (dual-core conseillé) — pas d'exigence de génération récente", gpu:{open:"Excellent — AMD/Intel pris en charge nativement", nvidia:"Correct — pilotes propriétaires disponibles dans des sections dédiées du dépôt, à activer manuellement dans Synaptic selon le modèle de carte"}},
     steps:[
       {t:"Télécharger l'ISO", d:"pclinuxos.com/?page_id=13 → édition KDE, MATE ou Xfce."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -1815,11 +1829,12 @@ window.OS_DATA = [
   },
   {
     id:"silverblue", name:"Fedora Silverblue", version:"43", cat:"advanced", color:"#3C6EB4", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#3C6EB4" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#3C6EB4">Sb</text></svg>',
     tag:"Fedora immuable façon image atomique (rpm-ostree). Rollbacks natifs, apps en Flatpak.",
     site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/silverblue", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
+    req:{ram:"4 Go conseillés (officiel fedoraproject.org, comme les autres variantes Fedora)", disk:"40 Go conseillés (officiel) — le double pour plus de confort ; OSTree conserve aussi les anciens déploiements, ce qui ajoute à l'usage réel au fil du temps", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"fedoraproject.org/atomic-desktops/silverblue → image officielle."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -2074,11 +2089,12 @@ window.OS_DATA = [
   /* ===================== AJOUTS v3.3 ===================== */
   {
     id:"ultramarine", name:"Ultramarine Linux", version:"44", cat:"desktop", color:"#4169E1", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4169E1" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4169E1">Um</text></svg>',
     tag:"Fedora repensée grand public : préconfigurée, codecs inclus, plusieurs bureaux au choix.",
     site:"ultramarine-linux.org", dl:"ultramarine-linux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Fedora",
-    req:{ram:"4 Go min. (8 Go conseillés, hérité du standard Fedora officiel)", disk:"40 Go conseillés (standard Fedora officiel, pas 20-25 Go)", cpu:"x86-64-v2 obligatoire, hérité de la base Fedora (exclut les CPU antérieurs à ~2008-2011) — pas besoin d'un CPU de dernière génération pour autant"},
+    req:{ram:"4 Go min. (8 Go conseillés, hérité du standard Fedora officiel)", disk:"40 Go conseillés (standard Fedora officiel, pas 20-25 Go)", cpu:"x86-64-v2 obligatoire, hérité de la base Fedora (exclut les CPU antérieurs à ~2008-2011) — pas besoin d'un CPU de dernière génération pour autant", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Correct — pilote propriétaire non fourni par défaut (héritage de la politique Fedora), à installer via le dépôt tiers RPM Fusion"}},
     steps:[
       {t:"Télécharger l'ISO", d:"ultramarine-linux.org/download → édition GNOME, Budgie ou Flagship."},
       {t:"Graver la clé", d:"balenaEtcher ou Fedora Media Writer."},
@@ -2099,11 +2115,12 @@ window.OS_DATA = [
   },
   {
     id:"mageia", name:"Mageia", version:"10", cat:"desktop", color:"#1E88E5", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1E88E5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1E88E5">Mg</text></svg>',
     tag:"Fork communautaire de Mandriva. Installeur DrakX réputé, très complet.",
     site:"mageia.org", dl:"mageia.org/fr/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. pour un bureau utilisable (Plasma/GNOME), 512 Mo l'absolu minimum officiel", disk:"20 Go d'espace disque", cpu:"N'importe quel processeur Intel, AMD ou VIA d'après le site officiel — Mageia maintient même une édition 32 bits (Xfce) en 2026, contrairement à la quasi-totalité des distributions de ce cluster"},
+    req:{ram:"2 Go min. pour un bureau utilisable (Plasma/GNOME), 512 Mo l'absolu minimum officiel", disk:"20 Go d'espace disque", cpu:"N'importe quel processeur Intel, AMD ou VIA d'après le site officiel — Mageia maintient même une édition 32 bits (Xfce) en 2026, contrairement à la quasi-totalité des distributions de ce cluster", gpu:{open:"Excellent — AMD/Intel pris en charge nativement", nvidia:"Correct — sélectionnable via le Centre de contrôle Mageia (Configurer le serveur graphique), mais nécessite d'abord d'activer les dépôts Nonfree"}},
     steps:[
       {t:"Télécharger l'ISO", d:"mageia.org/fr/downloads → édition Live ou Classic (netinstall)."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2326,11 +2343,12 @@ window.OS_DATA = [
   },
   {
     id:"kinoite", name:"Fedora Kinoite", version:"43", cat:"advanced", color:"#294172", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#294172" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#294172">Kn</text></svg>',
     tag:"Équivalent KDE Plasma de Silverblue : bureau immuable, mises à jour atomiques, Flatpak par défaut.",
     site:"fedoraproject.org", dl:"fedoraproject.org/atomic-desktops/kinoite", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
+    req:{ram:"4 Go conseillés (officiel fedoraproject.org, comme les autres variantes Fedora)", disk:"40 Go conseillés (officiel) — le double pour plus de confort ; OSTree conserve aussi les anciens déploiements, ce qui ajoute à l'usage réel au fil du temps", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"fedoraproject.org/atomic-desktops/kinoite → image officielle."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -2352,11 +2370,12 @@ window.OS_DATA = [
   },
   {
     id:"devuan", name:"Devuan", version:"6.1 Excalibur", cat:"advanced", color:"#8E1B3C", icon:"devuan",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#8E1B3C"><path d="M0 .415C42.518 10.56 2.297 18.812 2.297 18.812c-.792.127-1.432.54-1.816 1.167-.433.704-.47 1.656-.066 2.326.492.814 1.114 1.096 1.65 1.217.845.191 1.527-.113 1.527-.113s20.562-6.11 20.407-12.214C23.922 8.131 17.694 2.948 0 .415"/></svg>',
     tag:"Fork de Debian sans systemd (init sysvinit/OpenRC/runit au choix). Pour les puristes Unix.",
     site:"devuan.org", dl:"devuan.org/os/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
+    req:{ram:"1 Go min. (2 Go conseillés, 4 Go pour un usage confortable) — même base que Debian, dont Devuan reprend les paquets", disk:"10 Go min. (20-25 Go conseillés) — même ordre de grandeur que Debian", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"devuan.org/os/download → netinstall ou live desktop."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -2634,11 +2653,12 @@ window.OS_DATA = [
   /* ===================== AJOUTS v3.4 ===================== */
   {
     id:"nitrux", name:"Nitrux", version:"5.0", cat:"desktop", color:"#5E2CA5", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#5E2CA5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#5E2CA5">Nx</text></svg>',
     tag:"Depuis la version 5.0, bureau Hyprland (Wayland) exclusivement — KDE Plasma et NX Desktop ont été abandonnés.",
     site:"nxos.org", dl:"nxos.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"4 Go min. (8 Go conseillés, officiel nxos.org)", disk:"20-25 Go d'espace disque", cpu:"x86_64 avec support AVX2 (x86-64-v3) exigé — exclut une partie du matériel pourtant 64 bits"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel nxos.org)", disk:"20-25 Go d'espace disque", cpu:"x86_64 avec support AVX2 (x86-64-v3) exigé — exclut une partie du matériel pourtant 64 bits", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Debian, micrologiciels non-free inclus)", nvidia:"Correct — pilote propriétaire disponible mais dépôt non-free à activer manuellement, comme sur Debian"}},
     steps:[
       {t:"Télécharger l'ISO", d:"nxos.org/download → image Liquorix (AMD/Mesa) ou CachyOS (NVIDIA open)."},
       {t:"Graver la clé", d:"balenaEtcher (image spécifique, éviter Rufus en mode ISO)."},
@@ -2659,11 +2679,12 @@ window.OS_DATA = [
   },
   {
     id:"kaos", name:"KaOS", version:"2026.06", cat:"desktop", color:"#21B6A8", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#21B6A8" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#21B6A8">Ka</text></svg>',
     tag:"Distro indépendante rolling. Depuis 2026, bureau Niri/Noctalia (Wayland) par défaut et Dinit remplace systemd — KDE Plasma reste disponible en dépôt.",
     site:"kaosx.us", dl:"kaosx.us/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés, officiel kaosx.us)", disk:"8 Go min. (25 Go conseillés, officiel)", cpu:"x86_64 uniquement (aucun paquet 32 bits)"},
+    req:{ram:"2 Go min. (4 Go conseillés, officiel kaosx.us)", disk:"8 Go min. (25 Go conseillés, officiel)", cpu:"x86_64 uniquement (aucun paquet 32 bits)", gpu:{open:"Excellent — AMD/Intel pris en charge nativement", nvidia:"Limité — le pilote libre (nouveau) est utilisé par défaut ; le propriétaire existe en paquet communautaire mais reste peu mis en avant, configuration PRIME manuelle documentée pour les portables hybrides"}},
     steps:[
       {t:"Télécharger l'ISO", d:"kaosx.us/download → image live la plus récente."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -2684,11 +2705,12 @@ window.OS_DATA = [
   },
   {
     id:"ferenos", name:"Feren OS", version:"2025.03", cat:"desktop", color:"#0F6FC5", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#0F6FC5" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#0F6FC5">Fr</text></svg>',
     tag:"Base Ubuntu/Mint, bureau Cinnamon personnalisé façon Windows pour une transition en douceur.",
     site:"weebly.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"1-2 Go min. (4 Go conseillés) — le projet cible explicitement du matériel ancien", disk:"20 Go min. (50 Go conseillés pour un usage étendu)", cpu:"Processeur 64 bits, aucune exigence de génération récente — contredirait le positionnement du projet sur du matériel ancien"},
+    req:{ram:"1-2 Go min. (4 Go conseillés) — le projet cible explicitement du matériel ancien", disk:"20 Go min. (50 Go conseillés pour un usage étendu)", cpu:"Processeur 64 bits, aucune exigence de génération récente — contredirait le positionnement du projet sur du matériel ancien", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"ferenos.weebly.com → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2709,11 +2731,12 @@ window.OS_DATA = [
   },
   {
     id:"regolith", name:"Regolith Linux", version:"3.1", cat:"desktop", color:"#E64A19", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E64A19" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E64A19">Rg</text></svg>',
     tag:"Ubuntu avec un gestionnaire de fenêtres en tuiles (i3/Sway) préconfiguré, pour les claviéristes.",
     site:"regolith-desktop.com", dl:"regolith-desktop.com/docs/using-regolith/install", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés — i3/Sway consomment nettement moins que GNOME/KDE)", disk:"10 Go min.", cpu:"Processeur 64 bits, aucune exigence de génération récente — un tiling WM comme i3/Sway est justement peu gourmand en CPU"},
+    req:{ram:"2 Go min. (4 Go conseillés — i3/Sway consomment nettement moins que GNOME/KDE)", disk:"10 Go min.", cpu:"Processeur 64 bits, aucune exigence de génération récente — un tiling WM comme i3/Sway est justement peu gourmand en CPU", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"regolith-desktop.com/docs/using-regolith/install → procédure officielle (dépôt à ajouter sur une Ubuntu/Debian existante, ou image ISO)."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2940,11 +2963,12 @@ window.OS_DATA = [
   },
   {
     id:"crux", name:"CRUX", version:"3.8", cat:"advanced", color:"#C0392B", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#C0392B" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#C0392B">Cx</text></svg>',
     tag:"Distro source-based minimaliste, gestionnaire de ports façon BSD, pour puristes du « fait main ».",
     site:"crux.nu", dl:"crux.nu/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — système construit depuis les sources : prévoir un CPU rapide et plusieurs heures pour la compilation initiale"},
+    req:{ram:"2 Go min. pour installer depuis le DVD/clé USB (officiel, Handbook 3.8 — ce seuil a augmenté avec les versions, 192 Mo suffisaient il y a quelques années) ; un chroot personnalisé peut se faire avec moins", disk:"1 Go conseillé pour la partition racine au minimum (CRUX lui-même n'occupe que 200-500 Mo, officiel) — prévoir plus selon les paquets choisis", cpu:"x86_64 — système construit depuis les sources : prévoir un CPU rapide et plusieurs heures pour la compilation initiale"},
     steps:[
       {t:"Télécharger l'ISO", d:"crux.nu/Download → image d'installation amd64."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -2966,11 +2990,12 @@ window.OS_DATA = [
   },
   {
     id:"bluefin", name:"Bluefin", version:"stable (GTS)", cat:"advanced", color:"#1565C0", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1565C0" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1565C0">Bf</text></svg>',
     tag:"Bureau GNOME immuable du projet Universal Blue, basé sur Fedora Atomic, orienté dev/cloud-native.",
     site:"projectbluefin.io", dl:"docs.projectbluefin.io/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
+    req:{ram:"16 Go — minimum officiellement documenté (ublue-os), volontairement élevé car Bluefin embarque une stack de développement cloud-native par conteneurs ; fonctionne dans les faits avec moins mais sans garantie ni support", disk:"11 Go pour une installation standard, 19 Go avec le mode développeur (bluefin-dx) activé — officiel", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"projectbluefin.io → image ISO ou installeur web."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -2991,11 +3016,12 @@ window.OS_DATA = [
   },
   {
     id:"aurora", name:"Aurora", version:"stable (GTS)", cat:"advanced", color:"#8E44AD", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#8E44AD" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#8E44AD">Au</text></svg>',
     tag:"Équivalent KDE Plasma de Bluefin (Universal Blue) : bureau immuable, mises à jour atomiques.",
     site:"getaurora.dev", dl:"getaurora.dev/en", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Fedora",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
+    req:{ram:"4 Go conseillés en référence (socle Fedora Atomic) — non documenté officiellement par le projet Aurora lui-même", disk:"40 Go SSD conseillés (officiel docs.getaurora.dev) — un disque dur classique fonctionne mais dégrade fortement les mises à jour", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"getaurora.dev → image ISO ou installeur web."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -3016,11 +3042,12 @@ window.OS_DATA = [
   },
   {
     id:"microos", name:"openSUSE MicroOS", version:"Tumbleweed", cat:"advanced", color:"#4E9A06", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#4E9A06" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#4E9A06">Mo</text></svg>',
     tag:"openSUSE immuable en transactions atomiques (transactional-update), pensée conteneurs et edge.",
     site:"opensuse.org", dl:"get.opensuse.org/microos", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Avancé", base:"openSUSE",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
+    req:{ram:"1 Go min. (2 Go conseillés, officiel) — pensé pour des charges conteneurisées, pas pour un bureau classique", disk:"5 Go pour la racine + 5 Go pour /var (minimum officiel) ; 20 Go + 40 Go conseillés", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"get.opensuse.org/microos → édition Desktop (GNOME/KDE) ou serveur."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3273,11 +3300,12 @@ window.OS_DATA = [
   },
   {
     id:"ubuntumate", name:"Ubuntu MATE", version:"24.04 LTS", cat:"desktop", color:"#84A454", icon:"ubuntumate",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#84A454"><path d="M12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.628-5.373-12-12-12zm2.005 3.245L18.667 6 14 8.755ZM12 4.66c.342 0 .676.028 1.005.073v1.021A6.327 6.327 0 0 0 6.12 9.63l-.865-.51C6.378 6.503 8.978 4.66 12 4.66Zm0 2.495c.342 0 .677.041 1 .11v1.036a3.866 3.866 0 0 0-1-.13 3.812 3.812 0 0 0-3.672 2.76l-.896-.531A4.855 4.855 0 0 1 12 7.156Zm5.885.464A7.305 7.305 0 0 1 19.34 12a7.308 7.308 0 0 1-1.5 4.437l-.87-.515A6.3 6.3 0 0 0 18.329 12a6.31 6.31 0 0 0-1.313-3.865zm-2.171 1.286a4.81 4.81 0 0 1-.047 6.25l-.891-.526A3.793 3.793 0 0 0 15.828 12c0-.996-.377-1.899-.995-2.578zm-12.209.339L8.167 12 3.5 14.755Zm4.823 3.823A3.809 3.809 0 0 0 12 15.823c.346 0 .681-.047 1-.13v1.041a4.81 4.81 0 0 1-1 .11c-2.106 0-3.906-1.362-4.568-3.25zM6.12 14.37A6.327 6.327 0 0 0 12 18.328c.34 0 .67-.027.995-.078v1.016a7.212 7.212 0 0 1-.995.073c-3.022 0-5.622-1.842-6.745-4.459zm7.88.963 4.661 2.75-4.666 2.756z"/></svg>',
     tag:"Ubuntu avec le bureau MATE traditionnel : familier, léger et configurable.",
     site:"ubuntu-mate.org", dl:"ubuntu-mate.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"1 Go min. (2 Go conseillés, officiel Ubuntu MATE)", disk:"16 Go min.", cpu:"Dual-core 1 GHz ou mieux, 64 bits"},
+    req:{ram:"1 Go min. (2 Go conseillés, officiel Ubuntu MATE)", disk:"16 Go min.", cpu:"Dual-core 1 GHz ou mieux, 64 bits", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"ubuntu-mate.org/download → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus, mode image."},
@@ -3297,11 +3325,12 @@ window.OS_DATA = [
   },
   {
     id:"ubuntubudgie", name:"Ubuntu Budgie", version:"26.04 LTS", cat:"desktop", color:"#4B4C6E", icon:"ubuntu",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#4B4C6E"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"Ubuntu avec le bureau Budgie : élégant, moderne et épuré.",
     site:"ubuntubudgie.org", dl:"ubuntubudgie.org/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"ubuntubudgie.org → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3321,11 +3350,12 @@ window.OS_DATA = [
   },
   {
     id:"ubuntukylin", name:"Ubuntu Kylin", version:"26.04 LTS", cat:"desktop", color:"#EA1D2C", icon:"ubuntu",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#EA1D2C"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>',
     tag:"L'édition officielle d'Ubuntu pour le public chinois, bureau UKUI soigné.",
     site:"ubuntukylin.com", dl:"ubuntukylin.com/downloads/download-en.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet"},
+    req:{ram:"4 Go min. (8 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"Processeur 64 bits, aucune exigence de génération particulière documentée par le projet", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Ubuntu)", nvidia:"Bon — pilote propriétaire proposé via « Pilotes additionnels », comme sur Ubuntu"}},
     steps:[
       {t:"Télécharger l'ISO", d:"ubuntukylin.com → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3345,11 +3375,12 @@ window.OS_DATA = [
   },
   {
     id:"lmde", name:"LMDE 7", version:"Gigi", cat:"desktop", color:"#87CF3E", icon:"linuxmint",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#87CF3E"><path d="M5.438 5.906v8.438c0 2.06 1.69 3.75 3.75 3.75h5.625c2.06 0 3.75-1.69 3.75-3.75V9.656a2.827 2.827 0 0 0-2.813-2.812 2.8 2.8 0 0 0-1.875.737A2.8 2.8 0 0 0 12 6.844a2.827 2.827 0 0 0-2.812 2.812v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688h1.875V9.656c0-.529.408-.937.937-.937s.938.408.938.937v4.688a1.86 1.86 0 0 1-1.875 1.875H9.188a1.86 1.86 0 0 1-1.875-1.875V5.906ZM12 0C5.384 0 0 5.384 0 12s5.384 12 12 12 12-5.384 12-12S18.616 0 12 0m0 1.875A10.11 10.11 0 0 1 22.125 12 10.11 10.11 0 0 1 12 22.125 10.11 10.11 0 0 1 1.875 12 10.11 10.11 0 0 1 12 1.875"/></svg>',
     tag:"Linux Mint Debian Edition : le confort de Mint, directement sur base Debian.",
     site:"linuxmint.com", dl:"linuxmint.com/download_lmde.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20-25 Go d'espace disque", cpu:"64 bits obligatoire (le 32 bits a été abandonné avec la LMDE 7, base Debian 13), sans exigence de génération particulière"},
+    req:{ram:"2 Go min. (4 Go conseillés) — mêmes chiffres que Linux Mint main, la FAQ officielle les présente comme valables pour toutes les éditions", disk:"20-25 Go d'espace disque", cpu:"64 bits obligatoire (le 32 bits a été abandonné avec la LMDE 7, base Debian 13), sans exigence de génération particulière", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Debian, micrologiciels non-free inclus)", nvidia:"Correct — contrairement à l'édition Ubuntu de Mint, LMDE n'a pas de Gestionnaire de pilotes : dépôt non-free à activer manuellement, avec des retours documentés de frictions à la mise à niveau (session graphique en échec après installation du pilote)"}},
     steps:[
       {t:"Télécharger l'ISO", d:"linuxmint.com/download_lmde.php → édition Cinnamon."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3369,11 +3400,12 @@ window.OS_DATA = [
   },
   {
     id:"tumbleweed", name:"openSUSE Tumbleweed", version:"rolling", cat:"advanced", color:"#73BA25", icon:"opensuse",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#73BA25"><path d="M10.724 0a12 12 0 0 0-9.448 4.623c1.464.391 2.5.727 2.81.832.005-.19.037-1.893.037-1.893s.004-.04.025-.06c.026-.026.065-.018.065-.018.385.056 8.602 1.274 12.066 3.292.427.25.638.517.902.786.958.99 2.223 5.108 2.359 5.957.005.033-.036.07-.054.083a5.177 5.177 0 0 1-.313.228c-.82.55-2.708 1.872-5.13 1.656-2.176-.193-5.018-1.44-8.445-3.699.336.79.668 1.58 1 2.371.497.258 5.287 2.7 7.651 2.651 1.904-.04 3.941-.968 4.756-1.458 0 0 .179-.108.257-.048.085.066.061.167.041.27-.05.234-.164.66-.242.863l-.065.165c-.093.25-.183.482-.356.625-.48.436-1.246.784-2.446 1.305-1.855.812-4.865 1.328-7.66 1.31-1.001-.022-1.968-.133-2.817-.232-1.743-.197-3.161-.357-4.026.269A12 12 0 0 0 10.724 24a12 12 0 0 0 12-12 12 12 0 0 0-12-12zM13.4 6.963a3.503 3.503 0 0 0-2.521.942 3.498 3.498 0 0 0-1.114 2.449 3.528 3.528 0 0 0 3.39 3.64 3.48 3.48 0 0 0 2.524-.946 3.504 3.504 0 0 0 1.114-2.446 3.527 3.527 0 0 0-3.393-3.64zm-.03 1.035a2.458 2.458 0 0 1 2.368 2.539 2.43 2.43 0 0 1-.774 1.706 2.456 2.456 0 0 1-1.762.659 2.461 2.461 0 0 1-2.364-2.542c.02-.655.3-1.26.777-1.707a2.419 2.419 0 0 1 1.756-.655zm.402 1.23c-.602 0-1.087.325-1.087.727 0 .4.485.725 1.087.725.6 0 1.088-.326 1.088-.725 0-.402-.487-.726-1.088-.726Z"/></svg>',
     tag:"La rolling release d'openSUSE : toujours à jour, testée par openQA.",
     site:"opensuse.org", dl:"get.opensuse.org/tumbleweed", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
+    req:{ram:"2 Go pour l'installation graphique (1 Go en mode texte), officiel openSUSE", disk:"8 Go min. (officiel) ; 40 Go conseillés avec Btrfs et snapshots activés — le réglage par défaut de Tumbleweed", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"get.opensuse.org/tumbleweed → DVD complet."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3393,11 +3425,12 @@ window.OS_DATA = [
   },
   {
     id:"fedorakde", name:"Fedora KDE", version:"43", cat:"desktop", color:"#294172", icon:"fedora",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#294172"><path d="M12.001 0C5.376 0 .008 5.369.004 11.992H.002v9.287h.002A2.726 2.726 0 0 0 2.73 24h9.275c6.626-.004 11.993-5.372 11.993-11.997C23.998 5.375 18.628 0 12 0zm2.431 4.94c2.015 0 3.917 1.543 3.917 3.671 0 .197.001.395-.03.619a1.002 1.002 0 0 1-1.137.893 1.002 1.002 0 0 1-.842-1.175 2.61 2.61 0 0 0 .013-.337c0-1.207-.987-1.672-1.92-1.672-.934 0-1.775.784-1.777 1.672.016 1.027 0 2.046 0 3.07l1.732-.012c1.352-.028 1.368 2.009.016 1.998l-1.748.013c-.004.826.006.677.002 1.093 0 0 .015 1.01-.016 1.776-.209 2.25-2.124 4.046-4.424 4.046-2.438 0-4.448-1.993-4.448-4.437.073-2.515 2.078-4.492 4.603-4.469l1.409-.01v1.996l-1.409.013h-.007c-1.388.04-2.577.984-2.6 2.47a2.438 2.438 0 0 0 2.452 2.439c1.356 0 2.441-.987 2.441-2.437l-.001-7.557c0-.14.005-.252.02-.407.23-1.848 1.883-3.256 3.754-3.256z"/></svg>',
     tag:"Le spin officiel de Fedora avec KDE Plasma à la place de GNOME.",
     site:"fedoraproject.org", dl:"spins.fedoraproject.org/kde", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"—",
-    req:{ram:"4 Go min. (8 Go conseillés, officiel fedoraproject.org)", disk:"40 Go conseillés (officiel — le double pour un meilleur confort)", cpu:"x86-64-v2 obligatoire depuis Fedora 33+ (exclut les CPU antérieurs à Nehalem/Bulldozer, ~2008-2011) — pas besoin d'un CPU de dernière génération pour autant"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel fedoraproject.org)", disk:"40 Go conseillés (officiel — le double pour un meilleur confort)", cpu:"x86-64-v2 obligatoire depuis Fedora 33+ (exclut les CPU antérieurs à Nehalem/Bulldozer, ~2008-2011) — pas besoin d'un CPU de dernière génération pour autant", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (pilotes libres inclus)", nvidia:"Correct — pilote propriétaire non fourni par Fedora (politique du projet), à installer via le dépôt tiers RPM Fusion, comme sur Fedora Workstation"}},
     steps:[
       {t:"Télécharger l'ISO", d:"spins.fedoraproject.org/kde → image live KDE."},
       {t:"Graver la clé", d:"Fedora Media Writer ou balenaEtcher."},
@@ -3417,10 +3450,11 @@ window.OS_DATA = [
   },
   {
     id:"endless", name:"Endless OS", version:"6", cat:"desktop", color:"#FF9F00", icon:null,
+    lastVerified:"2026-08",
     tag:"OS immuable pensé pour l'éducation, riche en contenu hors-ligne. GNOME simplifié.",
     site:"endlessos.com", dl:"endlessos.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Debian",
-    req:{ram:"2 Go min. (4 Go usage léger, 8 Go multitâche)", disk:"16 Go min. (édition Basic), 32 Go+ (édition Full avec contenu préinstallé)", cpu:"x86_64 requis (32 bits non supporté), conçu pour redonner vie à du matériel ancien"},
+    req:{ram:"2 Go min. (4 Go usage léger, 8 Go multitâche)", disk:"16 Go min. (édition Basic), 32 Go+ (édition Full avec contenu préinstallé)", cpu:"x86_64 requis (32 bits non supporté), conçu pour redonner vie à du matériel ancien", gpu:{open:"Excellent — AMD/Intel pris en charge nativement (base Debian, micrologiciels non-free inclus)", nvidia:"Correct — pilote propriétaire disponible mais dépôt non-free à activer manuellement, comme sur Debian"}},
     steps:[
       {t:"Télécharger l'image", d:"endlessos.com → image de base ou complète (apps préinstallées)."},
       {t:"Graver la clé", d:"Endless USB Tool ou balenaEtcher."},
@@ -3440,10 +3474,11 @@ window.OS_DATA = [
   },
   {
     id:"vanillaos", name:"Vanilla OS", version:"2 Orchid", cat:"advanced", color:"#C99DFF", icon:null,
+    lastVerified:"2026-08",
     tag:"OS immuable sur base Debian sid, transactions atomiques (ABRoot) et conteneurs.",
     site:"vanillaos.org", dl:"github.com/Vanilla-OS/live-iso/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
+    req:{ram:"4 Go min. (8 Go conseillés, officiel docs.vanillaos.org)", disk:"50 Go min. — exigé par le système de partitions A/B d'ABRoot (officiel), nettement plus que la moyenne des distributions", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"vanillaos.org → dernière image stable."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3464,10 +3499,11 @@ window.OS_DATA = [
   },
   {
     id:"blendos", name:"blendOS", version:"rolling", cat:"advanced", color:"#4285F4", icon:null,
+    lastVerified:"2026-08",
     tag:"Arch immuable qui fait tourner apps Arch, Fedora, Ubuntu et Android côte à côte.",
     site:"blendos.co", dl:"blendos.co/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
+    req:{ram:"4 Go min. (officiel blendos.co)", disk:"25 Go min. (officiel blendos.co)", cpu:"x86_64 — images préconstruites, mises à jour par transaction (rien n'est compilé sur la machine)"},
     steps:[
       {t:"Télécharger l'ISO", d:"blendos.co → dernière image."},
       {t:"Graver la clé", d:"balenaEtcher ou dd."},
@@ -3488,10 +3524,11 @@ window.OS_DATA = [
   },
   {
     id:"clearlinux", name:"Clear Linux OS", version:"arrêtée (2025)", cat:"advanced", color:"#0071C5", icon:null,
+    lastVerified:"2026-08",
     tag:"Distribution Intel optimisée pour la performance x86, bundles au lieu de paquets — arrêtée par Intel en 2025, plus aucune mise à jour.",
     site:"github.com/clearlinux", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"—",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64 avec AVX2 recommandé — bundles binaires précompilés via swupd, optimisés pour les processeurs Intel récents"},
+    req:{ram:"1 Go (officiel clearlinux.github.io — la distribution vise du matériel modeste)", disk:"4 Go min. pour l'image serveur live (officiel) ; une image desktop complète demande davantage", cpu:"x86_64 avec AVX2 recommandé — bundles binaires précompilés via swupd, optimisés pour les processeurs Intel récents"},
     steps:[
       {t:"Télécharger l'image", d:"Projet arrêté : Intel a annoncé la fin de Clear Linux OS en 2025, clearlinux.org ne répond plus et le dépôt est archivé depuis août 2025. Aucune image officielle n'est plus distribuée ni mise à jour — fiche conservée à titre documentaire, à ne pas installer sur une machine en usage réel."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -3627,10 +3664,11 @@ window.OS_DATA = [
   },
   {
     id:"parabola", name:"Parabola", version:"rolling", cat:"advanced", color:"#797DF4", icon:null,
+    lastVerified:"2026-08",
     tag:"Arch entièrement libre (FSF). Rolling, noyau Linux-libre, dépôts nettoyés.",
     site:"parabola.nu", dl:"parabola.nu/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~40 min", diff:"Expert", base:"Arch",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
+    req:{ram:"256 Mo min. en CLI (officiel ParabolaWiki) — l'installateur graphique Calamares est le composant le plus gourmand, avec environ 1 Go", disk:"800 Mo pour une installation de base (groupe « base », officiel) — bien plus avec un environnement de bureau complet", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"parabola.nu → image de base ou LXDE live."},
       {t:"Graver la clé", d:"dd de l'image hybride."},
@@ -3650,10 +3688,11 @@ window.OS_DATA = [
   },
   {
     id:"hyperbola", name:"Hyperbola", version:"0.4", cat:"advanced", color:"#12A5DF", icon:null,
+    lastVerified:"2026-08",
     tag:"Distro libre stable (ex-Arch, en migration vers un noyau BSD). Puriste et minimaliste.",
     site:"hyperbola.info", dl:"www.hyperbola.info/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~30 min", diff:"Expert", base:"Arch / BSD",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"15-20 Go d'espace disque", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
+    req:{ram:"302 Mo en live / 47 Mo une fois installé, en mode texte sans bureau (officiel, v0.3.1) — nettement plus avec un environnement graphique", disk:"1-2 Go pour une installation de base en ligne de commande — bien plus avec un bureau complet, sans chiffre officiel précis", cpu:"x86_64, paquets binaires préconstruits (aucune compilation)"},
     steps:[
       {t:"Télécharger l'ISO", d:"hyperbola.info → dernière image."},
       {t:"Graver la clé", d:"dd de l'ISO."},
@@ -3934,11 +3973,12 @@ window.OS_DATA = [
   /* ===================== MOBILE (extension) ===================== */
   {
     id:"lineageos", name:"LineageOS", version:"23.2", cat:"mobile", color:"#167C80", icon:"lineageos",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#167C80"><path d="M21.64526 12.05735a2.40391 2.40391 0 0 0-1.80293.7993l-.13823-.0541a17.80096 17.80096 0 0 0-2.86666-.8594 4.80782 4.80782 0 0 0-9.61565 0h-.13221a17.74687 17.74687 0 0 0-2.7645.83537l-.13822.05409a2.40391 2.40391 0 1 0 .5589 1.06974 16.599 16.599 0 0 1 2.5782-.77526 4.80782 4.80782 0 0 0 9.35722 0 16.55693 16.55693 0 0 1 2.5782.76925 2.40391 2.40391 0 1 0 2.38588-1.839zM2.41397 15.6632a1.20196 1.20196 0 1 1 1.20196-1.20195 1.20196 1.20196 0 0 1-1.20196 1.20195zm9.61565 0a3.60587 3.60587 0 1 1 3.60586-3.60586 3.60587 3.60587 0 0 1-3.60586 3.60586zm9.61564 0a1.20196 1.20196 0 1 1 1.20196-1.20195 1.20196 1.20196 0 0 1-1.20196 1.20195zm-7.81271-3.60586a1.80293 1.80293 0 1 1-1.80293-1.80294 1.80293 1.80293 0 0 1 1.80293 1.80294z"/></svg>',
     tag:"Le grand classique des ROM Android alternatives. Continue de faire vivre les smartphones abandonnés par leur marque.",
     site:"lineageos.org", dl:"wiki.lineageos.org/devices", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~40 min", diff:"Avancé", base:"Android (AOSP)",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"8 Go de stockage libre", cpu:"Smartphone compatible (voir wiki officiel)"},
+    req:{ram:"2 Go dans la pratique (les téléphones officiellement supportés en ont presque tous au moins autant), mais LineageOS n'impose pas de seuil : la compatibilité dépend uniquement du modèle de téléphone, à vérifier sur le wiki officiel des appareils supportés", disk:"8 Go de stockage libre", cpu:"Smartphone compatible (voir wiki officiel)"},
     steps:[
       {t:"Vérifier la compatibilité", d:"Consulter wiki.lineageos.org et chercher le nom exact du modèle du téléphone."},
       {t:"Débloquer le bootloader", d:"Activer le mode développeur puis le débogage USB, débloquer via fastboot.", code:"fastboot flashing unlock"},
@@ -4035,11 +4075,12 @@ window.OS_DATA = [
   /* ===================== NOUVEAUX SYSTÈMES (2026-07-25) ===================== */
   {
     id:"win10", name:"Windows 10", version:"22H2", cat:"desktop", color:"#0078D6", icon:null,
+    lastVerified:"2026-08",
     svg:"<svg viewBox=\"0 0 24 24\" width=\"30\" height=\"30\" fill=\"#0078D6\"><path d=\"M2.5 2.5h8.5v8.5H2.5zM13 2.5h8.5v8.5H13zM2.5 13h8.5v8.5H2.5zM13 13h8.5v8.5H13z\"/></svg>",
     tag:"Le prédécesseur de Windows 11. Fin de support standard en octobre 2025, mais prolongeable via le programme ESU jusqu'en octobre 2027.",
     site:"microsoft.com", dl:"microsoft.com/software-download/windows10", license:"Propriétaire", popular:false, isNew:true,
     time:"~15 min", diff:"Facile", base:"Windows NT",
-    req:{ram:"2 Go min. (64 bits, officiel) ; 4 Go+ conseillés en pratique", disk:"32 Go min. (exigence officielle Microsoft récente)", cpu:"64 bits, 1 GHz, 1 cœur min."},
+    req:{ram:"2 Go min. (64 bits, officiel) ; 4 Go+ conseillés en pratique", disk:"32 Go min. (exigence officielle Microsoft récente)", cpu:"64 bits, 1 GHz, 1 cœur min.", gpu:{open:"Bon — pilotes AMD/Intel via Windows Update ou le site du fabricant", nvidia:"Bon — pilote GeForce officiel installable via Windows Update ou le site Nvidia"}},
     steps:[
       {t:"Télécharger l'ISO officiel", d:"Depuis microsoft.com/software-download/windows10, section « Télécharger l'image disque (ISO) ». Le site peut proposer l'outil de création de support à la place d'un lien direct selon le navigateur détecté."},
       {t:"Créer la clé bootable", d:"Ouvrir Rufus, sélectionner l'ISO et la clé USB. GPT/UEFI pour un PC récent, MBR/Legacy si le PC est plus ancien (BIOS non-UEFI).", code:"Rufus → GPT ou MBR selon le PC cible"},
@@ -4247,10 +4288,11 @@ window.OS_DATA = [
   },
   {
     id:"openmandriva", name:"OpenMandriva Lx", version:"6.0 (Rock stable / ROME rolling)", cat:"desktop", color:"#3DA5D9", icon:null,
+    lastVerified:"2026-08",
     tag:"Distribution RPM indépendante héritière de Mandriva, l'une des rares à compiler l'essentiel du système avec Clang/LLVM plutôt que GCC.",
     site:"openmandriva.org", dl:"www.openmandriva.org/release-picking", license:"Libre / Open-source", popular:false, isNew:true,
     time:"~20 min", diff:"Intermédiaire", base:"—",
-    req:{ram:"2 Go min. (4 Go+ conseillés pour Plasma)", disk:"10 Go min.", cpu:"x86_64 uniquement (32 bits non supporté), carte graphique compatible OpenGL 2.0+"},
+    req:{ram:"2 Go min. (4 Go+ conseillés pour Plasma)", disk:"10 Go min.", cpu:"x86_64 uniquement (32 bits non supporté), carte graphique compatible OpenGL 2.0+", gpu:{open:"Excellent — AMD/Intel pris en charge nativement", nvidia:"Correct — paquets propriétaires communautaires installables via dnf (dépôt non-free à activer) ou le module Welcome, avec parfois un décalage entre version du noyau et paquet nvidia disponible"}},
     steps:[
       {t:"Télécharger l'ISO", d:"openmandriva.org/release-picking, choisir Rock (stable, releases fixes) ou ROME (rolling, paquets récents en continu)."},
       {t:"Graver la clé USB", d:"Rufus, balenaEtcher ou dd."},

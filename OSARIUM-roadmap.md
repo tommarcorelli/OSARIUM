@@ -2,7 +2,88 @@
 
 *Dernière mise à jour : août 2026*
 
-## ✅ Fait (cette session — badge de fraîcheur)
+## ✅ Fait (cette session — dette de template : les deux plus gros clusters ÉLIMINÉS)
+
+Session la plus productive de ce chantier : 13 fiches supplémentaires différenciées, ce qui fait disparaître complètement les deux clusters génériques historiques (« 2 Go min. (4 Go conseillés) » et « 15-20 Go d'espace disque »). Le chantier de fond passe de 47 à **22 fiches concernées**, réparties sur 3 petits clusters bien plus spécifiques.
+
+Détail des 13 fiches, chacune vérifiée (recherche web sauf mention contraire) :
+- **Bluefin** : minimum officiel étonnamment élevé — 16 Go de RAM, documenté ainsi par le projet car Bluefin embarque une stack de développement cloud-native par conteneurs. Storage : 11 Go standard, 19 Go en mode développeur (bluefin-dx).
+- **Aurora** : pas de RAM minimale documentée par le projet lui-même (référence indicative au socle Fedora Atomic) ; 40 Go SSD conseillés (officiel docs.getaurora.dev).
+- **VanillaOS** : 4 Go/8 Go, et surtout 50 Go de disque — exigé par le système de partitions A/B d'ABRoot (officiel docs.vanillaos.org), très éloigné du générique.
+- **blendOS** : 4 Go/25 Go (officiel blendos.co).
+- **Clear Linux** : 1 Go, 4 Go de disque pour l'image serveur live (officiel clearlinux.github.io).
+- **Devuan** : reprend l'ordre de grandeur de Debian (sa base), avec attribution explicite plutôt qu'un chiffre generique flottant.
+- **Artix** : 300 Mo pour l'édition low-memory en CLI (sans systemd) ; pas de minimum desktop officiel.
+- **Parabola** : 256 Mo en CLI (officiel ParabolaWiki) — fait notable, l'installateur graphique Calamares est le composant le plus gourmand (~1 Go), pas le système lui-même.
+- **Hyperbola** : chiffres officiels très précis (v0.3.1) — 302 Mo en live / 47 Mo installé, en mode texte.
+- **CRUX** : 2 Go pour l'ISO actuelle (Handbook 3.8) — en hausse par rapport aux 192 Mo d'il y a quelques versions, point d'évolution intéressant à noter.
+- **LMDE** (RAM seulement, son disque était déjà différencié) : mêmes chiffres que Linux Mint, la FAQ officielle les couvrant explicitement pour toutes les éditions.
+- **LineageOS** (RAM seulement) : reformulé pour refléter la réalité — pas de seuil RAM imposé par le projet, la compatibilité dépend uniquement du modèle de téléphone listé sur le wiki officiel des appareils supportés.
+
+**Deux pièges récurrents rencontrés et corrigés dans la foulée** (même classe d'erreur que lors des sessions précédentes) : la formulation d'Aurora ne commençait pas par un chiffre (cassait `HwCheck.parseMinRamMB`), et celle d'Hyperbola utilisait « Mio » au lieu de « Mo » (unité non reconnue par le même parseur). Les deux fois, `node scripts/validate-data.js` a détecté l'erreur immédiatement.
+
+Cache offline passé en `osarium-v19`. Sitemap régénéré, 170/170 fiches toujours valides.
+
+**Reste au total, sur 3 petits clusters distincts** :
+- 9 fiches recovery — « 2-4 Go (clé USB bootable) » : clonezilla, systemrescue, rescatux, gpartedlive, ubcd, trinityrescuekit, rescuezilla, redorescue, kasperskyrescue
+- 8 fiches sécurité — « x86_64 (VM recommandée pour l'isolement) » : tails, parrot, blackarch, backbox, athenaos, caine, kalipurple, pentoo
+- 8 fiches lightweight — « 512 Mo à 1 Go » : lubuntu, bodhi, rescatux, sparkylinux, absolutelinux, endian, ubcd, redorescue
+
+## ✅ Fait (session précédente — dette de template : Silverblue, Kinoite, Tumbleweed, MicroOS)
+
+Suite du même chantier, deux familles traitées avec leurs pages officielles :
+
+- **Silverblue et Kinoite** : la page officielle Fedora Atomic Desktops (fedoraproject.org) indique explicitement 4 Go de RAM et 40 Go de disque conseillés pour la plupart des variantes Fedora — le double étant recommandé pour plus de confort. Précision ajoutée sur le disque : OSTree conserve les anciens déploiements, donc l'usage réel grandit avec le temps (comme pour NixOS).
+- **openSUSE Tumbleweed** : documentation officielle openSUSE (Hardware requirements, mise à jour avril 2025) — 2 Go de RAM pour l'installation graphique (1 Go en mode texte), 8 Go de disque minimum, 40 Go si Btrfs + snapshots sont activés (le réglage par défaut de Tumbleweed).
+- **openSUSE MicroOS** : pensé pour des charges conteneurisées plutôt qu'un bureau classique — 1 Go de RAM min. (2 Go conseillés), et un schéma disque particulier (5 Go pour la racine + 5 Go pour /var au minimum officiel, 20+40 Go conseillés).
+- **Résultat** : cluster RAM générique 20→16 fiches, cluster disque générique 16→12 fiches (36 fiches concernées au total, contre 47 au tout début de ce chantier).
+- Cache offline passé en `osarium-v18`.
+- **Reste dans ce cluster** : parrot, artix, chimera, caine, devuan, guix, crux, bluefin, aurora, lmde (RAM seulement), vanillaos, blendos, clearlinux, parabola, hyperbola, lineageos.
+
+## ✅ Fait (session précédente — dette de template : RAM Mint et Manjaro différenciées)
+
+Suite immédiate de la session précédente sur ce même cluster. Ces deux fiches avaient déjà un champ `disk` distinct (20 Go/100 Go pour Mint, 30 Go pour Manjaro) — seul `req.ram` restait sur le texte générique.
+
+- **Linux Mint** : la valeur générique s'est avérée juste (confirmée par plusieurs sources, dont la FAQ officielle Linux Mint : 2 Go min., 4 Go conseillés) — plutôt que d'inventer une fausse spécificité, le texte a été reformulé pour l'attribuer explicitement à la FAQ officielle, ce qui suffit à sortir la fiche du cluster générique tout en restant honnête.
+- **Manjaro** : correction plus substantielle — Manjaro ne publie pas de minimum strict, seulement une **recommandation** officielle (wiki Manjaro : 1 Go de RAM, 30 Go de disque, 1 GHz) — un cadrage différent de « minimum vs conseillé » qui méritait d'être formulé autrement.
+- **Piège évité** : la première formulation testée pour Manjaro ne commençait plus par un nombre, ce qui a fait échouer `HwCheck.parseMinRamMB` (utilisé par le filtre de compatibilité matérielle) — détecté immédiatement par `node scripts/validate-data.js`, corrigé en gardant "1 Go (...)" en tête de chaîne.
+- **Résultat** : cluster RAM générique 22→20 fiches (40 fiches concernées au total, contre 42 en début de session, 47 au départ de ce chantier).
+- Cache offline passé en `osarium-v17`.
+- **Reste dans ce cluster** : parrot, artix, silverblue, chimera, caine, kinoite, devuan, guix, crux, bluefin, aurora, microos, lmde, tumbleweed, vanillaos, blendos, clearlinux, parabola, hyperbola, lineageos (20 fiches RAM / 16 fiches disque, en bonne partie les mêmes).
+
+## ✅ Fait (session précédente — dette de template : 5 fiches différenciées, cluster RAM/disque le plus gros entamé)
+
+Reprise du chantier « dette de template » identifié depuis plusieurs sessions. Cinq fiches du plus gros cluster (« 2 Go min. (4 Go conseillés) » / « 15-20 Go ») vérifiées et différenciées avec leurs vrais chiffres officiels — souvent très différents du texte générique :
+
+- **NixOS** : pas de minimum strict officiel, mais l'installateur graphique Calamares exige au moins 3 Go (retours communautaires détaillés), 2 Go suffisent en ligne de commande. Le disque est un vrai piège : `/nix/store` conserve les anciennes générations, donc l'espace utilisé grandit dans le temps bien au-delà de 15-20 Go.
+- **Gentoo** : le Handbook officiel indique 140 Mo pour amorcer l'ISO minimale et 2 Go pour le LiveGUI KDE — sans rapport avec « 2 Go/4 Go » générique. 40 Go conseillés pour la partition racine (officiel), sans compter le cache de compilation.
+- **EndeavourOS** : la page d'accueil officielle indique clairement 4 Go de RAM et 15 Go de disque (les éditions légères Xfce/LXQt/i3 tournent avec 2 Go).
+- **Void Linux** : Handbook officiel — 96 Mo de RAM et 700 Mo de disque pour le système de base ; les images graphiques demandent nettement plus, sans chiffre officiel précis.
+- **Slackware** : page officielle slackware.com — 64 Mo de RAM (1 Go+ conseillé en pratique), 5 Go+ pour une installation complète.
+- **Résultat** : cluster RAM générique 27→22 fiches, cluster disque générique 21→16 fiches (42 fiches concernées au total, contre 47 en début de session).
+- **Vérifications** : script Python idempotent avec assertions (échoue si le texte générique attendu n'est plus présent, pour ne jamais écraser une fiche déjà différenciée par erreur), `node --check`, `node scripts/validate-data.js --dupes` (recompte confirmé), `node scripts/validate-data.js` (170/170 fiches toujours valides). Cache offline passé en `osarium-v16`.
+- **Reste dans ce même cluster** (22 fiches RAM / 16 fiches disque, en bonne partie les mêmes) : mint, manjaro, parrot, artix, silverblue, chimera, caine, kinoite, devuan, guix, crux, bluefin, aurora, microos, lmde, tumbleweed, vanillaos, blendos, clearlinux, parabola, hyperbola, lineageos — à traiter dans une session suivante, en gardant la même exigence (vérification web systématique avant d'écrire un chiffre).
+
+## ✅ Fait (session précédente — compatibilité GPU : les 4 dernières fiches desktop, catégorie complète)
+
+Dernier lot des distributions à base indépendante non couvertes la fois précédente, chacune vérifiée par recherche web : **Mageia** (Centre de contrôle Mageia, dépôts Nonfree à activer), **PCLinuxOS** (sections de dépôt dédiées par version de pilote, activation manuelle dans Synaptic), **OpenMandriva** (paquets communautaires via dnf, décalages noyau/pilote parfois rapportés), **KaOS** (nouveau libre par défaut, propriétaire en paquet communautaire mais peu mis en avant, configuration PRIME manuelle pour le hybride).
+
+- **35 fiches ont maintenant `req.gpu` — la catégorie desktop (32 fiches) est intégralement couverte**, plus les 3 fiches gaming les plus consultées (SteamOS, Garuda, Nobara, Bazzite, CachyOS).
+- Chaque fiche a aussi reçu `lastVerified:"2026-08"` (35 fiches datées au total).
+- **Reste hors scope, assumé** : ChromeOS Flex, Asahi Linux (paradigmes GPU différents), et les 5 fiches gaming d'émulation (Batocera, Lakka, Recalbox, ChimeraOS) où la question GPU se pose différemment (perf d'émulation, pas choix de pilote).
+- **Vérifications** : script Python idempotent (mêmes garde-fous anti-collision que les lots précédents), `node --check`, `node scripts/validate-data.js` (170/170 fiches toujours valides, 35 avec `req.gpu` conforme à l'attendu). Cache offline passé en `osarium-v15`.
+
+## ✅ Fait (session précédente — compatibilité GPU étendue à 18 fiches de plus, 31 au total)
+
+Suite de la session GPU précédente (13 fiches). Cette fois, deux approches selon les cas :
+
+- **10 fiches héritant directement de la même histoire pilote qu'une fiche déjà vérifiée** (même base, donc même mécanisme réel) : Zorin OS, elementary OS, Linux Lite, KDE Neon, Ubuntu MATE, Ubuntu Budgie, Ubuntu Kylin, Feren OS, Regolith Linux (toutes base Ubuntu → « Pilotes additionnels ») + Windows 10 (même histoire que Windows 11). Pas de nouvelle recherche nécessaire, le fait vérifié sur le parent s'applique tel quel.
+- **8 fiches vérifiées individuellement par recherche web**, avec une correction notable : **Deepin, Nitrux, Endless OS** suivent Debian (dépôt non-free à activer). **LMDE**, elle, n'a PAS le Gestionnaire de pilotes de l'édition Ubuntu de Mint — les forums Linux Mint le confirment explicitement (« there are no plans to port it »), avec des retours documentés de sessions graphiques en échec après mise à niveau. Sans cette vérification, j'aurais fait l'erreur de traiter LMDE comme du Mint standard. **Fedora KDE** et **Ultramarine Linux** suivent la politique Fedora (RPM Fusion). **CachyOS** propose le pilote nvidia-open dès le menu de démarrage de l'ISO et l'installe via son Kernel Manager. **Solus** a son propre outil de gestion de pilotes (Linux Driver Management), disponible en centre logiciel.
+- Chaque fiche modifiée a aussi reçu `lastVerified:"2026-08"`.
+- **Volontairement laissé de côté cette fois** : ChromeOS Flex et Asahi Linux (modèles GPU trop différents — Chrome OS et Apple Silicon ne se prêtent pas à la même grille AMD/Intel/Nvidia), et les distributions indépendantes non vérifiées (Mageia, PCLinuxOS, OpenMandriva, KaOS) — par souci de ne pas avancer de fait non vérifié plutôt que par manque de pertinence.
+- **Vérifications** : script Python pour insérer `gpu`/`lastVerified` de façon idempotente et anti-collision sur des `req` partagés (plusieurs fiches Ubuntu ont un texte `req` identique — l'ancrage s'est fait sur l'`id`, pas sur le texte, pour éviter toute confusion entre fiches). `node --check`, `node scripts/validate-data.js` (170/170 fiches toujours valides), inspection du nombre total de fiches avec `req.gpu` (31, conforme à l'attendu). Cache offline passé en `osarium-v14`.
+
+## ✅ Fait (session précédente — badge de fraîcheur)
 
 Idée écartée dans une session précédente « pour l'instant », reprise ici sous une forme volontairement honnête : plutôt que de dater rétroactivement 170 fiches sans preuve réelle de quand chacune a été vérifiée pour la dernière fois, le suivi **démarre maintenant** et s'enrichira fiche après fiche à mesure des vérifications réelles.
 
