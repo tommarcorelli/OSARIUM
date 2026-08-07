@@ -2,7 +2,7 @@
    La liste ASSETS doit rester exhaustive : `addAll` échoue en bloc si un seul
    fichier manque, et tout fichier absent d'ici n'est pas disponible hors-ligne
    au premier chargement. À compléter à chaque nouveau css/js ajouté aux pages. */
-const CACHE = 'osarium-v19'; // v19 : dette de template — clusters RAM/disque génériques éliminés (13 fiches supplémentaires différenciées)
+const CACHE = 'osarium-v23'; // v23 : cluster sécurité « VM recommandée pour l'isolement » corrigé (CAINE, Pentoo) + badges lastVerified étendus
 const ASSETS = [
   './',
   './index.html',

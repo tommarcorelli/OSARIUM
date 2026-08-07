@@ -755,11 +755,12 @@ window.OS_DATA = [
   },
   {
     id:"tails", name:"Tails", version:"7.x", cat:"security", color:"#8E64C8", icon:"tails",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#8E64C8"><path d="M21.356 11.162v3.98c0 .122-.081.154-.181.071l-2.032-1.682a.55.55 0 0 1-.181-.37v-.501l-.635-.516c-.68-.554-1.226-1.677-1.226-2.5 0-.822.549-1.036 1.226-.478l.635.516V9.18c0-.122.081-.154.181-.071l2.032 1.682c.1.082.181.248.181.37zm-2.993-1.265c-.358-.296-.648-.182-.648.253s.29 1.027.648 1.323l.599.486v-1.576l-.599-.486zM21.202 19.934l.013-.01a.334.334 0 0 0 .037-.036l.004-.004a.36.36 0 0 0 .032-.046l.007-.013a.299.299 0 0 0 .019-.042l.004-.01a.329.329 0 0 0 .013-.055v-.014l.003-.027.003-.152-5.223-4.28.022-12.91-.147-.111-.004-.003-.034-.02c-.007-.004-.014-.01-.022-.013l-.03-.01c-.01-.004-.02-.009-.03-.011l-.026-.004c-.013-.002-.026-.005-.039-.005H15.8l-.023.001c-.013 0-.025.001-.037.003l-.03.007c-.01.003-.021.005-.031.01-.01.003-.02.008-.029.012l-.029.015a.202.202 0 0 0-.014.01c-.012.004-.024.007-.035.013l-3.444 1.726.72.57.027 10.067-5.246-4.32-.003-5.241L7.623.328l-.001-.01a.283.283 0 0 0-.004-.035c-.001-.01-.002-.02-.005-.03L7.605.223C7.6.213 7.597.201 7.59.19L7.588.181l-.01-.015c-.006-.01-.012-.021-.02-.031L7.54.112A.354.354 0 0 0 7.466.05.294.294 0 0 0 7.44.035c-.01-.004-.02-.01-.03-.013a.365.365 0 0 0-.061-.016L7.314.002 7.294 0l-.009.001a.3.3 0 0 0-.036.004c-.01.001-.02.002-.03.005-.01.002-.019.006-.029.009a.286.286 0 0 0-.033.012l-.009.004L2.825 2.2l-.016.01a.336.336 0 0 0-.077.061.303.303 0 0 0-.053.078.402.402 0 0 0-.023.06.284.284 0 0 0-.01.065c-.001.006-.003.013-.002.02l.006 10.108v.02l.002.008c0 .015.003.03.006.044l.002.009.004.011a.32.32 0 0 0 .02.054v.001h.001c.009.018.02.034.031.05l.007.01.006.006a.31.31 0 0 0 .031.032l.006.006c.004.003.008.005.01.008.002 0 .003.003.005.004l4.7 3.909-.107 2.673v.038l.004.025.002.015c0 .005.002.01.004.015 0 .004.002.007.003.011l.001.005.003.01c.005.014.01.028.017.04v.002a.32.32 0 0 0 .031.049l.006.008.005.005a.342.342 0 0 0 .037.039l.005.003.003.002.003.004 5.317 4.212c.1.078.236.092.35.035l7.988-4 .004-.002a.321.321 0 0 0 .045-.029zM5.475 10.985L3.819 9.706v1.1l.844.585-1.392.698-.006-9.376 2.176-1.09.023 2.392-1.546-1.236v1.1l1.554 1.235.024 1.182L3.901 5.02v1.1l1.603 1.275-.006 1.283-1.573-1.257v1.1l1.58 1.256.01 1.187zm3.433 6.038l-5.309-4.365 3.668-1.837 5.309 4.365zM6.123 1.282l.733-.367.079 9.34-.733.366zM8.617 8.396l-.001-1.59L9.925 7.83l.001 1.591zM9.926 6.568l-1.31-1.025V3.952l1.309 1.025zM11.018 5.816c.507.646 1.026 1.907 1.026 3.073 0 1.165-.519 1.562-1.026 1.362V5.816z"/></svg>',
     tag:"L'OS de l'anonymat. Amnésique, tout passe par Tor. Utilisé par les journalistes.",
     site:"tails.net", dl:"tails.net/install", license:"Libre / Open-source", popular:true, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"3 Go conseillés (fonctionne avec moins, instabilité possible)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"3 Go conseillés (fonctionne avec moins, instabilité possible)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 — l'usage en VM n'est volontairement PAS la méthode recommandée par le projet : la documentation officielle Tails prévient que la virtualisation n'anonymise pas le trafic de la machine hôte, et que l'hôte/l'hyperviseur peuvent surveiller ce qui se passe à l'intérieur ; démarrer depuis une vraie clé USB reste la méthode principale"},
     steps:[
       {t:"Télécharger l'image USB", d:"tails.net → image .img. Vérifier la signature OpenPGP."},
       {t:"Graver la clé", d:"balenaEtcher ou GNOME Disks. Tails vit sur la clé, pas sur le disque."},
@@ -780,11 +781,12 @@ window.OS_DATA = [
   },
   {
     id:"parrot", name:"Parrot OS", version:"7.x", cat:"security", color:"#00E5CE", icon:"parrotsecurity",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#00E5CE"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0Zm6.267 2.784L13.03 5.54l8.05-.179-8.05 3.333-2.154 2.688 5.007 9.038-1.536-1.605 1.645 3.456-4.937-5.527-6.268-6.28L2.77 12.11l.7-3.442 4.018-.261.823-4.06Z"/></svg>',
     tag:"L'alternative à Kali. Pentest + confidentialité + dev, sur base Debian testing.",
     site:"parrotsec.org", dl:"parrotsec.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Debian",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20 Go min. (édition Home), 40 Go conseillés (édition Security)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"20 Go min. (édition Home), 40 Go conseillés (édition Security)", cpu:"x86-64 et ARM (armhf/arm64) — images dédiées Raspberry Pi 3/4/400/5 disponibles (officiel parrotsec.org), contrairement à la plupart des distributions de cette catégorie limitées à x86_64"},
     steps:[
       {t:"Télécharger l'ISO", d:"parrotsec.org → Security Edition (pentest) ou Home."},
       {t:"Graver la clé", d:"balenaEtcher ou Ventoy."},
@@ -805,11 +807,12 @@ window.OS_DATA = [
   },
   {
     id:"blackarch", name:"BlackArch", version:"rolling", cat:"security", color:"#1793D1", icon:"archlinux",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#1793D1"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"/></svg>',
     tag:"2800+ outils de pentest sur base Arch. Le rasoir des professionnels.",
     site:"blackarch.org", dl:"blackarch.org/downloads.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~40 min", diff:"Expert", base:"Arch",
-    req:{ram:"1 Go min. (2 Go conseillés, plus selon les outils utilisés)", disk:"8-32 Go pour une clé USB persistante (jusqu'à ~100 Go si tous les outils sont installés)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"1 Go min. (2 Go conseillés, plus selon les outils utilisés)", disk:"8-32 Go pour une clé USB persistante (jusqu'à ~100 Go si tous les outils sont installés)", cpu:"x86_64 (VM pratique pour un labo isolé ; le bare-metal reste préférable pour l'injection Wi-Fi et le cracking GPU, mal supportés en VM)"},
     steps:[
       {t:"Télécharger l'ISO", d:"blackarch.org → Full ISO (~20 Go) ou Slim ISO."},
       {t:"Graver la clé", d:"dd obligatoire pour l'image hybride.", code:"sudo dd if=blackarch.iso of=/dev/sdX bs=4M"},
@@ -882,11 +885,12 @@ window.OS_DATA = [
   /* ===================== LÉGER ===================== */
   {
     id:"backbox", name:"BackBox", version:"9", cat:"security", color:"#000000", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" fill="#000000" stroke="#666" stroke-width="0.5"><path d="M12 2 20 6v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>',
     tag:"Distribution d'audit basée sur Ubuntu. Interface légère XFCE, orientée pentest et forensic.",
     site:"backbox.org", dl:"linux.backbox.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"1 Go min. (2-4 Go conseillés)", disk:"30 Go d'espace disque (officiel BackBox 9)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"1 Go min. (2-4 Go conseillés)", disk:"30 Go d'espace disque (officiel BackBox 9)", cpu:"x86_64 (VM pratique pour un labo isolé ; le bare-metal reste préférable pour l'injection Wi-Fi et le cracking GPU, mal supportés en VM)"},
     steps:[
       {t:"Télécharger l'ISO", d:"backbox.org → section Downloads, édition Desktop."},
       {t:"Vérifier le hash", d:"Comparer le SHA256 fourni sur le site.", code:"sha256sum backbox-9-desktop-amd64.iso"},
@@ -958,11 +962,12 @@ window.OS_DATA = [
   },
   {
     id:"lubuntu", name:"Lubuntu", version:"26.04 LTS", cat:"lightweight", color:"#2E7CD6", icon:"lubuntu",
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30" fill="#2E7CD6"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m1.287 4.723q.316-.031.63.004a3.17 3.17 0 0 1 2.41 1.642l5.665.781h-6.458a2.58 2.58 0 0 0-1.66-.955 2.57 2.57 0 0 0-1.371.192c-.43.19-.8.495-1.068.88-.268.387-.424.84-.451 1.31-.026.468.078.935.3 1.349a3.13 3.13 0 0 1-.795-1.68 3.13 3.13 0 0 1 .305-1.832 3.14 3.14 0 0 1 1.299-1.332 3.1 3.1 0 0 1 1.195-.36m-9.88 1.09 8.673 6.232-7.154-4.012a3.6 3.6 0 0 0-.072 2.022 3.57 3.57 0 0 0 1.998 2.34l4.748 1.334-6.002-.983c.061.58.275 1.133.619 1.604a3.33 3.33 0 0 0 2.652 1.33 3.95 3.95 0 0 1-3.062-.451 3.9 3.9 0 0 1-1.432-1.563 3.9 3.9 0 0 1-.398-2.08l1.32.371a4.7 4.7 0 0 1-1.246-.986 4.7 4.7 0 0 1-1.111-2.48 4.67 4.67 0 0 1 .466-2.678m11.667 3.132q-.01.138-.008.278c.007 1.143.535 2.21 1.057 3.226.523 1.017 1.064 2.076 1.094 3.22.024.95-.32 1.895-.899 2.651-.578.756-1.377 1.328-2.255 1.696a6.5 6.5 0 0 1-3.91.338l-1 2.373v-3.327a6.23 6.23 0 0 0 3.665-.31c.7-.285 1.352-.707 1.862-1.264s.875-1.255.986-2.002c.15-1-.151-2.007-.447-2.974s-.595-1.977-.436-2.975a3.3 3.3 0 0 1 .291-.93"/></svg>',
     tag:"Ubuntu ultra-léger avec LXQt. Ressuscite les PC anciens.",
     site:"lubuntu.me", dl:"lubuntu.me/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"1 Go min. (2 Go conseillés) — le projet a cessé de publier un minimum strict après la 18.04, ce chiffre reprend la doc communautaire actuelle", disk:"8 Go min. (20 Go conseillés)", cpu:"1 GHz min. (Pentium 4, Pentium M, AMD K8 ou plus récent)"},
     steps:[
       {t:"Télécharger l'ISO", d:"lubuntu.me → dernière LTS."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -1084,11 +1089,12 @@ window.OS_DATA = [
   },
   {
     id:"bodhi", name:"Bodhi Linux", version:"7.0", cat:"lightweight", color:"#8DC63F", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" fill="#8DC63F"><path d="M12 21c-5-2-8-6-8-11 0-3 2-6 5-7 0 4 1 7 3 9 2-2 3-5 3-9 3 1 5 4 5 7 0 5-3 9-8 11z"/></svg>',
     tag:"Ubuntu minimaliste avec Moksha (fork d'Enlightenment). Léger mais très personnalisable.",
     site:"bodhilinux.com", dl:"www.bodhilinux.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"512 Mo min. (768 Mo en 64 bits, 1 Go conseillé) — l'installeur officiel tourne mais lentement à 512 Mo, le système une fois installé se comporte bien à ce niveau", disk:"5 Go min. (10 Go conseillés)", cpu:"500 MHz min. (1 GHz conseillé)"},
     steps:[
       {t:"Télécharger l'ISO", d:"bodhilinux.com → édition Standard, AppPack ou Legacy selon le matériel."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2038,11 +2044,12 @@ window.OS_DATA = [
   },
   {
     id:"systemrescue", name:"SystemRescue", version:"13.00", cat:"recovery", color:"#2ECC71", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2ECC71" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2ECC71">Sr</text></svg>',
     tag:"Live Linux de dépannage (Arch-based) : partitionnement, récupération de données, réseau.",
     site:"system-rescue.org", dl:"www.system-rescue.org/Download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Arch",
-    req:{ram:"2 Go min. pour les options de démarrage par défaut, 4 Go conseillés en mode mise en cache RAM — chiffre officiel plus élevé que le générique habituel", disk:"2-4 Go (clé USB bootable)", cpu:"64 bits (x86-64) uniquement — le support 32 bits (i686) a été abandonné depuis la version 10.00 (déc. 2023)"},
+    req:{ram:"2 Go min. pour les options de démarrage par défaut, 4 Go conseillés en mode mise en cache RAM — chiffre officiel plus élevé que le générique habituel", disk:"environ 1,1 Go pour l'image ISO (version 12/13, officiel) ; une clé USB de 2 Go ou plus recommandée", cpu:"64 bits (x86-64) uniquement — le support 32 bits (i686) a été abandonné depuis la version 10.00 (déc. 2023)"},
     steps:[
       {t:"Télécharger l'ISO", d:"www.system-rescue.org/Download → image amd64."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2063,11 +2070,12 @@ window.OS_DATA = [
   },
   {
     id:"rescatux", name:"Rescatux", version:"0.74 (dernière stable, novembre 2021 — aucune version 0.75 stable n'a jamais été publiée malgré des tags bêta internes)", cat:"recovery", color:"#E74C3C", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E74C3C" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E74C3C">Rt</text></svg>',
     tag:"Live de secours guidé par menus (Rescapp) : réparer GRUB, mots de passe, permissions.",
     site:"rescatux.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go conseillé — le projet ne publie pas de minimum officiel, mais recommande ce seuil pour que le système live tienne confortablement en RAM", disk:"1 Go (l'ISO tient sous 700 Mo, clé USB de 4 Go+ conseillée)", cpu:"x86_64 (686/32 bits aussi supporté si Secure Boot désactivé)"},
     steps:[
       {t:"Télécharger l'ISO", d:"rescatux.org → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2217,11 +2225,12 @@ window.OS_DATA = [
   },
   {
     id:"athenaos", name:"Athena OS", version:"25.0", cat:"security", color:"#C0392B", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#C0392B" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#C0392B">At</text></svg>',
     tag:"Distro pentest basée sur Arch, orientée personnalisation (BlackArch/Kali repos en option).",
     site:"athenaos.org", dl:"github.com/Athena-OS/athena/releases", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Arch",
-    req:{ram:"2 Go min. (4-8 Go conseillés)", disk:"20 Go min. (30 Go conseillés, SSD de préférence)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. (4-8 Go conseillés)", disk:"20 Go min. (30 Go conseillés, SSD de préférence)", cpu:"x86_64 (VM pratique pour un labo isolé ; le bare-metal reste préférable pour l'injection Wi-Fi et le cracking GPU, mal supportés en VM)"},
     steps:[
       {t:"Télécharger l'ISO", d:"github.com/Athena-OS/athena/releases → image ISO officielle de la dernière version publiée."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2243,11 +2252,12 @@ window.OS_DATA = [
   },
   {
     id:"caine", name:"CAINE", version:"14 (Lightstream)", cat:"security", color:"#1F3A5F", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1F3A5F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1F3A5F">Ca</text></svg>',
     tag:"Distro forensique (Computer Aided INvestigative Environment), basée sur Ubuntu. Écriture bloquée par défaut.",
     site:"caine-live.net", dl:"caine-live.net/page5/page5.html", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Intermédiaire", base:"Ubuntu",
-    req:{ram:"2 Go min. (4 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. (4 Go conseillés)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 — démarre en Live directement sur la machine à examiner, avec blocage en écriture des disques par défaut ; ce n'est pas un outil pensé pour tourner isolé en VM, contrairement aux autres distributions de ce cluster"},
     steps:[
       {t:"Télécharger l'ISO", d:"caine-live.net/page5/page5.html → dernière version stable."},
       {t:"Graver la clé", d:"balenaEtcher (attention : ne pas monter les disques à analyser en écriture)."},
@@ -2268,11 +2278,12 @@ window.OS_DATA = [
   },
   {
     id:"sparkylinux", name:"SparkyLinux", version:"8.3 (Seven Sisters)", cat:"lightweight", color:"#E67E22", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#E67E22" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#E67E22">Sp</text></svg>',
     tag:"Basée sur Debian Testing, légère et rapide, avec des éditions spécialisées (multimédia, gaming).",
     site:"sparkylinux.org", dl:"sparkylinux.org/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~10 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"128 Mo (CLI) à 1 Go (KDE) selon le bureau choisi (256 Mo LXQt/Openbox, 512 Mo MATE/Xfce) — le wiki officiel précise que l'installeur Calamares exige au moins 1 Go, en dessous utiliser l'installeur avancé", disk:"2 Go (CLI) à 20 Go (GameOver/Multimédia) selon l'édition, 10 Go pour les éditions Home", cpu:"i686 / amd64 (ARM64 également supporté, ex. Raspberry Pi 3+)"},
     steps:[
       {t:"Télécharger l'ISO", d:"sparkylinux.org/download → édition stable ou rolling."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2602,11 +2613,12 @@ window.OS_DATA = [
   },
   {
     id:"gpartedlive", name:"GParted Live", version:"1.8.1-2", cat:"recovery", color:"#1ABC9C", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#1ABC9C" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#1ABC9C">Gp</text></svg>',
     tag:"Live minimaliste dédié au partitionnement graphique (redimensionner, déplacer, formater).",
     site:"gparted.org", dl:"gparted.org/download.php", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~5 min", diff:"Facile", base:"Debian",
-    req:{ram:"1 Go min. (2 Go conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"500 Mo pour l'image ISO (officiel) ; une clé USB de 1 Go suffit largement", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"gparted.org/download.php → image stable amd64."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -2835,11 +2847,12 @@ window.OS_DATA = [
   },
   {
     id:"kalipurple", name:"Kali Purple", version:"2026.2", cat:"security", color:"#7A288A", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#7A288A" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#7A288A">Kp</text></svg>',
     tag:"Version défensive (blue team) de Kali : SIEM, IDS et outils SOC préinstallés aux côtés des classiques.",
     site:"kali.org", dl:"kali.org/get-kali", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Avancé", base:"Debian",
-    req:{ram:"2 Go min. pour l'OS seul (8 Go+ conseillés dès qu'Elastic SIEM est déployé)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"2 Go min. pour l'OS seul (8 Go+ conseillés dès qu'Elastic SIEM est déployé)", disk:"8-32 Go pour une clé USB persistante", cpu:"x86_64 (VM pratique pour un labo isolé ; le bare-metal reste préférable pour l'injection Wi-Fi et le cracking GPU, mal supportés en VM)"},
     steps:[
       {t:"Télécharger l'ISO", d:"kali.org/get-kali → sélectionner l'image Purple."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -2887,11 +2900,12 @@ window.OS_DATA = [
   },
   {
     id:"pentoo", name:"Pentoo", version:"2024.0", cat:"security", color:"#54487A", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#54487A" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#54487A">Pt</text></svg>',
     tag:"Overlay pentest pour Gentoo. Compilation source, kernel durci (hardened), pour utilisateurs avancés.",
     site:"pentoo.ch", dl:"pentoo.ch/downloads", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~20 min", diff:"Avancé", base:"Gentoo",
-    req:{ram:"512 Mo-2 Go suggérés (selon le wiki officiel du projet)", disk:"20 Go min. (30 Go+ conseillés)", cpu:"x86_64 (VM recommandée pour l'isolement)"},
+    req:{ram:"512 Mo-2 Go suggérés (selon le wiki officiel du projet)", disk:"20 Go min. (30 Go+ conseillés)", cpu:"x86_64 — le bare-metal est conseillé ici plus que pour les autres distributions de sécurité : les pilotes Wi-Fi patchés pour l'injection de paquets et le cracking GPGPU (OpenCL/CUDA), cœur du projet, perdent l'accès matériel direct en VM"},
     steps:[
       {t:"Télécharger l'ISO", d:"pentoo.ch/downloads → image live amd64 (hardened)."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -2913,11 +2927,12 @@ window.OS_DATA = [
   },
   {
     id:"absolutelinux", name:"Absolute Linux", version:"20240602 (dernière de Paul Sherman, avant la reprise eXybit)", cat:"lightweight", color:"#2F4F4F", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#2F4F4F" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#2F4F4F">Ab</text></svg>',
     tag:"Slackware simplifiée avec IceWM, pensée pour rester légère et rapide sans sacrifier la stabilité.",
     site:"absolutelinux.org", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~15 min", diff:"Intermédiaire", base:"Slackware",
-    req:{ram:"512 Mo à 1 Go", disk:"5-8 Go d'espace disque", cpu:"Processeur ancien (Pentium 4 / Core 2 Duo et plus)"},
+    req:{ram:"512 Mo min. (1 Go conseillé avec IceWM) — dernier chiffre connu avant l'arrêt de distribution du site officiel, aucune page de specs active à vérifier aujourd'hui", disk:"8 Go min.", cpu:"1 GHz min., x86_64 depuis ~2005 (Pentium 4 ou équivalent)"},
     steps:[
       {t:"Télécharger l'ISO", d:"Attention : absolutelinux.org n'affiche plus qu'une page « Returning! » depuis sa reprise par eXybit Technologies, sans image téléchargeable. Aucune version n'est distribuée officiellement pour l'instant — vérifier l'état du projet avant de compter dessus."},
       {t:"Graver la clé", d:"dd ou balenaEtcher."},
@@ -3094,11 +3109,12 @@ window.OS_DATA = [
   },
   {
     id:"endian", name:"Endian Firewall", version:"Community 3.4", cat:"network", color:"#16A085", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#16A085" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#16A085">Ef</text></svg>',
     tag:"UTM (Unified Threat Management) libre basé sur Linux : pare-feu, VPN, antivirus, filtrage web.",
     site:"endian.com", dl:"endian.com/community", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~12 min", diff:"Intermédiaire", base:"Linux",
-    req:{ram:"512 Mo à 1 Go", disk:"4-8 Go (carte CF/SSD selon le boîtier)", cpu:"x86_64 faible consommation ou matériel dédié"},
+    req:{ram:"256 Mo min. (512 Mo conseillé, 1 Go+ pour un réseau plus large)", disk:"4 Go min. (8 Go pour un petit réseau, 20 Go pour un plus grand)", cpu:"x86 500 MHz min. (1 GHz conseillé), deux cartes réseau requises"},
     steps:[
       {t:"Télécharger l'ISO", d:"endian.com/community → édition Community gratuite."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
@@ -3199,11 +3215,12 @@ window.OS_DATA = [
   /* ===================== OUTILS / SECOURS (suite) ===================== */
   {
     id:"ubcd", name:"Ultimate Boot CD", version:"5.3.9", cat:"recovery", color:"#34495E", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#34495E" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#34495E">Ub</text></svg>',
     tag:"Compilation historique d'utilitaires de diagnostic matériel, tests mémoire, disques et BIOS.",
     site:"ultimatebootcd.com", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"FreeDOS / Linux",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"512 Mo à 1 Go suffisent en pratique (aucun minimum strict publié — ça dépend des outils lancés depuis le menu)", disk:"2-4 Go (clé USB bootable, 1 Go+ conseillé pour la capacité)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"ultimatebootcd.com → dernière version stable."},
       {t:"Graver la clé", d:"Rufus (mode DD) ou balenaEtcher."},
@@ -3224,11 +3241,12 @@ window.OS_DATA = [
   },
   {
     id:"trinityrescuekit", name:"Trinity Rescue Kit", version:"3.4", cat:"recovery", color:"#D68910", icon:null,
+    lastVerified:"2026-08",
     svg:'<svg viewBox="0 0 24 24" width="30" height="30"><rect width="24" height="24" rx="4" fill="#D68910" fill-opacity=".15"/><text x="12" y="16" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700" fill="#D68910">Tr</text></svg>',
     tag:"Live orienté maintenance de parc : scan antivirus hors ligne, réinitialisation de mots de passe Windows.",
     site:"trinityhome.org", dl:"trinityhome.org/trinity_rescue_kit_download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Intermédiaire", base:"Linux",
-    req:{ram:"256 Mo min. (512 Mo conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"256 Mo min. (512 Mo conseillés)", disk:"environ 150-180 Mo pour l'image ISO (officiel trinityhome.org) — un des plus petits de cette catégorie ; projet resté sans mise à jour depuis le début des années 2010, à utiliser en connaissance de cause", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"trinityhome.org → dernière version disponible."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3879,10 +3897,11 @@ window.OS_DATA = [
   },
   {
     id:"rescuezilla", name:"Rescuezilla", version:"2.6.2", cat:"recovery", color:"#2C82C9", icon:null,
+    lastVerified:"2026-08",
     tag:"Le « Clonezilla graphique » : sauvegarde, restauration et clonage de disques en clics.",
     site:"rescuezilla.com", dl:"rescuezilla.com/download", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Ubuntu",
-    req:{ram:"1 Go min. (2 Go conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"1 Go pour l'image ISO live (officiel rescuezilla.com) ; une clé USB de 2 Go ou plus recommandée pour la marge", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"rescuezilla.com → dernière image."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3902,10 +3921,11 @@ window.OS_DATA = [
   },
   {
     id:"redorescue", name:"Redo Rescue", version:"4.0.0", cat:"recovery", color:"#1ABC9C", icon:null,
+    lastVerified:"2026-08",
     tag:"Sauvegarde et restauration bare-metal en un clic. Live minimal et rapide.",
     site:"redorescue.com", dl:"sourceforge.net/projects/redobackup", license:"Libre / Open-source", popular:false, isNew:false,
     time:"~6 min", diff:"Facile", base:"Debian",
-    req:{ram:"512 Mo à 1 Go", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go suffit en pratique (aucun minimum officiel publié sur redorescue.com ; l'ISO elle-même ne pèse que ~500-600 Mo)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64 ou x86 32 bits (support hérité)"},
     steps:[
       {t:"Télécharger l'ISO", d:"redorescue.com → dernière image."},
       {t:"Graver la clé", d:"balenaEtcher ou Rufus."},
@@ -3925,10 +3945,11 @@ window.OS_DATA = [
   },
   {
     id:"kasperskyrescue", name:"Kaspersky Rescue Disk", version:"18", cat:"recovery", color:"#006D5C", icon:null,
+    lastVerified:"2026-08",
     tag:"Live antivirus hors-ligne pour désinfecter un système Windows infecté sans le démarrer.",
     site:"kaspersky.fr", dl:"kaspersky.com/downloads/free-rescue-disk", license:"Propriétaire", popular:false, isNew:false,
     time:"~8 min", diff:"Facile", base:"Linux",
-    req:{ram:"1 Go min. (2 Go conseillés)", disk:"2-4 Go (clé USB bootable)", cpu:"x86_64, fonctionne sur la plupart des PC"},
+    req:{ram:"1 Go min. (2 Go conseillés)", disk:"1 Go min. pour la clé USB ou le DVD (officiel support.kaspersky.com)", cpu:"x86_64, fonctionne sur la plupart des PC"},
     steps:[
       {t:"Télécharger l'ISO", d:"kaspersky.fr → Kaspersky Rescue Disk (gratuit)."},
       {t:"Graver la clé", d:"Rufus ou balenaEtcher."},
